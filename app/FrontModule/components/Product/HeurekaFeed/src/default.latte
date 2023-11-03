@@ -1,0 +1,32 @@
+{contentType application/xml; charset=utf-8}
+{cache tags => [$control::CACHE_TAG, App\Product\Product::PRODUCT_FEED_CACHE_TAG]}
+<?xml version="1.0" encoding="utf-8"?>
+<SHOP>
+    {var $maxProducts = 500}
+    {for $i = 0; $i <= $control->getProductsCount()->getCount();}
+        {var $productDtos = $control->getProductDtos($maxProducts, $i)}
+        {foreach $productDtos as $productDto}
+            {var $product = $productDto->getProduct()}
+            {var $productTranslation = $product->getTranslation()}
+            <SHOPITEM>
+                <ITEM_ID>{$product->getCode()}</ITEM_ID>
+                <PRODUCT>{$productTranslation->getFullName($product)}</PRODUCT>
+                <PRODUCTNAME>{$productTranslation->getFullName($product)}</PRODUCTNAME>
+                <EAN>{$product->getCode()}</EAN>
+                <CATEGORYTEXT>{$product->getHeurekaCategory()}</CATEGORYTEXT>
+                <DESCRIPTION>{$productTranslation->getDescription()|striptags}</DESCRIPTION>
+                <URL>{$linkGenerator->link('Front:Product:detail', ['url' => $productTranslation->getUrl()])}</URL>
+                <DELIVERY_DATE>{if $product->isInStock()}0{else}28{/if}</DELIVERY_DATE>
+                <IMGURL n:if="$product->getPhoto()">{rtrim($linkGenerator->link('Front:Homepage:default'), '/')}{$fileManager->getFile($product->getPhoto(), $product->getUploadFolder())}</IMGURL>
+                <PRICE_VAT>{$product->getPrice()|number:2:'.':''}</PRICE_VAT>
+                <PARAM n:foreach="$productDto->getProductParameterList() as $value">
+                    <PARAM_NAME>{$value['group']->getTranslation()->getFiltrationTitle()}</PARAM_NAME>
+                    <VAL>{foreach $value['parameters'] as $parameter}{$parameter->getTranslation()->getValue()}{sep}, {/sep}{/foreach}</VAL>
+                </PARAM>
+            </SHOPITEM>
+        {/foreach}
+        {php unset($products)}
+        {var $i += $maxProducts}
+    {/for}
+</SHOP>
+{/cache}

@@ -1,0 +1,32 @@
+{block content}
+<section class="PageHeader">
+    <div class="PageHeader-bg" style="background-image: url(/www/assets/front/user_content/images/katalog_header_231025.jpg);"></div>
+    <div class="Container Grid">
+        <div class="Grid-cell u-size12of12">
+            {control breadcrumb}
+
+            <h1 class="Text-title u-mt--25 u-md-mb--0">{_pageStatic.representative_catalog.title|noescape}</h1>
+        </div>
+    </div>
+</section>
+
+<section class="Background">
+    <div class="Container u-textCenter u-mt--20 u-sm-mt--0">
+
+        <img class="u-mb--15" src="/assets/front/images/layout/jk-min.png" alt="JK">
+
+        <h2 class="Text-block-title-larger u-textCenter u-mb--20">{_pageStatic.representative_catalog.introduction.title|noescape}</h2>
+
+        <p class="Text-block-paragraph-ornament-bot-center u-textCenter u-mt--30 u-mb--80">{_pageStatic.representative_catalog.introduction.description|noescape}</p>
+
+    </div>
+</section>
+
+
+<div class="Background">
+    <div class="Container">
+        <div class="u-pb--10 u-xs-pb--30 u-sm-pb--80 u-md-pb--140">
+            {control representativeCatalogList}
+        </div>
+    </div>
+</div>

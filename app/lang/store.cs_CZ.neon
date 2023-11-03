@@ -1,0 +1,13 @@
+contact:
+    modal:
+        title: Kde nás najdete
+
+openingHours:
+    title: Otevírací doba
+    today: Dnes
+    label: Prodejna Filadelfie
+    opened: otevřeno
+    closed: zavřeno
+
+location:
+    title: Zobrazit adresu

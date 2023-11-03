@@ -1,0 +1,1 @@
+ALTER TABLE `category_filtration_group` ADD `cfg_thumbnail_image` VARCHAR(255) NULL AFTER `cfg_show_in_menu`;

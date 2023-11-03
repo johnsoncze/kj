@@ -1,0 +1,105 @@
+parameters:
+    frontend:
+        language:
+            default: cs
+    administration:
+        title: JK
+        language:
+            default: 1
+    project:
+        name: JK Jitka Kudláčková
+        companyName: JK Jitka Kudlackova Jewels s.r.o.
+        address: 'Želetavská 1525/1, Praha 4'
+        addressBuilding: 'Brumlovka – budova Filadelfie'
+        email: info@jk.cz
+        url: https://www.jk.cz
+        telephone: +420 241 091 761
+        in: 24782301
+        vatId: CZ24782301
+        bankAccount: 42222242/0800
+        socialMedia:
+            facebook: https://www.facebook.com/JKJitkaKudlackova
+            instagram: https://www.instagram.com/jkjitkakudlackova/
+            twitter: https://www.instagram.com/jkjitkakudlackova/
+    marketingEvents:
+        holidayCustomerDiscountRateActive: false ## christmas discount for registered customers is active; only for display purposes. Please change discount value here: \App\Customer\Customer::DISCOUNT
+    googleApi:
+        key: AIzaSyB3rYlFUKM_ICZ4E5TPy6jJtLPc8UQrg_A
+    googleMerchantFeed:
+        title: %project.name%
+    googleTagManager:
+        id: GTM-WXVDCWJ
+        idNoCookies: GTM-WZC5JJF
+    facebookFeed:
+        title: %project.name%
+    recaptcha:
+        siteKey: 6Ld20NMUAAAAAFvcn-FBvEIxQzxIXvpAkFVWhWNh
+        secretKey: 6Ld20NMUAAAAACpmp4D6MBLxBFNyMxEB1diUsBR3
+    notification:
+        email:
+            order:
+                - objednavky@jk.cz
+            demand:
+                - kontakt@jk.cz
+            contactForm:
+                - info@jk.cz
+    upload:
+        baseDir: /upload
+        dir: %wwwDir%%upload.baseDir%
+        editor:
+            baseDir: /editor
+            url: /www/%upload.baseDir%%upload.editor.baseDir%
+            dir: %wwwDir%%upload.baseDir%%upload.editor.baseDir%
+    systemFiles:
+        baseDir: /files
+        dir: %wwwDir%%systemFiles.baseDir%
+    assets:
+        baseDir: /assets
+        dir: %wwwDir%%assets.baseDir%
+    ecomail:
+        apiKey: 60951ad77ff0660951ad77ff09
+        databaseId:  '1'
+    sentry:
+        dsn: 'http://cf734237524347eb986f5d922e260ed5@185.213.25.4:9000/17'
+        in_app_exclude:
+            - %appDir%/../vendor/
+            - %appDir%/../temp/
+        send_default_pii: true
+
+application:
+	#catchExceptions: yes
+	mapping:
+		*: App\*Module\Presenters\*Presenter
+
+extensions:
+    console: Kdyby\Console\DI\ConsoleExtension
+    events: Kdyby\Events\DI\EventsExtension
+    mappero: Ricaefeliz\Mappero\DI\MapperoExtension
+    migrations: Nextras\Migrations\Bridges\NetteDI\MigrationsExtension
+    monolog: Kdyby\Monolog\DI\MonologExtension
+    translation: Kdyby\Translation\DI\TranslationExtension
+    ecomail: Ecomail\Extension
+
+translation:
+	default: cs
+	whitelist: [cs]
+	fallback: [cs_CZ, cs]
+
+mappero:
+    translation:
+        default: %frontend.language.default%
+        whitelist: [cs = 1, en = 2]
+
+migrations:
+    dir: %appDir%/../migrations
+    driver: mysql
+    dbal: nette
+
+console:
+	url: %project.url%
+
+session:
+	expiration: 60 days
+
+monolog:
+    name: jkeshop

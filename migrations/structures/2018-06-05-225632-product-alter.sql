@@ -1,0 +1,1 @@
+ALTER TABLE `product` ADD `p_comment_completed` TEXT NULL AFTER `p_is_completed`;

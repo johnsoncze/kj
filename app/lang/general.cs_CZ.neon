@@ -1,0 +1,20 @@
+error:
+    invalidEmailFormat: 'E-mail nemá správný formát.'
+    invalidPhoneFormat: 'Telefon nemá správný formát (pouze číslice a +)'
+
+message:
+    signRequire: Pro zobrazení požadované stránky se nejdříve přihlaste.
+
+meta:
+    title: 'Výroba a prodej šperků, hodinek a doplňků'
+    description: 'Česká rodinná zlatnická firma s ruční výrobou originálních zlatých šperků. Prodej renomovaných značek šperků, hodinek a doplňků. Prodejna a zlatnická dílna na Praze 4. Eshop.'
+
+state:
+    label: Stav
+
+type:
+    label: Typ
+
+page:
+    reload: Obnovit stránku
+    goToHomepage: Přejít na hlavní stránku

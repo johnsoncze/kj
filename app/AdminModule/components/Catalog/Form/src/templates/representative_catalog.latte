@@ -1,0 +1,33 @@
+<form n:name="form">
+    <div class="form-group">
+        <div class="row">
+            <div class="col-xs-9">
+                <label>Název*</label>
+                {input title}
+            </div>
+            <div class="col-xs-3">
+                {label state/}
+                {input state}
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="row">
+            <div class="col-xs-6">
+                <label>Náhled</label>
+                {include 'photo.latte'}
+            </div>
+            <div class="col-xs-6">
+                <label>Soubor ke stažení</label>
+                {input file}
+
+                {if $catalog instanceof \App\Catalog\Catalog && $catalog->getTranslation()->getFile()}
+                    {include 'file.latte'}
+                {/if}
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        {input submit}
+    </div>
+</form>

@@ -1,0 +1,39 @@
+.Collection {
+    text-align: center;
+}
+
+.Collection-title-small {
+    .Text-block-title-small;
+}
+
+.Collection-title {
+    .Text-block-title;
+}
+
+.Collection-desc {
+    .Text-block-desc;
+}
+
+.Collection-ornament {
+    position: relative;
+    display: inline-block;
+
+    &:before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        margin-left: -110px;
+        left: 50%;
+        top: -88px;
+        width: 220px;
+        height: 383px;
+        background: url(/assets/front/images/layout/ornament-collection.png) 0 0 no-repeat;
+    }
+
+    @media @media-sm-max {
+
+        &:before {
+            height: 236px;
+        }
+    }
+}

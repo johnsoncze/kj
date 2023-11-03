@@ -1,0 +1,31 @@
+<?php
+
+require __DIR__ . '/../vendor/autoload.php';
+
+$configurator = new Nette\Configurator;
+
+\Tracy\Debugger::$email = 'lachmart@dwd.cz';
+
+$configurator->setTimeZone('Europe/Prague');
+$configurator->setTempDirectory(__DIR__ . '/../temp');
+
+$configurator->createRobotLoader()
+    ->addDirectory(__DIR__ )
+    ->addDirectory(__DIR__ . '/../src')
+    ->register();
+
+$environment = \App\Environment\Environment::create();
+//$configurator->setDebugMode($environment->isProduction() !== TRUE);
+$configurator->enableDebugger(__DIR__ . '/../log');
+error_reporting(E_ALL & ~E_NOTICE & ~E_USER_DEPRECATED & ~E_DEPRECATED);
+
+$configurator->addConfig(__DIR__ . '/config/config.neon');
+$configurator->addConfig(__DIR__ . '/config/config.local.neon');
+$configurator->addConfig(__DIR__ . '/config/config.services.neon');
+$configurator->addConfig(__DIR__ . '/config/config.components.neon');
+$configurator->addConfig(__DIR__ . '/config/config.commands.neon');
+
+$container = $configurator->createContainer();
+$container->getService('application.application')->errorPresenter = 'Front:Error';
+
+return $container;

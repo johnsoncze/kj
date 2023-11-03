@@ -1,0 +1,52 @@
+<nav class="Pagination">
+    <ul class="Pagination-list">
+
+        <li class="Pagination-item">
+            {if $paginator->isFirst() === TRUE}
+                <span class="Pagination-arrow Pagination-arrow--prev Pagination-arrow--disabled">{_pagination.move.previous}</span>
+            {else}
+	            {var relPrevFirst = $paginator->page === 2}
+                <a href="{plink this pagination => $paginator->page - 1}" class="Pagination-arrow Pagination-arrow--prev"{if $relPrevFirst} rel="prev"{/if}>{_pagination.move.previous}</a>
+            {/if}
+        </li>
+
+        {if $paginator->pageCount > 4 && $paginator->page > 3}
+            <li class="Pagination-item">
+                <a href="{plink this pagination => 1}" class="Pagination-link">01</a>
+            </li>
+            <li class="Pagination-ellipsis">…</li>
+        {/if}
+
+        {var startPage = $paginator->pageCount < 5 ? 1 : ($paginator->pageCount - ($paginator->pageCount - $paginator->page) < 4 ? 1 : ($paginator->pageCount - $paginator->page === 0 ? $paginator->page - 2 : $paginator->page - 1))}
+        {var maxPage = $paginator->pageCount < 5 ? $paginator->pageCount : ($paginator->pageCount - $paginator->page === 0 ? $paginator->pageCount : ($paginator->pageCount - ($paginator->pageCount - $paginator->page) === 1 || $paginator->pageCount - $paginator->page === 2 ? $paginator->page + 2 : $paginator->page + 1))}
+        {for $i = $startPage; $i <= $maxPage; $i++}
+            {var isActive = $paginator->page === $i}			
+            {var relNext = $i === $paginator->page + 1}
+            {var relPrev = $i === $paginator->page - 1}
+            <li class="Pagination-item">
+                <a href="{if $isActive}#{else}{plink this pagination => $i}{/if}" id="pagination_{$i}" class="Pagination-link{if $isActive} Pagination-link--active{/if}"{if $relNext} rel="next"{/if}{if $relPrev} rel="prev"{/if}>{include pageNumber, page => $i}</a>
+            </li>
+            {breakIf $paginator->pageCount === 0}
+        {/for}
+
+        {if $paginator->pageCount > 4 && $paginator->pageCount - $paginator->page > 2}
+            <li class="Pagination-ellipsis">…</li>
+            <li class="Pagination-item">
+                <a href="{plink this pagination => $paginator->pageCount}" class="Pagination-link">{include pageNumber, page => $paginator->pageCount}</a>
+            </li>
+        {/if}
+
+        <li class="Pagination-item">
+            {if $paginator->isLast()}
+                <span class="Pagination-arrow Pagination-arrow--next Pagination-arrow--disabled">{_pagination.move.next}</span>
+            {else}
+	            {var relNextLast = $paginator->page === $paginator->pageCount - 1}
+                <a href="{plink this pagination => $paginator->page + 1}" class="Pagination-arrow Pagination-arrow--next"{if $relNextLast} rel="next"{/if}>{_pagination.move.next}</a>
+            {/if}
+        </li>
+    </ul>
+</nav>
+
+{define pageNumber}
+    {php echo sprintf('%02d', $page)}
+{/define}

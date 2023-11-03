@@ -1,0 +1,204 @@
+.Filter {
+    position: relative;
+    // padding-top: 30px;
+    padding-bottom: 20px;
+    // background: url(../images/layout/ornament.png) no-repeat center top;
+    // background-size: 60px;
+
+    // @media @media-md-min {
+    //     border-top: 1px solid @color-gray-new;
+    // }
+}
+
+.Filter-panel {
+    //padding-top: 20px;
+    //padding-bottom: 15px;
+    background-color: @color-white;
+    // box-shadow: 0 1rem 2.6rem fade(@color-black, 15%);
+
+    @media @media-md-min {
+        padding-bottom: 0;
+        // box-shadow: 0 2rem 5.333333rem fade(@color-black, 15%);
+    }
+}
+
+.Filter-row {
+    border-bottom: 1px solid @color-gray-new;
+}
+
+.Filter-row:first-child {
+    padding-bottom: 10px;
+}
+
+.Filter-row:not(:first-child) {
+    @media @media-md-min {
+        //  border-top: 1px solid @color-gray-new;
+        border-bottom: 1px solid @color-gray-new;
+    }
+}
+
+.Filter-container {
+    //width: 50%;
+}
+
+.Filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    // padding-top: 10px;
+    // padding-bottom: 10px;
+    margin-right: -0.25rem;
+    margin-left: -0.25rem;
+}
+
+.Filter-barItem {
+    margin-right: 25px;
+}
+
+.Filter-barItem:not(:last-child) {
+    margin-right: 1rem;
+
+    @media @media-md-min {
+        margin-right: 1.5rem;
+    }
+}
+
+.Filter-barItem--static {
+    padding-right: 0.25rem;
+    padding-left: 0.25rem;
+    font-size: @font-size-small;
+    color: @color-brown-dark-alpha-70;
+}
+
+.Filter-toggleMobile {
+    margin-left: -0.5em;
+
+    @media @media-md-min {
+        display: none;
+    }
+}
+
+.Filter-toggle {
+    // .//letter-spacing(320);
+
+    display: inline-flex;
+    align-items: center;
+    width: 208px;
+    height: @form-field-height;
+    padding: 1rem @form-field-spacing-x;
+    font-weight: 700;
+    font-size: @font-size-smaller;
+    text-transform: uppercase;
+    color: @color-brown-dark;
+    border: 0;
+    border-radius: 0;
+    background: none;
+    appearance: none;
+
+    &:hover,
+    &:focus {
+        color: @color-gold;
+        outline: none;
+    }
+}
+
+.Filter-toggleIcon {
+    margin-right: 0.75em;
+}
+
+.Filter-toggleText {
+    position: relative;
+    // top: 3px;
+}
+
+.Filter-toggleIcon--open,
+.Filter-toggleText--open,
+.Filter-toggle.is-open .Filter-toggleIcon,
+.Filter-toggle.is-open .Filter-toggleText {
+    display: none;
+}
+
+.Filter-toggle.is-open .Filter-toggleIcon--open,
+.Filter-toggle.is-open .Filter-toggleText--open {
+    display: block;
+}
+
+.Filter-title {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    // min-width: 90px;
+    // min-height: 90px;
+    margin-bottom: 0;
+    text-align: center;
+    // background: url(../images/layout/ornament.png) no-repeat center center;
+    // background-size: 90px;
+}
+
+.Filter-options {
+    padding-top: 10px;
+    margin-right: -@container-padding;
+    margin-left: -@container-padding;
+
+    @media @media-md-min {
+        display: flex;
+        padding-top: 0;
+        margin-right: -@form-field-spacing-x;
+        margin-left: -@form-field-spacing-x;
+    }
+}
+
+.Filter-options--spaced {
+    @media @media-md-min {
+        justify-content: space-between;
+    }
+}
+
+.Filter-collapsible {
+    display: none;
+}
+
+.Filter-collapsible.is-open {
+    display: block;
+
+    @media @media-md-min {
+        display: flex;
+    }
+}
+
+.Filter-collapsible--mobile,
+.Filter-collapsible--mobile.is-collapsed {
+    @media @media-md-min {
+        display: flex;
+    }
+}
+
+.Filter-sort {
+    position: absolute;
+    top: 42px;
+    right: @container-padding;
+    margin-right: 0.25rem;
+
+    @media @media-md-min {
+        position: static;
+        margin-left: auto;
+    }
+}
+
+.Filter-mobile {
+    @media @media-md-min {
+        display: none;
+    }
+}
+
+.Filter-barItem.Filter-stock span {
+    top: -4px;
+}
+
+.Filter-desktop.is-open {
+    display: none;
+
+    @media @media-md-min {
+        display: block;
+    }
+}

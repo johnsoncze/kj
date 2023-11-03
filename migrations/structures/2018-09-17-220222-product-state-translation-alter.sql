@@ -1,0 +1,1 @@
+ALTER TABLE `product_state_translation` CHANGE `pst_value` `pst_value` VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_czech_ci NOT NULL;

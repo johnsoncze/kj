@@ -1,0 +1,37 @@
+{block content}
+
+<main class="Background Background--gradient-top-100-ebebeb">
+    <div class="Container Container--slimer">
+
+        {include 'partials/breadcrumb.latte'}
+        {include 'partials/menu.latte'}
+
+        <div class="Grid u-pb--90">
+
+            <div class="Grid-cell u-size12of12">
+
+                <h1 class="User-page-title">{_account.overview.title}</h1>
+                <p class="Form-item-desc u-pl--0">{_account.overview.description}</p>
+
+                {include 'partials/benefits.latte'}
+
+                <div class="u-textCenter">
+
+                    {if $loggedUser->getEntity()->hasBirthdayCoupon() === TRUE}
+                        <div class="u-pb--20">
+                            <h3>{_account.overview.birthday.title}</h3>
+                            <p>{_account.overview.birthday.description}</p>
+                        </div>
+                    {/if}
+
+                    <a href="{plink Homepage:default}" class="Button">{_account.overview.goToShop.label}</a>
+
+                    {control orderList:lastOrder}
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</main>

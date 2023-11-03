@@ -1,0 +1,1 @@
+ALTER TABLE `opportunity_product` CHANGE `oppp_name` `oppp_name` VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_czech_ci NOT NULL;

@@ -1,0 +1,26 @@
+<table class="Footer-openingHours  u-size12of12">
+    {*
+    <tr>
+        <td class="">Pondělí-Čtvrtek</td>
+        <td class="">10:00-20:00</td>
+    </tr>
+    <tr>
+        <td class="">Pátek</td>
+        <td class="">10:00-19:00</td>
+    </tr>
+    <tr>
+        <td class="">24.12. - 26.12.</td>
+        <td class="">zavřeno</td>
+    </tr>
+    <tr>
+        <td class="">Státní svátky</td>
+        <td class="">zavřeno</td>
+    </tr>
+    *}
+    {foreach $openingHours as $day => $hours}
+        <tr>
+            <td class="">{$day}</td>
+            <td class="">{$hours}</td>
+        </tr>
+    {/foreach}
+</table>

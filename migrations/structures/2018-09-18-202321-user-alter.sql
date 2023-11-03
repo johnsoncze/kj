@@ -1,0 +1,1 @@
+ALTER TABLE `user` ADD `u_role` VARCHAR(10) NOT NULL DEFAULT 'admin' AFTER `u_password`;

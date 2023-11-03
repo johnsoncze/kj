@@ -1,0 +1,9 @@
+{if $isInFavourite === TRUE}
+	<svg role="img" class="Icon favouriteAddTrigger inFavourite" prid="{$productId}">
+			<use xlink:href="#symbol-heart-full"></use>
+	</svg>
+{else}
+	<svg role="img" class="Icon favouriteAddTrigger notFavourite" prid="{$productId}">
+			<use xlink:href="#symbol-heart-empty"></use>
+	</svg>
+{/if}

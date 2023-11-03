@@ -1,0 +1,32 @@
+{block content}
+
+<main class="Background Background--gradient-top-100-ebebeb">
+    <div class="Container Container--slim">
+
+        {include 'partials/navigation.latte'}
+
+        <div class="Grid u-pb--90">
+
+            <div class="Grid-cell u-size7of12 u-sm-max-size12of12">
+                <section class="Registration-form u-pb--70">
+
+                    <h1 class="User-page-title">{_account.sign.up.title}</h1>
+
+                    <div class="u-mt--30 u-mb--20">
+                        <a href="{plink Sign:storeRegistrationRequest}" class="Product-link-big">
+                            <span class="Link-animation u-md-displayInit Link Link--lineBefore">{_account.sign.up.store.request.title}<span class="Link--hover"></span></span>
+                        </a>
+                    </div>
+
+                    {control registrationForm}
+
+                </section>
+            </div>
+            <div class="Grid-cell u-size5of12 u-sm-max-size12of12">
+                {include 'partials/signUpBenefit.latte'}
+            </div>
+
+        </div>
+
+    </div>
+</main>

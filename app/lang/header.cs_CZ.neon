@@ -1,0 +1,16 @@
+contact:
+    title: Potřebujete poradit?
+
+menu:
+    menu:
+        title: Menu
+    search:
+        title: Hledat
+        subtitle: Vyhledat
+    favourites:
+        title: Oblíbené
+    account:
+        title: Můj účet
+    category:
+        all:
+            title: Vše

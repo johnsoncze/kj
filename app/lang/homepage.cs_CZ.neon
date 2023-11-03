@@ -1,0 +1,29 @@
+getKnow:
+    story:
+        title: Poznejte
+        subTitle: naši filosofii
+        description: 'Každý náš šperk je originální, tak jako je jedinečný každý náš vztah. Je výsledkem poctivé ruční řemeslné práce, aby vydržel navždy.<br />Používáme zlato a pravé kameny, protože… protože hluboký vztah si méně hodnotné materiály nezaslouží.'
+        anchor: Náš příběh
+    philosophy:
+        title: Ctíme
+        design: design
+        craft: zlatnické řemeslo
+        and: 'a&nbsp;'
+        materials: vzácné materiály
+        description: 'Každý den v&nbsp;naší dílně vznikají v&nbsp;rukou zlatníků jedinečné šperkařské skvosty, které jsou vrcholem zlatnického umu a&nbsp;kreativity. Originální nápad a&nbsp;vysoký podíl ruční práce je pro nás jediný možný způsob, jak vyrobit originální šperk, který bude navždy připomínkou vzácných životních okamžiků.'
+        workshopAnchor: Nahlédněte do zlatnické dílny
+        productionAnchor: Jak probíhá výroba
+
+blog:
+    title: Inspirujte se na našem
+    onOurBlog: blogu
+
+
+banner:
+    headerSupport: PODPORUJEME
+    headerMarriage: NOVÁ MANŽELSTVÍ
+    textPart1: Poskytujeme individuální poradenství a konzultaci při výběru
+    textLink1: snubních
+    textPart2: prstenů
+    textLink2: zásnubních
+    invite: Srdečně vás zveme do naší prodejny.

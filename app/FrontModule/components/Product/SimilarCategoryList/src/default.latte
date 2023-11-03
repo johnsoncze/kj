@@ -1,0 +1,24 @@
+{if $groups}
+    <section class="Background Background--taste" style="background-image: url('/www/assets/front/images/layout/bg-darkbrown.jpg');">
+        <div class="Taste">
+
+            <div class="Grid Container u-pt--70 u-sm-pt--100 u-md-pt--140 u-sm-pb--100">
+                <div class="Grid-cell u-size4of12 u-md-max-size12of12">
+                    <div class="Taste-title-small">{_product.similarCategoryList.title}</div>
+                    <h2 class="Taste-title u-mt--15 u-sm-mt--45">{_product.similarCategoryList.subTitle}</h2>
+                </div>
+                <div class="Grid-cell u-size8of12 u-md-max-size12of12 u-md-pl--90">
+                    <div class="Taste-list u-mt--10 u-sm-mt--60 u-mb--30 u-sm-mb--0">
+                        {foreach $groups as $group}
+                            <h3 class="Taste-title-list"><a
+                                        href="{$group->getFrontendLink($linkGenerator)}"
+                                        class="Link--noUnderline">{$group->getTitleSeo()}</a>
+                            </h3>
+                        {/foreach}
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+{/if}

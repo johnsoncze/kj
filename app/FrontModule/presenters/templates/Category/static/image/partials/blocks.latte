@@ -1,0 +1,93 @@
+{define header}
+    <section class="PageHeader PageHeader--tall CategoryHeader" style="background-image: url({$image});">
+        <div class="Container Grid">
+
+            {if isset($hidebread) && $hidebread == 1}
+            {else}
+                {ifset $textColorWhite}
+                    {control breadcrumb:white}
+                {else}
+                    {control breadcrumb}
+                {/ifset}
+
+                <div class="Grid-cell u-size12of12 u-mt--20 u-sm-mt--10">
+                    <h1 class="Collection-detail-page-title u-mb--10 {ifset $textColorWhite}u-textColor--white{else}u-textColor--darkBrown{/ifset}">{$title}</h1>
+                    <p class="Collection-detail-page-desc u-mb--20 {ifset $textColorWhite}u-textColor--white{else}u-textColor--darkBrown{/ifset}">{$motto}</p>
+                </div>
+
+            {/if}
+
+        </div>
+    </section>
+{/define}
+
+{define mainTextBlock}
+    <main class="Background">
+        <div class="Container">
+
+            <div class="Collection-top-product">
+                <img src="{$image}" alt="" class="Collection-top-product-image{ifset $imgClass} {$imgClass}{/ifset}">
+                <a href="{plink Category:default, url => $category->getUrl()}" class="Collection-top-product-link Collection-link-big">
+                    <span class="Link-animation u-md-displayInit Link Link--lineBefore">{_collection.preview.cta}<span class="Link--hover"></span></span>
+                </a>
+            </div>
+
+            <div class="Collection-detail">
+
+                <div class="Container u-pt--50 u-sm-pt--140 u-pb--20 u-sm-pb--20">
+                    <p class="Text-block-paragraph-ornament-top-left"><b>{$text}</b></p>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+{/define}
+
+{define textBlockCell}
+    <div class="Grid-cell u-size12of12 u-md-size6of12 u-scrn992-mt--140">
+        <div class="Collection-detail-item u-textCenter">
+            <div class="Collection-detail-item-content-text Collection-detail-item-content--var-1">
+                <p class="Collection-detail-item-desc u-mt--45">{$text|noescape}</p>
+            </div>
+        </div>
+    </div>
+{/define}
+
+{define productBlockCell}
+    <div class="Grid-cell u-size12of12 u-md-size6of12 u-scrn992-mt--20">
+        <div class="Collection-detail-item u-textCenter">
+            <div class="">
+                {control productList:collectionImageTemplateRow, $products}
+            </div>
+        </div>
+    </div>
+{/define}
+
+{define ctaBlock}
+    <div class="Grid-cell u-size12of12 u-md-size12of12 u-mt--80 u-mb--30">
+        <div class="u-textCenter">
+            <a href="{plink Category:default, url => $category->getUrl()}" class="Button">{_collection.preview.cta}</a>
+        </div>
+    </div>
+{/define}
+
+{define newHeaderForCollection}
+    <section class="PageHeaderNew">
+        <div class="Container Container--wide">
+            <div class="Container Grid">
+                <div class="Grid-cell u-size12of12">
+                    {if isset($breadcrumbRender)}
+                        {control breadcrumb:$breadcrumbRender}
+                    {else}
+                        {control breadcrumb}
+                    {/if}
+
+				{*Whitespace is a workaround for show banner in wave without title*}
+				{var $title = !isset($showTitle) || $showTitle === TRUE ? $title : ' '}
+                    <h1 class="u-mt--25 u-md-mb--40{ifset $titleClass} {$titleClass}{/ifset}">{$categoryTitle}</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+{/define}

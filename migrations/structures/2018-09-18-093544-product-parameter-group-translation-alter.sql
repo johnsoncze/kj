@@ -1,0 +1,1 @@
+ALTER TABLE `product_parameter_group_translation` ADD INDEX (`ppgt_name`);

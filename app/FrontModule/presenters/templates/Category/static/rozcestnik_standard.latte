@@ -1,0 +1,81 @@
+{block canonical}
+	<link rel="canonical" href="{plink //Category:default, url => $category->getUrl()}" />
+{/block}
+
+{block content}
+{if $category->getGeneralImageDesktop()}
+<section class="PageHeaderNew">
+	<div class="Container Container--wide">
+		<div class="PageHeaderNew-desktop-bg" style="background-image: url({if $category->getGeneralImageDesktop()}{thumbnailPath 1920, 470, $category->getGeneralImageDesktop(), $category->getUploadFolder()}{else}'/www/assets/front/images/layout/bg-category-rings.jpg'{/if});"></div>
+		<div class="PageHeaderNew-mobile-bg" style="background-image: url({if $category->getGeneralImageMobile()}{thumbnailPath 1920, 470, $category->getGeneralImageMobile(), $category->getUploadFolder()}{else}'/www/assets/front/images/layout/bg-category-rings.jpg'{/if});"></div>
+
+		{if $category->getRelatedPageText()}
+		<div class="Container Grid Category-relatedPageWrapper">
+			<div class="Category-relatedPageDefault">
+				<a href="{$category->getRelatedPageLink()}">
+					{$category->getRelatedPageText()|noescape}
+				</a>
+			</div>
+			<div class="Category-relatedPageScrolled">
+				<a href="{$category->getRelatedPageLink()}">
+					{$category->getRelatedPageScrolledText()|noescape}
+				</a>
+			</div>			
+		</div>
+		{/if}				
+		
+		
+		<div class="Container Grid">
+			<div class="Grid-cell u-size12of12">
+				{if isset($breadcrumbRender)}
+					{control breadcrumb:$breadcrumbRender}
+				{else}
+					{control breadcrumb}
+				{/if}
+
+				<h1 class="u-mt--25 u-md-mb--40">{$categoryTitle}</h1>
+			</div>
+		</div>
+
+	</div>
+</section>
+		
+{if $category->getContent()}
+<div class="PageHeaderNew-text">
+	{$category->getContent()|noescape}
+</div>
+{/if}
+		
+{else}
+<section class="PageHeader">
+    <div class="PageHeader-bg" style="background-image: url({if $category->getGeneralImage()}{thumbnailPath 1920, 470, $category->getGeneralImage(), $category->getUploadFolder()}{else}'/www/assets/front/images/layout/bg-category-rings.jpg'{/if});"></div>
+    <div class="Container Grid">
+        <div class="Grid-cell u-size12of12">
+            {control breadcrumb}
+
+            <h1 class="Text-title u-mt--25 u-md-mb--0">{$categoryTitle}</h1>
+        </div>
+    </div>
+</section>
+    
+{if $category->getContent()}
+    <div class="Container Container--slim Grid u-justifyContentCenter u-textCenter Category-description">
+        <div class="Grid-cell u-size12of12">
+            <ul class="Expand-list js-expand-list">
+                <li class="Expand-item js-toggle">
+                    <h3 class="Expand-title js-toggle-switch">
+                        <svg role="img" class="Icon Expand-icon">
+                            <use xlink:href="#symbol-arr-down"></use>
+                        </svg>
+                        {if !isset($categoryDescriptionAnchor)}{_category.about.anchor}{else}{$categoryDescriptionAnchor}{/if}</h3>
+                    <div class="Expand-content js-toggle-content u-textCenter">
+                        {$category->getContent()|noescape}
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+{/if}
+{/if}
+
+{control categoryList:block}

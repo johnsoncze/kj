@@ -1,0 +1,15 @@
+.has-error {
+    border-color: #a94442 !important;
+}
+
+.message-alert-div {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+    padding: 8px 7px 7px 10px;
+    border: 1px solid transparent;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}

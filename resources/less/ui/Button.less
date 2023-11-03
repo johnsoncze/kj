@@ -1,0 +1,83 @@
+.Button {
+  .u-textLetterSpacing--large();
+
+  display: inline-block;
+  height: 3rem;
+  padding: .75rem 1.3rem .8rem 1.3rem;
+  font-weight: 700;
+  font-size: @font-size-smaller;
+  line-height: 1.466666;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: @color-brown;
+  border: solid 1px @color-brown;
+  border-radius: 2rem;
+  background: #ffffff;
+  cursor: pointer;
+
+  /* puvodni definice
+  &--brown {
+    background: -webkit-gradient(
+      linear,
+      left top,
+      right top,
+      from(#65594d),
+      color-stop(50%, #d8d2d2),
+      to(#65594d)
+    );
+    background: linear-gradient(to right, #65594d 0, #d8d2d2 50%, #65594d 100%);
+    background-size: 200% auto;
+  }
+
+  &:hover,
+  &:focus {
+    background-position: right center;
+  }
+
+  @media @media-sm-max {
+    height: auto;
+    font-size: @font-size-tiny;
+    white-space: unset;
+  }
+  */
+}
+
+
+.Button--link {
+  // .//letter-spacing(320);
+
+  height: 2rem;
+  padding: 0.5em;
+  font-weight: 700;
+  font-size: @font-size-tiny;
+  text-transform: uppercase;
+  color: @color-gold;
+  border: 0;
+  background: transparent;
+}
+
+
+.Button--arrow {
+  background: url('/assets/front/images/button-arrow.svg') no-repeat right 14px top 14px;
+  padding: .75rem 2.5rem .8rem 1.3rem;	
+}
+
+.Button--dark-brown {
+	color: @color-brown-dark;
+	border-color: @color-brown-dark;
+	background: url(/assets/front/images/newsletter-arrow-right.svg) no-repeat right 14px top 14px;
+}
+
+.Button--white {
+	color: #fff;
+	border-color: #fff;
+	background: url(/assets/front/images/button-arrow-white.svg) no-repeat right 14px top 14px;	
+}
+
+.Button--gold {
+	color: #fff;
+	background: url(/assets/front/images/button-arrow-white.svg) no-repeat right 14px top 14px;	
+	background-color: @color-gold;
+}

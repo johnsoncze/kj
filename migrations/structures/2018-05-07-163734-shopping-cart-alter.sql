@@ -1,0 +1,17 @@
+ALTER TABLE `shopping_cart`
+CHANGE `sc_ip_address` `sc_ip_address` VARCHAR(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL,
+CHANGE `sc_name` `sc_name` VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_czech_ci NULL DEFAULT NULL,
+CHANGE `sc_first_name` `sc_first_name` VARCHAR(50) CHARACTER SET utf8 COLLATE utf8_czech_ci NULL DEFAULT NULL,
+CHANGE `sc_last_name` `sc_last_name` VARCHAR(50) CHARACTER SET utf8 COLLATE utf8_czech_ci NULL DEFAULT NULL,
+CHANGE `sc_delivery_first_name` `sc_delivery_first_name` VARCHAR(50) CHARACTER SET utf8 COLLATE utf8_czech_ci NULL DEFAULT NULL,
+CHANGE `sc_delivery_last_name` `sc_delivery_last_name` VARCHAR(50) CHARACTER SET utf8 COLLATE utf8_czech_ci NULL DEFAULT NULL,
+CHANGE `sc_delivery_company` `sc_delivery_company` VARCHAR(50) CHARACTER SET utf8 COLLATE utf8_czech_ci NULL DEFAULT NULL,
+CHANGE `sc_delivery_address` `sc_delivery_address` VARCHAR(35) CHARACTER SET utf8 COLLATE utf8_czech_ci NULL DEFAULT NULL,
+CHANGE `sc_delivery_city` `sc_delivery_city` VARCHAR(35) CHARACTER SET utf8 COLLATE utf8_czech_ci NULL DEFAULT NULL,
+CHANGE `sc_delivery_country` `sc_delivery_country` CHAR(2) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+CHANGE `sc_delivery_postal_code` `sc_delivery_postal_code` CHAR(5) NULL DEFAULT NULL,
+CHANGE `sc_billing_name` `sc_billing_name` VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_czech_ci NULL DEFAULT NULL,
+CHANGE `sc_billing_address` `sc_billing_address` VARCHAR(35) CHARACTER SET utf8 COLLATE utf8_czech_ci NULL DEFAULT NULL,
+CHANGE `sc_billing_city` `sc_billing_city` VARCHAR(35) CHARACTER SET utf8 COLLATE utf8_czech_ci NULL DEFAULT NULL,
+CHANGE `sc_billing_postal_code` `sc_billing_postal_code` CHAR(5) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+CHANGE `sc_billing_country` `sc_billing_country` CHAR(2) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL;

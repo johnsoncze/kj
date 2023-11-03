@@ -1,0 +1,98 @@
+{capture $photo240}{if $product->getProduct()->getPhoto()}{thumbnailPath 240, 240, $product->getProduct()->getPhoto(), $product->getProduct()->getUploadFolder()}{else}{imagePlaceholder 240, 240}{/if}{/capture}
+{capture $photo480}{if $product->getProduct()->getPhoto()}{thumbnailPath 480, 480, $product->getProduct()->getPhoto(), $product->getProduct()->getUploadFolder()}{else}{imagePlaceholder 480, 480}{/if}{/capture}
+<div class="ProductCard{if $product->getProduct()->hasBadge()} ProductCard--withBadge{/if}">
+	<div class="ProductCard-favourite">
+		{control favouriteProductHeart:productHeart $product->getProduct()->getId()}
+	</div>
+	
+    <a href="{plink Product:detail, url => $product->getProduct()->getTranslation()->getUrl()}" class="ProductCard-link">
+		
+		{var $badgesCount = 0}
+		{var $badgeClass = 'first'}
+        {if $product->getProduct()->isNew() === TRUE && $badgesCount < 2}
+			<div class="Badge ProductCard-badge-{$badgeClass} ProductCard-badge-new">
+				{_product.badge.new.title}
+			</div>
+			{var $badgesCount = $badgesCount + 1}
+			{var $badgeClass = 'second'}
+        {/if}
+        {if $product->getProduct()->isLimited() === TRUE  && $badgesCount < 2}
+			<div class="Badge ProductCard-badge-{$badgeClass} ProductCard-badge-limited">
+				{_product.badge.limited.title}
+			</div>
+			{var $badgesCount = $badgesCount + 1}
+			{var $badgeClass = 'second'}
+        {/if}
+        {if $product->getProduct()->isBestseller() === TRUE  && $badgesCount < 2}
+			<div class="Badge ProductCard-badge-{$badgeClass} ProductCard-badge-bestseller">
+				{_product.badge.bestseller.title}
+			</div>
+			{var $badgesCount = $badgesCount + 1}
+			{var $badgeClass = 'second'}
+        {/if}
+        {if $product->getProduct()->isGoodprice() === TRUE  && $badgesCount < 2}
+			<div class="Badge ProductCard-badge-{$badgeClass} ProductCard-badge-goodprice">
+				{_product.badge.goodprice.title}
+			</div>
+			{var $badgesCount = $badgesCount + 1}
+			{var $badgeClass = 'second'}
+        {/if}
+        {if $product->getProduct()->isRare() === TRUE  && $badgesCount < 2}
+			<div class="Badge ProductCard-badge-{$badgeClass} ProductCard-badge-rare">
+				{_product.badge.rare.title}
+			</div>
+			{var $badgesCount = $badgesCount + 1}
+			{var $badgeClass = 'second'}
+        {/if}
+
+        <div class="ProductCard-media{if $product->getProduct()->isFeatured() === TRUE} ProductCard-media--centered{/if}">
+            <div class="ProductCard-imageContainer">
+                {if $product->getProduct()->isFeatured() === TRUE}
+                <img
+                        src="{$photo480}"
+                        srcset="
+                            {$photo480} 1360w,
+                            {$photo480} 960w,
+                            {$photo480} 680w
+                        "
+                        sizes="
+                            (min-width: 1475px) 680px,
+                            (min-width: 992px) calc(100vw / 2 - 2 * 20px - 6 * 1.25rem),
+                            (min-width: 768px) calc(100vw * 2 / 3 - 2 * 20px - 4 * 1.25rem),
+                            calc(100vw - 2 * 20px - 2 * 0.25rem)
+                        "
+                        width="680"
+                        height="680"
+                        class="ProductCard-image"
+                        alt="{$product->getName()}"
+                        {if $lazy}loading="lazy"{/if}
+                />
+                {else}
+                <img
+                        src="{$photo480}"
+                        srcset="
+                            {$photo480} 480w,
+                            {$photo240} 240w
+                        "
+                        style="max-height: 240px;"
+                        class="ProductCard-image"
+                        alt="{$product->getProduct()->getTranslation()->getName()}"
+                        {if $lazy}loading="lazy"{/if}
+                />
+                {/if}
+            </div>
+        </div>
+
+        <div class="ProductCard-description">
+            <h3 style="max-width: 90%" class="ProductCard-heading Text-headline Text-headline--small">{$product->getProduct()->getTranslation()->getName()}</h3>
+            <p class="Text-block-desc-small u-textCenter u-mb--0">{$product->getProduct()->getCode()}</p>
+        </div>
+        <div class="ProductCard-price-box">
+            <div class="ProductCard-availability Text-caption Text-caption--small {if $product->getProduct()->isInStock() === FALSE}ProductCard-availability--notAvailable{/if}">
+                {$product->getState()->getTranslation()->getValue()}
+            </div>
+            <div class="ProductCard-price">{App\Helpers\Prices::toUserFriendlyFormat($customer ? $product->getProduct()->calculatePriceByCustomer($customer) : $product->getProduct()->getPrice())} {_price.currency.label}</div>
+        </div>
+
+    </a>
+</div>

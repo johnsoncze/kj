@@ -1,0 +1,12 @@
+{block contentAdmin}
+{include 'editMenu.latte'}
+{if $isVariant}
+    <div class="alert alert-info" role="alert">Produkt je veden jako varianta. Související produkty se načítají z hlavního produktu.
+        Více na <a href="{plink Product:editVariant, id => $product->getId()}" class="link-white">přehledu variant</a>.</div>
+    {else}
+    {control productRelatedForm}
+    <hr>
+{/if}
+
+<h3>Přehled</h3>
+{control productRelatedList}

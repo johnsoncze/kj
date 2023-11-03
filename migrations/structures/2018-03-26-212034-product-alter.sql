@@ -1,0 +1,1 @@
+ALTER TABLE `product` ADD `p_google_merchant_brand_text` VARCHAR(255) NULL AFTER `p_google_merchant_brand`;

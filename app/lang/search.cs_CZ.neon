@@ -1,0 +1,24 @@
+form:
+    input:
+        query:
+            label: Hledat
+            message:
+                placeholder: 'Zadejte například název produktu, kategorie..'
+                require: Co si přejete hledat?
+        submit:
+            label: Hledat
+
+result:
+    title: Výsledky vyhledávání
+    no:
+        text: 'Pro výraz <b>„%query%“</b> jsme nenalezli žádný výsledek.'
+        recommendation: 'Ujistěte se prosím, že hledaný výraz neobsahuje překlep.'
+        contactText: 'Nedaří se vám najít to, co hledáte?<br>Kontaktujte nás a my vám s tím pomůžeme.'
+    text: 'Nalezli jsme celkem <b>1 výsledek</b> pro výraz <b>„%query%“</b>.|Nalezli jsme celkem <b>%count%</b> výsledky pro výraz <b>„%query%“</b>.|Nalezli jsme celkem <b>%count% výsledků</b> pro výraz <b>„%query%“</b>.'
+    navigation:
+        product:
+            title: Produkty
+        article:
+            title: Články
+        category:
+            title: Kategorie

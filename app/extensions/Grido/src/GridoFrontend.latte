@@ -1,0 +1,219 @@
+{**
+ * This file is part of the Grido (http://grido.bugyik.cz)
+ *
+ * Copyright (c) 2011 Petr Bugyík (http://petr.bugyik.cz)
+ *
+ * For the full copyright and license information, please view
+ * the file LICENSE.md that was distributed with this source code.
+ *}
+
+{snippet grid}
+    {php
+    $form->getElementPrototype()->class[] = 'grido';
+    $form->getElementPrototype()->{"data-grido-refresh-handler"} = $control->link("refresh!");
+
+    $operation = $control->hasOperation();
+    $actions = $control->hasActions() ? $control->getComponent(\Grido\Components\Actions\Action::ID)->getComponents() : array();
+
+    $filters = $control->hasFilters() ? $form->getComponent(\Grido\Components\Filters\Filter::ID)->getComponents() : array();
+    $filterRenderType = $control->getFilterRenderType();
+
+    $columns = $control->getComponent(\Grido\Components\Columns\Column::ID)->getComponents();
+    $columnCount = count($columns) + ($operation ? 1 : 0);
+    $showActionsColumn = $actions || ($filters && $filterRenderType == \Grido\Components\Filters\Filter::RENDER_INNER);
+
+    /* TWITTER BOOTSTRAP 2/3 */
+    $buttons = $form->getComponent('buttons');
+    $buttons->getComponent('search')->getControlPrototype()->class[] = 'Button--default--sm';
+    $buttons->getComponent('reset')->getControlPrototype()->class[] = 'Button--default--sm';
+
+    $form['count']->controlPrototype->class[] = 'form-control';
+    $operation ? $form['operations']['operations']->controlPrototype->class[] = 'Form-input' : NULL}
+
+    {foreach $filters as $filter}
+        {php $filter->controlPrototype->class[] = 'TextField-input'}
+    {/foreach}
+
+    {foreach $actions as $action}
+        {php
+            $element = $action->getElementPrototype();
+            $element->class[] = 'btn btn-default btn-xs btn-mini';
+        }
+        {if $icon = $action->getOption('icon')}
+            {php
+            $element->setText(' ' . $action->getLabel());
+            $element->insert(0, \Nette\Utils\Html::el('i')->setClass(array("fa fa-$icon")));
+        }
+        {/if}
+    {/foreach}
+    {if $form->getErrors()}
+        <ul n:foreach="$form->getErrors() as $error">
+            <li>{$error}</li>
+        </ul>
+    {/if}
+    {form form}
+        {if $filterRenderType == \Grido\Components\Filters\Filter::RENDER_OUTER}
+            <div class="Grid">
+                <div class="Grid-cell u-md-size1of2 u-xs-size2of2 grid-filter-{$filter->getName()}" n:foreach="$filters as $filter">
+                    <label class="Form-label">{_Grido.Search.label}</label>
+                    {$filter->getControl()}
+                </div>
+                <div class="Grid-cell u-md-size1of2 u-xs-size2of2 u-mt--0 u-sm-mt--20">
+                    <div class="Order-list-buttons u-mt--5">
+                    {formContainer buttons}
+                        {if $filters}
+                            {input search}
+                        {/if}
+                        {input reset}
+                    {/formContainer}
+                    </div>
+                </div>
+            </div>
+        {/if}
+
+        {block table}
+            {*{if $infoBarText !== null}*}
+                {*<div class="grido-summary m-b-15">*}
+                    {*{$infoBarText}*}
+                {*</div>*}
+            {*{/if}*}
+            {$control->getTablePrototype()->startTag()|noescape}
+            <thead>
+            <tr class="head">
+                <th n:if="$operation" class="checker"{if $filters} rowspan="{if $filterRenderType == \Grido\Components\Filters\Filter::RENDER_OUTER}1{else}2{/if}"{/if}>
+                    <input type="checkbox" title="{_'Grido.Invert'}">
+                </th>
+                {foreach $columns as $column}
+                    {$column->getHeaderPrototype()->startTag()|noescape}
+                    {if $column->isSortable()}
+                        <a n:if="!$column->getSort()" n:href="sort! [$column->getName() => \Grido\Components\Columns\Column::ORDER_ASC]" class="">{$column->getLabel()|noescape}</a>
+                        <a n:if="$column->getSort() == \Grido\Components\Columns\Column::ORDER_ASC" n:href="sort! [$column->getName() => \Grido\Components\Columns\Column::ORDER_DESC]" class="sort ">{$column->getLabel()|noescape}</a>
+                        <a n:if="$column->getSort() == \Grido\Components\Columns\Column::ORDER_DESC" n:href="sort! [$column->getName() => \Grido\Components\Columns\Column::ORDER_ASC]" class="sort ">{$column->getLabel()|noescape}</a>
+                        <span></span>
+                    {else}
+                        {$column->getLabel()|noescape}
+                    {/if}
+                    {$column->getHeaderPrototype()->endTag()|noescape}
+                {/foreach}
+                <th n:if="$showActionsColumn" class="actions right">
+                    Akce
+                </th>
+            </tr>
+            <tr n:if="$filterRenderType == \Grido\Components\Filters\Filter::RENDER_INNER && $filters" class="filter inner">
+                {foreach $columns as $column}
+                    {if $column->hasFilter()}
+                        {var $f = $control->getFilter($column->getName())}
+                        {$f->getWrapperPrototype()->startTag()|noescape}
+                        {formContainer filters}
+                            {if $f instanceof \Grido\Components\Filters\Check}
+                                {input $column->getName():}
+                            {else}
+                                {input $column->getName()}
+                            {/if}
+                        {/formContainer}
+                        {$control->getFilter($column->getName())->getWrapperPrototype()->endTag()|noescape}
+                    {elseif $column->headerPrototype->rowspan != 2}
+                        <th>&nbsp;</th>
+                    {/if}
+                {/foreach}
+
+                <th n:if="$filters" class="u-mt--20 u-sm-mt--30" n:block="action">
+                    {formContainer buttons}
+                        <button n:name="search"><i class="fa fa-search"></i></button>
+                        <button n:name="reset"><i class="fa fa-times" aria-hidden="true"></i></button>
+                    {/formContainer}
+                </th>
+            </tr>
+            </thead>
+            <tfoot>
+            <tr>
+                <td colspan="{=$showActionsColumn ? $columnCount + 1 : $columnCount}">
+                <span n:if="$operation" n:block="operations" class="operations"  title="{_'Grido.SelectSomeRow'}">
+                    {$form[\Grido\Components\Operation::ID][\Grido\Components\Operation::ID]->control}
+                    {php $form[\Grido\Grid::BUTTONS][\Grido\Components\Operation::ID]->controlPrototype->class[] = 'hide'}
+                    {$form[\Grido\Grid::BUTTONS][\Grido\Components\Operation::ID]->control}
+                </span>
+                    <span n:block="count" class="count">
+                    {= sprintf(("Grido.Items"|translate), $paginator->getCountBegin(), $paginator->getCountEnd(), $control->getCount())}
+                        <div class="u-displayNone">
+                        {input count}
+                        {formContainer buttons}
+                            {input perPage, class => 'hide'}
+                        {/formContainer}
+                        <a n:if="$control->hasExport()" class="export btn btn-default btn-xs btn-mini" href="{=$control->getComponent(\Grido\Components\Export::ID)->link('export!')}" title="{='Grido.ExportAllItems'|translate}"><i class="glyphicon glyphicon-download fa fa-download icon-download"></i></a>
+                        </div>
+                    </span>
+                    <div style="padding-top:10px">
+                    <span n:if="$paginator->steps && $paginator->pageCount > 1" n:block="paginator" class="paginator">
+                    {if $control->page == 1}
+                        <span class="btn btn-default btn-xs btn-mini disabled" n:href="page! page => $paginator->getPage() - 1"><i class="glyphicon glyphicon-arrow-left fa fa-arrow-left icon-arrow-left"></i> {='Grido.Paginator.Previous'|translate}</span>
+                    {else}
+                        <a class="btn btn-default btn-xs btn-mini " n:href="page! page => $paginator->getPage() - 1"><i class="glyphicon glyphicon-arrow-left fa fa-arrow-left icon-arrow-left"></i> {='Grido.Paginator.Previous'|translate}</a>
+                    {/if}
+                        {var $steps = $paginator->getSteps()}
+                        {foreach $steps as $step}
+                            {if $step == $control->page}
+                                <span class="btn btn-default btn-xs btn-mini disabled">{$step}</span>
+                        {else}
+                            <a class="btn btn-default btn-xs btn-mini " n:href="page! page => $step">{$step}</a>
+                            {/if}
+                        <a n:if="$iterator->nextValue > $step + 1" class="prompt" data-grido-prompt="{='Grido.EnterPage'|translate}" data-grido-link="{link page! page => 0}">...</a>
+                            {var $prevStep = $step}
+                        {/foreach}
+                        {if $control->page == $paginator->getPageCount()}
+                            <span class="btn btn-default btn-xs btn-mini disabled" n:href="page! page => $paginator->getPage() + 1">{='Grido.Paginator.Next'|translate} <i class="glyphicon glyphicon-arrow-right fa fa-arrow-right icon-arrow-right"></i></span>
+                    {else}
+                        <a class="btn btn-default btn-xs btn-mini " n:href="page! page => $paginator->getPage() + 1">{='Grido.Paginator.Next'|translate} <i class="glyphicon glyphicon-arrow-right fa fa-arrow-right icon-arrow-right"></i></a>
+                        {/if}
+                </span>
+                    </div>
+                </td>
+            </tr>
+            </tfoot>
+            <tbody>
+            {foreach $data as $row}
+                {php $checkbox = $operation
+                    ? $form[\Grido\Components\Operation::ID][\Grido\Helpers::formatColumnName($control->getProperty($row, $control->getComponent(\Grido\Components\Operation::ID)->getPrimaryKey()))]
+                    : NULL;
+                $tr = $control->getRowPrototype($row);
+                $tr->class[] = $checkbox && $checkbox->getValue()
+                    ? 'selected'
+                    : NULL;
+            }
+                {$tr->startTag()|noescape}
+                <td n:if="$checkbox" class="checker">
+                    {$checkbox->getControl()}
+                </td>
+                {foreach $columns as $column}
+                    {php $td = $column->getCellPrototype($row)}
+                    {$td->startTag()|noescape}
+                    {if is_string($column->getCustomRender()) && $column->getCustomRenderVariables()}
+                        {include $column->getCustomRender() control => $control, presenter => $control->getPresenter(), item => $row, column => $column, (expand) $column->getCustomRenderVariables()}
+                    {elseif is_string($column->getCustomRender())}
+                        {include $column->getCustomRender() control => $control, presenter => $control->getPresenter(), item => $row, column => $column}
+                    {else}
+                        {$column->render($row)|noescape}
+                    {/if}
+                    {$td->endTag()|noescape}
+                {/foreach}
+                <td n:if="$showActionsColumn" class="actions center">
+                    {foreach $actions as $action}
+                        {control $action $row}
+                    {/foreach}
+                    {if !$actions}
+                        &nbsp;
+                    {/if}
+                </td>
+                {$tr->endTag()|noescape}
+            {/foreach}
+            <tr n:if="!$control->getCount()"><td colspan="{=$showActionsColumn ? $columnCount + 1 : $columnCount}" class="no-results">Žádný výsledek</td></tr>
+            </tbody>
+            {$control->getTablePrototype()->endTag()|noescape}
+            {*{if $infoBarText !== null}*}
+                {*<div class="grido-summary m-t-15">*}
+                    {*{$infoBarText}*}
+                {*</div>*}
+            {*{/if}*}
+        {/block}
+    {/form}
+{/snippet}

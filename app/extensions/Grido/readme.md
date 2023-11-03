@@ -1,0 +1,1 @@
+Pro výpis dat z více tabulek je třeba použít vlastní metody na repozitáři, které budou joinovat data.

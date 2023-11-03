@@ -1,0 +1,47 @@
+{block contentAdmin}
+<div class="row">
+    <div class="col-xs-6">
+        <b>Datum vytvoření:</b> {$personalMeeting->getAddDate()|date:"d.m.Y H:i:s"}
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-xs-6">
+        <h4>Kontaktní údaje</h4>
+        <table class="table table-striped">
+            <tr>
+                <th scope="row">Příjmení</th>
+                <td>{$personalMeeting->getLastName()}</td>
+            </tr>
+            <tr>
+                <th scope="row">Křestní jméno</th>
+                <td>{$personalMeeting->getFirstName()}</td>
+            </tr>
+            <tr>
+                <th scope="row">Telefon</th>
+                <td>{fill $personalMeeting->getTelephone()}</td>
+            </tr>
+            <tr>
+                <th scope="row">E-mail</th>
+                <td>{if $personalMeeting->getEmail() !== NULL}<a href="mailto:{$personalMeeting->getEmail()}">{$personalMeeting->getEmail()}</a>{else}-{/if}</td>
+            </tr>
+        </table>
+    </div>
+    <div class="col-xs-6">
+        <h4>Doplňující údaje</h4>
+        <table class="table table-striped">
+            <tr>
+                <th scope="row">Poznámka</th>
+                <td>{fill $personalMeeting->getNote()}</td>
+            </tr>
+            <tr>
+                <th scope="row">Preferovaný čas a datum</th>
+                <td>{fill $personalMeeting->getRequestDate()}</td>
+            </tr>
+            <tr>
+                <th scope="row">Zájem o odebírání newsletteru</th>
+                <td>{if $personalMeeting->getNlConsent() !== 0}Ano{else}-{/if}</td>
+            </tr>
+        </table>
+    </div>
+</div>

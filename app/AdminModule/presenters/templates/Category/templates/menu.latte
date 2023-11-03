@@ -1,0 +1,34 @@
+{var defaultAction = 'add'}
+{var action = $presenter->getAction()}
+
+{ifset $category}
+    <div class="text-right">
+        {if $category->isPublished() === TRUE}
+            <a href="{$category->getRelativeLink($control, TRUE)}"
+               class="btn btn-default btn-xs"
+               target="_blank">Zobrazit kategorii na frontendu <i class="fa fa-external-link"></i></a>
+        {else}
+            <i>Kategorie není aktivní, není možné ji zobrazit na frontendu.</i>
+        {/if}
+    </div>
+{/ifset}
+
+<ul class="nav nav-tabs action {if $action === $defaultAction}menu-disabled{/if}">
+    <li id="{if $action === 'add'}add{else}edit{/if}"><a href="{if $action !== $defaultAction}{plink Category:edit, id => $category->getId()}{else}#{/if}" class="confirm-exit">Základní informace</a></li>
+    <li id="editParameter"><a href="{if $action !== $defaultAction}{plink Category:editParameter, id => $category->getId()}{else}#{/if}" class="confirm-exit">Parametry produktů</a></li>
+    <li id="editFiltration"><a href="{if $action !== $defaultAction}{plink Category:editFiltration, id => $category->getId()}{else}#{/if}" class="confirm-exit">Filtrace</a></li>
+    <li id="editFiltrationCombination"><a href="{if $action !== $defaultAction}{plink Category:editFiltrationCombination, id => $category->getId()}{else}#{/if}" class="confirm-exit">Skupiny parametrů filtrace</a></li>
+    <li id="editAssociated"><a href="{if $action !== $defaultAction}{plink Category:editAssociated, id => $category->getId()}{else}#{/if}" class="confirm-exit">Související kategorie</a></li>
+    <li id="editAssociatedProduct"><a href="{if $action !== $defaultAction}{plink Category:editAssociatedProduct, id => $category->getId()}{else}#{/if}" class="confirm-exit">{_presenter.admin.category.editassociatedproduct}</a></li>
+    <li id="collectionList"><a href="{if $action !== $defaultAction}{plink Category:collectionList, id => $category->getId()}{else}#{/if}" class="confirm-exit">{_presenter.admin.category.collectionlist}</a></li>
+</ul>
+<div class="p-b-20"></div>
+
+{block scriptBottom}
+    <script>
+        var actionId = '#{$action|noescape}';
+        //set active tab
+        $(actionId).addClass('active');
+        $(actionId + ' > a').attr('href', '#');
+    </script>
+{/block}

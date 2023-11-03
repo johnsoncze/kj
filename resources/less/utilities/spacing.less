@@ -1,0 +1,66 @@
+.GenerateSpacingClassNames(@min, @max, @step, @unit, @infix: ~'') {
+    .spacing(@value: @min) when (@value <= @max) {
+        @value-formatted: if(@value > 0, unit(@value, @unit), @value);
+
+        // Margin classes
+        .u-@{infix}m--@{value} { margin: @value-formatted; }
+
+        .u-@{infix}my--@{value} {
+            margin-top: @value-formatted;
+            margin-bottom: @value-formatted;
+        }
+
+        .u-@{infix}mx--@{value} {
+            margin-right: @value-formatted;
+            margin-left: @value-formatted;
+        }
+
+        .u-@{infix}mt--@{value} { margin-top: @value-formatted; }
+        .u-@{infix}mr--@{value} { margin-right: @value-formatted; }
+        .u-@{infix}mb--@{value} { margin-bottom: @value-formatted; }
+        .u-@{infix}ml--@{value} { margin-left: @value-formatted; }
+
+        // ofset
+        .u-@{infix}mt--ofset-2x@{value} { margin-top: -(2*@value-formatted); }
+
+        // Padding classes
+        .u-@{infix}p--@{value} { padding: @value-formatted; }
+
+        .u-@{infix}py--@{value} {
+            padding-top: @value-formatted;
+            padding-bottom: @value-formatted;
+        }
+
+        .u-@{infix}px--@{value} {
+            padding-right: @value-formatted;
+            padding-left: @value-formatted;
+        }
+
+        .u-@{infix}pt--@{value} { padding-top: @value-formatted; }
+        .u-@{infix}pr--@{value} { padding-right: @value-formatted; }
+        .u-@{infix}pb--@{value} { padding-bottom: @value-formatted; }
+        .u-@{infix}pl--@{value} { padding-left: @value-formatted; }
+
+        .spacing(@value + @step);
+    }
+
+    .spacing();
+}
+
+.GenerateSpacingClassNames(@spacing-min-value, @spacing-max-value, @spacing-step, @spacing-unit);
+
+@media @media-xs-min {
+    .GenerateSpacingClassNames(@spacing-min-value, @spacing-max-value, @spacing-step, @spacing-unit, ~'xs-');
+}
+
+@media @media-sm-min {
+    .GenerateSpacingClassNames(@spacing-min-value, @spacing-max-value, @spacing-step, @spacing-unit, ~'sm-');
+}
+
+@media @media-md-min {
+    .GenerateSpacingClassNames(@spacing-min-value, @spacing-max-value, @spacing-step, @spacing-unit, ~'md-');
+}
+
+@media @media-lg-min {
+    .GenerateSpacingClassNames(@spacing-min-value, @spacing-max-value, @spacing-step, @spacing-unit, ~'lg-');
+}

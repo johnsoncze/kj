@@ -1,0 +1,25 @@
+<form n:name="menuForm">
+    <div class="row">
+        <div class="col-xs-6">
+            <div class="inline-blocks">
+                <div class="p-r-5">
+                    Řadit stránky pro:
+                </div>
+                <div>
+                    {input source}
+                </div>
+                <div>
+                    {input submit}
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-6">
+            <div style="margin-top: 11px; text-align: right">
+                <span class="p-r-5"><b>Jazyk:</b> {$language->getName()}</span>
+                <a href="{plink Page:sort}">Změnit</a>
+            </div>
+        </div>
+    </div>
+</form>
+<hr>
+{control form}

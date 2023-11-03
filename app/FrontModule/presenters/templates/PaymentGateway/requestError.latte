@@ -1,0 +1,16 @@
+{block content}
+<div class="Background--gradient-top-100-ebebeb">
+    <div class="Container Container--slimer">
+        <div class="Basket-step u-pb--90">
+            <h2 class="Text-block-title-larger u-textCenter u-mb--20 u-pt--40">{_payment.gateway.request.error.title|noescape}</h2>
+            <p class="Text-block-desc u-textCenter">{_payment.gateway.request.error.description|noescape}</p>
+            <div class="u-pt--10">
+                <div class="u-pt--10 u-textCenter">
+                    <a href="{plink this}" class="Button">
+                        {_general.page.reload}
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

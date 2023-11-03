@@ -1,0 +1,258 @@
+
+.Wedding-header {
+	overflow: hidden;
+}
+
+.Wedding-header-video {
+	width: 1440px;
+}
+
+.Wedding-header-mobile {
+	height: auto;
+}
+
+.Wedding-header-video-mobile {
+	width: 100%;
+}
+
+.Wedding-category-relatedPageDefault {
+	margin-top: -50px;
+}
+
+.Wedding-text {
+	font-size: 20px;
+	line-height: 29px;
+	color: @color-brown-dark;
+}
+
+.Wedding-article-preview-link { 
+	margin: auto;
+	margin-top: -50px;
+	display: inline-block;
+	width: 206px;
+	height: 124px;
+	background-color: @color-brown-dark;
+	color: @color-gold;
+	text-transform: uppercase;
+	font-size: 20px;
+	line-height: 24px;
+	text-align: center;
+	text-decoration: none;
+	padding: 14px 30px;
+	font-family: "Source Serif Pro";
+}
+
+.Wedding-article-wrapper {
+	width: auto;
+	text-align: left;
+	
+    @media @media-sm-min {
+		width: 800px;
+		margin: auto;
+    }
+}
+
+.Wedding-list {
+	list-style: none;	
+} 
+
+.Wedding-list li::before {
+	content: "\2022";
+	color: @color-gold;
+	font-weight: bold;
+	display: inline-block;
+	width: 20px;
+	margin-left: -1em;
+	font-size: 35px;
+	line-height: 19px;
+	vertical-align: sub;	
+} 
+
+
+.Wedding-play-trigger {
+	position: absolute;
+	left: calc(50% - 44px);
+	top: calc(40% - 44px);
+	opacity: 0.8;
+	cursor: pointer;
+}
+
+.Wedding-banner1 {
+	position: relative;
+	height: 360px;
+	padding: 60px 30px;
+	background-position: center top;
+	background-image: url('/www/assets/front/images/wedding/banner_1_mobile.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	
+    @media @media-sm-min {
+		height: 622px;
+		background-image: url('/www/assets/front/images/wedding/banner_1.jpg');
+    }
+}
+
+.Wedding-banner2 {
+	position: relative;
+	height: 360px;
+	padding: 60px 30px;
+	background-position: center top;
+	background-image: url('/www/assets/front/images/wedding/banner_2_mobile.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	
+    @media @media-sm-min {
+		height: 622px;
+		background-image: url('/www/assets/front/images/wedding/banner_2.jpg');
+    }
+}
+
+.Wedding-rings {
+    @media @media-sm-min {
+		display: grid;
+		grid-template-columns: 245px 1fr 245px;
+    }	
+}
+
+.Wedding-ring img {
+	width: 245px;
+}
+
+.Wedding-ring a {
+	color: @color-gold;
+	text-decoration: underline;
+	font-size: 16px;
+	line-height: 22px;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.Wedding-banner-custom {
+	position: relative;
+	height: 360px;
+	padding: 60px 30px;
+	margin: 0px -20px;
+	background-position: center top;
+	background-image: url('/www/assets/front/images/wedding/banner_custom_production_mobile.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	
+    @media @media-sm-min {
+		height: 480px;
+		margin: 0px;
+		background-image: url('/www/assets/front/images/wedding/banner_custom_production.jpg');
+    }
+}
+
+.Wedding-unique-content {
+	width: 100%;
+	
+    @media @media-sm-min {
+		width: 490px;
+		margin: auto;
+    }	
+}
+
+.Wedding-banner-img {
+	box-shadow: 0px 0px 10px #3D341733;
+}
+
+
+ 
+.Wedding-rings-wrapper-left {
+	font-size: 20px;
+	line-height: 29px;
+	text-align: center;
+	margin-bottom: 50px;
+	overflow: hidden;
+	display: grid;
+	
+    @media @media-sm-min {
+		width: 100%;
+		grid-template-columns: 5fr 6fr;
+		margin: auto;
+		margin-bottom: 90px;
+		align-items: center;
+		text-align: left;
+    }	
+	
+    @media @media-md-min {
+		width: calc(100% - 180px);
+	}	
+}
+
+.Wedding-rings-wrapper-left div:first-child {	
+	order: 2;
+	margin-top: 30px;
+	
+    @media @media-sm-min {
+		margin-top: 0px;
+		order: 1;		
+	}	
+}
+
+.Wedding-rings-wrapper-left div:last-child {
+	margin-top: 40px;
+	order: 1;
+	
+    @media @media-sm-min {
+		margin-top: 0px;
+		padding-left: 90px;
+		order: 2;
+	}
+}
+
+
+.Wedding-rings-wrapper-right {
+	font-size: 20px;
+	line-height: 29px;
+	text-align: center;
+	display: grid;
+	grid-template-columns: 1fr;
+	margin-bottom: 50px;
+	overflow: hidden;
+	
+    @media @media-sm-min {
+		width: 100%;
+		margin: auto;
+		margin-bottom: 90px;
+		grid-template-columns: 6fr 5fr;
+		align-items: center;
+		text-align: left;
+    }		
+	
+    @media @media-md-min {
+		width: calc(100% - 180px);
+	}		
+}
+
+.Wedding-rings-wrapper-right div:first-child {
+	margin-top: 40px;
+	
+    @media @media-sm-min {
+		margin-top: 0px;
+	}
+}
+
+.Wedding-rings-wrapper-right div:last-child {
+	margin-top: 30px;
+
+    @media @media-sm-min {
+		margin-top: 0px;
+		padding-left: 90px;
+	}
+}
+
+.Wedding-rings-wrapper-left h2, .Wedding-rings-wrapper-right h2 {
+	font-size: 28px;
+	line-height: 32px;
+	text-transform: uppercase;
+	color: @color-gold;
+	font-family: "Source Serif Pro";
+	font-weight: 400;
+	
+    @media @media-sm-min {
+		font-size: 42px;
+		line-height: 50px;
+	}	
+}

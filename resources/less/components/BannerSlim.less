@@ -1,0 +1,104 @@
+.BannerSlim {
+    position: relative;
+    max-width: 100%;
+    height: auto;
+    padding: 0;
+    margin: 30px auto;
+    border-radius: @border-radius-large;
+
+    @media @media-sm-min {
+        border-radius: @border-radius-larger;
+        background-size: cover;
+    }
+
+    @media @media-md-min {
+        left: -60px;
+        max-width: ~"calc(1130px - 60px)";
+        height: 690px;
+        margin: 60px auto;
+    }
+}
+
+.BannerSlim .BannerSlimBox {
+    position: relative;
+    left: 25%;
+    height: 320px;
+    margin-top: -20px;
+    transform: translateX(-50%);
+
+    @media @media-sm-min {
+        left: 35%;
+        height: auto;
+        margin-top: 120px;
+    }
+
+    @media @media-md-min {
+        left: 60px;
+        margin-top: 0;
+        transform: translateX(0);
+    }
+}
+
+.BannerSlim-content {
+    padding: 60px 30px;
+
+    @media @media-sm-min {
+        padding: 80px 40px;
+    }
+
+    @media @media-md-min {
+        padding: 130px 70px;
+        padding-right: 50px;
+    }
+}
+
+.BannerSlim-title {
+    margin-bottom: 0.75em;
+    font-weight: 400;
+    font-size: @font-size-large;
+    font-family: @font-secondary;
+    color: @color-brown-dark;
+
+    @media @media-sm-min {
+        // .//letter-spacing(180);
+
+        margin-bottom: 1.5em;
+        font-size: @font-size-largest;
+        color: inherit;
+    }
+}
+
+.BannerSlim-text,
+.BannerSlim-foot {
+    line-height: 1.8;
+    color: @color-brown-dark-alpha-70;
+}
+
+.BannerSlim-foot {
+    // .//letter-spacing(320);
+
+    font-size: @font-size-smallest;
+    font-family: @font-secondary;
+    text-transform: uppercase;
+}
+
+.BannerSlim-link {
+    // .//letter-spacing(280);
+
+    display: block;
+    margin-top: 15px;
+    font-weight: 600;
+    font-size: @font-size-tiny;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: @color-brown;
+
+    &:hover {
+        text-decoration: underline;
+    }
+
+    @media @media-lg-min {
+        display: inline-block;
+        margin-top: 0;
+    }
+}

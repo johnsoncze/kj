@@ -1,0 +1,1 @@
+ALTER TABLE `shopping_cart` ADD INDEX(`sc_hash`);

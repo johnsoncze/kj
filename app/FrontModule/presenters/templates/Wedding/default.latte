@@ -1,0 +1,312 @@
+{block content}
+<section class="PageHeaderNew">
+	<div class="Container Container--wide">
+		<div class="PageHeaderNew-desktop-bg Wedding-header">
+			<video class="Wedding-header-video" autoplay="" muted="" loop="" playsinline>
+				<source src="/assets/front/images/wedding/banner_video.mp4" type="video/mp4"/>
+				Your browser does not support the video tag.
+			</video>
+		</div>
+		<div class="PageHeaderNew-mobile-bg Wedding-header-mobile">
+			<video class="Wedding-header-video-mobile" autoplay="" muted="" loop="" playsinline>
+				<source src="/assets/front/images/wedding/banner_video_m.mp4" type="video/mp4"/>
+				Your browser does not support the video tag.
+			</video>			
+		</div>
+
+		<div class="Container Grid u-positionRelative">
+			<div class="Category-relatedPageDefault Wedding-category-relatedPageDefault">
+				<a href="{plink Page:detail, url => 'sjednani-osobni-schuzky'}">
+					{_wedding.personalMeeting|noescape}
+				</a>
+			</div>
+		</div>
+
+				
+		<div class="Container Grid u-mt--40 u-md-mt--0">
+			<div class="Grid-cell u-size12of12">
+				{control breadcrumb}
+
+				<h1 class="Text-title u-mb--60 u-md-mb--100">{_wedding.engagementRings|noescape}</h1>
+			</div>
+		</div>
+	</div>	
+</section>
+
+<section class="Background u-mb--80 u-md-mb--130">
+	<div class="Container Grid u-px--0 u-md-px-20">
+		<div class="Grid-cell u-size12of12 u-md-size7of12 u-pr--0 u-md-pr--60 u-mb--25 u-md-mb-0 u-px--0">
+			<img src="/assets/front/images/wedding/dm.jpg" />
+		</div>
+		<div class="Grid-cell u-size12of12 u-md-size5of12 u-textCenter u-md-textLeft u-p--20 u-md-px-0">
+			<h2 class="h-primary">{_wedding.title}</h2>
+			<div class="Wedding-text">{_wedding.supportText|noescape}</div>
+		</div>
+		
+		<div class="u-textCenter u-w--100-pcn u-mt--40 u-mb--80">
+			<a class="u-textUppercase Button Button--arrow u-mx--20 u-mb--20" href="{plink Page:detail, url => 'sjednani-osobni-schuzky'}">{_wedding.btn_edvantage}</a>			
+			<a class="u-textUppercase Button Button--arrow u-mx--20 u-mb--20" href="{plink Category:default, url => 'tolerance-zasnubni'}">{_wedding.btn_toleration}</a>			
+			<a class="u-textUppercase Button Button--arrow u-mx--20 u-mb--20" href="{plink Category:default, url => 'zasnubni-prsteny'}">{_wedding.btn_all}</a>			
+			<a class="u-textUppercase Button Button--arrow Button--gold u-mx--20" href="#schuzka">{_wedding.btn_meeting}</a>			
+		</div>
+	</div>
+		
+	<div class="Container Grid">
+		<a href="#velikost" class="Grid-cell u-size12of12 u-md-size4of12 u-textCenter u-pr--0 u-md-pr--50 u-mb--50 u-md-mb--0">
+			<img src="/assets/front/images/wedding/video_1_trigger.jpg" alt="" /><br />
+			<div class="Wedding-article-preview-link">{_wedding.howEstimate.title|noescape}</div>
+		</a>
+		<a href="#zlato" class="Grid-cell u-size12of12 u-md-size4of12 u-textCenter u-px--0 u-md-px--30 u-mb--50 u-md-mb--0">
+			<img src="/assets/front/images/wedding/video_2_trigger.jpg" alt="" /><br />
+			<div class="Wedding-article-preview-link">{_wedding.goldColor.title|noescape}</div>
+		</a>
+		<a href="#proc-jk" class="Grid-cell u-size12of12 u-md-size4of12 u-textCenter u-pl--0 u-md-pl--50">
+			<img src="/assets/front/images/wedding/video_3_trigger.jpg" alt="" /><br />
+			<div class="Wedding-article-preview-link"><br />{_wedding.whyChoose.title|noescape}</div>
+		</a>
+	</div>		
+		
+</section>
+
+<a name="velikost"></a>
+<div class="Background Background--rose-lighter">
+    <div class="Container u-pt--40 u-textCenter u-md-pt--70 u-pb--60 u-md-pb--70 u-px--0 u-md-px--20">
+		<h2 class="h-primary u-textCenter u-mb--30 u-md-mb--50 u-px--20 u-md-px--0">{_wedding.howEstimate.title|noescape}</h2>
+
+		{var $videoId = 'article1Video'}
+		{capture $videoFrame}<iframe width="100%" height="400" id="videoPopup" src="https://www.youtube.com/embed/rdhsKik9mPU?version=3&enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>{/capture}
+		{capture $videoTitle}{_wedding.howEstimate.title|noescape}{/capture}
+		{include popup, id => $videoId, title => $videoTitle, content => $videoFrame}
+
+		<div class="u-positionRelative">
+			<img href="#{$videoId}" src="/assets/front/images/wedding/play.png" class="Wedding-play-trigger js-popup-opener"></a>
+			<img src="/assets/front/images/wedding/video_1_trigger.jpg" class="u-mb--30 u-md-mb--60">
+		</div>
+
+		<div class="Wedding-article-wrapper Wedding-text u-mb--60 u-md-mb--80 u-px--20 u-md-px--0">
+			<div class="u-textCenter"><b>{_wedding.howEstimate.topText}</b></div>
+			<br /><br />
+			<b>{_wedding.howEstimate.listHeader}</b><br />
+			<ul class="Wedding-list">
+				<li>{_wedding.howEstimate.list1}</li>
+				<li>{_wedding.howEstimate.list2}</li>
+				<li>{_wedding.howEstimate.list3}</li>
+				<li>{_wedding.howEstimate.list4}</li>
+			</ul>
+			<br />
+			{_wedding.howEstimate.bottomText|noescape}
+
+		</div>
+
+		<a class="u-textUppercase Button Button--arrow u-mx--20 u-mb--20" href="{plink Article:detail, url => 'jak-vybrat-nausnice-podle-tvaru-obliceje'}">{_wedding.readArticle}</a>
+		<a class="u-textUppercase Button Button--arrow u-mx--20 u-mb--20" href="{plink Page:detail, url => 'sjednani-osobni-schuzky'}">{_wedding.howEstimate.helperDownload}</a>
+		<a class="u-textUppercase Button Button--arrow Button--gold u-mx--20" href="#schuzka">{_wedding.howEstimate.meeting}</a>
+    </div>
+</div>
+		
+
+<a name="zlato"></a>
+<div class="">
+    <div class="Container u-textCenter u-pt--40 u-md-pt--70 u-pb--60 u-md-pb--70 u-px--0 u-md-px--20">
+		<h2 class="h-primary u-textCenter u-mb--30 u-md-mb--50 u-px--20 u-md-px--0">{_wedding.goldColor.title|noescape}</h2>
+
+		{var $videoId = 'article2Video'}
+		{capture $videoFrame}<iframe width="100%" height="400" id="videoPopup" src="https://www.youtube.com/embed/uxzqKffGkKk?version=3&enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>{/capture}
+		{capture $videoTitle}{_wedding.goldColor.title|noescape}{/capture}
+		{include popup, id => $videoId, title => $videoTitle, content => $videoFrame}
+
+		<div class="u-positionRelative">
+			<img href="#{$videoId}" src="/assets/front/images/wedding/play.png" class="Wedding-play-trigger js-popup-opener"></a>
+			<img src="/assets/front/images/wedding/video_2_trigger.jpg" class="u-mb--60">
+		</div>
+
+		<div class="Wedding-article-wrapper Wedding-text u-mb--60 u-md-mb--60 u-px--20 u-md-px--0">{_wedding.goldColor.topText|noescape}</div>
+
+		<a class="u-textUppercase Button Button--arrow u-mx--20 u-mb--20" href="{plink Article:detail, url => 'jak-vybrat-nausnice-podle-tvaru-obliceje'}">{_wedding.goldColor.edvantage}</a>
+		<a class="u-textUppercase Button Button--arrow u-mx--20 u-mb--20" href="{plink Category:default, url => 'tolerance-zasnubni'}">{_wedding.goldColor.toleration}</a>
+		<a class="u-textUppercase Button Button--arrow u-mx--20 u-mb--20" href="{plink Category:default, url => 'zasnubni-prsteny'}">{_wedding.goldColor.rings}</a>
+		<a class="u-textUppercase Button Button--arrow Button--gold u-mx--20" href="#schuzka">{_wedding.goldColor.meeting}</a>
+    </div>
+</div>
+		
+	
+<a name="proc-jk"></a>
+<div class="Background Background--rose-lighter">
+    <div class="Container u-pt--40 u-md-pt--70 u-pb--60 u-md-pb--100 u-px--0 u-md-px--20">
+		<div class="u-textCenter u-mb--60 u-md-mb--80">
+			<h2 class="h-primary u-textCenter u-mb--30 u-md-mb--50 u-px--20 u-md-px--0">{_wedding.whyChoose.title|noescape}</h2>
+			
+			{var $videoId = 'article3Video'}
+			{capture $videoFrame}<iframe width="100%" height="400" id="videoPopup" src="https://www.youtube.com/embed/lU7vtL2Gj44?version=3&enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>{/capture}
+			{capture $videoTitle}{_wedding.whyChoose.title|noescape}{/capture}
+			{include popup, id => $videoId, title => $videoTitle, content => $videoFrame}
+			
+			<div class="u-positionRelative">
+				<img href="#{$videoId}" src="/assets/front/images/wedding/play.png" class="Wedding-play-trigger js-popup-opener"></a>
+				<img src="/assets/front/images/wedding/video_3_trigger.jpg" class="u-mb--60">
+			</div>
+			
+			<div class="Wedding-article-wrapper Wedding-text u-textCenter u-mb--60 u-md-mb--40 u-px--20 u-md-px--120"><b>{_wedding.whyChoose.topText}</b></div>
+			<div class="Wedding-article-wrapper Wedding-text u-mb--60 u-md-mb--40 u-px--20 u-md-px--0">{_wedding.whyChoose.content|noescape}</div>
+		</div>
+
+		<div class="u-textCenter">
+	        <a class="u-textUppercase Button Button--gold u-pr--30" href="#schuzka">{_wedding.personalMeetingBtn}</a>
+		</div>
+		
+    </div>
+</div>
+
+		
+
+<section class="Wedding-banner1">
+</section>
+		
+
+		
+<section class="Background u-mt--50 u-md-mt--90 u-mb--80 u-md-mb--130">
+    <div class="Container u-textCenter">
+		<h2 class="h-primary u-mb--50 u-md-mb--100">{_wedding.engagementRings}</h2>
+
+		<div class="Wedding-rings u-mb--60 u-md-mb--70">
+			<div class="Wedding-ring u-mb--60 u-md-mb-0">
+				<a href="/kategorie/zasnubni-prsteny/diamant"><img src="/assets/front/images/wedding/engagement_ring_diamond.jpg" class="u-mb--0 u-md-mb--20" /></a>
+				<br />
+				<a href="/kategorie/zasnubni-prsteny/diamant">{_wedding.engagementRingsOffer.diamond|noescape}</a>
+			</div>
+			
+			<div class="Wedding-ring u-mb--60 u-md-mb-0">
+				<a href="/kategorie/zasnubni-prsteny/bila-4"><img src="/assets/front/images/wedding/engagement_ring_white.jpg" class="u-mb--0 u-md-mb--20" /></a>
+				<br />
+				<a href="/kategorie/zasnubni-prsteny/bila-4">{_wedding.engagementRingsOffer.white|noescape}</a>
+			</div>
+
+			<div class="Wedding-ring">
+				<a href="/kategorie/zasnubni-prsteny/bila-4/diamant"><img src="/assets/front/images/wedding/engagement_ring_white_diamond.jpg" class="u-mb--0 u-md-mb--20" /></a>
+				<br />
+				<a href="/kategorie/zasnubni-prsteny/bila-4/diamant">{_wedding.engagementRingsOffer.whiteDiamond|noescape}</a>
+			</div>
+			
+		</div>
+		
+		<a class="u-textUppercase Button Button--gold u-pr--30" href="{plink Category:default, url => 'zasnubni-prsteny'}">{_wedding.engagementRingsOffer.offer}</a>		
+    </div>
+</section>
+		
+
+	
+<section class="Wedding-banner2">
+</section>
+		
+	
+	
+<section class="Background u-mt--50 u-md-mt--90">
+    <div class="Container u-textCenter">
+		<h2 class="h-primary u-mb--50 u-md-mb--80">{_wedding.weddingRingsOffer.rings}</h2>
+
+		<div class="Wedding-rings u-mb--110">
+			<div class="Wedding-ring u-mb--60 u-md-mb-0">
+				<a href="/kategorie/snubni-prsteny/classic-1"><img src="/assets/front/images/wedding/wedding_ring_classic.jpg" class="u-mb--0 u-md-mb--20" /></a>
+				<br />
+				<a href="/kategorie/snubni-prsteny/classic-1">{_wedding.weddingRingsOffer.classic|noescape}</a>
+			</div>
+			
+			<div class="Wedding-ring u-mb--60 u-md-mb-0">
+				<a href="/kategorie/snubni-prsteny/design"><img src="/assets/front/images/wedding/wedding_ring_design.jpg" class="u-mb--0 u-md-mb--20" /></a>
+				<br />
+				<a href="/kategorie/snubni-prsteny/design">{_wedding.weddingRingsOffer.design|noescape}</a>
+			</div>
+
+			<div class="Wedding-ring">
+				<a href="/kategorie/snubni-prsteny/exclusive"><img src="/assets/front/images/wedding/wedding_ring_exclusive.jpg" class="u-mb--0 u-md-mb--20" /></a>
+				<br />
+				<a href="/kategorie/snubni-prsteny/exclusive">{_wedding.weddingRingsOffer.exclusive|noescape}</a>
+			</div>
+			
+		</div>
+		
+		<a class="u-textUppercase Button Button--gold u-pr--30 u-mb--100" href="{plink Category:default, url => 'snubni-prsteny'}">{_wedding.weddingRingsOffer.offer}</a>
+		
+		<h2 class="h-primary u-mb--60">{_wedding.weddingRingsOffer.choose}</h2>
+    </div>
+</section>	
+<section class="Background u-mb--0 u-md-mb--90">
+    <div class="Container u-textCenter u-px--0 u-md-px--20">
+
+		{var $videoId = 'ChooseVideo'}
+		{capture $videoFrame}<iframe width="100%" height="400" id="videoPopup" src="https://www.youtube.com/embed/fHwDHxyncfk?version=3&enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>{/capture}
+		{capture $videoTitle}{_wedding.weddingRingsOffer.choose|noescape}{/capture}
+		{include popup, id => $videoId, title => $videoTitle, content => $videoFrame}
+		
+		<div class="u-positionRelative">
+			<img href="#{$videoId}" src="/assets/front/images/wedding/play.png" class="Wedding-play-trigger js-popup-opener">
+			<img src="/assets/front/images/wedding/video_4_trigger.jpg" class="u-mb--0 u-md-mb--60">
+		</div>
+		
+    </div>
+</section>		
+	
+		
+<div class="Background Background--rose-lighter u-pb--60 u-md-pb--0">
+    <div class="Container Container--wide u-pt--40 u-md-pt--70 u-pb--0 u-md-pb--80 u-px--20 u-textCenter">
+		<h2 class="h-primary u-mb--4 u-md-mb--60">{_wedding.customJewerly.title}</h2>
+		
+		<div class="Wedding-article-wrapper Wedding-text u-mb--50 u-md-mb--80">
+			{_wedding.customJewerly.text1}
+			<a href="{plink Page:detail, url => 'zakazkova-vyroba'}"><b>{_wedding.customJewerly.link}</b></a>.<br />
+			{_wedding.customJewerly.text2}
+		</div>
+		
+		<div class="Wedding-banner-custom u-mb--60 u-md-mb--90"></div>
+		
+		<a class="u-textUppercase Button Button--gold u-pr--30" href="{plink Page:detail, url => 'zakazkova-vyroba'}">{_wedding.customJewerly.customProduction}</a>				
+    </div>
+</div>		
+
+<a name="schuzka"></a>
+<div class="Container u-pt--50 u-md-pt--90 u-pb--50 u-md-pb--90">	
+	<h2 class="h-primary u-textCenter u-mb--50">{_pageStatic.customProduction.meeting.title|noescape}</h2>
+	<div class="CustomProduction-meetingTop u-mb--20">
+		{_pageStatic.customProduction.meeting.subtitle|noescape}
+	</div>
+	
+	<div class="personalMeeting-form-wrapper u-mt--50">
+		{control meetingForm}
+	</div>
+	
+</div>
+
+	
+<div class="Background Background--silver">
+    <div class="Container">
+        <div class="u-pb--45 u-xs-pb--110 u-sm-pb--80 u-md-pb--75 u-pt--40 u-md-pt--80 u-textCenter u-md-textLeft">
+            <h2 class="u-textCenter u-mb--20 personalMeeting-header u-mb--70">{_pageStatic.meeting.titleStore|noescape}</h2>
+
+            <div class="Grid personalMeeting-shop-text u-mb--40 u-md-mb--80">
+                <div class="Grid-cell u-size5of12 u-sm-max-size2of2 u-mb--30 u-md-mb--0">
+					{$parameters['project']['address']}<br />
+					{_pageStatic.meeting.addressBuilding|noescape}<br /><br />					
+					
+					<b>{control openingHours:today}</b><br /><br />
+					
+					{control openingHours:listNoTable}<br />
+					
+					<a class="Button Button--arrow" href="{plink Page:detail, url => 'kontakt'}">{_pageStatic.meeting.howGet}</a>
+                </div>
+                <div class="Grid-cell u-size7of12 u-sm-max-size2of2">
+					<img src="/assets/front/images/layout/osobni-schuzka-1.jpg" class="u-pl--0 u-md-pl--40" />
+                </div>
+            </div>			
+			
+            <div class="Grid personalMeeting-shop-text personalMeeting-shop-grid-center u-mb--20 u-md-md--60">
+                <div class="Grid-cell u-size7of12 u-sm-max-size2of2 personalMeeting-shop-order-1">
+					<img src="/assets/front/images/layout/osobni-schuzka-2.jpg" class="u-pr--0 u-md-pr--40" />
+                </div>
+                <div class="Grid-cell u-size5of12 u-sm-max-size2of2 personalMeeting-shop-order-2 u-mb--30 u-md-mb--0">
+                    {_pageStatic.meeting.bottomText}
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

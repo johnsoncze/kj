@@ -1,0 +1,41 @@
+<section class="BannerSlim{$item->getBannerClass()}" style="background-color: {$item->getBackgroundColor()|noescape};">
+    <div class="Grid Grid-gutter--0">
+        <div class="Grid-cell u-size12of12 u-sm-size6of12">
+            <div class="BannerSlim-content">
+                <h3 class="BannerSlim-title">{$item->getTitle()}</h3>
+
+                {if $item->getDescription()}
+                    <p class="BannerSlim-text">{$item->getDescription()|noescape}</p>
+                {/if}
+
+                {if $item->getFootText()}
+                    <p class="BannerSlim-foot u-mb--0">{$item->getFootText()|noescape}</p>
+                {/if}
+
+                {if $item->getLinkCallUrl()}
+                    <a href="tel:{$item->getLinkCallUrl()}" class="BannerSlim-link u-mr--20">
+                        <svg role="img" class="Icon Icon--offset">
+                            <use xlink:href="#symbol-phone"></use>
+                        </svg>
+                        {$item->getLinkCallAnchor()}
+                    </a>
+                {/if}
+
+                {if $item->getLinkEmailUrl()}
+                    <a href="{$item->getLinkEmailUrl()}" class="BannerSlim-link js-popup-opener">
+                        <svg role="img" class="Icon Icon--offset">
+                            <use xlink:href="#symbol-envelope"></use>
+                        </svg>
+                        {$item->getLinkEmailAnchor()}
+                    </a>
+                {/if}
+            </div>
+        </div>
+        <div class="Grid-cell u-size12of12 u-sm-size6of12">
+            <div class="BannerSlimBox{if $item->isRevert()} BannerSlimBox--revert{/if}">
+                <div class="BannerSlimBox-media BannerSlimBox-media--bottom" style="background-image: url('/www/assets/front/user_content/images/category-box-top.jpg');"></div>
+                <div class="BannerSlimBox-media BannerSlimBox-media--top" style="background-image: url('/www/assets/front/user_content/images/page/design/9144.jpg');"></div>
+            </div>
+        </div>
+    </div>
+</section>

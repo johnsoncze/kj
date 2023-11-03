@@ -1,0 +1,67 @@
+// Based on https://github.com/suitcss/utils-size/
+// Supports 2, 3, 4, 5, 6, 7, 8, 10, 12 part.
+
+.GenerateSizeClassName(@@columns, @i, @infix: ~'') {
+    .u-@{infix}size@{i}of@{columns} {
+        width: 100% * (@i / @columns);
+    }
+}
+
+.GenerateSizeClassNames(@columns, @i: 1, @infix: ~'') when (@i <= @columns) {
+    .GenerateSizeClassName(@columns, @i, @infix);
+    .GenerateSizeClassNames(@columns, @i + 1, @infix);
+}
+
+.GenerateSizeSet(@infix: ~'') {
+
+    // Intentionally in descending order
+    .GenerateSizeClassNames(12, 1, @infix);
+    .GenerateSizeClassNames(10, 1, @infix);
+    .GenerateSizeClassNames(8, 1, @infix);
+    .GenerateSizeClassNames(7, 1, @infix);
+    .GenerateSizeClassNames(6, 1, @infix);
+    .GenerateSizeClassNames(5, 1, @infix);
+    .GenerateSizeClassNames(4, 1, @infix);
+    .GenerateSizeClassNames(3, 1, @infix);
+    .GenerateSizeClassNames(2, 1, @infix);
+}
+
+.GenerateSizeBreakpoints() {
+    .GenerateSizeSet();
+
+    @media @media-xs-min {
+        .GenerateSizeSet(~'xs-');
+    }
+
+    @media @media-sm-min {
+        .GenerateSizeSet(~'sm-');
+    }
+
+    @media @media-md-min {
+        .GenerateSizeSet(~'md-');
+    }
+
+    @media @media-lg-min {
+        .GenerateSizeSet(~'lg-');
+    }
+
+    // TODO refactor max to min everywhere, if possible.
+    @media @media-xs-max {
+        .GenerateSizeSet(~'xs-max-');
+    }
+
+    @media @media-sm-max {
+        .GenerateSizeSet(~'sm-max-');
+    }
+
+    @media @media-md-max {
+        .GenerateSizeSet(~'md-max-');
+    }
+
+    @media @media-lg-max {
+        .GenerateSizeSet(~'lg-max-');
+    }
+}
+
+// stylelint-disable no-duplicate-selectors
+.GenerateSizeBreakpoints();

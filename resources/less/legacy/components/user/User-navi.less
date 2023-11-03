@@ -1,0 +1,56 @@
+.User-navi-link {
+    display: inline-block;
+    text-transform: uppercase;
+    font-family: @font-secondary;
+    //letter-spacing: 0.3em;
+    font-size: @font-size-small;
+    color: @color-brown-dark-alpha-70;
+    padding: 15px 0;
+    width: 100%;
+    position: relative;
+    text-decoration: none;
+
+    &:before,
+    &:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 1px;
+        background: @color-gold-lightest;
+    }
+
+    &:after {
+        width: 0;
+        transition: all 0.45s ease;
+    }
+
+    &.active {
+        font-weight: 600;
+    }
+
+    &:hover,
+    &.active {
+        color: @color-brown-dark;
+    }
+
+    &.active::after {
+        width: 100%;
+        background: @gradient-gold-revert;
+    }
+
+    @media (hover: hover) {
+        &:hover::after {
+            width: 100%;
+            background: @gradient-gold-revert;
+        }
+    }
+
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        &:hover::after {
+            width: 100%;
+            background: @gradient-gold-revert;
+        }
+    }
+}

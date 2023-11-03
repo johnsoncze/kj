@@ -1,0 +1,29 @@
+<form n:name="categoryForm">
+    <div class="row">
+        <div class="col-xs-6">
+            <div class="inline-blocks">
+                <div class="p-r-5">
+                    Řadit kategorie pro:
+                </div>
+                <div>
+                    {input categoryParentId}
+                </div>
+                <div>
+                    {input submit}
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-6">
+            <div style="margin-top: 11px; text-align: right">
+                <span class="p-r-5"><b>Jazyk:</b> {$language->getName()}</span>
+                <a href="{plink Category:sort}">Změnit</a>
+            </div>
+        </div>
+    </div>
+</form>
+<hr>
+<div class="row">
+    <div class="col-xs-offset-3 col-xs-6">
+        {control sortForm}
+    </div>
+</div>

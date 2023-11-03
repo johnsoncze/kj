@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="Windows-1250"?>
+<orders>
+    {foreach $orders as $order}
+        <order id="{App\Periskop\Order\OrderHelpers::createOrderId($order)}" state="{App\Order\Order::getStates()[$order->getState()]['externalSystemId']}">
+            <date>{$order->getAddDate()|date:"Y-m-d"}</date>
+            <currency>CZK</currency>
+            <note>{php echo $control->encoding($order->getComment())} {php echo $control->encoding('Způsob dopravy')}: {php echo $control->encoding($order->getDeliveryName())} {php echo $control->encoding('Způsob platby')}: {php echo $control->encoding($order->getPaymentName())}</note>
+            <payment>{$order->getPaymentExternalSystemId()}</payment>
+            <delivery>{$order->getDeliveryExternalSystemId()}</delivery>
+            <deliveryplace></deliveryplace>
+            <customer id="{$order->getCustomerId()}" fid="{$order->getCustomerExternalSystemId()}">
+                <name>{php echo $control->encoding($order->getCustomerLastName())} {php echo $control->encoding($order->getCustomerFirstName())}</name>
+                <username></username>
+                <firstname>{php echo $control->encoding($order->getCustomerFirstName())}</firstname>
+                <lastname>{php echo $control->encoding($order->getCustomerLastName())}</lastname>
+                <ico></ico>
+                <dic></dic>
+                <email>{$order->getCustomerEmail()}</email>
+                <phone>{$order->getCustomerTelephone()}</phone>
+                <fax></fax>
+                <www></www>
+                <address_part1>{if $order->getDeliveryAddressCompany()}{php echo $control->encoding($order->getDeliveryAddressCompany())}{else}{php echo $control->encoding($order->getCustomerLastName())} {php echo $control->encoding($order->getCustomerFirstName())}{/if}</address_part1>
+                <address_part2></address_part2>
+                <street>{php echo $control->encoding($order->getBillingAddressStreet())}</street>
+                <city>{php echo $control->encoding($order->getBillingAddressCity())}</city>
+                <place></place>
+                <postcode>{$order->getFormattedBillingAddressPostcode()}</postcode>
+                <country>{$order->getBillingAddressCountry()}</country>
+                <note></note>
+            </customer>
+            <dname>{if $order->getDeliveryAddressCompany()}{php echo $control->encoding($order->getDeliveryAddressCompany())}, {/if}{if $order->getDeliveryAddressLastName()}{php echo $control->encoding($order->getDeliveryAddressLastName() . ' ' . $order->getDeliveryAddressFirstName())}{else}{php echo $control->encoding($order->getCustomerLastName())} {php echo $control->encoding($order->getCustomerFirstName())}{/if}</dname>
+            <dstreet>{if $order->getDeliveryAddressLastName()}{php echo $control->encoding($order->getDeliveryAddressStreet())}{else}{php echo $control->encoding($order->getBillingAddressStreet())}{/if}</dstreet>
+            <dcity>{if $order->getDeliveryAddressLastName()}{php echo $control->encoding($order->getDeliveryAddressCity())}{else}{php echo $control->encoding($order->getBillingAddressCity())}{/if}</dcity>
+            <dplace></dplace>
+            <dpostcode>{if $order->getDeliveryAddressLastName()}{$order->getFormattedDeliveryAddressPostcode()}{else}{$order->getFormattedBillingAddressPostcode()}{/if}</dpostcode>
+            <dcountry>{if $order->getDeliveryAddressLastName()}{$order->getDeliveryAddressCountry()}{else}{$order->getBillingAddressCountry()}{/if}</dcountry>
+            <dphone>{if $order->getDeliveryTelephone()}{$order->getDeliveryTelephone()}{else}{$order->getCustomerTelephone()}{/if}</dphone>
+            <birthdaycoupon>{$order->wasAppliedBirthdayDiscount() === TRUE ? 'A' : 'N'}</birthdaycoupon>
+            <items>
+                {var $products = $order->getProducts()}
+                {foreach $products as $product}
+                    <item id="{$product->getExternalSystemId()}">
+                        <quantity>{$product->getQuantity()}</quantity>
+                        <vat>{$product->getVat()}</vat>
+                        <vat_base>{$product->getUnitPriceWithoutVat()|number:4:".":""}</vat_base>
+                        <unit_price>{$product->getUnitPrice()|number:4:".":""}</unit_price>
+                        <total_vat_base>{$product->getSummaryPriceWithoutVat()|number:4:".":""}</total_vat_base>
+                        <total_price>{$product->getSummaryPrice()|number:4:".":""}</total_price>
+                        <discount>{$product->getDiscount()|number:4:".":""}</discount>
+                        <variant_code></variant_code>
+                    </item>
+                {/foreach}
+            </items>
+        </order>
+    {/foreach}
+</orders>

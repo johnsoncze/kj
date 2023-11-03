@@ -1,0 +1,39 @@
+.DateField-label {
+    .form-field-label();
+}
+
+.DateField-label--required::after {
+    .form-field-label-required();
+}
+
+.DateField-label--disabled {
+    .form-field-label-disabled();
+}
+
+.DateField-group {
+    display: flex;
+}
+
+// stylelint-disable selector-max-specificity
+.DateField-group > .SelectField {
+    flex: 1 0 25%;
+
+    &:nth-child(2) {
+        flex-grow: 2;
+        padding-right: 5px;
+        padding-left: 5px;
+
+        @media @media-sm-min {
+            flex-basis: 50%;
+        }
+    }
+}
+// stylelint-enable
+
+.DateField-description {
+    .form-field-description();
+}
+
+.DateField--hasError .DateField-description {
+    .form-field-description-error();
+}

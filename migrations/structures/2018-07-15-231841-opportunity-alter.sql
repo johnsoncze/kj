@@ -1,0 +1,1 @@
+ALTER TABLE `opportunity` ADD `opp_page_arguments` TEXT NULL AFTER `opp_page_base_path_url`;

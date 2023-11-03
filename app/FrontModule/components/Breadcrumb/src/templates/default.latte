@@ -1,0 +1,26 @@
+<nav class="Breadcrumb {ifset $style}{$style}{else}Breadcrumb--dark{/ifset} u-displayNone u-md-displayBlock">
+    <ol class="Breadcrumb-list">
+        <li class="Breadcrumb-item">
+            <a class="Breadcrumb-link" href="{plink Homepage:default}">
+                <svg role="img" class="Icon Breadcrumb-iconHome">
+                    <use xlink:href="#symbol-home"></use>
+                </svg>
+            </a>
+        </li>
+        {foreach $navigation->getItems() as $item}
+                {if $iterator->isLast() !== TRUE}
+                    <li class="Breadcrumb-item">
+                        <a class="Breadcrumb-link" href="{$item->getLink()}">{$item->getName()}
+                            <svg role="img" class="Icon Breadcrumb-icon">
+                                <use xlink:href="#symbol-arr-right"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    {else}
+                    <li class="Breadcrumb-item">
+                        {$item->getName()}
+                    </li>
+                {/if}
+        {/foreach}
+    </ol>
+</nav>

@@ -1,0 +1,32 @@
+<form n:name="newPasswordForm">
+
+    <fieldset class="Form-fieldset">
+
+        <div class="Form-row">
+            <div class="TextField">
+                <label for="passwordActual" class="Form-label">{_form.newPassword.input.actualPassword.label}<span class="Form-mandatory">*</span></label>
+                <input n:name="passwordActual" class="TextField-input">
+            </div>
+        </div>
+
+        <div class="Form-row">
+            <div class="TextField">
+                <label for="password" class="Form-label">{_form.newPassword.input.password.label}<span class="Form-mandatory">*</span></label>
+                <input n:name="password" class="TextField-input">
+            </div>
+        </div>
+
+        <div class="Form-row">
+            <div class="TextField">
+                <label for="passwordConfirm" class="Form-label">{_form.newPassword.input.passwordConfirm.label}<span class="Form-mandatory">*</span></label>
+                <input n:name="passwordConfirm" class="TextField-input">
+            </div>
+        </div>
+
+    </fieldset>
+
+    <div class="Form-buttons u-mt--20 u-sm-mt--30">
+        <input class="Button" value="{_form.newPassword.input.submit.label}" n:name="submit">
+    </div>
+
+</form>

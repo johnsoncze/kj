@@ -1,0 +1,1 @@
+ALTER TABLE `shopping_cart` ADD UNIQUE(`sc_customer_id`);

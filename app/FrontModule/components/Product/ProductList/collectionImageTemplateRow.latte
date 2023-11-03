@@ -1,0 +1,9 @@
+{if $products}
+    <div class="Grid">
+        {foreach $products as $product}
+            <div class="Grid-cell u-size6of12 u-sm-max-size12of12 u-mt--40">
+                {control 'product_' . $product->getProduct()->getId()}
+            </div>
+        {/foreach}
+    </div>
+{/if}

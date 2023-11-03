@@ -1,0 +1,6 @@
+{block content}
+{if $childPages}
+    {include 'templates/signpost.latte' page => $page, childPages => $childPages}
+{else}
+    {include 'templates/content.latte' page => $page}
+{/if}

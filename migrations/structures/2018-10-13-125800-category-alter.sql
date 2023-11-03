@@ -1,0 +1,1 @@
+ALTER TABLE `category` ADD `cat_menu_image` VARCHAR(255) NULL DEFAULT NULL AFTER `cat_image_template`;

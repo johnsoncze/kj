@@ -1,0 +1,1 @@
+ALTER TABLE `shopping_cart_payment` ADD `scp_name` VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_czech_ci NOT NULL AFTER `scp_payment_id`;

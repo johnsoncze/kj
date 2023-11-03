@@ -1,0 +1,52 @@
+.Signpost {
+    padding: 60px 0;
+    background-image: url(../images/layout/signpost-mobile-bg.jpg);
+    background-size: cover;
+
+    @media @media-sm-min {
+        padding: 160px 0;
+        background-image: url(../images/layout/signpost-bg.jpg);
+    }
+}
+
+.Signpost-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.Signpost-title {
+    width: 100%;
+    color: @text-inversed-color;
+
+    @media @media-sm-min {
+        width: 33%; /* percentage(2/5); */
+    }
+}
+
+.Signpost-list {
+    margin-top: 25px;
+    list-style: none;
+    padding-left: 0;
+
+    @media @media-sm-min {
+        column-count: 2;
+        column-width: 300px;
+        margin-top: 50px;
+        padding-left: 30px;
+    }
+}
+
+.Signpost-link {
+    display: inline-block;
+    padding: 15px 0;
+    font-size: @font-size-tiny;
+    font-weight: 700;
+    // .//letter-spacing(320);
+    line-height: 16px;
+
+    @media @media-sm-min {
+        padding: 6px 0;
+        font-size: @font-size-smaller;
+        line-height: 28px;
+    }
+}

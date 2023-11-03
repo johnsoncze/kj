@@ -1,0 +1,1 @@
+ALTER TABLE `product_translation` ADD INDEX (`pt_name`);

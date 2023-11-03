@@ -1,0 +1,80 @@
+<footer class="Footer">
+    <div class="Container">
+        <div>
+            <img class="Footer-logo" src="/assets/front/images/layout/jk-simple-logo.png" alt="{$parameters['project']['name']}" width="35" height="33">
+        </div>
+        <div class="Footer-blockContainer">
+
+            <div class="Footer-block u-size12of12 u-sm-size1of3">
+                <h4 class="Footer-blockTitle Footer-item">{_footer.contact.title|noescape}</h4>
+                  <div class="Footer-linksBlock u-pb--0">
+                    <a class="Footer-link Footer-item " href="tel:{php echo str_replace(['+', ' '], ['00', ''], $parameters['project']['telephone'])}">
+                        <svg role="img" class="Icon">
+                            <use xlink:href="#symbol-phone"/>
+                        </svg>{$parameters['project']['telephone']}
+                    </a>
+
+                    <a class="Footer-link Footer-item " href="mailto:info@jk.cz">
+                        <svg role="img" class="Icon">
+                            <use xlink:href="#symbol-envelope"/>
+                        </svg>{$parameters['project']['email']}
+                    </a>
+
+                    <a class="Footer-link Footer-item " n:href="Page:detail prodejna">
+                        <svg role="img" class="Icon">
+                            <use xlink:href="#symbol-store"/>
+                        </svg>{$parameters['project']['address']}
+
+                    </a>
+                    <a class="Footer-link Footer-item" href="https://goo.gl/maps/Lqcskak4MA92" target="_blank">
+                        <svg role="img" class="Icon">
+                            <use xlink:href="#symbol-map"/>
+                        </svg>{_footer.contact.map}
+
+                    </a>
+
+                  </div>
+                    <div class="Footer-social">
+                        <h4 class="Footer-blockTitle Footer-item">{_footer.socialMedia.title}</h4>
+                      <div class="Footer-linksBlock u-pb--0 u-textSmall">
+                        <span class="Footer-socialButtons">
+                              <a class="Footer-socialLink SocialButton" href="https://www.facebook.com/JKJitkaKudlackova" target="_blank">
+                                  <svg role="img" class="Footer-socialIcon">
+                                      <use xlink:href="#symbol-facebook"/>
+                                  </svg>
+                              </a>
+                              <a class="Footer-socialLink SocialButton" href="https://www.instagram.com/jkjitkakudlackova/" target="_blank">
+                                  <svg role="img" class="Footer-socialIcon">
+                                      <use xlink:href="#symbol-instagram"/>
+                                  </svg>
+                              </a>
+                          </span>
+                        </div>
+                    </div>
+
+            </div>
+
+            <div class="Footer-block">
+                <div>
+                    <h4 class="Footer-blockTitle Footer-item" data-component="expand" data-target="Footer-linksBlock">{_footer.menu.allAboutBuying.title}</h4>
+                    {control pageMenu:purchase}
+                </div>
+
+                {* <div>
+                    <h4 class="Footer-blockTitle Footer-item" data-component="expand" data-target="Footer-linksBlock">{_footer.menu.ourWeb.title}</h4>
+                      {control pageMenu:ourWeb}
+                </div> *}
+            </div>
+
+            <div class="Footer-block">
+                <h4 class="Footer-blockTitle Footer-item" data-component="expand" data-target="Footer-linksBlock">{_store.openingHours.title}</h4>
+                <div class="Footer-linksBlock u-pb--0">
+                    {control openingHours:list}
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+</footer>

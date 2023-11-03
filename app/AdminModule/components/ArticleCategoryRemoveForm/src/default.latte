@@ -1,0 +1,16 @@
+<form n:name="form">
+    <h4>Opravdu si přejete smazat rubriku <b>{$articleCategoryEntity->getName()}</b>
+        pro jazyk <b>{$languageEntity->getName()}</b>?</h4>
+    {if $articlesCount->getCount() > 0}
+        <p>Rubrika obsahuje celkem <b>{$articlesCount->getCount()}</b> článků.
+            Přejete si u těchto článků nahradit rubriku jinou?</p>
+        <div class="form-group p-t-10">
+            {label articleCategory/}
+            {input articleCategory}
+        </div>
+    {/if}
+    <div class="form-group">
+        {input submit}
+        <a href="{plink ArticleCategory:default}" class="btn btn-default">Nemazat a vrátit se zpět</a>
+    </div>
+</form>

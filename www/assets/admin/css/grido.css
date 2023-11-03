@@ -1,0 +1,45 @@
+.grido .filter.outer, .grido table {
+    box-shadow: none;
+}
+
+.grido thead .filter th {
+    background: #ededed;
+}
+
+.grido .filter, .grido table {
+    border-radius: 2px;
+    border: none;
+}
+
+.grido .filter.outer, .grido tfoot td, .grido thead th {
+    background: none;
+}
+
+.grido tfoot, .grido thead {
+    font-size: 14px;
+}
+
+.grido input.text {
+    padding: 3px;
+}
+
+.grido input.text, .grido select {
+    height: auto;
+}
+
+.grido thead th {
+    padding: 9px 6px !important;
+    border: none !important;
+}
+
+.grido th.column {
+    text-transform: none;
+}
+
+.grido table tfoot td {
+    border-top: 1px solid #ecf0f1 !important;
+}
+
+.grido td.actions, .grido th.actions, .grido th.buttons {
+    text-align: right;
+}

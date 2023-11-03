@@ -1,0 +1,1 @@
+ALTER TABLE `opportunity` ADD INDEX (`opp_state`);

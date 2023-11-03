@@ -1,0 +1,72 @@
+{import 'helpers.latte'}
+
+{var $groups = $tree ? $tree->getGroups() : []}
+{if $groups}
+    {include printGroups, groups => $groups}
+{/if}
+
+{define printGroups}
+    {foreach $groups as $group}
+        {var $groupVariants = $group->getVariants()}
+        {var $lastGroupVariant = end($groupVariants)}
+
+        {*Workaround for not show each other group which is related to main product and actual product is not the main or a variant from the group*}
+        {breakIf $iterator->isFirst() === FALSE && (!$lastGroupVariant->getVariant() || $lastGroupVariant->getVariant()->getParentVariantId() === NULL) && ($product->getId() !== $mainProduct->getProduct()->getId() && $group->hasProduct($product->getId()) === FALSE)}
+
+        {include selectbox, group => $group}
+
+        {foreach $groupVariants as $variant}
+            {var $variantGroups = $variant->getGroups()}
+            {if $variantGroups && ($product->getId() === $variant->getProduct()->getproduct()->getId() || $variant->hasProductInTree($product->getId()))}
+                {include this, groups => $variantGroups}
+            {/if}
+        {/foreach}
+    {/foreach}
+{/define}
+
+{define selectbox}
+    <div class="Product-options">
+        <div class="Product-option-row">
+            <div class="Product-option-info-title u-textBold">
+                <div class="Product-option-title">{$group->getParameterGroup()->getTranslation()->getName()} {include infoTooltip, group => $group->getParameterGroup()}</div>
+            </div>
+            <div class="Product-option-dropdown Product-option-value">
+                {include selectRow, group => $group}
+            </div>
+        </div>
+    </div>
+{/define}
+
+{define selectRow}
+    <div class="SelectField SelectField--inline">
+        {var $variants = $group->getVariants()}
+        {include variantList, variants => $variants, product => $product}
+    </div>
+{/define}
+
+{define variantList}
+    <select class="product-variant js-selectfield select2-hidden-accessible">
+        {*Workaround for get known if variants has a selected option. In case that not select main.*}
+        {var $selected = NULL}
+        {foreach $variants as $variant}
+            {var $isSelected = $product->getId() === $variant->getProduct()->getProduct()->getId() || $variant->hasProductInTree($product->getId())}
+            {if $isSelected && $variant->getVariant()}
+                {$selected = $variant->getVariant()->getId()}
+            {/if}
+        {/foreach}
+
+        {foreach $variants as $variant}
+            {var $isSelected = $selected === NULL && $variant->isMain() || $variant->getVariant() && $variant->getVariant()->getId() === $selected}
+            {var $name = $isSelected !== TRUE ? $variant->getParameter()->getTranslation()->getValue() . ' - ' . $variant->getProduct()->getState()->getTranslation()->getValue() : $variant->getParameter()->getTranslation()->getValue()}
+            <option value="{plink Product:detail url => $variant->getProduct()->getProduct()->getTranslation()->getUrl()}" {if $isSelected}selected{/if}>{$name}</option>
+        {/foreach}
+    </select>
+{/define}
+
+<script>
+    $(document).ready(function () {
+        $('.product-variant').on('change', function () {
+            window.location.href = this.value;
+        })
+    });
+</script>

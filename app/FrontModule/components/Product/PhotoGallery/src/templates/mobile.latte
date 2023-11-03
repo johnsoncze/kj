@@ -1,0 +1,81 @@
+{var $photoGroup = 'product-' . $product->getId()}
+{var $photoAlt = $product->getTranslation()->getName()}
+
+<div class="Product-gallery-mobile light-gallery u-positionRelative">
+	{var $badgesCount = 0}
+	{var $badgeClass = 'first'}
+	{if $product->isNew() === TRUE && $badgesCount < 2}
+		<div class="Badge ProductCard-badge-{$badgeClass} ProductCard-badge-all-border ProductCard-badge-new">
+			{_product.badge.new.title}
+		</div>
+		{var $badgesCount = $badgesCount + 1}
+		{var $badgeClass = 'second'}
+	{/if}
+	{if $product->isLimited() === TRUE  && $badgesCount < 2}
+		<div class="Badge ProductCard-badge-{$badgeClass} ProductCard-badge-all-border ProductCard-badge-limited">
+			{_product.badge.limited.title}
+		</div>
+		{var $badgesCount = $badgesCount + 1}
+		{var $badgeClass = 'second'}
+	{/if}
+	{if $product->isBestseller() === TRUE  && $badgesCount < 2}
+		<div class="Badge ProductCard-badge-{$badgeClass} ProductCard-badge-all-border ProductCard-badge-bestseller">
+			{_product.badge.bestseller.title}
+		</div>
+		{var $badgesCount = $badgesCount + 1}
+		{var $badgeClass = 'second'}
+	{/if}
+	{if $product->isGoodprice() === TRUE  && $badgesCount < 2}
+		<div class="Badge ProductCard-badge-{$badgeClass} ProductCard-badge-all-border ProductCard-badge-goodprice">
+			{_product.badge.goodprice.title}
+		</div>
+		{var $badgesCount = $badgesCount + 1}
+		{var $badgeClass = 'second'}
+	{/if}
+	{if $product->isRare() === TRUE  && $badgesCount < 2}
+		<div class="Badge ProductCard-badge-{$badgeClass} ProductCard-badge-all-border ProductCard-badge-rare">
+			{_product.badge.rare.title}
+		</div>
+		{var $badgesCount = $badgesCount + 1}
+		{var $badgeClass = 'second'}
+	{/if}
+	
+    <div class="u-md-mt--30 u-md-mb--30">
+        {if $product->getPhoto()}
+            <div style="max-width: 250px; max-height: 250px">
+                {thumbnailLink 250, 250, $product->getPhoto(), $product->getUploadFolder(), $photoGroup, $photoAlt}
+            </div>
+        {else}
+            <img src="{imagePlaceholder 600, 600}">
+        {/if}
+    </div>
+    {if $additionalPhotos}
+        <ul class="Gallery-thumbnails u-md-mt--20 u-md-mb--30">
+            {foreach $additionalPhotos as $photo}
+                <li>
+                    <div style="max-width: 190px; max-height: 190px">
+                        {thumbnailLink 250, 250, $photo->getFileName(), $product->getUploadFolder(), $photoGroup, $photoAlt}
+                    </div>
+                </li>
+            {/foreach}
+
+            {if $displayPackageImage == 1}
+                <li>
+                    <a href="/assets/front/images/layout/produkt/baleni.jpg" class="thumbnail item-photo" rel={$photoGroup}>
+                        <img src="/assets/front/images/layout/produkt/baleni_th.jpg" alt="Balení">
+                    </a>
+                </li>
+            {/if}
+        </ul>
+    {else}
+        {if $displayPackageImage == 1}
+            <ul class="Gallery-thumbnails u-md-mt--20 u-md-mb--30">
+                <li>
+                    <a href="/assets/front/images/layout/produkt/baleni.jpg" class="thumbnail item-photo" rel={$photoGroup}>
+                        <img src="/assets/front/images/layout/produkt/baleni_th.jpg" alt="Balení">
+                    </a>
+                </li>
+            </ul>
+        {/if}
+    {/if}
+</div>

@@ -1,0 +1,1 @@
+ALTER TABLE `opportunity_product` CHANGE `oppp_stock` `oppp_was_in_stock` TINYINT(1) NOT NULL;

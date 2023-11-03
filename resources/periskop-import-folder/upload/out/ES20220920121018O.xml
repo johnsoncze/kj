@@ -1,0 +1,541 @@
+<?xml version="1.0" encoding="Windows-1250"?>
+<orders>
+        <order id="999638" state="2">
+            <date>2021-05-12</date>
+            <currency>CZK</currency>
+            <note> Způsob dopravy: PPL Způsob platby: Převodem na účet</note>
+            <payment>2</payment>
+            <delivery>2</delivery>
+            <deliveryplace></deliveryplace>
+            <customer id="" fid="">
+                <name>Test Test Test</name>
+                <username></username>
+                <firstname>Test</firstname>
+                <lastname>Test Test</lastname>
+                <ico></ico>
+                <dic></dic>
+                <email>razova.c@gmail.com</email>
+                <phone>222222222</phone>
+                <fax></fax>
+                <www></www>
+                <address_part1>Test Test Test</address_part1>
+                <address_part2></address_part2>
+                <street>Test 999</street>
+                <city>Uherský Brod</city>
+                <place></place>
+                <postcode>688 01</postcode>
+                <country>CZ</country>
+                <note></note>
+            </customer>
+            <dname>Test Test Test</dname>
+            <dstreet>Test 999</dstreet>
+            <dcity>Uherský Brod</dcity>
+            <dplace></dplace>
+            <dpostcode>688 01</dpostcode>
+            <dcountry>CZ</dcountry>
+            <dphone>222222222</dphone>
+            <birthdaycoupon>N</birthdaycoupon>
+            <items>
+                    <item id="47735">
+                        <quantity>1</quantity>
+                        <vat>21</vat>
+                        <vat_base>652.8926</vat_base>
+                        <unit_price>790.0000</unit_price>
+                        <total_vat_base>652.8926</total_vat_base>
+                        <total_price>790.0000</total_price>
+                        <discount>0.0000</discount>
+                        <variant_code></variant_code>
+                    </item>
+            </items>
+        </order>
+        <order id="999711" state="2">
+            <date>2021-08-24</date>
+            <currency>CZK</currency>
+            <note> Způsob dopravy: PPL Způsob platby: Převodem na účet</note>
+            <payment>2</payment>
+            <delivery>2</delivery>
+            <deliveryplace></deliveryplace>
+            <customer id="" fid="">
+                <name>TEST TEST</name>
+                <username></username>
+                <firstname>TEST</firstname>
+                <lastname>TEST</lastname>
+                <ico></ico>
+                <dic></dic>
+                <email>jtrcka@dwd.cz</email>
+                <phone>+420737755432</phone>
+                <fax></fax>
+                <www></www>
+                <address_part1>TEST FIRMA</address_part1>
+                <address_part2></address_part2>
+                <street>TEST</street>
+                <city>TEST</city>
+                <place></place>
+                <postcode>180 00</postcode>
+                <country>CZ</country>
+                <note></note>
+            </customer>
+            <dname>TEST FIRMA, TEST TEST</dname>
+            <dstreet>TEST</dstreet>
+            <dcity>TEST</dcity>
+            <dplace></dplace>
+            <dpostcode>123 12</dpostcode>
+            <dcountry>CZ</dcountry>
+            <dphone>123123123</dphone>
+            <birthdaycoupon>N</birthdaycoupon>
+            <items>
+                    <item id="54188">
+                        <quantity>1</quantity>
+                        <vat>21</vat>
+                        <vat_base>7661.1570</vat_base>
+                        <unit_price>9270.0000</unit_price>
+                        <total_vat_base>7661.1570</total_vat_base>
+                        <total_price>9270.0000</total_price>
+                        <discount>0.0000</discount>
+                        <variant_code></variant_code>
+                    </item>
+            </items>
+        </order>
+        <order id="999731" state="2">
+            <date>2021-09-29</date>
+            <currency>CZK</currency>
+            <note>s paní Zrnovou je domluveno zhotovení do 15.9.2021, v neděli 17.9.2021 si zboží osobně převezmeme na prodejně Způsob dopravy: Osobní odběr na prodejně (Praha 4) Způsob platby: Online platba (platba kartou nebo ePlatba - expresní převod)</note>
+            <payment>3</payment>
+            <delivery>3</delivery>
+            <deliveryplace></deliveryplace>
+            <customer id="27075" fid="">
+                <name>Javorská Jana</name>
+                <username></username>
+                <firstname>Jana</firstname>
+                <lastname>Javorská</lastname>
+                <ico></ico>
+                <dic></dic>
+                <email>jana.javorska@email.cz</email>
+                <phone>+420724291299</phone>
+                <fax></fax>
+                <www></www>
+                <address_part1>Javorská Jana</address_part1>
+                <address_part2></address_part2>
+                <street>Nádražní 56</street>
+                <city>Dubňany</city>
+                <place></place>
+                <postcode>696 03</postcode>
+                <country>CZ</country>
+                <note></note>
+            </customer>
+            <dname>Javorská Jana</dname>
+            <dstreet>Nádražní 56</dstreet>
+            <dcity>Dubňany</dcity>
+            <dplace></dplace>
+            <dpostcode>696 03</dpostcode>
+            <dcountry>CZ</dcountry>
+            <dphone>+420724291299</dphone>
+            <birthdaycoupon>N</birthdaycoupon>
+            <items>
+                    <item id="57373">
+                        <quantity>1</quantity>
+                        <vat>21</vat>
+                        <vat_base>11588.4298</vat_base>
+                        <unit_price>14022.0000</unit_price>
+                        <total_vat_base>11588.4298</total_vat_base>
+                        <total_price>14022.0000</total_price>
+                        <discount>10.0000</discount>
+                        <variant_code></variant_code>
+                    </item>
+            </items>
+        </order>
+        <order id="999803" state="2">
+            <date>2021-11-20</date>
+            <currency>CZK</currency>
+            <note> Způsob dopravy: PPL Způsob platby: Převodem na účet</note>
+            <payment>2</payment>
+            <delivery>2</delivery>
+            <deliveryplace></deliveryplace>
+            <customer id="" fid="">
+                <name>test test</name>
+                <username></username>
+                <firstname>test</firstname>
+                <lastname>test</lastname>
+                <ico></ico>
+                <dic></dic>
+                <email>malomuch12@gmail.com</email>
+                <phone>601000000</phone>
+                <fax></fax>
+                <www></www>
+                <address_part1>test test</address_part1>
+                <address_part2></address_part2>
+                <street>Test 25</street>
+                <city>Vrchlabí 1</city>
+                <place></place>
+                <postcode>543 01</postcode>
+                <country>CZ</country>
+                <note></note>
+            </customer>
+            <dname>test test</dname>
+            <dstreet>Test 25</dstreet>
+            <dcity>Vrchlabí 1</dcity>
+            <dplace></dplace>
+            <dpostcode>543 01</dpostcode>
+            <dcountry>CZ</dcountry>
+            <dphone>601000000</dphone>
+            <birthdaycoupon>N</birthdaycoupon>
+            <items>
+                    <item id="54386">
+                        <quantity>1</quantity>
+                        <vat>21</vat>
+                        <vat_base>7429.7521</vat_base>
+                        <unit_price>8990.0000</unit_price>
+                        <total_vat_base>7429.7521</total_vat_base>
+                        <total_price>8990.0000</total_price>
+                        <discount>0.0000</discount>
+                        <variant_code></variant_code>
+                    </item>
+            </items>
+        </order>
+        <order id="999823" state="2">
+            <date>2021-11-28</date>
+            <currency>CZK</currency>
+            <note> Způsob dopravy: Osobní odběr na prodejně (Praha 4) Způsob platby: Online platba (platba kartou nebo ePlatba - expresní převod)</note>
+            <payment>3</payment>
+            <delivery>3</delivery>
+            <deliveryplace></deliveryplace>
+            <customer id="26284" fid="22036">
+                <name>Blažek Petr</name>
+                <username></username>
+                <firstname>Petr</firstname>
+                <lastname>Blažek</lastname>
+                <ico></ico>
+                <dic></dic>
+                <email>blazekp@atlas.cz</email>
+                <phone>608984162</phone>
+                <fax></fax>
+                <www></www>
+                <address_part1>Blažek Petr</address_part1>
+                <address_part2></address_part2>
+                <street>Miškovského 715</street>
+                <city>Český Brod</city>
+                <place></place>
+                <postcode>282 01</postcode>
+                <country>CZ</country>
+                <note></note>
+            </customer>
+            <dname>Blažek Petr</dname>
+            <dstreet>Miškovského 715</dstreet>
+            <dcity>Český Brod</dcity>
+            <dplace></dplace>
+            <dpostcode>282 01</dpostcode>
+            <dcountry>CZ</dcountry>
+            <dphone>608984162</dphone>
+            <birthdaycoupon>N</birthdaycoupon>
+            <items>
+                    <item id="55675">
+                        <quantity>1</quantity>
+                        <vat>21</vat>
+                        <vat_base>5900.8264</vat_base>
+                        <unit_price>7140.0000</unit_price>
+                        <total_vat_base>5900.8264</total_vat_base>
+                        <total_price>7140.0000</total_price>
+                        <discount>15.0000</discount>
+                        <variant_code></variant_code>
+                    </item>
+            </items>
+        </order>
+        <order id="999988" state="2">
+            <date>2022-04-19</date>
+            <currency>CZK</currency>
+            <note> Způsob dopravy: Česká pošta - Cenné psaní Způsob platby: Převodem na účet</note>
+            <payment>2</payment>
+            <delivery>1</delivery>
+            <deliveryplace></deliveryplace>
+            <customer id="27533" fid="">
+                <name>Šimeček Ondřej</name>
+                <username></username>
+                <firstname>Ondřej</firstname>
+                <lastname>Šimeček</lastname>
+                <ico></ico>
+                <dic></dic>
+                <email>simecekondra@seznam.cz</email>
+                <phone>721537982</phone>
+                <fax></fax>
+                <www></www>
+                <address_part1>Šimeček Ondřej</address_part1>
+                <address_part2></address_part2>
+                <street>Kpt. Nálepky 20</street>
+                <city>Třebíč</city>
+                <place></place>
+                <postcode>674 01</postcode>
+                <country>CZ</country>
+                <note></note>
+            </customer>
+            <dname>Šimeček Ondřej</dname>
+            <dstreet>Kpt. Nálepky 20</dstreet>
+            <dcity>Třebíč</dcity>
+            <dplace></dplace>
+            <dpostcode>674 01</dpostcode>
+            <dcountry>CZ</dcountry>
+            <dphone>721537982</dphone>
+            <birthdaycoupon>N</birthdaycoupon>
+            <items>
+                    <item id="79324">
+                        <quantity>1</quantity>
+                        <vat>21</vat>
+                        <vat_base>25705.7851</vat_base>
+                        <unit_price>31104.0000</unit_price>
+                        <total_vat_base>25705.7851</total_vat_base>
+                        <total_price>31104.0000</total_price>
+                        <discount>10.0000</discount>
+                        <variant_code></variant_code>
+                    </item>
+            </items>
+        </order>
+        <order id="999991" state="2">
+            <date>2022-04-25</date>
+            <currency>CZK</currency>
+            <note> Způsob dopravy: Osobní odběr na prodejně (Praha 4) Způsob platby: Převodem na účet</note>
+            <payment>2</payment>
+            <delivery>3</delivery>
+            <deliveryplace></deliveryplace>
+            <customer id="24674" fid="8650">
+                <name>Sonták Miloš</name>
+                <username></username>
+                <firstname>Miloš</firstname>
+                <lastname>Sonták</lastname>
+                <ico></ico>
+                <dic></dic>
+                <email>milos@sontak.eu</email>
+                <phone>737827230</phone>
+                <fax></fax>
+                <www></www>
+                <address_part1>Sonták Miloš</address_part1>
+                <address_part2></address_part2>
+                <street>Na Hlinkách 402</street>
+                <city>Zbuzany</city>
+                <place></place>
+                <postcode>252 25</postcode>
+                <country>CZ</country>
+                <note></note>
+            </customer>
+            <dname>Sonták Miloš</dname>
+            <dstreet>Na Hlinkách 402</dstreet>
+            <dcity>Zbuzany</dcity>
+            <dplace></dplace>
+            <dpostcode>252 25</dpostcode>
+            <dcountry>CZ</dcountry>
+            <dphone>737827230</dphone>
+            <birthdaycoupon>N</birthdaycoupon>
+            <items>
+                    <item id="57233">
+                        <quantity>1</quantity>
+                        <vat>21</vat>
+                        <vat_base>25906.6116</vat_base>
+                        <unit_price>31347.0000</unit_price>
+                        <total_vat_base>25906.6116</total_vat_base>
+                        <total_price>31347.0000</total_price>
+                        <discount>10.0000</discount>
+                        <variant_code></variant_code>
+                    </item>
+            </items>
+        </order>
+        <order id="9991023" state="2">
+            <date>2022-07-26</date>
+            <currency>CZK</currency>
+            <note> Způsob dopravy: Česká pošta - Balík na poštu Způsob platby: Dobírka</note>
+            <payment>1</payment>
+            <delivery>4</delivery>
+            <deliveryplace></deliveryplace>
+            <customer id="27651" fid="">
+                <name>Vajnar Dalibor</name>
+                <username></username>
+                <firstname>Dalibor</firstname>
+                <lastname>Vajnar</lastname>
+                <ico></ico>
+                <dic></dic>
+                <email>daliborvajnar@gmail.com</email>
+                <phone>733728212</phone>
+                <fax></fax>
+                <www></www>
+                <address_part1>Vajnar Dalibor</address_part1>
+                <address_part2></address_part2>
+                <street>Vinohrady 2015</street>
+                <city>Kadaň</city>
+                <place></place>
+                <postcode>432 01</postcode>
+                <country>CZ</country>
+                <note></note>
+            </customer>
+            <dname>Vajnar Dalibor</dname>
+            <dstreet>Vinohrady 2015</dstreet>
+            <dcity>Kadaň</dcity>
+            <dplace></dplace>
+            <dpostcode>432 01</dpostcode>
+            <dcountry>CZ</dcountry>
+            <dphone>733728212</dphone>
+            <birthdaycoupon>A</birthdaycoupon>
+            <items>
+                    <item id="58782">
+                        <quantity>1</quantity>
+                        <vat>21</vat>
+                        <vat_base>2908.2645</vat_base>
+                        <unit_price>3519.0000</unit_price>
+                        <total_vat_base>2908.2645</total_vat_base>
+                        <total_price>3519.0000</total_price>
+                        <discount>15.0000</discount>
+                        <variant_code></variant_code>
+                    </item>
+                    <item id="59332">
+                        <quantity>1</quantity>
+                        <vat>21</vat>
+                        <vat_base>7699.1736</vat_base>
+                        <unit_price>9316.0000</unit_price>
+                        <total_vat_base>7699.1736</total_vat_base>
+                        <total_price>9316.0000</total_price>
+                        <discount>15.0000</discount>
+                        <variant_code></variant_code>
+                    </item>
+            </items>
+        </order>
+        <order id="9991026" state="2">
+            <date>2022-08-02</date>
+            <currency>CZK</currency>
+            <note> Způsob dopravy: Osobní odběr na prodejně (Praha 4) Způsob platby: Online platba (platba kartou nebo ePlatba - expresní převod)</note>
+            <payment>3</payment>
+            <delivery>3</delivery>
+            <deliveryplace></deliveryplace>
+            <customer id="27345" fid="23654">
+                <name>Mardešić Kateřina</name>
+                <username></username>
+                <firstname>Kateřina</firstname>
+                <lastname>Mardešić</lastname>
+                <ico></ico>
+                <dic></dic>
+                <email>katerina.mardesic@gmail.com</email>
+                <phone>608072680</phone>
+                <fax></fax>
+                <www></www>
+                <address_part1>Mardešić Kateřina</address_part1>
+                <address_part2></address_part2>
+                <street>Petra Rezka 1090/3</street>
+                <city>Praha 4</city>
+                <place></place>
+                <postcode>140 00</postcode>
+                <country>CZ</country>
+                <note></note>
+            </customer>
+            <dname>Mardešić Kateřina</dname>
+            <dstreet>Petra Rezka 1090/3</dstreet>
+            <dcity>Praha 4</dcity>
+            <dplace></dplace>
+            <dpostcode>140 00</dpostcode>
+            <dcountry>CZ</dcountry>
+            <dphone>608072680</dphone>
+            <birthdaycoupon>N</birthdaycoupon>
+            <items>
+                    <item id="60840">
+                        <quantity>1</quantity>
+                        <vat>21</vat>
+                        <vat_base>12272.7273</vat_base>
+                        <unit_price>14850.0000</unit_price>
+                        <total_vat_base>12272.7273</total_vat_base>
+                        <total_price>14850.0000</total_price>
+                        <discount>10.0000</discount>
+                        <variant_code></variant_code>
+                    </item>
+            </items>
+        </order>
+        <order id="9991029" state="2">
+            <date>2022-08-08</date>
+            <currency>CZK</currency>
+            <note> Způsob dopravy: PPL Způsob platby: Online platba (platba kartou nebo ePlatba - expresní převod)</note>
+            <payment>3</payment>
+            <delivery>2</delivery>
+            <deliveryplace></deliveryplace>
+            <customer id="" fid="">
+                <name>Bálint Peter</name>
+                <username></username>
+                <firstname>Peter</firstname>
+                <lastname>Bálint</lastname>
+                <ico></ico>
+                <dic></dic>
+                <email>Petr.balint@gmail.com</email>
+                <phone>+421773608741</phone>
+                <fax></fax>
+                <www></www>
+                <address_part1>Bálint Peter</address_part1>
+                <address_part2></address_part2>
+                <street>Šumice 105</street>
+                <city>Šumice</city>
+                <place></place>
+                <postcode>671 75</postcode>
+                <country>CZ</country>
+                <note></note>
+            </customer>
+            <dname>Bálint Peter</dname>
+            <dstreet>Šumice 105</dstreet>
+            <dcity>Šumice</dcity>
+            <dplace></dplace>
+            <dpostcode>671 75</dpostcode>
+            <dcountry>CZ</dcountry>
+            <dphone>+421773608741</dphone>
+            <birthdaycoupon>N</birthdaycoupon>
+            <items>
+                    <item id="61495">
+                        <quantity>1</quantity>
+                        <vat>21</vat>
+                        <vat_base>15247.9339</vat_base>
+                        <unit_price>18450.0000</unit_price>
+                        <total_vat_base>15247.9339</total_vat_base>
+                        <total_price>18450.0000</total_price>
+                        <discount>0.0000</discount>
+                        <variant_code></variant_code>
+                    </item>
+            </items>
+        </order>
+        <order id="9991030" state="2">
+            <date>2022-08-10</date>
+            <currency>CZK</currency>
+            <note> Způsob dopravy: Česká pošta - Balík do ruky Způsob platby: Dobírka</note>
+            <payment>1</payment>
+            <delivery>5</delivery>
+            <deliveryplace></deliveryplace>
+            <customer id="27656" fid="">
+                <name>Žídková Kristina</name>
+                <username></username>
+                <firstname>Kristina</firstname>
+                <lastname>Žídková</lastname>
+                <ico></ico>
+                <dic></dic>
+                <email>k.chomatova@centrum.cz</email>
+                <phone>720138733</phone>
+                <fax></fax>
+                <www></www>
+                <address_part1>Žídková Kristina</address_part1>
+                <address_part2></address_part2>
+                <street>Na Sekyře 1471</street>
+                <city>Rakovník</city>
+                <place></place>
+                <postcode>269 01</postcode>
+                <country>CZ</country>
+                <note></note>
+            </customer>
+            <dname>Žídková Kristina</dname>
+            <dstreet>Na Sekyře 1471</dstreet>
+            <dcity>Rakovník</dcity>
+            <dplace></dplace>
+            <dpostcode>269 01</dpostcode>
+            <dcountry>CZ</dcountry>
+            <dphone>720138733</dphone>
+            <birthdaycoupon>N</birthdaycoupon>
+            <items>
+                    <item id="47108">
+                        <quantity>1</quantity>
+                        <vat>21</vat>
+                        <vat_base>148.0165</vat_base>
+                        <unit_price>179.1000</unit_price>
+                        <total_vat_base>148.0165</total_vat_base>
+                        <total_price>179.1000</total_price>
+                        <discount>10.0000</discount>
+                        <variant_code></variant_code>
+                    </item>
+            </items>
+        </order>
+</orders>

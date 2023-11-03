@@ -1,0 +1,54 @@
+<form n:name="form">
+        <div class="Form-row">
+            <div class="TextField">
+                <label for="name" class="Form-label">{_pageStatic.meetingForm.name|noescape}<span class="Form-mandatory">*</span></label>
+                <input n:name="name" class="TextField-input">			
+            </div>
+        </div>
+        <div class="Form-row">
+            <div class="TextField">
+                <label for="surname" class="Form-label">{_pageStatic.meetingForm.surname|noescape}<span class="Form-mandatory">*</span></label>
+                <input n:name="surname" class="TextField-input">			
+            </div>
+        </div>
+       <div class="Form-row">
+            <div class="TextField">
+                <label for="email" class="Form-label">{_pageStatic.meetingForm.email|noescape}<span class="Form-mandatory">*</span></label>
+                <input n:name="email" class="TextField-input">			
+            </div>
+        </div>
+       <div class="Form-row">
+            <div class="TextField">
+                <label for="phone" class="Form-label">{_pageStatic.meetingForm.phone|noescape}<span class="Form-mandatory">*</span></label>
+                <input n:name="phone" class="TextField-input">			
+            </div>
+        </div>
+       <div class="Form-row">
+            <div class="TextField">
+                <label for="preferredDate" class="Form-label">{_pageStatic.meetingForm.preferredDate|noescape}</label>
+                <input n:name="preferredDate" class="TextField-input">			
+            </div>
+        </div>				
+        <div class="Form-row">
+            <div class="TextField">
+                <label for="note" class="Form-label">{_pageStatic.meetingForm.note|noescape}</label>
+                <textarea n:name="note" class="TextField-input TextField-input--multiline"></textarea>
+            </div>
+        </div>
+       <div class="Form-row">
+            <div class="CheckboxField">
+                <label>
+                    <input type="checkbox" n:name="wantNewsletter"> {_pageStatic.meetingForm.newsletter|noescape}
+                </label>
+            </div>
+        </div>
+
+	<div class="u-textCenter u-md-textLeft">
+		{_form.registration.label.personalData} {_form.registration.gdpr.link.text1} <a href="{plink Page:detail, url => 'gdpr'}" target="_blank">{_form.registration.gdpr.link.text2}</a>.				
+
+		<div class="Form-buttons u-mt--20 u-sm-mt--30">
+		  <input class="Button Button--arrow" n:name="submit" value="{_pageStatic.meetingForm.submit|noescape}">  
+		</div>
+	</div>
+
+</form>

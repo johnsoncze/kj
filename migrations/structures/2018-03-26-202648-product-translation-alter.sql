@@ -1,0 +1,1 @@
+ALTER TABLE `product_translation` ADD `pt_google_merchant_title` VARCHAR(255) NULL AFTER `pt_description_seo`;

@@ -1,0 +1,98 @@
+{layout '../../../Email/templates/@layout.latte'}
+
+{block content}
+<!--[if (mso)|(IE)]>
+<table class="layout" cellpadding="0" cellspacing="0" align="center" bgcolor="#FCFCFC">
+<![endif]-->
+
+<!--[if (mso)|(IE)]>
+<tr>
+    <td colspan="2" class="column" valign="top" style="width: 600px;">
+<![endif]-->
+
+{capture $title}{_opportunity.email.body.title}{/capture}
+{include header, title => $title}
+{capture $text}{_opportunity.email.body.description1}<br>{_opportunity.email.body.description2}{/capture}
+{include textBlock, text => $text, title => NULL}
+
+<!--[if (mso)|(IE)]>
+</td>
+</tr>
+<![endif]-->
+
+
+<!--[if (mso)|(IE)]>
+</table>
+<![endif]-->
+
+<!--[if (mso)|(IE)]>
+<table class="layout" cellpadding="0" cellspacing="0" align="center" bgcolor="#FCFCFC">
+<![endif]-->
+
+<!--[if (mso)|(IE)]>
+<tr>
+    <td colspan="2" class="column" valign="top" style="width: 600px;">
+<![endif]-->
+<div class="column" style="font-family: Arial, Tahoma, Georgia, Times, serif; float: left; width: 100%;">
+    <div class="spacing" style="margin: 0;">
+
+        <table width="100%" cellpadding="0" cellspacing="0" align="center">
+            <tr>
+                <td class="column" valign="top" style="width: 100%;" height="20"></td>
+            </tr>
+        </table>
+
+        <table width="100%" cellpadding="0" cellspacing="0" align="center" bgcolor="#FCFCFC">
+            <tr>
+                <td class="column" valign="top" style="width: 100%;">
+                    <h2 style="margin: 20px; font-family: Arial, Tahoma, Georgia, Times, serif; color: #3d3417; font-size: 20px; font-weight: 500; text-align: left; text-transform: uppercase;">
+                        {_opportunity.email.contactForm.information.title}
+                    </h2>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="column" valign="top" style="width: 100%;">
+                    <p style="margin: 0 20px 20px; font-family: Arial, Tahoma, Georgia, Times, serif; color: #3d3417; font-size: 14px; font-weight: 500; text-align: left;">
+                        {$opportunity->getFullName()}<br>
+                        {if $opportunity->getTelephone()}{$opportunity->getTelephone()}<br>{/if}
+                        {if $opportunity->getEmail()}{$opportunity->getEmail()}<br>{/if}
+                        <strong>{_opportunity.email.contactForm.body.prefferedContact.title}:</strong> {_$opportunity->getPreferredContactTranslationKey()}
+                    </p>
+                </td>
+            </tr>
+        </table>
+
+        <table width="100%" cellpadding="0" cellspacing="0" align="center" bgcolor="#FCFCFC">
+            <tr>
+                <td class="column" valign="top" style="width: 100%;">
+                    <p style="margin: 0 20px 20px; font-family: Arial, Tahoma, Georgia, Times, serif; color: #3d3417; font-size: 14px; font-weight: 500; text-align: left;">
+                        <strong>{_opportunity.email.contactForm.body.comment.title}:</strong> {fill $opportunity->getComment()}<br><br>
+                        {_opportunity.email.product.body.description4}
+                    </p>
+                </td>
+            </tr>
+        </table>
+
+        <table width="100%" cellpadding="0" cellspacing="0" align="center" bgcolor="#FCFCFC">
+            <tr>
+                <td class="column" valign="top" style="width: 100%;">
+                    <p style="margin: 0 20px 20px; font-family: Arial, Tahoma, Georgia, Times, serif; color: #3d3417; font-size: 14px; font-weight: 500; text-align: left; margin: 20px;">
+                        {_opportunity.email.product.body.description5}
+                    </p>
+                </td>
+            </tr>
+        </table>
+
+        <br>
+
+    </div>
+</div>
+<!--[if (mso)|(IE)]>
+</td>
+</tr>
+<![endif]-->
+
+<!--[if (mso)|(IE)]>
+</table>
+<![endif]-->

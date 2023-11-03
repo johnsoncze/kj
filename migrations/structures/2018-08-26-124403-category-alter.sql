@@ -1,0 +1,1 @@
+ALTER TABLE `category` ADD `cat_image_template` VARCHAR(50) NULL AFTER `cat_template`;

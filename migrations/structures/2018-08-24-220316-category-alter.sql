@@ -1,0 +1,1 @@
+ALTER TABLE `category` ADD `cat_category_slider` TINYINT(1) NOT NULL AFTER `cat_homepage_sort`, ADD INDEX (`cat_category_slider`);

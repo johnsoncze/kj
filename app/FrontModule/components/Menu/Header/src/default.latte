@@ -1,0 +1,230 @@
+<div class="Container">
+    <ul class="NavigationList">
+
+        {foreach $categories as $category}
+            {var subCategories = $category->getItems()}
+            <li class="NavigationList-item">
+                {if $subCategories}
+
+                    {*Mobile submenu toggle*}
+                    <button type="button" class="NavigationList-link u-sm-displayNone js-navigation-submenu-toggle">
+                        <svg role="img"
+                             class="NavigationList-itemArrow Icon u-sm-displayNone js-navigation-submenu-arrow-left">
+                            <use xlink:href="#symbol-arr-left"/>
+                        </svg>
+                        {$category->getCategory()->getName()}
+                        <svg role="img"
+                             class="NavigationList-itemArrow Icon u-sm-displayNone js-navigation-submenu-arrow-right">
+                            <use xlink:href="#symbol-arr-right"/>
+                        </svg>
+                    </button>
+
+                    <a href="{$category->getCategory()->getRelativeLink($control->getPresenter(), TRUE)}"
+                       class="NavigationList-link u-displayNone u-sm-displayFlex">
+                        {$category->getCategory()->getName()} <img src="/assets/front/images/menu_arrow.svg" class="NavigationList-icon">
+                    </a>
+                {else}
+                    <a href="{$category->getCategory()->getRelativeLink($control->getPresenter(), TRUE)}"
+                       class="NavigationList-link">
+                        {$category->getCategory()->getName()} <img src="/assets/front/images/menu_arrow.svg" class="NavigationList-icon">
+                    </a>
+                {/if}
+
+                {if $subCategories}
+
+                    {*Mobile submenu*}
+                    <div class="NavigationList-submenu u-sm-displayNone js-navigation-submenu">
+                        <ul class="NavigationList-submenuList u-mb--10">
+                            {foreach $subCategories as $subCategory}
+                                <li class="NavigationList-submenuItem">
+                                    <a href="{$subCategory->getCategory()->getRelativeLink($control->getPresenter(), TRUE)}"
+                                       class="NavigationList-submenuLink">
+                                        {$subCategory->getCategory()->getName()}
+                                    </a>
+                                </li>
+                            {/foreach}
+                        </ul>
+                        <a href="{$category->getCategory()->getRelativeLink($control->getPresenter(), TRUE)}"
+                           class="Link Link--lineBefore">
+                            {_header.menu.category.all.title}
+                            <span class="Link--hover"></span>
+                        </a>
+                    </div>
+
+                    {*Desktop submenu*}
+                    <div class="NavigationSubmenu u-displayNone u-sm-displayBlock">
+                        <div class="Container">
+                            <div class="Grid">
+								<div class="Grid-cell u-size10of12">
+			                    {* Another vairnt for cellections *}
+								{if $category->getCategory()->getId() == 3}
+									<div class="NavigationSubmenu-collections">
+										{foreach $subCategories as $subCategory}
+											{var $categoryLink = $subCategory->getCategory()->getRelativeLink($control->getPresenter(), TRUE)}
+
+											<div class="Grid-cell">
+
+												<div class="NavigationSubmenu-title NavigationSubmenu-title-collection">
+													<a href="{$categoryLink}"
+													   class="Link--noUnderline">
+														{$subCategory->getCategory()->getName()}
+													</a>
+												</div>
+											</div>
+										{/foreach}
+									</div>
+								{else}									
+									<div class="Grid">
+										{foreach $subCategories as $subCategory}
+											{var $categoryLink = $subCategory->getCategory()->getRelativeLink($control->getPresenter(), TRUE)}
+
+											<div class="Grid-cell u-size3of12">
+
+												<div class="NavigationSubmenu-title">
+													<a href="{$categoryLink}"
+													   class="Link--noUnderline">
+														{$subCategory->getCategory()->getName()}
+													</a>
+												</div>
+
+												{var $_subCategories = $subCategory->getItems()}
+												{var $groups = $categoryParameterGroups[$subCategory->getCategory()->getId()] ?? []}
+												{if $_subCategories || $groups}
+													<ul class="NavigationSubmenu-list">
+													  {* tohle jsou přidané položky v submenu prsteny - zasnubni a snubni prsteny. *}
+													  {if $subCategory->getCategory()->getId() == 6}
+														<li class="NavigationSubmenu-item">
+															<a href="/kategorie/zasnubni-prsteny"
+															   class="NavigationSubmenu-link">
+																Zásnubní prsteny
+															</a>
+														</li>
+														<li class="NavigationSubmenu-item">
+															<a href="/kategorie/snubni-prsteny"
+															   class="NavigationSubmenu-link">
+																Snubní prsteny
+															</a>
+														</li>
+													  {/if}
+														{foreach $_subCategories as $_subCategory}
+															<li class="NavigationSubmenu-item">
+																<a href="{$_subCategory->getCategory()->getRelativeLink($control->getPresenter(), TRUE)}"
+																   class="NavigationSubmenu-link">
+																	{$_subCategory->getCategory()->getName()}
+																</a>
+															</li>
+														{/foreach}
+														{foreach $groups as $group}
+															{php $group->setCategory($subCategory->getCategory())}
+															<li class="NavigationSubmenu-item">
+																<a href="{$group->getFrontendLink($linkGenerator)}"
+																   class="NavigationSubmenu-link">
+																	{$group->getName()}
+																</a>
+															</li>
+														{/foreach}
+													</ul>
+												{/if}
+
+											</div>
+										{/foreach}
+									</div>
+								{/if}
+								</div>
+
+								<div class="Grid-cell u-size2of12">
+									
+								</div>	
+							</div>
+
+									
+                        </div>
+                    </div>
+
+                {/if}
+            </li>
+
+            {if $subCategories}
+                <li class="NavigationBackdrop" aria-hidden="true"></li>
+            {/if}
+        {/foreach}
+
+        {foreach $pages as $page}
+            {var $subPages = $page->getSubPages()}
+
+                <li class="NavigationList-item">
+
+                    {if $subPages}
+                        {*Mobile submenu toggle*}
+                        <button type="button" class="NavigationList-link u-sm-displayNone js-navigation-submenu-toggle">
+                            <svg role="img"
+                                 class="NavigationList-itemArrow Icon u-sm-displayNone js-navigation-submenu-arrow-left">
+                                <use xlink:href="#symbol-arr-left"/>
+                            </svg>
+                            {$page->getName()}
+                            <svg role="img"
+                                 class="NavigationList-itemArrow Icon u-sm-displayNone js-navigation-submenu-arrow-right">
+                                <use xlink:href="#symbol-arr-right"/>
+                            </svg>
+                        </button>
+
+                        <a href="{$page->getFrontendLink($linkGenerator)}"
+                           class="NavigationList-link u-displayNone u-sm-displayFlex">
+                            {$page->getName()} <img src="/assets/front/images/menu_arrow.svg" class="NavigationList-icon">
+                        </a>
+                    {else}
+                        <a href="{$page->getFrontendLink($linkGenerator)}"
+                           class="NavigationList-link">
+                            {$page->getName()}
+                        </a>
+                    {/if}
+
+                    {if $subPages}
+                        <div class="NavigationList-submenu u-sm-displayNone js-navigation-submenu">
+                            <ul class="NavigationList-submenuList u-mb--10">
+                                {foreach $subPages as $subPage}
+                                    <li class="NavigationList-submenuItem">
+                                        <a href="{$subPage->getFrontendLink($linkGenerator)}"
+                                           class="NavigationList-submenuLink">{$subPage->getName()}
+                                        </a>
+                                    </li>
+                                {/foreach}
+                            </ul>
+                        </div>
+
+                        {*Desktop submenu*}
+                        <div class="NavigationSubmenu u-displayNone u-sm-displayBlock">
+                            <div class="Container">
+                                <div class="Grid">
+                                    {foreach $subPages as $subPage}
+                                        <div class="Grid-cell u-size3of12">
+                                            <div class="NavigationSubmenu-title">
+                                                <a href="{$subPage->getFrontendLink($linkGenerator)}"
+                                                   class="Link--noUnderline">
+                                                    {$subPage->getName()}
+                                                </a>
+                                            </div>
+                                        </div>
+                                    {/foreach}
+                                </div>
+                            </div>
+                        </div>
+                    {/if}
+
+                </li>
+        {/foreach}
+
+        <li role="separator"
+            class="NavigationList-item NavigationList-item--separator u-displayNone u-sm-displayBlock"></li>
+
+        <li class="NavigationList-item u-displayNone u-sm-displayBlock">
+            <a href="#" class="NavigationList-link Link--noUnderline js-searchBox-desktop-toggle">
+                <svg role="img" class="Icon Icon--offset">
+                    <use xlink:href="#symbol-search"/>
+                </svg>
+                {_header.menu.search.title}
+            </a>
+        </li>
+
+    </ul>
+</div>

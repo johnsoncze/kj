@@ -1,0 +1,58 @@
+{block contentAdmin}
+<div class="row">
+    <div class="col-xs-4">
+        <div class="jumbotron">
+            {if $newOrderCount->getCount()}
+                <h1 class="display-3">{$newOrderCount->getCount()}</h1>
+                <p class="lead">{_order.newOrder, $newOrderCount->getCount()}</p>
+                <hr class="my-4">
+
+                <p class="lead">
+                    <a class="btn btn-primary btn" href="{plink Order:default}?orderList-list-filter[state]={App\Order\Order::NEW_STATE}" role="button">Zobrazit <i class="fa fa-caret-right"></i></a>
+                </p>
+            {else}
+                <p class="lead">Žádná nová objednávka.</p>
+            {/if}
+        </div>
+    </div>
+    <div class="col-xs-4">
+        <div class="jumbotron">
+            {if $newDemandCount->getCount()}
+            <h1 class="display-3">{$newDemandCount->getCount()}</h1>
+            <p class="lead">{_demand.newDemand, $newDemandCount->getCount()}</p>
+            <hr class="my-4">
+
+            <p class="lead">
+                <a class="btn btn-primary btn" href="{plink Demand:default}?opportunityList-list-filter[state]={App\Opportunity\Opportunity::STATE_NEW}" role="button">Zobrazit <i class="fa fa-caret-right"></i></a>
+            </p>
+            {else}
+                <p class="lead">Žádná nová poptávka.</p>
+            {/if}
+        </div>
+    </div>
+    <div class="col-xs-4">
+        <div class="jumbotron">
+            {if $newStoreMeetingCount->getCount()}
+            <h1 class="display-3">{$newStoreMeetingCount->getCount()}</h1>
+            <p class="lead">{_opportunity.new.storeMeeting, $newStoreMeetingCount->getCount()}</p>
+            <hr class="my-4">
+
+            <p class="lead">
+                <a class="btn btn-primary btn" href="{plink StoreMeeting:default}?opportunityList-list-filter[state]={App\Opportunity\Opportunity::STATE_NEW}" role="button">Zobrazit <i class="fa fa-caret-right"></i></a>
+            </p>
+            {else}
+                <p class="lead">Žádná nová žádost o schůzku.</p>
+            {/if}
+        </div>
+    </div>
+</div>
+
+<div class="well info-box">
+    <i class="fa fa-envelope-o" aria-hidden="true"></i>
+    {if $newContactFormMessageCount->getCount() > 0}
+        <span>{$newContactFormMessageCount->getCount()}</span> {_contact.newMessage, $newContactFormMessageCount->getCount()}
+        <span class="pull-right"> <a href="{plink ContactForm:default}?contactFormMessageList-list-filter[state]={App\Opportunity\Opportunity::STATE_NEW}">Zobrazit <i class="fa fa-caret-right"></i></a></span>
+    {else}
+        Žádná nová zpráva z kontaktního formuláře.
+    {/if}
+</div>

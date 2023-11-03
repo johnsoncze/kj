@@ -1,0 +1,34 @@
+{var defaultAction = 'add'}
+{var action = $presenter->getAction()}
+
+{ifset $product}
+    <div class="text-right">
+        {if $product->isPublished() === TRUE}
+            <a href="{plink :Front:Product:detail, url => $product->getTranslation()->getUrl()}"
+               class="btn btn-default btn-xs"
+               target="_blank">Zobrazit produkt na frontendu <i class="fa fa-external-link"></i></a>
+        {else}
+            <i>Produkt není aktivní, není možné jej zobrazit na frontendu.</i>
+        {/if}
+    </div>
+{/ifset}
+
+<ul class="nav nav-tabs action {if $action === $defaultAction}menu-disabled{/if}">
+    <li id="{if $action === 'add'}add{else}edit{/if}"><a href="{if $action !== $defaultAction}{plink Product:edit, id => $product->getId()}{else}#{/if}" class="confirm-exit">Základní informace</a></li>
+    <li id="editParameter"><a href="{if $action !== $defaultAction}{plink Product:editParameter, id => $product->getId()}{else}#{/if}" class="confirm-exit">Parametry</a></li>
+    <li id="editVariant"><a href="{if $action !== $defaultAction}{plink Product:editVariant, id => $product->getId()}{else}#{/if}" class="confirm-exit">Varianty</a></li>
+    <li id="editRelated"><a href="{if $action !== $defaultAction}{plink Product:editRelated, id => $product->getId()}{else}#{/if}" class="confirm-exit">Související produkty</a></li>
+    <li id="editBatch"><a href="{if $action !== $defaultAction}{plink Product:editBatch, id => $product->getId()}{else}#{/if}" class="confirm-exit">Dávkové úpravy</a></li>
+    <li id="editComponent"><a href="{if $action !== $defaultAction}{plink Product:editComponent, id => $product->getId()}{else}#{/if}" class="confirm-exit">Komponenty</a></li>
+    <li id="editProductSearchEngine"><a href="{if $action !== $defaultAction}{plink Product:editProductSearchEngine, id => $product->getId()}{else}#{/if}" class="confirm-exit">Zbožové vyhledávače</a></li>
+</ul>
+<div class="p-b-20"></div>
+
+{block scriptBottom}
+    <script>
+        var actionId = '#{$action|noescape}';
+        //set active tab
+        $(actionId).addClass('active');
+        $(actionId + ' > a').attr('href', '#');
+    </script>
+{/block}

@@ -1,0 +1,57 @@
+{block content}
+<section class="PageHeader">
+    <div class="PageHeader-bg" style="background-image: url(/www/assets/front/images/layout/b-snubni-zasnubni.jpg);"></div>
+</section>
+
+<div class="Container Grid">
+	<div class="Grid-cell u-size12of12 u-mt--0">
+		{control breadcrumb}
+	</div>
+</div>
+
+<div class="Container Container--slim u-textCenter">
+	<h1 class="u-mt--25 u-mb--50 personalMeeting-header">{_pageStatic.meetingConfirm.title}</h1>
+
+    <div class="personalMeeting-text-wrapper u-mb--60">
+        <b>{_pageStatic.meetingConfirm.topText|noescape}</b><br /><br />
+        {_pageStatic.meetingConfirm.discount|noescape}<br /><br />
+		
+		<a class="Button Button--arrow" href="{plink Sign:up}">{_pageStatic.meetingConfirm.registration}</a>		
+   </div>
+	
+</div>
+
+<div class="Background Background--silver">
+    <div class="Container">
+        <div class="u-pb--45 u-xs-pb--110 u-sm-pb--80 u-md-pb--75 u-pt--40 u-md-pt--100 u-textCenter u-md-textLeft">
+            <div class="Grid personalMeeting-shop-text personalMeeting-shop-grid-center u-mb--40 u-md-mb--80">
+                <div class="Grid-cell u-size5of12 u-sm-max-size2of2 u-mb--30 u-md-mb--0">
+					<h2 class="personalMeeting-header">{_pageStatic.meetingConfirm.storeTitle|noescape}</h2>
+					{$parameters['project']['address']}<br />
+					{_pageStatic.meetingConfirm.addressBuilding|noescape}<br /><br />					
+					
+					<b>{control openingHours:today}</b><br /><br />
+					
+					<a class="Button Button--arrow" href="{plink Page:detail, url => 'prodejna'}">{_pageStatic.meetingConfirm.aboutStore}</a>
+                </div>
+                <div class="Grid-cell u-size7of12 u-sm-max-size2of2">
+					<img src="/assets/front/images/layout/osobni-schuzka-1.jpg" class="u-pl--0 u-md-pl--40" />
+                </div>
+            </div>			
+			
+            <div class="Grid personalMeeting-shop-text personalMeeting-shop-grid-center u-mb--20 u-md-md--60">
+                <div class="Grid-cell u-size7of12 u-sm-max-size2of2 personalMeeting-shop-order-1">
+					<img src="/assets/front/images/layout/osobni-schuzka-3.jpg" class="u-pr--0 u-md-pr--40" />
+                </div>
+                <div class="Grid-cell u-size5of12 u-sm-max-size2of2 personalMeeting-shop-order-2 u-mb--30 u-md-mb--0">
+					<h2 class="personalMeeting-header">{_pageStatic.meetingConfirm.customTitle}</h2>
+                    {_pageStatic.meetingConfirm.customText}<br /><br />
+					<a class="Button Button--arrow" href="{plink Page:detail, url => 'zakazkova-vyroba'}">{_pageStatic.meetingConfirm.customBtn}</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+				

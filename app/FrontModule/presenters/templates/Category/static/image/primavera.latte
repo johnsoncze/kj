@@ -1,0 +1,61 @@
+{layout 'partials/@layout.latte'}
+
+{block templateContent}
+
+{capture $motto}{_collection.primavera.motto}{/capture}
+{include header,
+image => '/www/upload/category/28/1920_470_primavera.jpg',
+hidebread => 1,
+title => $title,
+motto => $motto,
+textColorWhite => TRUE}
+
+{capture $text}{_collection.primavera.description1}{/capture}
+
+{include newHeaderForCollection}
+
+{include mainTextBlock,
+category => $category,
+image => '/www/assets/front/user_content/images/collection/primavera/primavera-300x470.png',
+text => $text}
+
+<section class="Background">
+    <div class="Collection-detail-items Container">
+        <div class="Grid u-pb--90 u-sm-pb--120">
+
+            {capture $text}{_collection.primavera.description2}{/capture}
+            {include textBlockCell, text => $text}
+
+            {include productBlockCell, products => $control->getRepresentativeProducts(2)}
+
+            {include productBlockCell, products => $control->getRepresentativeProducts(2, 2)}
+
+            {capture $text}{_collection.primavera.description3}{/capture}
+            {include textBlockCell, text => $text}
+
+            {capture $text}{_collection.primavera.description4}{/capture}
+            {include textBlockCell, text => $text}
+
+            {include productBlockCell, products => $control->getRepresentativeProducts(2, 4)}
+
+            {include productBlockCell, products => $control->getRepresentativeProducts(2, 6)}
+
+            {capture $text}{_collection.primavera.description5}{/capture}
+            {include textBlockCell, text => $text}
+
+            {capture $text}{_collection.primavera.description6}{/capture}
+            {include textBlockCell, text => $text}
+
+            {include productBlockCell, products => $control->getRepresentativeProducts(2, 8)}
+
+            {include productBlockCell, products => $control->getRepresentativeProducts(2, 10)}
+
+            {capture $text}{_collection.primavera.description7}{/capture}
+            {include textBlockCell, text => $text}
+
+            {include ctaBlock, category => $category}
+
+        </div>
+
+    </div>
+</section>

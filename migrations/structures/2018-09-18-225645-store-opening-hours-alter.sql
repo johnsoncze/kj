@@ -1,0 +1,1 @@
+ALTER TABLE `store_opening_hours` CHANGE `soh_day` `soh_day` VARCHAR(15) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;

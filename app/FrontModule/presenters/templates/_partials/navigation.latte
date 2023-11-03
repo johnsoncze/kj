@@ -1,0 +1,60 @@
+<nav class="Navigation js-navigation">
+    <div class="NavigationHeader u-sm-displayNone">
+        <div class="NavigationHeader-item NavigationHeader-item--logo">
+            <a href="{plink Homepage:default}" class="NavigationHeader-logo">
+                <img
+                        src="/assets/front/images/JK-logo-claim-web.svg"
+                        width="110"
+                        height="44"
+                        alt="Jitka Kudláčková Jewels"
+                />
+            </a>
+        </div>
+
+        <div class="NavigationHeader-item NavigationHeader-item--controls">
+            <div class="NavigationHeader-control">
+                <button type="button" class="IconLink js-navigation-toggle">
+                    <svg role="img" class="Icon Icon--medium IconLink-icon">
+                        <use xlink:href="#symbol-menu" />
+                    </svg>
+                    <span class="IconLink-text">{_header.menu.menu.title}</span>
+                </button>
+            </div>
+            <div class="NavigationHeader-control">
+                <button type="button" class="IconLink js-navigation-toggle">
+                    <svg role="img" class="Icon Icon--medium IconLink-icon">
+                        <use xlink:href="#symbol-cancel" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    {control headerMenu}
+
+    <div class="NavigationContact u-sm-displayNone">
+        <div class="Container">
+            <div class="u-textLetterSpacing--large u-textUppercase u-mb--20">{_header.contact.title}</div>
+            <a href="tel:{php echo str_replace(['+', ' '], ['00', ''], $parameters['project']['telephone'])}" class="NavigationContact-link u-mb--10">
+                <svg role="img" class="Icon">
+                    <use xlink:href="#symbol-phone" />
+                </svg>
+                <br />
+                {$parameters['project']['telephone']}
+            </a>
+            <a href="mailto:{$parameters['project']['email']}" class="NavigationContact-link u-mb--20">
+                <svg role="img" class="Icon">
+                    <use xlink:href="#symbol-envelope" />
+                </svg>
+                <br />
+                {$parameters['project']['email']}
+            </a>
+            <div>
+                <a href="/stranka/prodejna" title="Prodejna" class="Header-link">
+                {control openingHours:today}
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+{include '../_partials/stripChristmas.latte'}

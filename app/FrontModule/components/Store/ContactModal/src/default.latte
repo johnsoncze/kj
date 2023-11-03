@@ -1,0 +1,44 @@
+<div class="pb-overlay"></div>
+<div id="contactModal" class="pb-popup-container Opportunity-form u-textLeft">
+    <div class="pb-popup pb-popup--padding-wide">
+        <div class="pb-popup-heading">{_store.contact.modal.title}</div>
+        <div class="pb-popup-content">
+            <div class="Grid">
+                <div class="Grid-cell u-xs-size12of12 u-sm-size12of12 u-md-size6of12 u-mt--20">
+                    <div class="Grid">
+                        <div class="Grid-cell u-size2of2">
+                            <h3 class="Timeline-subtitle u-mt--0 u-mb--10">{_pageStatic.contact.address.title}</h3>
+                            <p class="Timeline-desc"><b>{$parameters['project']['name']}</b><br>
+                                {$parameters['project']['address']}<br><br>
+                                Areál BB Centrum - www.bbcentrum.cz<br>
+                                Obchodní pasáž budovy Filadelfie
+                                <br><br>
+                                <svg role="img" class="Icon u-colorGold"><use xlink:href="#symbol-phone"></use></svg>
+                                <span class="Timeline-desc">{$parameters['project']['telephone']}</span>
+                                <span class="u-pl--10"></span>
+                                <svg role="img" class="Icon u-colorGold"><use xlink:href="#symbol-envelope"></use></svg>
+                                <span class="Timeline-desc">{$parameters['project']['email']}</span>
+                            </p>
+                        </div>
+                        <div class="Grid-cell u-size2of2">
+                            <h3 class="Timeline-subtitle u-mt--0 u-mb--10">{_pageStatic.contact.openingHours.title}</h3>
+                            {control openingHours:list}
+                        </div>
+                    </div>
+                </div>
+                <div class="Grid-cell u-xs-size12of12 u-sm-size12of12 u-md-size6of12 u-mt--20">
+                    {control map}
+                </div>
+            </div>
+        </div>
+        <div class="pb-popup-close js-popup-close">
+            <div class="SearchBoxHeader-control">
+                <button type="button" class="IconLink ">
+                    <svg role="img" class="Icon Icon--medium IconLink-icon">
+                        <use xlink:href="#symbol-cancel"></use>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

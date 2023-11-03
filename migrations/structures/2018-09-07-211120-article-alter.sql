@@ -1,0 +1,1 @@
+ALTER TABLE `article` ADD UNIQUE (`art_language_id`, `art_url`);

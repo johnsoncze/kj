@@ -1,0 +1,187 @@
+.CategoryBoxTriple {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+    margin-bottom: 0;
+
+    @media @media-lg-min {
+        position: relative;
+        // overflow: hidden;
+    }
+}
+
+.CategoryBoxTriple-mediaContainer {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 40px;
+    margin-bottom: 1.75rem;
+
+    @media @media-sm-min {
+        padding-bottom: 60px;
+        margin-bottom: 3.5rem;
+    }
+
+    @media @media-lg-min {
+        padding-bottom: 110px;
+    }
+}
+
+.CategoryBoxTriple-media {
+    position: relative;
+    width: 140px;
+    height: 180px;
+    border-radius: @border-radius-large;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: @color-brown-dark;
+
+    @media @media-sm-min {
+        width: 240px;
+        height: 325px;
+    }
+
+    @media @media-lg-min {
+        width: 340px;
+        height: 460px;
+        border-radius: @border-radius-larger;
+    }
+}
+
+.CategoryBoxTriple-media--top {
+    width: 140px;
+    height: 150px;
+    top: 110px;
+    left: -40px;
+    opacity: 0.9;
+    margin-right: -20px;
+    box-shadow: 0 15px 40px fade(@color-black, 15%);
+
+    @media @media-sm-min {
+        width: 230px;
+        height: 260px;
+        top: 200px;
+        left: -60px;
+    }
+
+    @media @media-lg-min {
+        width: 310px;
+        height: 340px;
+        top: 290px;
+        left: -60px;
+    }
+}
+
+.CategoryBoxTriple-media--bottom {
+    right: -5px;
+    margin-left: 0;
+
+    &:after {
+        content: "";
+        position: absolute;
+        left: 40px;
+        top: 200px;
+        width: 40px;
+        height: 40px;
+        background: url('/images/layout/produkt-triple-box-diamant.jpg') 0 0 no-repeat;
+        background-size: contain;
+    }
+
+    @media @media-sm-min {
+        right: -40px;
+        margin-left: -20px;
+
+        &:after {
+            left: 40px;
+            top: 360px;
+            width: 79px;
+            height: 83px;
+        }
+    }
+
+    @media @media-lg-min {
+        right: -46px;
+
+        &:after {
+            left: 110px;
+            top: 520px;
+        }
+    }
+}
+
+.CategoryBoxTriple-note {
+    max-width: 100%;
+
+    @media @media-md-min {
+        max-width: 26rem;
+    }
+
+    @media @media-lg-min {
+        position: absolute;
+        top: unit((70), px);
+        left: calc(50% + 108px);
+        width: 15rem;
+        color: @color-white;
+    }
+}
+
+.CategoryBoxTriple-description {
+    max-width: 100%;
+    margin-top: 40px;
+
+    @media @media-sm-min {
+        margin-top: 60px;
+    }
+
+    @media @media-md-min {
+        max-width: 26rem;
+    }
+
+    @media @media-lg-min {
+        position: absolute;
+        margin-top: 0;
+        top: unit((110 + 250), px);
+        left: calc(50% - 110px + 108px);
+        max-width: 15rem;
+        color: @color-white;
+    }
+}
+
+.CategoryBoxTriple-title {
+    margin-bottom: 0.75em;
+    font-weight: 400;
+    font-size: @font-size-large;
+    font-family: @font-secondary;
+    color: @color-brown-dark;
+    line-height: 1.9em;
+    //letter-spacing: 0.12em;
+
+    @media @media-lg-min {
+        text-transform: uppercase;
+        // .//letter-spacing(180);
+
+        margin-bottom: 1.5em;
+        font-size: @font-size-base;
+        color: inherit;
+    }
+}
+
+.CategoryBoxTriple-text {
+    line-height: 1.8em;
+    font-size: @font-size-small;
+    color: @color-brown-dark-alpha-70;
+
+    @media @media-lg-min {
+        line-height: 2.2em;
+        font-size: @font-size-smallest;
+        color: @color-white-alpha-70;
+    }
+}
+
+.CategoryBoxTriple-title--dark {
+    color: @color-brown-dark;
+}
+
+.CategoryBoxTriple-text--dark {
+    color: @color-brown-dark-alpha-70;
+}

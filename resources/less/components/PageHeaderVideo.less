@@ -1,0 +1,69 @@
+.PageHeaderVideo {
+    .PageHeader();
+
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.PageHeaderVideo-tall {
+    .PageHeader-tall();
+
+    padding-bottom: 80px;
+
+    @media @media-xs-min {
+        height: 320px;
+        padding-bottom: 0;
+    }
+
+    @media @media-sm-min {
+        height: 480px;
+    }
+
+    @media @media-md-min {
+        height: 540px;
+    }
+
+    @media @media-lg-min {
+        height: 834px;
+    }
+}
+
+.PageHeaderVideo video {
+    display: none;
+
+    @media @media-md-min {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        display: block;
+        min-width: 100%;
+        min-height: 100%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.PageHeaderVideo.PageHeader--tall {
+    .PageHeaderVideo-tall();
+}
+
+.PageHeaderVideo.PageHeader--light .Text-title {
+    .PageHeader-light();
+
+    position: relative;
+}
+
+.PageHeaderVideo.PageHeader--tall .Text-description {
+    .PageHeader-tall-textDescription();
+}
+
+.PageHeaderVideo-link.PageHeaderVideo-link--bottom {
+    .PageHeader-linkBottom();
+
+    position: relative;
+}
+
+.PageHeaderVideo br {
+    .PageHeader-br();
+}

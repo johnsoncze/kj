@@ -1,0 +1,1 @@
+ALTER TABLE `category` ADD `cat_display_package_image` TINYINT(1) UNSIGNED NULL DEFAULT '0' AFTER `cat_description_og`; 

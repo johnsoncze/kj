@@ -1,0 +1,28 @@
+<section class="PageHeader">
+    <div class="PageHeader-bg" style="background-image: url(/www/assets/front/images/layout/jk-prodejni-pult.jpg);"></div>
+    <div class="Container Grid">
+        <div class="Grid-cell u-size12of12">
+            {control breadcrumb}
+
+            <h1 class="Text-title u-mt--25 u-md-mb--0">{$page->getName()}</h1>
+        </div>
+    </div>
+</section>
+
+<section class="Background">
+    <div class="Container u-textCenter u-mt--20 u-sm-mt--0">
+
+        <div class="Grid u-pt--90 u-pb--90 u-justifyContentCenter">
+            {foreach $childPages as $childPage}
+                <div class="Grid-cell u-xs-size12of12 u-sm-size6of12 u-md-size4of12">
+                    <a href="{$childPage->getFrontendLink($linkGenerator)}" class="Page-signpost">
+                        <div class="u-borderRoundedLarge" style="background-image: url('/www/assets/front/images/layout/zlatnicka-dilna-ctime-zlatnicke-remeslo-2.jpg')">
+                            <h3 class="Text-title u-p--40 u-textColor--white">{$childPage->getName()}</h3>
+                        </div>
+                    </a>
+                </div>
+            {/foreach}
+        </div>
+
+    </div>
+</section>

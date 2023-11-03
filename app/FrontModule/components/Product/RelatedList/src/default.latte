@@ -1,0 +1,16 @@
+{if $products}
+    <section class="Background">
+        <div class="Related">
+
+{*            <div class="Container u-pt--90 u-sm-pt--100 u-md-pt--120 u-lg-pt--160 u-pb--30 u-sm-pb--50 u-md-pb--90">*}
+{*                <div class="Related-title-small">{_product.discovery.title}</div>*}
+{*                <h2 class="Related-title u-mt--45">{_product.related.$type.title}</h2>*}
+{*                <p class="Related-desc">{_product.related.$type.description}</p>*}
+                <div class="Grid">
+                    {control productList}
+                </div>
+{*            </div>*}
+
+        </div>
+    </section>
+{/if}

@@ -1,0 +1,1 @@
+ALTER TABLE `product` ADD `p_new_until_to` DATE NULL DEFAULT NULL AFTER `p_is_new`;

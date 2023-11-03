@@ -1,0 +1,99 @@
+/* PB popups */
+
+.pb-popup {
+    position: absolute;
+    left: 50%;
+    top: 10%;
+    height: 500px;
+    max-width: 96%;
+    width: 480px;
+    transform: translateX(-50%);
+    background-color: @color-white;
+    z-index: @depth-popup;
+    display: none;
+    margin-bottom: 50px;
+
+    @media @media-sm-min {
+    }
+}
+
+.pb-popup-container .pb-popup {
+    display: none;
+}
+.pb-popup-container .pb-popup.is-open {
+    display: block;
+}
+
+.pb-popup.pb-popup--padding-wide {
+    width: 1090px;
+}
+
+.pb-popup-heading {
+    background: @color-white;
+    margin-right: 40px;
+    padding: 23px 40px 12px;
+    padding-right: 70px;
+    border-bottom: 1px solid @color-gray;
+    text-transform: uppercase;
+    //letter-spacing: 0.22em;
+    font-size: @font-size-large;
+    color: @color-brown-dark;
+    font-weight: 400;
+    line-height: 1.5em;
+
+    @media @media-sm-min {
+        font-size: @font-size-larger;
+        line-height: 1.9em;
+    }
+
+}
+
+.pb-popup-content {
+    margin-top: 0;
+    padding: 20px 30px;
+    background: @color-white;
+    font-size: @font-size-small;
+}
+
+.pb-popup .pb-popup-close {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    cursor: pointer;
+    padding: 9px 0;
+    width: auto;
+    cursor: pointer;
+
+    .IconLink-icon {
+        color: @color-gold;
+    }
+
+    &:hover {
+        opacity: 0.7;
+    }
+
+    &.close:before,
+    &.close::after {
+        background: @color-white;
+    }
+}
+
+/* PB popups -- overlay */
+
+.pb-overlay {
+    position: fixed;
+    z-index: @depth-popup-overlay;
+    left: 0;
+    top: 0;
+    right: 0;
+    background: fade(black, 60%);
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+}
+
+.pb-overlay.show {
+    visibility: visible;
+    bottom: 0;
+    opacity: 1;
+}

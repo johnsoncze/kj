@@ -1,0 +1,7 @@
+{$telephone}
+{if $openingHours}
+    {_store.openingHours.today} {$openingHours->getOpeningTime()|date:"H:i"}-{$openingHours->getClosingTime()|date:"H:i"}
+{/if}
+
+{$email}
+{_contact.response.time}

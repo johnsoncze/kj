@@ -1,0 +1,112 @@
+{block content}
+
+<style>
+    .mybannerbtn {
+        background-color: #3d3417;
+        color: #fff;
+        padding: 11px 17px;
+        text-decoration: none;
+    }
+
+    .mybannerbtn:hover {
+        background-color: #be9f57;
+    }
+</style>
+
+<div class="b" style="background: #f8f1ea;">
+    <div class="Container b__container">
+        <div class="b__content u-textCenter u-md-textRight u-mb--10">
+            <h2 class="b__title Heading">MIMOŘÁDNÉ VÁNOČNÍ<br class="u-displayNone u-xs-displayBlock"> 15% ZVÝHODNĚNÍ</h2>
+            <p class="b__subtitle u-textSecondary u-textUppercase">na nákup šperků a&nbsp;hodinek<br class="u-displayNone u-xs-displayBlock"> pro registrované zákazníky</p>
+            <p class="u-mb-0"><b>Pro <a href="/ucet/prihlaseni"><u>registrované zákazníky</u></a> jsme spustili<br class="u-displayNone u-xs-displayBlock"> oblíbenou vánoční akci: cenové zvýhodnění 15&nbsp;%.</b><br class="u-displayNone u-xs-displayBlock"> Využijte speciální příležitost k&nbsp;nákupu šperků&nbsp;JK či hodinek a&nbsp;potěšte<br class="u-displayNone u-xs-displayBlock"> sebe i&nbsp;své blízké. <a href="/katalogy/2022" target="_blank">Inspirujte se v&nbsp;našem novém katalogu.</a></p>
+            <a href="/ucet/prihlaseni" class="mybannerbtn">REGISTROVAT SE</a>
+        </div>
+    </div>
+
+    <picture class="b__bg">        
+        <source media="(max-width: 991px)" srcset="{$baseUrl}/assets/front/images/layout/b-zvyhodneni-mobile.jpg">
+        <source media="(min-width: 992px)" srcset="{$baseUrl}/assets/front/images/layout/b-zvyhodneni.jpg">
+        <img src="{$baseUrl}/assets/front/images/layout/b-zvyhodneni.jpg" alt="" loading="lazy">
+    </picture>  
+
+</div>
+
+{include '../_partials/listaZarukyDark.latte'}
+
+<section class="GetToKnow">
+    <div class="GetToKnow-item GetToKnow-item--bg1">
+    </div>
+    <div class="GetToKnow-item GetToKnow-item--text">
+        <div class="GetToKnow-content GetToKnow-content--right">
+            <h2 class="GetToKnow-title Heading Heading--section">
+                <span class="Heading-incentive">{_homepage.getKnow.story.title}</span> {_homepage.getKnow.story.subTitle}
+            </h2>
+            <p class="GetToKnow-text u-colorBrownDarkTransparent u-textLineHeight--large">
+                {_homepage.getKnow.story.description|noescape}
+            </p>
+            <a class="Link Link--lineBefore" href="{plink Page:detail, url => 'o-jk'}">{_homepage.getKnow.story.anchor}<span class="Link--hover"></span></a>
+        </div>
+    </div>
+    <div class="GetToKnow-item GetToKnow-item--text u-pb--40 u-sm-pb--60">
+        <div class="GetToKnow-content GetToKnow-content--left">
+            <h2 class="GetToKnow-title Heading Heading--section">
+                <span class="Heading-incentive">{_homepage.getKnow.philosophy.title}</span> {_homepage.getKnow.philosophy.design}, <br>{_homepage.getKnow.philosophy.craft} <br>{_homepage.getKnow.philosophy.materials}
+            </h2>
+            <p class="GetToKnow-text u-colorBrownDarkTransparent u-textLineHeight--large u-mb--0">
+                {_homepage.getKnow.philosophy.description|noescape}
+            </p>
+        </div>
+    </div>
+    <div class="GetToKnow-item GetToKnow-item--bg2 u-sm-none">
+        <a class="GetToKnow-link Link Link--imgBlock" href="{plink Page:detail, url => 'design-vyroba'}"><span class="Link-inner Link--lineBefore">{_homepage.getKnow.philosophy.workshopAnchor}<span class="Link--hover"></span></span></a>
+        <a class="GetToKnow-link Link Link--imgBlock" href="{plink Page:detail, url => 'zakazkova-vyroba'}"><span class="Link-inner Link--lineBefore">{_homepage.getKnow.philosophy.productionAnchor}<span class="Link--hover"></span></span></a>
+    </div>
+    <div class="GetToKnow-link-xs u-pb--20">
+    <a class="Link" href="{plink Page:detail, url => 'design-vyroba'}"><span class="Link-inner Link--lineBefore">{_homepage.getKnow.philosophy.workshopAnchor}<span class="Link--hover"></span></span></a><br>
+    <a class="Link" href="{plink Page:detail, url => 'zakazkova-vyroba'}"><span class="Link-inner Link--lineBefore">{_homepage.getKnow.philosophy.productionAnchor}<span class="Link--hover"></span></span></a>
+</section>
+
+{define bannerCarousel}
+    <div class="BannerCarousel-item">
+        <div class="Container">
+            <div class="BannerCarousel-content">
+                <div n:ifset="$subtitle1" class="BannerCarousel-subTitleUp {$align} {$color} u-mt--10  u-textUppercase">
+                    {$subtitle1}
+                </div>
+                <div class="BannerCarousel-title {$align} {$color} Heading Heading--section u-mb--20 u-sm-mb--30">
+                  {$title}
+                </div>
+                <div class="BannerCarousel-subTitle BannerCarousel-subTitleLower u-colorGold u-textUppercase ">
+                  {$subtitle2}
+                  <div class="BannerCarousel-subTitle u-colorDarkGreen u-textUppercase ">
+                    {$subtitle3}
+                  </div>
+                </div>
+            </div>
+        </div>
+        <picture>
+            <source media="(min-width: 620px)" srcset="{$bannerDesktop}" />
+            <source srcset="{$bannerMobile}" />
+            <img
+                    class="BannerCarousel-image"
+                    src="{$bannerDesktop}"
+                    {if $lazy}loading="lazy"{/if}
+            />
+        </picture>
+        <div n:ifset="$url" class="BannerCarousel-product">
+            <a href="{$url}" class="BannerCarousel-productImage Link--noUnderline">
+                <img
+                        src="{$bannerForegroundImage}"
+                        alt="{$bannerForegroundImageDescription}"
+                        {if $lazy}loading="lazy"{/if}
+                />
+            </a>
+            <div class="BannerCarousel-productText u-displayNone u-md-displayBlock">
+                <a href="{$url}" class="Link Link--lineBefore">
+                    {$bannerForegroundImageDescription}
+                    <span class="Link--hover"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+{/define}

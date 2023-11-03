@@ -1,0 +1,29 @@
+<section class="PageHeader">
+    <div class="PageHeader-bg" style="background-image: url({$backgroundImage});"></div>
+    <div class="Container Grid">
+        <div class="Grid-cell u-size12of12">
+            {control breadcrumb}
+
+            <h1 class="Text-title u-mt--50 u-md-mb--0">{$page->getName()}</h1>
+        </div>
+    </div>
+</section>
+{*
+<div class="Container Container--slimer">
+    <div class="u-mb--20 u-md-mb--50">
+        {control articleCategoryList}
+    </div>
+</div>
+    *}
+
+<section>
+    <div class="Container Container--wide">
+        <div class="u-mb--20 u-md-mb--50 u-justifyContentCenter u-textCenter">
+            {control articleList:List}
+        </div>
+
+        <div class="Grid u-mb--70 u-md-mb--110 u-alignItemsBaseline">
+            <div class="Grid-cell u-size3of3 u-textCenter">{control pagination}</div>
+        </div>
+    </div>
+</section>

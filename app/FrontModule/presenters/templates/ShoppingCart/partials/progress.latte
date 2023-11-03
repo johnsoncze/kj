@@ -1,0 +1,43 @@
+<div class="Basket-progress Background Background--gray-lighter u-pt--40 u-pb--35 u-xs-pt--65 u-md-pt--50 u-md-pb--25">
+    <div class="Container Container--slim">
+        <div class="Grid u-textCenter">
+            <div class="Grid-cell u-size3of12 u-sm-size3of12">
+                <div n:class="'Basket-progress-item', 'Basket-progress-item--1',$activeStep===1? 'Basket-progress-item--active'">
+                    <a n:href="ShoppingCart:step1" n:tag-if="$activeStep>1" class="Basket-progress-link">
+                        <span class="Basket-progress-step">1</span>
+                        <span class="Basket-progress-title">{_shopping-cart.step.step1.title}</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="Grid-cell u-size3of12 u-sm-size3of12">
+                <div n:class="'Basket-progress-item', 'Basket-progress-item--2', $activeStep>=2? 'Basket-progress-item--active'">
+                    <a n:href="ShoppingCart:step2" n:tag-if="$activeStep>2" class="Basket-progress-link">
+                        <span class="Basket-progress-step">2</span>
+                        <span class="Basket-progress-title">{_shopping-cart.step.step2.title}</span>
+                    </a>
+                </div>
+                
+            </div>
+
+            <div class="Grid-cell u-size3of12 u-sm-size3of12">
+                <div n:class="'Basket-progress-item', 'Basket-progress-item--2', $activeStep>=3? 'Basket-progress-item--active'">
+                    <a  n:href="ShoppingCart:step3" n:tag-if="$activeStep>3"  class="Basket-progress-link">
+                        <span class="Basket-progress-step">3</span>
+                        <span class="Basket-progress-title">{_shopping-cart.step.step3.title}</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="Grid-cell u-size3of12 u-sm-size3of12">
+                <div  n:class="'Basket-progress-item', 'Basket-progress-item--3', $activeStep==4? 'Basket-progress-item--active'">
+                    <a n:tag-if="false" class="Basket-progress-link">
+                        <span class="Basket-progress-step">4</span>
+                        <span class="Basket-progress-title">{_shopping-cart.step.step3Recapitulation.title}</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

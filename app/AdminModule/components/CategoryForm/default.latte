@@ -1,0 +1,161 @@
+<form n:name="form" class="exit-watcher">
+
+    <div class="row">
+        <div class="col-xs-12 text-right">
+            {input showOnHomepage}
+            {input top}
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="form-group">
+        <div class="row">
+            <div class="col-xs-6">
+                {label language}
+            </div>
+            <div class="col-xs-6 text-right">
+                {if $categoryEntity === NULL}
+                    <a href="{plink Category:add}" class="confirm-exit">Vybrat jiný jazyk</a>
+                {/if}
+            </div>
+        </div>
+        {input language}
+    </div>
+    <div class="form-group">
+        <div class="row">
+            <div class="col-xs-9">
+                {label name}
+                {input name}
+            </div>
+            <div class="col-xs-3">
+                {label status}
+                {input status}
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        {label parentCategoryId}
+        {input parentCategoryId}
+    </div>
+    {control form-urlForm}
+
+    <div class="form-group">
+        <div class="row">
+            <div class="col-xs-4 mb-3">
+                <div class="b-g p-10">
+                    {label generalImage/}
+                    {input generalImage}
+
+                    {if $categoryEntity instanceof \App\Category\CategoryEntity && $categoryEntity->getGeneralImage()}
+                        <hr>
+                        {capture $link}{link deleteGeneralImage!, id => $categoryEntity->getId()}{/capture}
+                        {include image, photo => $categoryEntity->getGeneralImage(), folder => $categoryEntity->getUploadFolder(), link => $link}
+                    {/if}
+                </div>
+            </div>
+            <div class="col-xs-4 mb-3">
+                <div class="b-g p-10">
+                    {label thumbnailImage/}
+                    {input thumbnailImage}
+
+                    {if $categoryEntity instanceof \App\Category\CategoryEntity && $categoryEntity->getMenuImage()}
+                        <hr>
+                        {capture $link}{link deleteThumbnailImage!, id => $categoryEntity->getId()}{/capture}
+                        {include image, photo => $categoryEntity->getMenuImage(), folder => $categoryEntity->getUploadFolder(), link => $link}
+                    {/if}
+                </div>
+            </div>
+            <div class="col-xs-4 mb-3">
+                <div class="b-g p-10">
+                    {label subcategoryImage/}
+                    {input subcategoryImage}
+
+                    {if $categoryEntity instanceof \App\Category\CategoryEntity && $categoryEntity->getSubcategoryImage()}
+                        <hr>
+                        {capture $link}{link deleteSubcategoryImage!, id => $categoryEntity->getId()}{/capture}
+                        {include image, photo => $categoryEntity->getSubcategoryImage(), folder => $categoryEntity->getUploadFolder(), link => $link}
+                    {/if}
+                </div>
+            </div>				
+        </div>
+				<br />
+        <div class="row">
+            <div class="col-xs-6">
+                <div class="b-g p-10">
+                    {label generalImageDesktop/}
+                    {input generalImageDesktop}
+
+                    {if $categoryEntity instanceof \App\Category\CategoryEntity && $categoryEntity->getGeneralImageDesktop()}
+                        <hr>
+                        {capture $link}{link deleteGeneralImageDesktop!, id => $categoryEntity->getId()}{/capture}
+                        {include image, photo => $categoryEntity->getGeneralImageDesktop(), folder => $categoryEntity->getUploadFolder(), link => $link}
+                    {/if}
+                </div>
+            </div>
+            <div class="col-xs-6">
+                <div class="b-g p-10">
+                    {label generalImageMobile/}
+                    {input generalImageMobile}
+
+                    {if $categoryEntity instanceof \App\Category\CategoryEntity && $categoryEntity->getGeneralImageMobile()}
+                        <hr>
+                        {capture $link}{link deleteGeneralImageMobile!, id => $categoryEntity->getId()}{/capture}
+                        {include image, photo => $categoryEntity->getGeneralImageMobile(), folder => $categoryEntity->getUploadFolder(), link => $link}
+                    {/if}
+                </div>
+            </div>
+				
+        </div>
+    </div>
+
+    {if $categoryEntity instanceof \App\Category\CategoryEntity && $categoryEntity->getParentCategoryId() == 3}
+        {var $defaultControls = ['language', 'name', 'status', 'parentCategoryId', 'submit', 'showOnHomepage', 'top', 'generalImage', 'thumbnailImage', 'generalImageDesktop', 'generalImageMobile', 'subcategoryImage', 'promoArticleId1', 'promoArticleId2', 'promoArticleId3']}
+    {else}
+        {var $defaultControls = ['language', 'name', 'status', 'parentCategoryId', 'submit', 'showOnHomepage', 'top', 'generalImage', 'thumbnailImage', 'generalImageDesktop', 'generalImageMobile', 'subcategoryImage', 'description', 'promoArticleId1', 'promoArticleId2', 'promoArticleId3']}
+    {/if}
+    {foreach $form->getComponents() as $c}
+        {if $c instanceof \Nette\Forms\IControl && !in_array($c->getName(), $defaultControls)}
+            <div class="form-group">
+                {label $c->getName()/}
+                {input $c->getName()}
+            </div>
+        {/if}
+    {/foreach}
+	
+	<div class="row m-b-20">
+		<div class="col-xs-4">
+			<div class="p-10">
+				{label promoArticleId1/}
+				{input promoArticleId1}
+			</div>
+		</div>
+		<div class="col-xs-4">
+			<div class="p-10">
+				{label promoArticleId2/}
+				{input promoArticleId2}
+			</div>
+		</div>
+		<div class="col-xs-4">
+			<div class="p-10">
+				{label promoArticleId3/}
+				{input promoArticleId3}
+			</div>
+		</div>
+	</div>	
+	
+    {control form-relatedPage}
+    {control form-collectionForm}
+    {control form-seoForm}
+    {control form-ogForm}
+    <div class="form-group">
+        {input submit}
+    </div>
+</form>
+
+{define image}
+    <div class="thumbnail-body file-wrapper">
+        {thumbnailLink 100, 100, $photo, $folder}
+        <a href="{$link|noescape}" class="btn btn-danger btn-xs delete-file"><i class="fa fa-trash-o" aria-hidden="true"></i> odstranit</a>
+    </div>
+{/define}

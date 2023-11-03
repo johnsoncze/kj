@@ -1,0 +1,40 @@
+{var $groups = $tree ? $tree->getGroups() : []}
+{if $groups}
+    {include printGroups, groups => $groups}
+{else}
+    Žádné varianty.
+{/if}
+
+{define printGroups}
+    <ul>
+        {foreach $groups as $group}
+            {var $variants = $group->getVariants()}
+            <li><b>{$group->getParameterGroup()->getTranslation()->getName()}</b></li>
+            <ul>
+            {foreach $variants as $variant}
+                {if $variant->getProduct()->getProduct()->getId() !== $product->getId()}
+                    <li><a href="{plink Product:edit, id => $variant->getProduct()->getProduct()->getId()}">{$variant->getProduct()->getProduct()->getCode()}</a>
+                        <span class="f-s-13">(<b>Parametr:</b> {$variant->getParameter()->getTranslation()->getValue()},
+                        <b>Kusů skladem:</b> {$variant->getProduct()->getProduct()->getStock()},
+                        <b>Stav:</b> {$variant->getProduct()->getProduct()->getTranslatedState()})</span>
+                        <span class="p-l-5"></span><a href="{link removeVariant!, variantId => $variant->getVariant()->getId()}"
+                                                      class="remove-variant"
+                                                      data-confirm-message="Opravdu si přejete smazat {$variant->getProduct()->getProduct()->getCode()} skupiny {$group->getParameterGroup()->getTranslation()->getName()} ?"><i class="fa fa-trash"></i></a></li>
+                    {if $variant->getGroups()}{include this, groups => $variant->getGroups()}{/if}
+                {/if}
+            {/foreach}
+            </ul>
+        {/foreach}
+    </ul>
+{/define}
+
+<script>
+    $(document).ready(function() {
+        $('.remove-variant').click(function() {
+            var message = $(this).attr('data-confirm-message');
+            if (!confirm(message)) {
+                event.preventDefault();
+            }
+        });
+    });
+</script>

@@ -1,0 +1,1 @@
+ALTER TABLE `product_translation` DROP `pt_photo_name_generated`;

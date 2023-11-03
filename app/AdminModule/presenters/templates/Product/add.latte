@@ -1,0 +1,7 @@
+{block contentAdmin}
+{include 'editMenu.latte'}
+{if $type === \App\Product\Product::WEEDING_RING_PAIR_TYPE}
+    {control weedingRingForm}
+{else}
+    {control productForm}
+{/if}

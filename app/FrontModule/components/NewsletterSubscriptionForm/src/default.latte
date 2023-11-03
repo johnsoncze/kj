@@ -1,0 +1,34 @@
+<section class="Newsletter">
+    <div class="Grid Container">
+        <div class="Grid-cell u-size12of12">
+            <h2 class="Heading Heading--section">{_form.newsletter.title}</h2>
+            <div class="u-colorBrownDarkTransparent u-textLineHeight--large u-sm-displayBlock">
+                {_form.newsletter.subTitle}
+            </div>
+			<div class="Newsletter-formText u-colorBrownDarkTransparent u-textLineHeight--larger u-size12of12">
+				{_form.newsletter.agreement} {_form.newsletter.subAgreement}.<br>
+			</div>
+            <form n:name="form">
+                <div class="Newsletter-form u-size12of12">
+                  {input email}
+                        <div class="Control-sm-group">
+                            {input personFullName}
+                            {input companyFullName}
+                            {input gRecaptchaResponse}
+                        </div>
+                    &nbsp
+					{input submit class => "Button u-size12of12"}
+                </div>
+            </form>
+            <script>
+              grecaptcha.ready(function() {
+                  grecaptcha.execute('6Ld20NMUAAAAAFvcn-FBvEIxQzxIXvpAkFVWhWNh', { action: 'newsletterSubscriptionForm' })
+                  .then(function(token) {
+                  //console.log(token);
+                  document.getElementById('frm-newsletterSubscriptionForm-form-gRecaptchaResponse').value=token;
+              });
+              });
+              </script>
+        </div>
+    </div>
+</section>

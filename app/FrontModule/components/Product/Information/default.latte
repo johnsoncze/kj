@@ -1,0 +1,48 @@
+{import '../VariantList/src/helpers.latte'}
+
+{*{if $product->getTranslation()->getDescription()}*}
+{*    <li class="Expand-item Expand-item--open js-toggle">*}
+{*        <h4 class="Expand-title js-toggle-switch u-textUppercase">*}
+{*            <svg role="img" class="Icon Expand-icon">*}
+{*                <use xlink:href="#symbol-arr-down"/>*}
+{*            </svg>*}
+{*            {_product.information.about.title}</h4>*}
+{*        <div class="Expand-content js-toggle-content">*}
+{*            {$product->getTranslation()->getDescription()|noescape}*}
+{*        </div>*}
+{*    </li>*}
+{*{/if}*}
+
+{if $parameters}
+<h4 class="u-textUppercase">
+    {_product.information.specification.title}</h4>
+<div class="Product-options">
+    <div class="Product-option-row">
+        <div class="Product-option-info-title">
+            <div class="Product-option-title">{_product.property.code.titleFront}</div>
+        </div>
+        <div class="Product-option-info-value">
+            <div class="Product-option-label">
+                {$product->getCode()}
+            </div>
+        </div>
+    </div>
+
+    {foreach $parameters as $value}
+    {continueIf $value['group']->getId() == 6} {*skip collection*}
+    <div class="Product-option-row">
+        <div class="Product-option-info-title">
+            <div class="Product-option-title">{$value['group']->getTranslation()->getFiltrationTitle()} {include infoTooltip, group => $value['group']}</div>
+        </div>
+        <div class="Product-option-info-value">
+            <div class="Product-option-label">
+                {foreach $value['parameters'] as $parameter}
+                    {$parameter->getTranslation()->getValue()}
+                    {if $iterator->isLast() === FALSE}<br>{/if}
+                {/foreach}
+            </div>
+        </div>
+    </div>
+    {/foreach}
+</div>
+{/if}

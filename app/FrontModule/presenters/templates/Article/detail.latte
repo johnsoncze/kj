@@ -1,0 +1,37 @@
+{block content}
+
+<section class="Background">
+    <div class="Container">
+	{control breadcrumb}
+	</div>
+	
+    <div class="Container--slim Container u-textCenter u-mt--90">
+        <h1 class="Article-header">{$article->getArticle()->getName()}</h1>
+
+        <p class="u-textCenter u-mt--30 u-mb--60 Article-perex"><b>{$article->getArticle()->getIntroduction()}</b></p>
+
+    </div>
+</section>
+
+{if $article->getArticle()->getCoverPhoto()}
+    <section class="Background">
+        <div class="Container u-textCenter Container--slim">
+
+            {thumbnailLink 500, 500, $article->getArticle()->getCoverPhoto(), \App\Article\ArticleCoverPhotoService::FOLDER}
+
+        </div>
+    </section>
+{/if}
+
+<section class="Background">
+    <div class="Container Container--slim Article-text u-md-mt--60 u-xs-mt--30 u-mb--120">
+
+        {$article->getArticle()->getContent()|noescape}
+
+		<div class="u-textCenter u-mt--50">
+			<a class="u-textUppercase Button Button--arrow" href="{plink Article:list, url => 'novinky'}">{_article.backList}</a>
+		</div>
+    </div>
+</section>
+
+{control articleRelatedList}

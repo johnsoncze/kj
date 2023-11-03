@@ -1,0 +1,130 @@
+added:
+    title: Produkt jste úspěšně vložili do košíku
+    back:
+        anchor: Zpět k nákupu
+    cart:
+        anchor: Nákupní košík
+
+action.failed: Akce se nezdařila. Opakujte akci znovu.
+
+benefit:
+    service:
+        description: '<a href="/stranka/sluzby#warranty"><b>Doživotní záruka</b></a><br>a každé dva roky <b><a href="/stranka/sluzby#warranty">servis</a><br> šperků jk zdarma</b>'
+    certificate:
+        description: 'součástí nákupu šperku<br><b>certifikát pravosti<br> a krabička</b>'
+    delivery:
+        description: '<b><a href="/stranka/zpusob-dopravy">bezpečně doručíme</a><br></b> kamkoli v ČR i zahraničí'
+    exchange:
+        description: 'Pokud je třeba, nenošený<br> produkt vám <b>vyměníme<br> za jiný</b>'
+
+birthdaycoupon:
+    apply: Uplatnit narozeninové zvýhodnění
+    remove: Odstranit narozeninové zvýhodnění
+    applied: Narozeninové zvýhodnění bylo nastaveno.
+    removed: Narozeninové zvýhodnění bylo odstraněno.
+    canNotBeAppliedAlready: 'Narozeninové zvýhodnění bylo odebráno, jelikož jej již nelze použít.'
+    missingcustomer: Pro uplatnění narozeninového zvýhodnění musíte být přihlášeni.
+
+button:
+    next: Pokračovat
+    return: Zpět
+
+delivery:
+    notFound: Vámi zvolená doprava není v současné době dostupná.
+    free: Doprava v ČR a na Slovensku zdarma
+
+finishOnStore:
+    or: nebo můžete
+    anchor: Dokončit objednávku<br>na prodejně
+    button: Dokončit objednávku na prodejně
+
+
+not.found: Košík nebyl nalezen.
+
+deleted.already: Košík byl již smazán.
+
+delivery.not.found: Vámi zvolená doprava neexistuje či není v současné době povolena.
+payment:
+    notFound: Vámi zvolená platba není v současné době dostupná.
+
+empty: košík je prázdný
+title: Košík
+
+merge:
+    product: Měli jste otevřený košík pod Vaším uživatelským účtem. Produkty byly spojeny dohromady.
+
+product.save.error: Produkt se nepodařilo uložit. Zkuste to prosím znovu.
+product.not.found: Produkt nebyl nalezen.
+product.wrong.quantity: Neplatné množství produktu. Minimální množství produktu je 1ks.
+
+product:
+    appliedDiscount: 'U produktu %name% bylo nastaveno %discount%% zvýhodnění.'
+    canNotBeSaleOnline: 'Produkt %name% není možné zakoupit online. Prosím, kontaktujte nás a společně domluvíme další kroky.'
+    priceChanged: U produktu %name% došlo ke změně ceny z %o% %currency% na %c% %currency% za kus.
+    unavailable: 'Produkt %name% není v současné době v nabídce.'
+    unavailableLabel: Produkt není dostupný
+    removed: Produkt byl odstraněn z košíku.
+    doesNotHaveEnoughQuantity: Produkt %name% je skladem v množství %quantity% ks. Snížili jsme Vámi zvolené množství na aktuálně dostupné.
+    maximumQuantity: Produkt %name% je skladem v množství %quantity% ks. Větší množství v tuto chvíli objednat nelze.
+    maximumQuantityAndProductInCart: Produkt %name% je skladem v množství %quantity% ks. V košíku již tento produkt máte v množství %cartQuantity% ks. Větší množství v tuto chvíli objednat nelze.
+    removedDiscount: 'U produktu %name% bylo odebráno zvýhodnění, jelikož na tento produkt není možné zvýhodnění uplatnit.'
+    productionTime:
+        productUnavailableAlready: 'Produkt %name% není skladem a je možné jej dodat později. Zvolte dobu dodání.'
+        setDefault: 'Produkt %name% není skladem. Byla nastavena pozdější doba dodání.'
+        notAvailable: Zvolená doba výroby u produktu %product% není dostupná.
+        productAvailableAlready: 'Byla odstraněna Vámi zvolená doba výroby u produktu %name%, jelikož produkt již máme skladem.'
+        errorOnSetting: Nastala chyba. Opakujte akci znovu.
+
+
+products:
+    missing: Košík je prázdný a není možné vytvořit objednávku.
+
+overview:
+    empty:
+        title: Košík je prázdný.
+        cta: Zpět do obchodu
+    removeProduct:
+        confirm: 'Opravdu si přejete odstranit produkt %name%?'
+
+recapitulation:
+    title: Produkty v košíku
+
+step:
+    step1:
+        title: Přehled košíku
+        back:
+            anchor: Zpět k nákupu
+        next:
+            anchor: Doprava a platba
+    step1links:
+        title: Způsob dokončení nákupu
+        back:
+            anchor: Zpět k nákupu
+        next:
+            anchor: Doprava a platba
+    step2:
+        title: Doprava a platba
+        back:
+            anchor: Zpět k nákupu
+            anchor2: Zpět na přehled
+        next:
+            anchor: Dodací údaje
+    step3:
+        title: Dodací údaje
+        back:
+            anchor: Zpět k nákupu
+            anchor2: Zpět na dopravu a platbu
+        next:
+            anchor: Rekapitulace objednávky
+    step3Recapitulation:
+        title: Odeslání objednávky
+        back:
+            anchor: Zpět k nákupu
+        next:
+            anchor: Odeslat objednávku
+    step4:
+        title: Objednávka odeslána
+        subtitle: Hotovo! Děkujeme Vám za důvěru!
+        description: 'Zvolili jste krásu, kvalitu a nadčasovost – a ty dělají radost celý život.<br>Co se bude teď dít? Podívejte se na svůj e-mail,<br>najdete tam veškeré informace a také shrnutí objednávky.'
+        homepage:
+            anchor: Pokračovat na hlavní stránku

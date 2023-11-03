@@ -1,0 +1,53 @@
+.NoUiSlider {
+    position: relative;
+    padding-top: 30px;
+
+    .NoUiSlider-slider {
+        height: 3px;
+        border: 1px solid @color-gold-lighter;
+        background-color: @color-gold-lighter;
+        box-shadow: 0 0 0 transparent;
+    }
+
+    .noUi-connects {
+        height: 3px;
+    }
+
+    .noUi-connect {
+        background-color: @color-gold;
+    }
+
+    .noUi-handle {
+        top: -11px;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        border: 2px solid @color-white;
+        background-color: @color-brown-dark;
+        box-shadow: 0 0 0 transparent;
+
+        &:before,
+        &:after {
+            display: none;
+        }
+    }
+
+    .NoUiSlider-value {
+        position: absolute;
+        top: 0;
+        font-size: @font-size-smaller;
+        color: @color-brown-dark-alpha-70;
+    }
+
+    .NoUiSlider-value--left {
+        left: 0;
+    }
+
+    .NoUiSlider-value--right {
+        right: 0;
+    }
+}
+
+html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
+    right: -12px;
+}

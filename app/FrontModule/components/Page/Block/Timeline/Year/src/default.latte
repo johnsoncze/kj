@@ -1,0 +1,18 @@
+<div class="Timeline Timeline--progressline">
+    {foreach $items as $item}
+        <div class="Timeline-row{if $item->isReverse()} Timeline-row--reverse{/if}">
+            <div class="Timeline-item u-size6of12 u-sm-max-size12of12">
+                <div class="Timeline-content Timeline-content--right">
+                    <span class="Timeline-year">{$item->getYear()}</span>
+                    <h3 class="Timeline-title{if $item->getTitleClass()} {$item->getTitleClass()}{/if}">{$item->getTitle()}</h3>
+                    <p class="Timeline-desc">{$item->getDescription()|noescape}</p>
+                </div>
+            </div>
+            <div class="Timeline-item u-textCenter u-sm-textLeft u-size6of12 u-sm-max-size12of12">
+                <div class="Timeline-images">
+                    {$item->getImages()|noescape}
+                </div>
+            </div>
+        </div>
+    {/foreach}
+</div>

@@ -1,0 +1,47 @@
+.ImageLink {
+    text-decoration: none;
+    color: inherit;
+    will-change: color, text-shadow;
+    transition-property: color, text-shadow;
+    transition-duration: 250ms;
+    transition-timing-function: ease-out;
+
+    &:hover,
+    &:focus {
+        text-shadow: 0 0 10px fade(@color-gray, 50%);
+        color: @color-gold;
+    }
+}
+
+.ImageLink-imageBox {
+    display: inline-block;
+    margin-bottom: 10px;
+    border-radius: @border-radius-large;
+    background-color: @color-gold-lighter;
+    will-change: transform;
+    transition: transform 250ms ease-out;
+}
+
+.ImageLink:hover .ImageLink-imageBox,
+.ImageLink:focus .ImageLink-imageBox {
+    transform: scale(1.05, 1.05);
+}
+
+.ImageLink-image {
+    display: block;
+}
+
+.ImageLink-text {
+    // .//letter-spacing(180);
+
+    font-size: @font-size-tiniest;
+    line-height: 1.9;
+    text-transform: uppercase;
+
+    @media @media-md-min {
+        // .//letter-spacing(320);
+
+        font-size: @font-size-tiny;
+        line-height: 1.8;
+    }
+}

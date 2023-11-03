@@ -1,0 +1,12 @@
+{if $result[App\FrontModule\Presenters\SearchPresenter::ARTICLE_RESULT]['count']}
+    <div class="Container u-mt--40">
+        <div class="u-mb--20 u-md-mb--50">
+            {control articleList:list}
+        </div>
+        <div class="Grid u-mb--70 u-md-mb--110 u-alignItemsBaseline">
+            <div class="Grid-cell u-size3of3 u-textCenter">{control pagination}</div>
+        </div>
+    </div>
+{else}
+    {include '../blocks/noResultOfResultType.latte'}
+{/if}

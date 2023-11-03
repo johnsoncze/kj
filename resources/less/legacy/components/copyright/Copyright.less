@@ -1,0 +1,42 @@
+.Copyright {
+    padding: 40px 0;
+    font-size: @font-size-smaller;
+    color: @color-white-alpha-40;
+    background-color: @secondary-bg;
+    border-top: 1px solid @color-gold;
+
+    .Icon {
+        fill: @text-inversed-color;
+        width: 14px;
+        height: 14px;
+        margin-right: 3px;
+        margin-left: 3px;
+    }
+}
+
+.Copyright-container {
+    @media @media-sm-min {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.Copyright-text {
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    @media @media-sm-min {
+        margin-bottom: 0;
+    }
+}
+
+.Copyright-link {
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}

@@ -1,0 +1,173 @@
+<div class="pb-overlay"></div>
+<div id="{$popUpId}" class="pb-popup-container Opportunity-form">
+    <div class="pb-popup pb-popup--padding-wide">
+        <div class="pb-popup-heading">{$title}</div>
+        <div class="pb-popup-content">
+            <div class="Grid">
+                <div class="Grid-cell u-size12of12 u-md-size6of12 u-mt--20">
+                    <div>
+                        <form n:name="form">
+
+                            <fieldset class="Form-fieldset">
+                                <div class="Form-row">
+                                    <div class="TextField">
+                                        <label class="Form-label">{_form.opportunity.input.firstName.label}<span class="Form-mandatory">*</span></label>
+                                        <input n:name="opportunityForm-firstName" class="TextField-input">
+                                    </div>
+                                </div>
+
+                                <div class="Form-row">
+                                    <div class="TextField">
+                                        <label class="Form-label">{_form.opportunity.input.lastName.label}<span class="Form-mandatory">*</span></label>
+                                        <input n:name="opportunityForm-lastName" class="TextField-input">
+                                    </div>
+                                </div>
+
+                                <div class="Form-row">
+                                    <label class="Form-label">{_form.opportunity.input.preferredContact.label}</label>
+                                    <div class="RadioField u-textCenter u-w--100-pcn">
+                                        {var sexItems = $form->getComponent('opportunityForm-preferredContact')->getItems()}
+                                        {foreach $sexItems as $key => $name}
+                                            <label><input type="radio" n:name="opportunityForm-preferredContact:{$key}" class="RadioField-input">
+                                                <span class="RadioField-label"><span class="RadioField-labelText">{$name}</span></span>
+                                            </label>
+                                        {/foreach}
+                                    </div>
+                                </div>
+
+                                <div class="Form-row">
+                                    <div class="TextField">
+                                        <label class="Form-label">E-mail<span class="Form-mandatory">*</span></label>
+                                        <input n:name="opportunityForm-email" class="TextField-input">
+                                    </div>
+                                </div>
+
+                                <div class="Form-row">
+                                    <div class="TextField">
+                                        <label class="Form-label">{_form.opportunity.input.telephone.label}<span class="Form-mandatory">*</span></label>
+                                        <input n:name="opportunityForm-telephone" class="TextField-input">
+                                    </div>
+                                </div>
+
+
+                                <div class="Form-row">
+                                    <div class="TextField">
+                                        <label class="Form-label">{_form.opportunity.input.requestDate.label}</label>
+                                        <input n:name="opportunityForm-requestDate" class="TextField-input">
+                                    </div>
+                                </div>
+
+                                <div class="Form-row">
+                                    <div class="TextField">
+                                        <label class="Form-label">{_form.opportunity.input.comment.label}<span class="Form-mandatory">*</span></label>
+                                        <textarea n:name="opportunityForm-comment" class="TextField-input TextField-input--multiline"></textarea>
+                                    </div>
+
+                                    <div class="Control-sm-group">
+                                        {input personFullName}
+                                        {input companyFullName}
+                                        {input gRecaptchaResponse}
+                                    </div>
+                                </div>
+
+                                <div class="Form-row{if $hasCustomer} u-displayNone{/if}">
+                                    <div class="CheckboxField">
+                                        <label>
+                                            <input type="checkbox" n:name="opportunityForm-personalData" class="CheckboxField-input">
+                                            <span class="CheckboxField-label">
+                                            <span class="CheckboxField-labelText">{_form.registration.label.personalData}<span class="Form-mandatory">*</span></span>
+                                                {_form.registration.gdpr.link.text1} <a href="{plink Page:detail, url => 'gdpr'}" target="_blank">{_form.registration.gdpr.link.text2}</a>.
+                                            </span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="Form-row">
+                                    <div class="Form-buttons">
+                                        <input class="Button" value="{_form.opportunity.input.submit.label}" n:name="submit">
+                                    </div>
+                                </div>
+                            </fieldset>
+
+                        </form>
+                    </div>
+                </div>
+                <div class="Grid-cell u-size12of12 u-md-size6of12 u-mt--20">
+
+                    <div class="Grid">
+                        <div class="Grid-cell u-size12of12">
+                            <h2 class="Heading--subTitle">{_opportunity.address.title}</h2>
+                        </div>
+                    </div>
+
+                    <div class="Grid">
+                        <div class="Grid-cell u-sm-size6of12 u-xs-size12of12">
+                            <p class="Timeline-desc"><b>{$parameters['project']['name']}</b><br>
+                                {$parameters['project']['address']}<br><br>
+                                Areál BB Centrum - www.bbcentrum.cz<br>
+                                Obchodní pasáž budovy Filadelfie</p>
+                        </div>
+                        <div class="Grid-cell u-sm-size6of12 u-xs-size12of12">
+                            <p class="Timeline-desc u-textBold u-mb--3">{_store.openingHours.title}:</p>
+                            {control openingHours:list}
+                        </div>
+                    </div>
+                    {snippet productList}
+                        {if $products}
+                            <div class="Background Background--silver u-p--20">
+                                <h2 class="Heading--subTitle">{_opportunity.overview.title}</h2>
+                                {foreach $products as $product}
+                                    {var $visibleParameters = $product->getProduct()->getVisibleParameters()}
+                                    <table class="Basket-productsTable">
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <img src="{if $product->getProduct()->getProduct()->getPhoto()}{thumbnailPath 100, 100, $product->getProduct()->getProduct()->getPhoto(), $product->getProduct()->getProduct()->getUploadFolder()}{else}{imagePlaceholder 100, 100}{/if}"
+                                                         class="Basket-productsImage" alt="{$product->getProduct()->getProduct()->getTranslation()->getName()}" width="100" height="100">
+                                                </td>
+                                                <td class="Basket-productTitle">
+                                                    <div class="Basket-productsTitle">{$product->getProduct()->getProduct()->getTranslation()->getName()}</div>
+                                                    <div class="Basket-productsCode">{$product->getProduct()->getProduct()->getCode()}</div>
+                                                    {if $visibleParameters}
+                                                        <div class="Basket-productsParam">
+                                                            {foreach $visibleParameters as $parameter}
+                                                                {$parameter->getGroup()->getTranslation()->getName()}: {$parameter->getTranslation()->getValue()}{if $iterator->isLast() !== TRUE}
+                                                                <br>{/if}
+                                                            {/foreach}
+                                                        </div>
+                                                    {/if}
+                                                </td>
+                                                <td>
+                                                    <div class="Basket-productsPrice u-textRight u-pt--10">
+                                                        <div class="Basket-productsAmount u-textRight">{$product->getQuantity()} {_product.quantityUnit}</div>
+                                                        {if $data->getCustomer() && $product->getProduct()->getProduct()->isDiscountAllowed()}
+                                                            <div class="Product-total-price-old u-mb--5">
+                                                                <strike>{\App\Helpers\Prices::toUserFriendlyFormat($product->getProduct()->getProduct()->calculatePriceByQuantity($product->getQuantity()))} {_price.currency.label}</strike>
+                                                            </div>
+                                                            <div class="Product-total-price">{\App\Helpers\Prices::toUserFriendlyFormat($product->getProduct()->getProduct()->calculatePriceAfterDiscountByQuantity(\App\Customer\Customer::DISCOUNT, $product->getQuantity()))} {_price.currency.label}</div>
+                                                        {else}
+                                                            <div class="Product-total-price">{\App\Helpers\Prices::toUserFriendlyFormat($product->getProduct()->getProduct()->calculatePriceByQuantity($product->getQuantity()))} {_price.currency.label}</div>
+                                                        {/if}
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                {/foreach}
+                            </div>
+                        {/if}
+                    {/snippet}
+                </div>
+            </div>
+        </div>
+        <div class="pb-popup-close js-popup-close">
+            <div class="SearchBoxHeader-control">
+                <button type="button" class="IconLink ">
+                    <svg role="img" class="Icon Icon--medium IconLink-icon">
+                        <use xlink:href="#symbol-cancel"></use>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

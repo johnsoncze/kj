@@ -1,0 +1,249 @@
+birthday:
+    label:
+        day: Den
+        month: Měsíc
+        year: Rok
+    error:
+        month: Zvolte měsíc
+
+contact:
+    label:
+        street: Ulice a č. p.
+        city: Město
+        postCode: PSČ
+        state: Stát
+        telephone: Telefon
+    input:
+        city:
+            require: Vyplňte město
+        postcode:
+            require: Vyplňte PSČ
+        street:
+            require: Vyplňte ulici a č. p.
+    error:
+        postCode: 'PSČ musí obsahovat 5 nebo 6 znaků (čísla a mezery).'
+
+contactInformation:
+    input:
+        deliveryAddress: Chci doručit zboží na jinou adresu
+
+customerForm:
+    input:
+        catalog:
+            label: Chci odebírat tištěný katalog
+        submit:
+            label: Uložit
+    message:
+        success: Údaje byly uloženy.
+
+delivery:
+    input:
+        delivery:
+            require: Vyberte způsob dopravy
+        payment:
+            require: Vyberte způsob platby
+
+demand:
+    weedingRing:
+        action: Poptat prsteny
+        title: Poptávka snubních prstenů
+    title: Poptávka produktu
+    action: Poptat produkt
+    input:
+        comment:
+            value: 'Dobrý den, zajímá mě dostupnost produktu %name%. Mohu poprosit o bližší informace?'
+            timeValue: 'Dobrý den, poptávám rychlejší dobu dodání produktu %name%. Můžete mě prosím kontaktovat?'
+        submit:
+            label: Odeslat poptávku
+
+diamondQuality:
+    label: Kvalita diamantů
+
+forgottenPassword:
+    input:
+        email:
+            require: Vyplňte e-mail
+        submit:
+            label: Odeslat žádost
+    message:
+        success: Žádost o změnu hesla byla odeslána. Zkontrolujte svoji e-mailovou schránku.
+
+general:
+    selectbox:
+        prompt: Vyberte
+
+hearAboutUs:
+    label:
+        general: Odkud jste se o nás dozvěděli
+        comment: Upřesnění
+    personal: Osobní doporučení
+    printedMedia: Tištěná média
+    event: Společenská akce
+    internet: Internet
+    other: Jiné
+
+newPassword:
+    change:
+        title: Změna hesla
+    input:
+        actualPassword:
+            label: Aktuální heslo
+            require: Vyplňte aktuální heslo
+        password:
+            label: Nové heslo
+            require: Zvolte heslo
+            minimumLength: 'Minimální délka hesla musí být %length% znaků'
+        passwordConfirm:
+            label: Potvrzení hesla
+            require: Potvrďte heslo
+        submit:
+            label: Uložit nové heslo
+    message:
+        success: Heslo bylo nastaveno.
+        successChangedPassword: Heslo bylo uloženo.
+        successAfterForgotten: Heslo bylo nastaveno. Nyní se můžete přihlásit.
+        error:
+            invalidActualPassword: Aktuální heslo není správné.
+
+newsletter:
+    title: Mějte přehled o novinkách
+    subTitle: 'Jakmile doplníme sortiment o nové šperky či hodinky, nebo vyhlásíme zajímavou akci, napíšeme vám o tom na e-mail, který rozesíláme maximálně 1x měsíčně.'
+    agreement: Přihlášením k odběru newsletteru zároveň souhlasíte se zpracováním potřebných
+    subAgreement: osobních údajů
+    customer:
+        input:
+            newsletter:
+                label: Chci newsletter na e-mail
+            submit:
+                label: Uložit
+        message:
+            success: Nastavení bylo uloženo.
+    subscription:
+        confirm:
+            message:
+                success: Odběr novinek byl potvrzen. Děkujeme Vám.
+        input:
+            email:
+                placeholder: Váš e-mail
+            submit:
+                label: Odebírat newsletter
+        message:
+            existsAlready: 'Váš e-mail %email% je již k odběru novinek přihlášen.'
+            success: 'Děkujeme za Váš zájem k odběru novinek. Na e-mail jsme Vám zaslali odkaz k potvrzení odběru. Prosíme, potvrďte jej.'
+            successCustomer: 'Odběr novinek byl nastaven. Děkujeme za Váš zájem.'
+
+opportunity:
+    contact:
+        title: Kontaktní formulář
+    input:
+        firstName:
+            label: Jméno
+            require: Vyplňte jméno
+        lastName:
+            label: Příjmení
+            require: Vyplňte příjmení
+        preferredContact:
+            label: Jaký způsob kontaktu preferujete?
+        email:
+            require: Vyplňte e-mail
+        telephone:
+            label: Telefon
+            require: Vyplňte telefon
+        requestDate:
+            label: 'Předběžný termín, kdy výrobek potřebujete'
+        comment:
+            label: Poznámka
+        submit:
+            label: Odeslat
+    message:
+        success: Formulář byl odeslán. Děkujeme Vám. Ozveme se do 24 hodin v pracovní dny.
+        error: Při odesílání formuláře došlo k chybě. Zkuste to prosím znovu či nás kontaktujte.
+    storeMeeting:
+        title: Žádost o schůzku
+        product:
+            anchor: Připravit k prohlédnutí na prodejně
+            comment:
+                value: Rád bych si osobně prohlédl/a produkt %name% na prodejně.
+        shoppingCart:
+            comment:
+                value: Přeji si dokončit objednávku osobně na prodejně.
+
+productionTime:
+    label: Termín dodání
+    label2: Doba výroby
+
+registration:
+    gdpr:
+        link:
+            text1: Více
+            text2: zde
+    section:
+        birthday:
+            title: Datum narození
+            description: 'Zadejte své datum narození a každý rok od nás dostanete 15% narozeninové zvýhodnění.'
+        contact:
+            title: Kontaktní údaje
+        hearAboutUs:
+            title: 'Odkud jste se o nás dozvěděli'
+    label:
+        name: Jméno
+        surname: Příjmení
+        man: Muž
+        woman: Žena
+        password: Heslo
+        confirmPassword: Potvrzení hesla
+        contact: Chci vyplnit datum narození a kontaktní údaje a získat 15% narozeninové zvýhodnění
+        newsletter: Chci odebírat newsletter
+        personalData: 'Souhlasím se zpracováním výše uvedených osobních údajů společností JK Jitka Kudlackova Jewels s.r.o., která se tímto zaručuje, že Vaše osobní údaje budou sloužit pouze pro interní účely firmy a bude s nimi nakládáno v souladu s Nařízením Evropského parlamentu a Rady (EU) 2016/679 i GDPR.'
+        sex: Pohlaví
+        submit: Registrovat se
+    message:
+        success: Registrace proběhla úspěšně. Nyní se můžete přihlásit.
+    error:
+        name: Vyplňte jméno
+        surname: Vyplňte příjmení
+        email: Vyplňte e-mail
+        password: Zvolte heslo
+        sex: Zvolte pohlaví
+        confirmPassword: Potvrďte zvolené heslo
+        passwordsAreNotEqual: Zadaná hesla nejsou stejná
+        personalData: Souhlas se zpracováním osobních údajů je povinný
+
+sign:
+    in:
+        input:
+            email:
+                require: Vyplňte e-mail
+            password:
+                label: Heslo
+                require: Vyplňte heslo
+            submit:
+                label: Přihlásit
+        message:
+            success: 'Byli jste úspěšně přihlášeni.'
+        error:
+            failure: 'Přihlášení se nezdařilo. Zadali jste nesprávný e-mail či heslo.'
+    out:
+        message:
+            success: 'Byli jste úspěšně odhlášeni.'
+
+shoppingCart:
+    contactInformation:
+        input:
+            company:
+                label: Firma
+            deliveryAddress:
+                label: Chci doručit zboží na jinou adresu
+            terms:
+                label: 'Souhlasím s <a href="%link%">Obchodními podmínkami</a>.'
+                require: Potvrďte souhlas s našimi Obchodními podmínkami
+
+spam:
+    message: 'Formulář nebyl vyplněn správně. Prosím, vyplňte a odešlete formulář znovu.'
+
+storeRegistrationCompletion:
+    input:
+        submit:
+            label: Nastavit
+recaptcha:
+    agreement: 'This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.'

@@ -1,0 +1,9 @@
+parameters:
+    bootstrap: %rootDir%/../../../app/bootstrap.php
+    ignoreErrors:
+        - '#Class [a-zA-Z\\]* extends Nette\\Object - it.s better to use Nette\\SmartObject trait#'
+        - '#Call to an undefined method Nette\\Security\\IUserStorage::setNamespace()#'
+
+includes:
+    - ../../vendor/phpstan/phpstan-nette/extension.neon
+    - ../../vendor/phpstan/phpstan-nette/rules.neon

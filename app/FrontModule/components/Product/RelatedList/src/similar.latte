@@ -1,0 +1,69 @@
+{if $products}
+    <h4 class="u-textUppercase u-pt--15 u-mt--15 Similar-heading">Další barevné varianty</h4>
+    <div class="ProductGrid">
+    {foreach $products as $product}
+        {capture $photo240}{if $product->getProduct()->getPhoto()}{thumbnailPath 240, 240, $product->getProduct()->getPhoto(), $product->getProduct()->getUploadFolder()}{else}{imagePlaceholder 240, 240}{/if}{/capture}
+        {capture $photo480}{if $product->getProduct()->getPhoto()}{thumbnailPath 480, 480, $product->getProduct()->getPhoto(), $product->getProduct()->getUploadFolder()}{else}{imagePlaceholder 480, 480}{/if}{/capture}
+        <div class="ProductCard ProductCard--noShadow u-mb--0{if $product->getProduct()->hasBadge()} ProductCard--withBadge{/if}">
+            <a href="{plink Product:detail, url => $product->getProduct()->getTranslation()->getUrl()}" class="ProductCard-link" style="padding: 0">
+
+                {if $product->getProduct()->isNew() === TRUE}
+                    {include badgeNew}
+                {/if}
+
+                <div class="ProductCard-media{if $product->getProduct()->isFeatured() === TRUE} ProductCard-media--centered{/if}">
+                    <div class="ProductCard-imageContainer" style="margin-bottom: 0">
+                        {if $product->getProduct()->isFeatured() === TRUE}
+                            <img
+                                    src="{$photo480}"
+                                    srcset="
+                            {$photo480} 1360w,
+                            {$photo480} 960w,
+                            {$photo480} 680w
+                        "
+                                    sizes="
+                            (min-width: 1475px) 680px,
+                            (min-width: 992px) calc(100vw / 2 - 2 * 20px - 6 * 1.25rem),
+                            (min-width: 768px) calc(100vw * 2 / 3 - 2 * 20px - 4 * 1.25rem),
+                            calc(100vw - 2 * 20px - 2 * 0.25rem)
+                        "
+                                    width="680"
+                                    height="680"
+                                    class="ProductCard-image"
+                                    alt="{$product->getName()}"
+                            />
+                        {else}
+                            <img
+                                    src="{$photo480}"
+                                    srcset="
+                            {$photo480} 480w,
+                            {$photo240} 240w
+                        "
+                                    style="max-height: 240px;"
+                                    class="ProductCard-image"
+                                    alt="{$product->getProduct()->getTranslation()->getName()}"
+                            />
+                        {/if}
+                    </div>
+                </div>
+
+                <div class="ProductCard-description">
+{*                    <h3 class="ProductCard-heading Text-headline Text-headline--small">{$product->getProduct()->getTranslation()->getName()}</h3>*}
+{*                    <p class="Text-block-desc-small u-textCenter u-mb--0">{$product->getProduct()->getCode()}</p>*}
+                    <div class="ProductCard-availability Text-caption Text-caption--small {if $product->getProduct()->isInStock() === FALSE}ProductCard-availability--notAvailable{/if}">
+                        {$product->getState()->getTranslation()->getValue()}
+                    </div>
+                </div>
+
+            </a>
+        </div>
+
+        {define badgeNew}
+            <div class="Badge ProductCard-badge">
+                {_product.badge.new.title}
+            </div>
+        {/define}
+
+    {/foreach}
+    </div>
+{/if}

@@ -1,0 +1,85 @@
+{block newUntilToHelper}
+    <div style="font-size: 13px" class="p-t-5">
+        Rychlý výběr:
+        <a role="button" class="newUntilToHelper" data-month="2">2 měsíce</a>,
+        <a role="button" class="newUntilToHelper" data-month="6">6 měsíců</a>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $('.newUntilToHelper').click(function () {
+                var month = $(this).attr('data-month');
+                var date = moment().add(month, 'months').format('DD.MM.YYYY');
+                $('#newUntilTo').val(date);
+            });
+        });
+    </script>
+{/block}
+
+{block limitedUntilToHelper}
+    <div style="font-size: 13px" class="p-t-5">
+        Rychlý výběr:
+        <a role="button" class="limitedUntilToHelper" data-month="2">2 měsíce</a>,
+        <a role="button" class="limitedUntilToHelper" data-month="6">6 měsíců</a>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $('.limitedUntilToHelper').click(function () {
+                var month = $(this).attr('data-month');
+                var date = moment().add(month, 'months').format('DD.MM.YYYY');
+                $('#limitedUntilTo').val(date);
+            });
+        });
+    </script>
+{/block}
+
+{block bestsellerUntilToHelper}
+    <div style="font-size: 13px" class="p-t-5">
+        Rychlý výběr:
+        <a role="button" class="bestsellerUntilToHelper" data-month="2">2 měsíce</a>,
+        <a role="button" class="bestsellerUntilToHelper" data-month="6">6 měsíců</a>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $('.bestsellerUntilToHelper').click(function () {
+                var month = $(this).attr('data-month');
+                var date = moment().add(month, 'months').format('DD.MM.YYYY');
+                $('#bestsellerUntilTo').val(date);
+            });
+        });
+    </script>
+{/block}
+
+
+{block goodpriceUntilToHelper}
+    <div style="font-size: 13px" class="p-t-5">
+        Rychlý výběr:
+        <a role="button" class="goodpriceUntilToHelper" data-month="2">2 měsíce</a>,
+        <a role="button" class="goodpriceUntilToHelper" data-month="6">6 měsíců</a>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $('.goodpriceUntilToHelper').click(function () {
+                var month = $(this).attr('data-month');
+                var date = moment().add(month, 'months').format('DD.MM.YYYY');
+                $('#goodpriceUntilTo').val(date);
+            });
+        });
+    </script>
+{/block}
+
+{block rareUntilToHelper}
+    <div style="font-size: 13px" class="p-t-5">
+        Rychlý výběr:
+        <a role="button" class="rareUntilToHelper" data-month="2">2 měsíce</a>,
+        <a role="button" class="rareUntilToHelper" data-month="6">6 měsíců</a>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $('.rareUntilToHelper').click(function () {
+                var month = $(this).attr('data-month');
+                var date = moment().add(month, 'months').format('DD.MM.YYYY');
+                $('#rareUntilTo').val(date);
+            });
+        });
+    </script>
+{/block}

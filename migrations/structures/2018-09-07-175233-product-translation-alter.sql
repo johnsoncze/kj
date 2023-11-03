@@ -1,0 +1,1 @@
+ALTER TABLE `product_translation` ADD UNIQUE `pt_url` (`pt_url`, `pt_language_id`);

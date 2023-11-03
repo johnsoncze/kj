@@ -1,0 +1,22 @@
+<div class="tree">
+    {if $items}
+        {block menu}
+            <ul>
+                {foreach $items as $item}
+                    <li>{if $tree->getCustomRenderCallback()}
+                        {php call_user_func($tree->getCustomRenderCallback(), $item)}
+                        {else}
+                        {$item->getTitle()}
+                        {/if}</li>
+                    {if $item->getItems()}
+                        {include menu, items => $item->getItems()}
+                    {/if}
+                {/foreach}
+            </ul>
+        {/block}
+    {else}
+        <div class="none">
+            Žádné položky.
+        </div>
+    {/if}
+</div>

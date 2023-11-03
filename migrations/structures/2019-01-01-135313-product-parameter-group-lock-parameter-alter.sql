@@ -1,0 +1,1 @@
+ALTER TABLE `product_parameter_group_lock_parameter` ADD `ppglp_weight` SMALLINT NOT NULL DEFAULT '1000' AFTER `ppglp_parameter_id`, ADD INDEX (`ppglp_weight`);

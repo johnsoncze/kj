@@ -1,0 +1,10 @@
+{var hasProducts = $shoppingCart !== NULL && $shoppingCart->hasProducts() === TRUE}
+<span class="u-displayNone u-sm-displayInline Header-cart-items">
+    {if $hasProducts === TRUE}<strong>{$shoppingCart->getQuantity()} {_product.quantityUnit}</strong> za <strong>{\App\Helpers\Prices::toUserFriendlyFormat($shoppingCart->getPrice()->summaryPrice)} {_price.currency.label}{else}{_shopping-cart.empty}{/if}</strong>
+</span>
+
+{if $hasProducts === TRUE}
+<span class="Header-cart__quantity">
+    <strong>{$shoppingCart->getQuantity()}</strong>
+</span>
+{/if}

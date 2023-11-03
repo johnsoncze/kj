@@ -1,0 +1,15 @@
+<div class="User-navi">
+    <div class="Grid u-pt--55 u-pb--90">
+
+        <div class="Grid-cell u-size4of12 u-sm-max-size12of12">
+            <a href="{plink Sign:in}" class="User-navi-link {$presenter->isLinkCurrent() ? active}">{_account.sign.in.title}</a>
+        </div>
+        <div class="Grid-cell u-size4of12 u-sm-max-size12of12">
+            <a href="{plink Sign:up}" class="User-navi-link {$presenter->isLinkCurrent() || $presenter->isLinkCurrent('Sign:storeRegistrationRequest')? active}">{_account.sign.up.title}</a>
+        </div>
+        <div class="Grid-cell u-size4of12 u-sm-max-size12of12">
+            <a href="{plink Sign:forgottenPassword}" class="User-navi-link {$presenter->isLinkCurrent() ? active}">{_account.sign.password.forgotten.title}</a>
+        </div>
+
+    </div>
+</div>

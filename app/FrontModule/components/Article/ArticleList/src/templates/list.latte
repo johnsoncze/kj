@@ -1,0 +1,24 @@
+{if $articles}
+    <div class="u-mb--40 u-sm-mb--80">
+        <div class="Grid">
+            {var $newLine = TRUE}
+            {foreach $articles as $article}
+                {var $categories = $article->getCategories()}
+                <div class="Grid-cell u-size12of12 u-sm-size1of3 u-mt--50">
+                    <div class="BlogCard{if $iterator->getCounter() % 3 === 0} BlogCard--right{elseif $newLine === TRUE} BlogCard--left{/if}">
+                        <img {if $iterator->counter > 3}loading="lazy"{/if} n:if="$article->getCoverPhoto()" class="BlogCard-image u-borderRounded" src="{thumbnailPath 300, 280, $article->getCoverPhoto(), 'article-cover-photos'}" alt="{$article->getName()}" width="300" height="280">
+                        <span class="Heading--sectionSubtitle">{foreach $categories as $category}{$category->getCategory()->getName()}{if $iterator->isLast() !== TRUE}, {/if}{/foreach}</span>
+                        <h3 class="Heading Heading--subTitle Heading--subTitleBlog">{$article->getName()}</h3>
+                        <p class="BlogCard-text u-colorBrownDarkTransparent u-textLineHeight--large">
+                            {$article->getIntroduction()}
+                        </p>
+                        <a class="Link Link--lineBefore" href="{plink Article:detail, url => $article->getUrl()}">{_article.preview.anchor}<span class="Link--hover"></span></a>
+                    </div>
+                </div>
+                {php $newLine = $iterator->getCounter() % 3 === 0}
+            {/foreach}
+        </div>
+    </div>
+{else}
+    {_article.noArticle}
+{/if}

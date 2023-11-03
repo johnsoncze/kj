@@ -1,0 +1,219 @@
+.Text-block-title-small {
+    display: inline-block;
+    text-transform: uppercase;
+    font-family: @font-secondary;
+    //letter-spacing: 0.3em;
+    font-size: @font-size-small;
+    color: @color-brown;
+    position: relative;
+}
+
+.Text-block-title-middle {
+    display: inline-block;
+    font-family: @font-secondary;
+    //letter-spacing: 0.18em;
+    font-size: @font-size-largest;
+    color: @color-brown-dark;
+    position: relative;
+}
+
+.Text-block-title {
+    text-transform: uppercase;
+    //letter-spacing: 0.4em;
+    font-size: @font-size-large;
+    color: @color-brown-dark;
+    font-weight: 400;
+    line-height: 1.5em;
+
+    @media @media-sm-min {
+        font-size: @font-size-x-large;
+        line-height: 1.9em;
+    }
+
+    @media @media-md-max {
+
+        br {
+            display: none;
+        }
+    }
+}
+
+.Text-block-title-larger {
+    text-transform: uppercase;
+    //letter-spacing: 0.4em;
+    font-size: @font-size-large;
+    color: @color-brown-dark;
+    font-weight: 400;
+    line-height: 1.5em;
+
+    @media @media-sm-min {
+        font-size: @font-size-larger;
+        line-height: 1.9em;
+    }
+
+    @media @media-sm-max {
+
+        br {
+            display: none;
+        }
+    }
+}
+
+.Text-block-desc {
+    //letter-spacing: 0.07em;
+    font-size: @font-size-base;
+    color: @color-brown-dark-alpha-70;
+    font-weight: 400;
+    line-height: 1.9em;
+
+    @media @media-md-max {
+
+        br {
+            display: none;
+        }
+    }
+}
+
+.Text-block-desc-small {
+    //letter-spacing: 0.07em;
+    font-size: @font-size-small;
+    color: @color-brown-dark-alpha-70;
+    font-weight: 400;
+    line-height: 1.9em;
+
+    @media @media-sm-max {
+
+        br {
+            display: none;
+        }
+    }
+}
+
+.Text-block-title-list {
+    text-transform: uppercase;
+    //letter-spacing: 0.4em;
+    font-size: @font-size-smaller;
+    color: @color-gold;
+    font-weight: 600;
+    line-height: 1.9em;
+
+    @media @media-sm-max {
+        display: inline-block;
+        max-width: 230px;
+        margin-bottom: 20px;
+        //letter-spacing: 0.3em;
+        font-size: @font-size-smallest;
+        line-height: 1.7em;
+    }
+}
+
+.Text-block-paragraph {
+    position: relative;
+    margin: 0;
+    font-family: @font-secondary;
+    font-size: @font-size-large;
+    color: @color-brown-dark;
+    //letter-spacing: 0.2em;
+    line-height: 1.5em;
+
+    @media @media-sm-min {
+        font-size: @font-size-largest;
+    }
+}
+
+.Text-block-paragraph-ornament-top-left {
+    position: relative;
+    margin: 0;
+    font-family: @font-secondary;
+    font-size: @font-size-large;
+    color: @color-brown-dark;
+    //letter-spacing: 0.2em;
+    line-height: 1.5em;
+
+    &:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: -41px;
+        margin-left: -55px;
+        width: 120px;
+        height: 120px;
+        background: url(/assets/front/images/layout/ornament-discover.png) 0 0 no-repeat;
+        transform: rotate(-90deg);
+    }
+
+    @media @media-sm-min {
+        font-size: @font-size-largest;
+    }
+}
+
+.Text-block-paragraph-ornament-bot-center {
+    position: relative;
+    margin: 0;
+    font-family: @font-secondary;
+    font-size: @font-size-large;
+    color: @color-brown-dark;
+    //letter-spacing: 0.2em;
+    line-height: 1.5em;
+
+    &:before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: -60px;
+        margin-left: -60px;
+        width: 120px;
+        height: 120px;
+        background: url(/assets/front/images/layout/ornament-discover.png) 0 0 no-repeat;
+        transform: rotate(-180deg);
+    }
+
+    @media @media-md-max {
+
+        br {
+            display: none;
+        }
+    }
+
+    @media @media-sm-min {
+        font-size: @font-size-largest;
+    }
+}
+
+.Text-blockquote-ornament {
+    position: relative;
+    margin: 0 auto;
+    text-align: center;
+    font-family: @font-secondary;
+    font-size: @font-size-large;
+    color: @color-brown-dark;
+    //letter-spacing: 0.22em;
+    line-height: 1.5em;
+
+    &:before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: -56px;
+        margin-left: -60px;
+        width: 120px;
+        height: 120px;
+        background: url(/assets/front/images/layout/ornament-discover.png) 0 0 no-repeat;
+    }
+
+    &:after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: -60px;
+        margin-left: -60px;
+        width: 120px;
+        height: 120px;
+        background: url(/assets/front/images/layout/ornament-discover.png) 0 0 no-repeat;
+        transform: rotate(180deg);
+    }
+
+    @media @media-sm-min {
+        font-size: @font-size-largest;
+    }
+}

@@ -1,0 +1,34 @@
+<form n:name="form" class="exit-watcher">
+    <h4>Google Merchant feed</h4>
+    <div class="form-group">
+        {label googleMerchantTitle/} (V případě nevyplnění bude použit název produktu)
+        {input googleMerchantTitle}
+    </div>
+    <div class="form-group">
+        <div class="row">
+            <div class="col-xs-6">
+                {label googleMerchantCategory/}
+                {input googleMerchantCategory}
+            </div>
+            <div class="col-xs-6">
+                {label googleMerchantBrand/}
+                {input googleMerchantBrand}
+            </div>
+        </div>
+    </div>
+    <hr>
+    <h4>Heuréka</h4>
+    <div class="form-group">
+        {label heurekaCategory/}
+        {input heurekaCategory}
+    </div>
+    <hr>
+    <h4>Zboží.cz</h4>
+    <div class="form-group">
+        {label zboziCzCategory/}
+        {input zboziCzCategory}
+    </div>
+    <div class="form-group">
+        {input submit}
+    </div>
+</form>

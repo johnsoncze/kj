@@ -1,0 +1,45 @@
+{contentType application/xml; charset=utf-8}
+{cache tags => [$control::CACHE_TAG, App\Product\Product::PRODUCT_FEED_CACHE_TAG]}
+{var $baseUrl = rtrim($linkGenerator->link('Front:Homepage:default'), '/')}
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:g="http://base.google.com/ns/1.0">
+    <title>{$presenter->context->getParameters()['googleMerchantFeed']['title']}</title>
+    <link rel="self" href="{$baseUrl}"/>
+    <updated>{$control->getDateTimeStamp()}</updated>
+    {var $maxProducts = 500}
+    {var $count = $control->getProductsCount()->getCount()}
+    {for $i = 0; $i <= $count;}
+        {var $products = $control->getProducts($maxProducts, $i)}
+        {var $customLabel1 = $control->getCustomLabel1($products)}
+        {foreach $products as $product}
+            {var $productTranslation = $product->getTranslation()}
+            <entry>
+                <g:id>{$product->getCode()}</g:id>
+                <g:title>{$productTranslation->getResolvedGoogleMerchantTitle($product)}</g:title>
+                {if $productTranslation->getDescription()}
+                  <g:description>{$productTranslation->getDescription()|striptags}</g:description>
+                {else}
+                  <g:description>Každý náš šperk je originální, tak jako je jedinečný každý náš vztah. Je výsledkem poctivé ruční řemeslné práce, aby vydržel navždy.</g:description>
+                {/if}
+                <g:link>{$linkGenerator->link('Front:Product:detail', ['url' => $productTranslation->getUrl()])}</g:link>
+                <g:image_link>{if $product->getPhoto()}{$baseUrl}{$fileManager->getFile($product->getPhoto(), $product->getUploadFolder())}{/if}</g:image_link>
+                <g:price>{$product->getPrice()|number:2:'.':''} CZK</g:price>
+                <g:google_product_category>{if $product->getGoogleMerchantCategory() !== NULL}{$product->getGoogleMerchantCategory()}{/if}</g:google_product_category>
+                <g:brand>{if $product->getGoogleMerchantBrandText() !== NULL}{$product->getGoogleMerchantBrandText()}{/if}</g:brand>
+                <g:mpn>{$product->getCode()}</g:mpn>
+                <g:condition>new</g:condition>
+                <g:availability>{if $product->getStock() > 0}in stock{else}{if $product->getEmptyStockState() == 3}preorder{else}out of stock{/if}{/if}</g:availability>
+                {if $product->getStock() == 0 && $product->getEmptyStockState() == 3}
+                <g:availability_date>{\Nette\Utils\DateTime::from('now +4 weeks')->format('c')}</g:availability_date>
+                {/if}
+                <g:adult>no</g:adult>
+                <g:custom_label_0>{$productTranslation->getName()}</g:custom_label_0>
+                <g:custom_label_1>{isset($customLabel1[$product->getId()]) ? $customLabel1[$product->getId()]->getValue() : NULL}</g:custom_label_1>
+                <g:custom_label_2>{$product->getPriceLabel()}</g:custom_label_2>
+            </entry>
+        {/foreach}
+        {php unset($products)}
+        {var $i += $maxProducts}
+    {/for}
+</feed>
+{/cache}

@@ -1,0 +1,2 @@
+App\Password\PasswordService:
+    verifyFail: "Neplatné heslo."

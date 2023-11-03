@@ -1,0 +1,74 @@
+{**
+* Is included in search category result as well.
+*}
+
+{if $categories}
+    <section class="Background">
+        <div class="Collection-items Container Container--wide">
+
+            <div class="Grid u-pb--80 u-sm-pb--120">
+
+                {foreach $categories as $category}
+                    <div class="Grid-cell u-size12of12 u-xs-size6of12 u-sm-size3of12 u-mt--20 u-sm-mt--30 u-md-mt--30">
+                        <div class="Collection-item u-textCenter u-mb--40">
+                            <div class="Collection-block-item-content">
+                                <div class="Collection-block-item-images">
+                                    <a href="{plink Category:default, url => $category->getUrl()}">
+								{if $category->getParentId() === 1}
+                                        <img src="{if $category->getSubcategoryImage()}{thumbnailPath 800, 800, $category->getSubcategoryImage(), $category->getUploadFolder()}{else}{imagePlaceholder 280, 261}{/if}"
+                                             alt="{$category->getName()}"
+                                             class="">								
+								{else}
+                                        <img src="{if $category->getMenuImage()}{thumbnailPath 800, 800, $category->getMenuImage(), $category->getUploadFolder()}{else}{imagePlaceholder 280, 261}{/if}"
+                                             alt="{$category->getName()}"
+                                             class="">
+								{/if}
+                                    </a>
+                                </div>
+                                <h3 class="Collection-item-title u-mt--30 u-mb--5 u-textSecondary">{$category->getName()}</h3>
+                                <a href="{plink Category:default, url => $category->getUrl()}"
+                                   class="Collection-link-big">
+									{if $category->getParentId() === 2 || $category->getParentId() === 69}
+                                    <span class="Link-animation u-md-displayInit Link Link--lineBefore">{_category.signpost.block.ctaWatch|noescape}
+                                        <span class="Link--hover"></span></span>
+									{elseif $category->getParentId() === 46} 
+                                    <span class="Link-animation u-md-displayInit Link Link--lineBefore">{_category.signpost.block.ctaAccessories|noescape}
+                                        <span class="Link--hover"></span></span>
+									{else} 
+                                    <span class="Link-animation u-md-displayInit Link Link--lineBefore">{_category.signpost.block.cta|noescape}
+                                        <span class="Link--hover"></span></span>
+									{/if}
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                {/foreach}
+                {* fixed element *}
+
+                {if (isset($parentCategory) && $parentCategory->getUrl() == 'sperky')}
+                <div class="Grid-cell u-size12of12 u-xs-size6of12 u-sm-size3of12 u-mt--20 u-sm-mt--30 u-md-mt--30">
+                    <div class="Collection-item u-textCenter u-mb--40">
+                        <div class="Collection-block-item-content">
+                            <div class="Collection-block-item-images">
+                                <a href="{plink Page:detail, url => 'zakazkova-vyroba'}">
+                                        <img
+                                                src="/assets/front/images/banner/banner-zakazkova-vyroba.jpg"
+                                                width="300"
+                                                height="400"
+                                                alt="Zakázková výroba"
+                                        />
+                                </a>
+                            </div>
+                            <h3 class="Collection-item-title u-mt--30 u-mb--5 u-textSecondary">Šperky na zakázku</h3>
+                            <a href="{plink Page:detail, url => 'zakazkova-vyroba'}"
+                               class="Collection-link-big">
+                                    <span class="Link-animation u-md-displayInit Link Link--lineBefore">VÍCE INFORMACÍ<span class="Link--hover"></span></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                {/if}
+            </div>
+        </div>
+    </section>
+{/if}

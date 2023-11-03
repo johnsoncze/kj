@@ -1,0 +1,257 @@
+list:
+    cta: 'Prohlédněte si kolekci'
+
+preview:
+    title: Kolekce
+    cta: Prohlédněte si celou kolekci
+    ctaMore: Zobrazit celou kolekci
+
+topCollection:
+    cta: Prohlédněte si kolekci
+
+andele:
+    motto: Čistota a skutečná hodnota
+    description1: 'Anděl je symbol ochrany, lásky a boží milosti. Je poslem dobra a naděje.  A tyto hodnoty si v dnešním světě potřebujeme připomínat. Vyberte si svého anděla a noste jej u sebe – už jen letmý dotyk nebo pohled na něj vás zahřeje u srdce.'
+    description2: 'Při návrhu nové kolekce jsme hledali něco příjemného a čistého, co vyvolá dobrý pocit. Napadli nás andělíčci strážníčci pro děti, andělé strážní pro ženy.'
+    description3: 'Když přichází rodiče s holčičkou a ona si vybere andělíčka, je to radost. Víme, že si odnáší něco skutečně hodnotného, co zůstane v rodině navždy.'
+    description4: 'Anděl je velmi osobním šperkem. Předáte spolu s ním lásku i prosbu o ochranu obdarovaného. Je to dar, který nikdy nezevšední.'
+    description5: 'Anděly a andělíčky tvoříme ze zlata nebo jeho barevných kombinací. Jejich křídla či šaty září drobnými diamanty. Připravili jsme pro vás ale i několik čistě stříbrných šperků.'
+    description6: 'Každý náš anděl je jiný, osobitý. Rádi vám pomůžeme vybrat toho pravého – ať už jej hledáte pro své děťátko či vnučku, pro svého blízkého, nebo sami pro sebe. Tak, aby potěšil a podpořil.'
+
+barevna:
+    motto: Paleta vzácných darů přírody
+    description1: 'Kolumbie, Egypt, Madagaskar, Srí Lanka či Borneo. Doputovaly k nám ze všech koutů světa. Některé z nich jsou minerály nebo horniny a jejich zrodu předcházely dlouhé geologické procesy. Něco však mají společného – jsou vzácné, výrazné a nádherné. Není divu, že se drahokamy kdysi staly symbolem moci a bohatství. I dnes si svoji hodnotu uchovávají a fascinují nás svými barvami.'
+    description2: 'Kouzlu a barvám přírodních kamenů jsme zcela propadli. Jedinečnost každého z nich je pro nás inspirací pro návrh designu šperku, který vyzdvihne osobitost daného drahokamu i jeho nositele.'
+    description3: 'Fialový ametyst, zlatý citrín, zelený smaragd i temně modrý safír. V této kolekci září celá paleta barev. Která z nich je ta vaše?'
+    description4: 'Souprava se smaragdy vyniká nejen sytě zelenou barvou, ale i netradičním a výrazným designem, který ihned upoutá pozornost.'
+    description5: 'Milujete černou barvu? Vybírejte z variace přívěsků s onyxem, který je zasazen do bílého zlata, ručně vytvarovaného do nadčasových geometrických obrazců.'
+    description6: 'Sety s rudými rubíny a drobnými diamanty potěší ženu, která vyhledává kvalitní a do detailu propracované šperky. Rádi vám je osobně představíme.'
+
+classic:
+    motto: 'Tvary, které nezevšední'
+    description1: 'Díky nadčasovému designu jsou vyhledávané a velmi oblíbené. Proto jsme pro vás i my navrhli klasické šperky, ve kterých vynikají především diamanty nebo barevné drahokamy, a některé z nich ozvláštnili vlastním rukopisem.'
+    description2: 'S kolekcí Classic nabízíme šperky, jejichž design bude aktuální i za desítky let a jejich hodnota s časem poroste. Jsou elegantní a přitom univerzální.'
+    description3: 'Všechny šperky spojuje stejný základ – zlato o 14 či 18 karátech, vzácné drahokamy a precizní ruční zpracování, prověřené několika kontrolami kvality.'
+    description4: 'Kameny vybíráme s největší pečlivostí. Ten správný drahokam mnohdy hledáme řadu měsíců po celém světě, ve spolupráci s našimi ověřenými dodavateli.'
+    description5: 'Náušnice, přívěsky a náramky z kolekce Classic jsou určené k dennímu nošení i pro slavnostní příležitosti. Vyberete si tu ale i překrásný zásnubní prsten, se kterým bude váš vzácný okamžik nezapomenutelný.'
+
+denni:
+    motto: Kvalita a elegance pro každý den
+    description1: 'Každá žena potřebuje mít ve své šperkovnici univerzální šperky, které bude ráda nosit každý den. Takové, které vypadají skvěle, ať už jde do práce, nebo do divadla. K ležérním kalhotám, letním i večerním šatům či ke kostýmku.'
+    description2: 'Rozhodli jsme se nabídnout kolekci kvalitních šperků pro každodenní nošení, po kterých se často ptáte. Vytvořili jsme je pro vás tak, aby zůstaly krásné a stále moderní po desítky let.'
+    description3: 'Denní kolekce je určena především pro ženy, které hledají nadčasové a decentní soupravy šperků.'
+    description4: 'Vybírejte z čistě zlatých šperků s hladkým povrchem či zdobených rytinou a z klenotů posetých drobnými diamanty. Každý z nich naši odborníci tvoří s největší pečlivostí a s důrazem na ruční práci.'
+    description5: 'Šperky s čistým designem vyrábíme často v soupravách náušnic, prstenu a přívěsku. Můžete je ale pořídit i samostatně a dalším kusem setu si udělat radost zase při další příležitosti.'
+    description6: 'Každý šperk z této kolekce bude i krásným dárkem, který pro vaše blízké tvoříme s precizností – tak, aby si dlouhá léta udržel svoji kvalitu a hodnotu a dělal radost po celý život.'
+
+detska:
+    motto: Radost našim dětem
+    description1: 'Své děti milujete ještě před jejich prvním nadechnutím. Radujete se z jejich prvních krůčků, úsměvů i z každého obrázku, který pro vás namalují. Chcete jejich štěstí, proto jim do života vybíráte jen to nejlepší.'
+    description2: 'I my jsme rodiče. Vzpomínali jsme na dobu, kdy byly naše děti malé, a prohlíželi jsme si jejich obrázky. Až jsme se rozhodli dát jejich kresbám život.'
+    description3: 'Medvídci, kočičky a pejsci, beruška nebo usměvavé sluníčko. To jsou některé z oblíbených motivů dětského světa. Najdete je i v našich špercích.'
+    description4: 'Šperk zachytí důležité vzpomínky. Takovou je i radost z prvních náušnic pro vaši holčičku. Bude si je navždy pamatovat a možná je jednou předá své dceři.'
+    description5: 'Veselé barvy rubínů, safírů i diamantů oživují oblíbené dětské postavičky vytvořené z různých druhů 14 či 18karátového zlata.'
+    description6: 'V kolekci najdete náušnice pro miminka i pro větší děti. Rádi poradíme s výběrem motivu i vhodného zapínání a náušničky nasadíme.'
+
+diva:
+    motto: Oslňující krása a osobitost
+    description1: 'Vše najednou utichne a oči všech se upírají stejným směrem. Přichází Ona. Žena, jejíž vnitřní síla a krása září natolik, že setkání s ní se zapíše do paměti každého člověka.'
+    description2: 'Slovo „diva“ dříve označovalo obdivovanou bohyni, později významné ženy s výjimečným talentem. Dnes patří všem úžasným ženám, stejně jako tato kolekce.'
+    description3: 'Kolekce Diva v sobě spojuje krásu, inspiraci a výjimečnost. Všimněte si propracovaného designu s netradičními detaily, který nemá obdoby.'
+    description4: 'Podtrhněte svoji krásu tahitskými perlami, jejichž vzácné tmavé odstíny vynikají v netradičních tvarech a různých barvách zlata.'
+    description5: 'Třpyt výrazných bílých i barevných diamantů vás rozzáří. Nebo jsou vám bližší syté odstíny safírů, topazů či tanzanitů?'
+    description6: 'Vyjádřete obdiv a lásku okouzlující ženě a darujte ručně vytvořené klenoty Diva s jedinečným designem. Pomůžeme vám vybrat ty pravé.'
+
+fantazie:
+    motto: Smyslná hra křivek
+    description1: 'Jako volné tahy štětcem, když se malíř nechává unášet momentem inspirace. Jako příběh v knize, který spisovatel zamotává, pomalu rozplétá a kříží s jiným. Jako krásná spontánní píseň, hraná bez not. Fantazie bez pravidel.'
+    description2: 'Kolekce Fantazie je dílem tvůrčího okamžiku. Vznikla z chuti navrhnout zcela originální a variabilní šperky. Rozverné, a přitom elegantní.'
+    description3: 'Volně tvarované a spletené křivky překvapují dokonalým dojmem harmonie a smyslnosti. Působí velice žensky.'
+    description4: 'Červené, bílé i žluté zlato se pod rukama zlatníků mění do ladných tvarů bez předem daných kritérií. Ty doplňují vzácné přírodní kameny různých velikostí.'
+    description5: 'Kolekce vás bude bavit svou hravostí. Volbou zapínání nebo drobnou úpravou nastavení změníte tvar a dojem, kterým šperk působí.'
+    description6: 'Darujte neopakovatelné šperky vytvořené tradiční klenotnickou technikou, které žena může nosit na více způsobů.'
+
+kvetiny:
+    motto: Hravý půvab a trvalá radost
+    description1: 'Hýří barvami, voní, jsou půvabné. Dělají radost a sdělují: „Miluji tě. Vážím si toho, že tě mám.“ Květiny ženu vždy potěší, i když vydrží jen pár dnů. Co když ale pořídíte květy, které zůstanou krásné navždy a jejich hodnota poroste?'
+    description2: 'Muž ženě, maminka dceři, vnuk babičce. Květiny jsou dar, který rozzáří oči každé ženě. Proto jsme vytvořili trvalé květy, které zůstanou ve vaší rodině navždy.'
+    description3: 'Kolekce je živá, barevná a hravá. Svým krásným motivem potěší každou ženu, bez ohledu na věk.'
+    description4: 'Záplavu drobných zlatých kvítků oživují pestré barvy tanzanitů, smaragdů, topazů či peridotů. Pozornost si zaslouží i vzácné tahitské perly.'
+    description5: 'Něžné, a přitom výrazné. Šperky z kolekce Květiny rozzáří vaši krásu a posílí vaši energii při jakékoli příležitosti.'
+    description6: 'Vyznání lásky či díků, oslava a radost nad úspěchem, připomínka vzácného okamžiku. Vyjádřete své pocity květinou zvěčněnou v kvalitním šperku.'
+
+laskaVira:
+    motto: Symboly nejvzácnějších hodnot
+    description1: 'Jsou staré jako lidstvo samo, přesto nikdy nezevšední. Hrály důležitou roli při vytváření naší historie a dokázaly ovlivnit mnohé významné příběhy. Odjakživa díky nim vyhráváme bitvy, překonáváme nejtěžší chvíle a radujeme se ze života. Lásku, víru a naději budeme vždy potřebovat.'
+    description2: 'Za motivaci k vytvoření této kolekce děkujeme vám, našim zákazníkům. Volali jste po zajímavém provedení těchto nesmrtelných motivů – a my jsme vaše přání rádi splnili.'
+    description3: 'Láska, víra a naděje mají významné místo v našich životech. Cítíme je, ale nemůžeme se jich dotknout. Proto jsme je pro vás zhmotnili do podoby tří symbolů.'
+    description4: 'Srdce znamená lásku – trpělivou, laskavou a čestnou. Kříž je symbolem víry, kterou nosíme v srdci. A kotva značí naději, že překonáme překážky, které nám osud přichystá.'
+    description5: 'Láska, víra, naděje je kolekcí přívěsků. Srdíčko, křížek nebo kotvu tak můžete nosit u svého srdce a každý den si je připomínat.'
+    description6: 'Symboly tvoříme v různých podobách a velikostech. Někdy stojí samostatně, jindy jsou všechny tři pohromadě. Rádi pomůžeme s výběrem toho pravého pro vás nebo vašeho blízkého.'
+
+nasiMotyli:
+    motto: Klenotům českých luk
+    description1: 'Motýli patří k nejvzácnějším, ale také nejohroženějším klenotům české přírody. Věděli jste, že z původních 161 druhů vyhynulo v posledních sto letech celých 11 procent? Nás tato zpráva hluboce zasáhla a rozhodli jsme se ihned jednat. V nejkratším možném čase jsme vytvořili kolekci Naši motýli, která už díky vašemu zájmu a podpoře dokázala malý zázrak.'
+    description2: 'Kolekci Naši motýli už několik let obnovujeme a rozšiřujeme. Část výtěžku vždy věnujeme společnosti <a href="http://www.ceska-krajina.cz">Česká krajina</a> na záchranu ohrožených druhů.'
+    description3: 'Společně se nám již podařilo proměnit zpustlé vojenské prostory v Milovicích v rozsáhlou louku plnou vzácných kvetoucích bylin. Navrátili se sem divocí koně a už tu dnes žije skoro polovina druhů českých denních motýlů. Děkujeme vám!'
+    description4: 'Udělejte si také radost a vyberte motýla z naší kolekce. Můžete tím zároveň zachránit život dalším druhům motýlů a zachovat tato božská stvoření pro další generace.'
+    description5: 'Tak jako jsou výjimečné jednotlivé druhy motýlů, které se od sebe liší tvary i barvami křídel, jsou jedinečné i naše šperky. Každý z nich jsme navrhli a vytvořili v naší dílně.'
+    description6: 'Když vidíme letět motýla, jako bychom sledovali živé umělecké dílo. My jsme podobný efekt vykouzlili barevnými kameny a perletí, která věrně připomíná křehká motýlí křídla.'
+    description7: 'Připravili jsme jednoduché a jemné soupravy i high jewellery s propracovanými detaily pro náročnější zákazníky. Z motýlů a motýlků si vyberete šperk pro každou příležitost. '
+
+odvaznaAKrasna:
+    motto: Nepřehlédnutelně originální
+    description1: 'Každý den k nám promlouvají skrz televizní obrazovku. Sdělují nám dobré i špatné zprávy, vždy s klidným hlasem a příjemným úsměvem. Rádi se na ně díváme a nasloucháme jim – pro jejich půvab i odvahu, s jakou vystupují v přímém přenosu. Kolekce Odvážná a krásná však není určena jen pro televizní reportérky, ale pro každou ženu, na kterou se upírají oči ostatních.'
+    description2: 'Naskytl se nám zcela nový pohled na naše šperky – skrz televizní obrazovku. Spolu s ním přišel nápad vytvořit novou kolekci výrazných šperků, které vyniknou za všech okolností.'
+    description3: 'Šperky Odvážná a krásná poutají pozornost svou originalitou, odvážnou barevností i tvarem. Některé z přívěsků můžete nosit i více způsoby.'
+    description4: 'Odvaha a krása těchto šperků spočívá také v použití méně běžných, avšak nádherných barevných kamenů, které vyžadují specifický přístup a práce s nimi je náročnější.'
+    description5: 'S naší novou kolekcí vás svět spatří v celé vaší kráse a odvaze. Rádi poradíme s výběrem šperku nebo setu, který vyzdvihne a podpoří vaši osobnost.'
+
+organickeMotivy:
+    motto: Zážitek z krás přírody
+    description1: 'Chladivý ranní vzduch proudí otevřeným oknem, až vyláká k vyběhnutí na zahradu. První sluneční paprsky už šimrají zelenající se trávu. A co se to třpytí mezi lístky? Jako by někdo rozsypal hrst diamantů… to vánek houpá křehké kapky rosy, které tančí ve sluneční záři.'
+    description2: 'Krásný zážitek se vepsal do paměti malé holčičky, která ještě netušila, že jednou dokáže své vidění světa kreativně sdílet s ostatními. Po letech uzrál v inspiraci a ožil v kolekci Organické motivy.'
+    description3: 'Vytvořili jsme ušlechtilé šperky pro vnímavé osobnosti, které cítí sílu a energii přírody a chtějí mít střípek z ní neustále při sobě.'
+    description4: 'Navlékněte soupravy z bílého, žlutého i červeného zlata. I vy pak na své kůži ucítíte jemné lístky s chvějícími se kapkami rosy, prostoupenými světlem letního slunce.'
+    description5: 'Všem šperkům se věnujeme do nejmenších detailů. Každý z nich ručně opracujeme, smirkujeme, leštíme a osazujeme diamanty.'
+    description6: 'Design kolekce je nezaměnitelný. Šperky se vzájemně doplňují a můžete je libovolně kombinovat – vždy budou působit harmonicky.'
+
+perly:
+    motto: Lesklý zázrak s rostoucí hodnotou
+    description1: 'I z malého zrnka může vzniknout něco vzácného a mimořádného. Na krásu se však musí čekat. Perlorodá lastura uvolňuje perleť několik let, než z nepatrného zrnka vytvoří nádhernou perlu. Trpělivost se ale vyplácí – při správné péči si kvalitní perla zachová svůj lesk po dlouhá desetiletí. V kombinaci se zlatem tak utváří hodnotný klenot, který se předává z generace na generaci.'
+    description2: 'Tuto kolekci jsme vytvořili pro ženy, které milují perly. Připravili jsme velký výběr sladěných souprav i jednotlivých šperků různorodých stylů.'
+    description3: 'Nabízíme vám šperky jedině z pravých perel. Osobně vybíráme ty nejkvalitnější perly jižních moří i sladkovodní perly, které jsou na světovém trhu k sehnání.'
+    description4: 'Vyberte si své perly a noste je, zdůrazní vaši ženskost a eleganci. Zároveň tím perlám dodáte život – dotyk pokožky jim totiž dává lesk a zůstávají tak krásné po dlouhé roky.'
+    description5: 'Ať už preferujete klasický design perlových šperků, nebo hledáte ručně vytvořený originál, v naší nabídce jej najdete. U každého z nich dbáme na nejvyšší kvalitu perel i zpracování.'
+    description6: 'Barva perly závisí na místě jejího vzniku. Je jich celá škála – kterou z nich si vyberete? Bude to klasická bílá či smetanová, něžně růžová, tajemně modrá až černá nebo zelená?'
+    description7: 'Navrhujeme a ručně pro vás navlékáme nápadité designové šňůry se zlatými komponenty. Vyberte si z limitované řady.'
+    description8: 'Perly jsou nádherné samy o sobě. Sluší jim ale i kombinace s diamanty či barevnými drahokamy. Přijďte si šperky prohlédnout a vyzkoušet.'
+
+primavera:
+    motto: Jarní jemnost přírody
+    description1: 'Na chvíli se zasněte a přeneste se v myšlenkách na rozkvétající louku. Nadechněte se svěžího vzduchu, ještě vonícího po nedávném dešti. Dotkněte se něžně zbarvených květů a nastavte tvář slunci. Cítíte to? Přichází jaro.'
+    description2: 'Podobně jako impresionističtí malíři, i my jsme pocítili nutkání zachytit jemnost jarní přírody a vnesli ji do uměleckého šperku.'
+    description3: 'Inspiraci pro vytvoření kolekce jsme našli při pozorování probouzející se přírody. Tak vznikl i název Primavera, který znamená „jaro“.'
+    description4: 'Se šperkem z kolekce Primavera darujete něhu, zdánlivě křehkou krásu a ušlechtilost. Potěší romantickou ženu, která vyhledává nadčasovou eleganci.'
+    description5: 'Všimněte si vzácných tvarů a barev perel. Každá z nich byla svým vzhledem předurčena ke stvoření jiného jarního květu.'
+    description6: 'Sluneční paprsky se odráží v čistě bílých i žlutých diamantech a hrají si také s pastelovými barvami perel, které jako by pod jejich září ožily.'
+    description7: 'Udělejte radost jedinečnými sety šperků, které navrhli a ručně vytvořili naši zlatníci. Každý šperk s perlou je neopakovatelný originál.'
+
+radost:
+    motto: Nadčasová dokonalost čistých linií
+    description1: 'Přesně ta chvíle, kdy sfoukáváte svíčky na dortu nebo když přebíráte vysokoškolský diplom. Zatajený dech a pak vteřina, kdy řekne „Ano“. První minuty, kdy chováte v náručí své dítě. Všechny tyto okamžiky spojuje stejný pocit – radost. Uchovejte si ji navždy ve špercích, které jsme pro vás i my tvořili s radostí.'
+    description2: 'V kolekci Radost se odráží naše naladění při tvorbě šperků, ale také vzpomínky na vzácné životní momenty.'
+    description3: 'Radost je čistá a prostá. Proto šperky z této kolekce vychází z jednoduchých linií a tradičních tvarů, které jsme s důrazem na přesnost a detail ozvláštnili vlastními designovými prvky.'
+    description4: 'Tato kolekce vykouzlí úsměv na tváři každému, koho chcete obdarovat kvalitním šperkem. Najdete tu zásnubní prsteny, manžetové knoflíčky i kravatové spony a řadu precizně zpracovaných šperků.'
+    description5: 'Tvorba všech JK šperků probíhá přímo v naší dílně – stejně tak zde vznikla i kolekce Radost. Každý kus je ručně vyrobeným originálem s vysokou hodnotou, která s časem roste.'
+    description6: 'Šperky z Radosti můžete nosit k mnoha příležitostem. Často tvoří sady v kombinaci prsten – náušnice – přívěsek nebo náhrdelník – náramek.'
+
+severskeMotivy:
+    motto: Drsná krása přírody
+    description1: 'Horské vrcholy jsou věčně zapadané sněhem. Slunce si hraje s ledovými krystalky a odráží v nich své paprsky, až se zdá, jako by hory pokryl zlatavý koberec. Vodopády a divoké řeky se nespoutaně ženou dolů a nechají se usměrnit jen oblými skalami. Jaké poklady se asi skrývají v údolí zastřeném mléčným oparem?'
+    description2: 'Kolekce Severské motivy byla inspirována severskou přírodou. Surovou a mnohdy nebezpečnou, ale nádhernou.'
+    description3: 'Ve zlatých špercích jsme zachytili přirozenost a drsnou krásu norských hor, zalitých hřejivou a přívětivou září slunce.'
+    description4: 'Všimněte si speciální úpravy povrchu, která se u evropských šperků běžně nepoužívá – ve žlutém zlatě ručně vytváříme reliéf, evokující sněžné závěje a skály.'
+    description5: 'Pravé přírodní opály pečlivě vybíráme. Při pohledu na jejich odstíny si vybavíte divokou vodu, chladné ledovce i blankytné nebe.'
+    description6: 'Ručně vyrábíme celý šperk – ke každému opálu přesně tvarujeme obrubu a ve zlatě vytváříme reliéf. Každý kus je tak jedinečný.'
+    description7: 'Severské motivy potěší každou ženu, která miluje přírodu v celé její nespoutanosti a chce si ji uchovat v kvalitním a unikátním šperku.'
+
+sol:
+    motto: S veselými paprsky slunce
+    description1: 'Jeho paprsky dávají život. Hřejí a rozjasňují náš den i ve chvíli, kdy je nám těžko. Dokážou dát třpyt a půvab věcem, které jsou jindy šedivé. Není divu, že bylo slunce v historii mnohdy uctíváno jako božstvo.'
+    description2: 'Do této kolekce jsme vtiskli velkolepost a záři nebeského tělesa, které prosvěcuje náš život. Proto i název Sol, který znamená slunce.'
+    description3: 'Zlato je od pradávna symbolem slunce. A nejen kvůli barvě. Všimli jste si někdy, že zlaté šperky na pokožce jemně hřejí, podobně jako sluneční paprsky?'
+    description4: 'Šperky Sol jsou určené ženě, která chce být viděna. Nesou v sobě eleganci, vznešenost i oslňující půvab. Přijďte si je k nám vyzkoušet.'
+    description5: 'Zlaté paprsky vychází z něžně bílé či růžové perly a společně utváří nadčasové zpodobnění naší nejdůležitější a životodárné hvězdy.'
+    description6: 'Jednotlivé šperky mají originální design a obsahují nezaměnitelné solitéry, které nemají na zdejším trhu obdobu.'
+    description7: 'Šperky se vzájemně doplňují a vyzařují jednotnou energii. Kus po kusu tak můžete postupně skládat svoji soupravu a dělat si radost při různých příležitostech.'
+
+spiraly:
+    motto: Život v čisté linii
+    description1: 'Jako zatočená ulita hlemýždě. Jako postupně se rozvíjející lístky mladé kapradiny. Nebo jako semínka v terčích zlatých slunečnic. Tvar spirály se v přírodě objevuje na mnoha místech. A nejen u nás na Zemi – do spirál se točí i vzdálené galaxie.'
+    description2: 'Spirály jsou ve své podstatě velmi jednoduché, ale v prostých liniích se ukrývá hloubka jejich významu. Některé zachycují život, který sledujeme v přírodě, jiné zase život lidský.'
+    description3: 'Život běží a jeho dny se jeden po druhém vinou. Má svá důležitá období a okamžiky. Vtiskli jsme je do šperků v podobě zlatých úseků i drobných diamantů či teček, připomínajících významné chvíle.'
+    description4: 'Z kolekce Spirály dýchá harmonie. Je ladná a nenajdete v ní nic ostrého. Ve své jednoduchosti je nadčasová.'
+    description5: 'Část šperků si zachovává dokonale čistý design a linie spirály je vytvořena z jednoho druhu zlata. Další kusy v sobě spojují dvě barvy zlata nebo jsou zvýrazněny diamanty.'
+    description6: 'Každý šperk této kolekce od základu tvarujeme ručně. S každým z nich tak získáte originál vysoké kvality.'
+    description7: 'Tvar spirály se objevuje v každém šperku kolekce. Jednotlivé kusy tak můžete libovolně kombinovat, vždy utvoří sladěný celek.'
+
+tahitskeKralovny:
+    motto: Tajemná vznešenost tmavých perel
+    description1: 'Stříbrné, čokoládově hnědé, tmavě zelené až černé. Přirozeně tmavé odstíny tahitských perel se s přicházejícím večerem ještě prohlubují a mění barvu, až se zdá, že skrývají vzácné tajemství. Na první pohled vnímáme jejich vznešenost a mimořádnost – nejen kvůli jejich kráse a kovovým odleskům, ale i vzácnému původu. Tahitská perla je bezesporu královnou všech perel.'
+    description2: 'Pravé tahitské perly byly objeveny až v 70. letech dvacátého století ve Francouzské Polynésii. Ihned si získaly naše srdce a jako jedni z prvních výrobců jsme s nimi začali pracovat.'
+    description3: 'Vzácné perly potřebují ke svému vzniku čistou vodu a klidnou hladinu. Tuto harmonii si v sobě uchovávají navždy a přenáší ji i na svoji nositelku.'
+    description4: 'Přijďte tahitské perly poznat osobně – dotkněte se jich, vyzkoušejte si je a podívejte se, jak se na světle lesknou. Pokud k vám patří, ihned to poznáte.'
+    description5: 'Nejprve najdeme jedinečnou perlu, až poté pro ni navrhujeme šperk. To ona je jeho královnou. K ní ručně tvarujeme zlato a doplňujeme diamanty, aby vynikla.'
+    description6: 'Dokonalost si žádá svůj čas. V kolekci najdete šperky s jednou perlou, ale i náhrdelníkové šňůry, pro které hledáme ty správné perly měsíce či roky.'
+    description7: 'Tahitské perly existují proto, aby byly nošeny. Dotyk pokožky jim dodává lesk a dlouhý život. Při správné péči budou vám i vašim dětem dělat radost až sto let.'
+
+toleranceSnubni:
+    motto: Navždy ruku v ruce
+    description1: 'Rozhodli jste se upevnit svůj vztah a společně sdílet dobré i zlé. Stojíte před začátkem nového života, do kterého vám přejeme nejen lásku a štěstí, ale také soužití ve vzájemné úctě a toleranci. Právě to je klíčem ke vzkvétajícímu manželství a trvalému hlubokému vztahu.'
+    description2: 'Snubní prsteny jsou pro nás šperky se zásadním významem. Proto byla Tolerance jednou z našich prvních kolekcí a stále ji rozšiřujeme.'
+    description3: 'Snubní prsteny budou symbolem vašeho slibu a připomínkou zásadního okamžiku, ze kterého vzejde pouto na celý život. Proto je tvoříme ze vzácných materiálů, jejichž hodnota s časem roste.'
+    description4: 'Návrhu nadčasového designu i kontrolám kvality při tvorbě šperků věnujeme velkou péči, abyste z nich měli stejnou radost i za několik desetiletí.'
+    description5: 'Společně vybírejte z naší široké nabídky ručně tvořených prstenů v různých barvách zlata, s matným či lesklým povrchem, s diamanty nebo reliéfem.'
+    description6: 'Váš pocit, když prsten navléknete, je ještě důležitější než dokonalý vzhled. Přijďte si prsteny prohlédnout a vyzkoušet. Poté je pro vás vyrobíme na míru.'
+    description7: 'O snubní prsteny je třeba pečovat, stejně jako o manželství. Proto vaše prsteny jednou za dva roky bezplatně prohlédneme a vyčistíme. Servis je celoživotní.'
+
+toleranceZasnubni:
+    motto: Ano společnému životu
+    description1: 'Tolerance je vyjádřením pochopení milovaného člověka. Je cestou ke vzájemné úctě a hluboké lásce. A s nimi se vztah vyvíjí a vzkvétá. Blahopřejeme vám k takovému štěstí a k rozhodnutí upevnit a dále budovat váš vztah po zbytek života.'
+    description2: 'Zásnubní prsten není pouhým šperkem. Je připomínkou důležitého okamžiku, kdy se vztah promění. Hluboké a trvalé vztahy mají pro náš život zásadní význam, proto jim při tvorbě šperků věnujeme hlavní pozornost.'
+    description3: 'Výběr prstenu mnohdy provází nejistota. Ale nemějte obavu, přineste fotografii své milované a povězte nám, jaká je. Společně vybereme prsten nejbližší její duši.'
+    description4: 'V naší široké nabídce najdete jak prsteny s výraznou korunkou, tak i prsteny s nižším kamenem. Vybírejte mezi brilianty a barevnými drahokamy.'
+    description5: 'Prsteny navrhujeme a tvoříme v naší zlatnické dílně s velkým důrazem na ruční práci a originalitu. Každý detail musí být perfektní, proto provádíme několik kontrol kvality.'
+    description6: 'Necháváme se inspirovat vašimi příběhy a kolekci Tolerance neustále doplňujeme o nové prsteny. Jakýkoli z nich pro vás vyrobíme na míru nebo upravíme.'
+    description7: 'Přejete si, aby zásnubní prsten ladil se snubním? Nabídneme vám set prstenů, které se na prsteníčku doplňují a společně tvoří vizuální celek.'
+
+tricolor:
+    motto: Zdánlivá jednoduchost a dokonalá elegance
+    description1: 'Přes den úspěšná manažerka či maminka. Odpoledne žena, která dbá o svoji fyzickou kondici. Večer partnerka, okouzlující svého muže v restauraci nebo v divadle. Během svého dne vystřídáte řadu rolí a při každé z nich chcete být elegantní a sama sebou.'
+    description2: 'Kolekci Tricolor jsme tvořili s myšlenkou na aktivní moderní ženu a navrhli jsme šperky, které vyzdvihnou její osobnost při každé příležitosti.'
+    description3: 'Tváří kolekce je Hanka Kynychová, která je zosobněním naší inspirativní ženy a dokazuje, že se šperky Tricolor můžete i sportovat.'
+    description4: 'Hlavní motiv kolekce vychází z inspirace olympijskými kruhy. Symboliku nesou i tři barvy zlata, které se prolínají stejně jako události ve vašem každodenním životě.'
+    description5: 'Kolekci tvoří kvalitní designové a ručně vyráběné šperky s přírodními kameny, jako jsou smaragdy nebo diamanty s briliantovým brusem.'
+    description6: 'Darujte sady šperků s jednoduchým a čistým provedením, které vyjadřují obdiv skvělé ženě a zdůrazní její krásu opravdu při každé příležitosti.'
+
+venezia:
+    motto: Kouzlo renesančních Benátek
+    description1: 'Město ležící na vodě nás přitahuje svým výjimečným půvabem. Koho by nelákalo proplouvat malebnými uličkami na gondole a obdivovat skvělou práci architektů? Benátky jsou plné barev a života, mají ale i svá tichá zákoutí. Právě zde, na hladině téměř zapomenutých kanálů a pod hvězdným nebem, k nám přicházejí nové myšlenky a nápady.'
+    description2: 'Benátky podnítily k tvorbě již mnoho umělců. Nás však inspirovala jejich méně známá tvář a tajuplná atmosféra kanálů, kam nepronikl ruch města.'
+    description3: 'Podobně jako benátské renesanční fresky, šperky kolekce Venezia vynikají zdobností a precizním ručním zpracováním detailů.'
+    description4: 'Něžné linie a barvy osloví romantické, jemné ženy. Zlaté šperky s vzácnými perlami i kameny mohou nosit při mnoha příležitostech.'
+    description5: 'Kolekce Venezia je živá jako samotné Benátky. Je plná různorodých tvarů, barev i materiálů. Najdete tu zlaté šperky osazené diamanty, barevnými přírodními kameny i perlami.'
+    description6: 'Všechny šperky kolekce nesou JK rukopis. Díky mistrovské práci našich zlatníků a fasérů získáte originální šperk s vysokou kvalitou.'
+
+vivaVisionII:
+    motto: 'Pocta moudrosti a tomu, co nás přesahuje'
+    description1: 'Svět je plný věcí, které nás přesahují a jsou pro lidstvo tak neuchopitelné, že si je mnohdy dokáže vysvětlit až o tisíce let později. Přesto nás fascinují a obdivujeme je. Žasneme nad příběhy a myšlenkami vzácných osobností, které formovaly historii, naše názory i vědění. A se stejně upřímným zájmem obracíme svůj zrak nahoru k vesmíru – aniž bychom si hráli na to, že mu rozumíme.'
+    description2: 'Viva Vision II je poctou tomu, co obdivujeme a co si nedokážeme logicky vysvětlit – převratným myšlenkám vzácných osobností i zákonitostem vesmíru.'
+    description3: 'Hlavní a jednotící kruhový prvek byl inspirován pravidelnými krátery na povrchu Měsíce a zároveň vzdáleným pohledem na jednotlivé planety.'
+    description4: 'Šperky kolekce Viva Vision II jsou určeny ženám, které nosí své myšlenky do společnosti.'
+    description5: 'Tváří kolekce je výjimečná žena a Česká Miss 2013 Gabriela Lašková.'
+    description6: 'Jedinečné tvary nadčasových šperků vznikly v naší zlatnické dílně a jsou v nich zasazeny barevné přírodní kameny.'
+    description7: 'Viva Vision II je pokračováním unikátní kolekce limitovaných souprav šperků, o kterou jste měli velký zájem. Věříme, že si zamilujete i nové kusy.'
+
+voda:
+    motto: Zdroj našeho života
+    description1: 'Je zázračná a životodárná. Bez ní bychom nikdy nespatřili krásy tohoto světa. Voda je úžasný živel, tvořící přírodní umělecká díla a oživující vše kolem nás. Naučili jsme se ji však vnímat jako samozřejmost. Změňme to a oslavme její mimořádný význam!'
+    description2: 'Vytvořili jsme první vědomou kolekci šperků na světě, která ztvárňuje a podporuje vodu. Uctívá její krásu a přínos pro náš svět i život.'
+    description3: 'V designovém  zpracování jsme zachytili vodu tak, jak ji milujeme – v podobě vln, kapek, louží, řek, potůčků i vodopádů.'
+    description4: 'Každá žena je jiná. A stejně tak rozmanitá je i voda. Ať už vás fascinuje krása divoké řeky, nebo jednoduchých drobných kapek, najdete zde svůj šperk.'
+    description5: 'Při pohledu na sytě modré topazy, safíry či smaragdy jako bychom hleděli do hlubokých vod oceánu. Mezi zlatými vlnkami zase tu a tam objevíme perlu.'
+    description6: 'Mimořádný šperk poutá pozornost a předává poselství. Při jeho nošení tak upozorníte na důležitost vody. Jako malý dárek od nás zároveň dostanete knihu Tajuplná řeč vody.'
+    description7: 'Navštivte naši reprezentativní prodejnu a rádi vám šperky z kolekce Voda představíme. Prozradíme víc o jejich příběhu a pomůžeme vám vybrat ten pravý.'
+
+kubistik:
+    motto: Krása v jednoduchosti
+    description1: 'Kolekce vybočuje z romantického vzezření šperků, v ostatních kolekcích hojně zastoupených, a střídá je techničtějším pojetím. Nabízí protipól organických motivů. Je to posun od ornamentu k minimalismu a obnažení surového materiálu bez příkras.'
+    description2: 'Kolekce Kubistik je oslavou uměleckého směru počátku 20. století, zejména architektury. Inspirací jsou věci, které kolem sebe vídáme, jako například Kovařovicova kubistická vila či kubistický trojdům pod Vyšehradem.'
+    description3: 'Kolekce je posunem od ornamentu k minimalismu s akcentací surového materiálu. Vše se točí kolem ústředního motivu koule.'
+    description4: 'Převažují v ní na první pohled spíše pánské kousky, ale ženy si rozhodně také vyberou. Téměř celá kolekce je unisex.'
+
+
+entrance:
+    MostFavourite: "Ukázka z kolekce"
+    btnAll: "Zobrazit celou kolekci"

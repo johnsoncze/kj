@@ -1,0 +1,8 @@
+<form n:name="form">
+    {foreach $form->getControls() as $c}
+        <div class="form-group">
+            {label $c->getName()/}
+            {input $c->getName()}
+        </div>
+    {/foreach}
+</form>

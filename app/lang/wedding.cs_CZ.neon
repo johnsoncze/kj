@@ -1,0 +1,64 @@
+title: 'Podporujeme nová manželství'
+personalMeeting: 'Sjednejte si<span class="font-source-serif">osobní schůzku</span> v naší prodejně<br />se zlatnickou dílnou'
+
+engagementRings: 'Zásnubní prsteny'
+supportText: 'I v dnešní době vnímáme důležitost manželství, a to jak v citové, tak praktické, a dokonce i ekonomické rovině. Naše krédo je <b>„šperk je vztah“</b>. Věříme, že zásnubní a snubní prsteny by měly symbolizovat trvalý svazek, který v ideálním případě vydrží po celý život. To odráží i naše prsteny. Jedním z aspektů, který vnímáme jako esenciální je práce výhradně s <b>materiály, které vydrží roky</b> – ušlechtilé kovy a vzácné kameny.<br /><br />Všechny naše šperky mají <b>certifikát pravosti</b>. Za kvalitou našich šperků si stojíme natolik, že při dodržování pravidelného servisu (každé dva roky zdarma) na ně <b>poskytujeme doživotní záruku</b>.<br /><br />Podporujeme nová manželství, proto jsme pro sortiment zásnubních a snubních prstenů spustili na <b>vybrané modely cenové zvýhodnění.</b>'
+btn_meeting: 'Sjednejte si schůzku'
+btn_all: 'Všechny zásnubní prsteny'
+btn_toleration: 'Kolekce tolerance'
+btn_edvantage: 'Výhodný nákup'
+
+howEstimate:
+    title: 'Jak odhadnout velikost prstenu?'
+    topText: 'Muži se často bojí, že vyberou špatnou velikost. Chceme vás ale ubezpečit, že velikostí prstenu se tolik trápit nemusíte. Díky tomu, že si prsteny sami vyrábíme a poskytujeme i kvalitní zákaznický servis, tak jsme u valné většiny prstenů schopni velikost bez problémů zdarma následně upravit.'
+    listHeader: 'Existuje však několik metod, jak velikost změřit:'
+    list1: 'Změřit vnitřní obvod'
+    list2: 'Změřit provázkem nebo pomocí papírových kroužků'
+    list3: 'Využít multisizer'
+    list4: 'Kontaktovat nás'
+    bottomText: 'Nám v JK k určení velikosti na dálku také pomůže, pokud své milované vyfotíte ruku a s tím nám pošlete i foto celkové postavy. Dokážeme pak velikost určit poměrně přesně, a to díky našim letitým zkušenostem.<br />Nejrozšířenější velikost u mladších žen a dívek spíše štíhlejší postavy se pohybuje v rozmezí 51–54, záleží ale také na dispozicích ruky a dalších faktorech. Velkou roli hraje i velikost kloubu, protože prsten přes něj musí projít, je-li větší než samotný prst za ním, volí se určitý kompromis mezi velikostí kloubu a části prstu, kde se prsten nosí.'
+    helperDownload: 'Pomocník pro určení velikosti (pdf)'
+    meeting: 'Sjednejte si bezplatnou schůzku v JK'
+
+goldColor:
+    title: 'Jakou barvu zlata a typ prstenu vybrat?'
+    topText: 'Co se týká zlata, máme <b>na výběr ze tří barev – bílá, žlutá a růžová</b>. Za klasiku v oblasti kamenů je považován přírodní bílý diamant díky svým fyzikálním i optickým vlastnostem. Mezi trendy patří i vzácné barevné kameny jako je safír, rubín nebo smaragd.<br /><br /><b>Jaký typ je vaše vyvolená?</b> Má ráda klasický styl, moderní design nebo sportovní či romantická? Hodně vám napoví, jaký má šatník i dosavadní šperky, aby vybraný prsten ladil k jejímu stylu. Jsme připraveni Vám s výběrem pomoci i na základě popisu a fotografie Vaší milované. A pokud byste se přece jen do vkusu vaší nastávající netrefili, <b>nabízíme</b> následnou <b>výměnu zboží</b>.<br /><br />Určitě se vyplatí <b>investovat do kvality</b>. Zásnubní a snubní prsteny jsou <b>šperky na celý život</b> a odráží se v nich hluboké city.'
+    edvantage: 'Výhodný nákup'
+    toleration: 'Kolekce tolerance'
+    rings: 'Všechny zásnubní prsteny'
+    meeting: 'Sjednejte si schůzku'
+
+
+whyChoose:
+    title: 'Proč si vybrat JK?'
+    topText: 'Šperk je vztah – to je naše krédo a princip, který se prolíná vším, co děláme, a to již více než 30 let.'
+    content: 'Poskytujeme <b>individuální poradenství a konzultaci při výběru</b> šperků a dbáme na vztahy se zákazníky, kterých máme v databázi 30 000 a velkou část z nich známe osobně a za ta léta jsme se stali i přáteli.<br /><br />I v dnešní době vnímáme <b>důležitost manželství</b>, a to jak v citové, tak praktické, a dokonce i ekonomické rovině. <b>Podporujeme nová manželství</b>, proto jsme pro sortiment zásnubních a snubních prstenů spustili <b>cenové zvýhodnění</b>.<br /><br />Pracujeme výhradně s <b>kvalitními kovy a vzácnými kameny</b>. Všechny naše šperky mají <b>certifikát pravosti</b>. Kombinujeme <b>ruční výrobu i nejmodernější technologie</b>. Za kvalitou našich šperků si stojíme natolik, že na ně <b>poskytujeme doživotní záruku</b> (při dodržování pravidelného servisu, který je každé dva roky zdarma). U většiny šperků lze dělat i dodatečné úpravy a změny velikostí.<br /><br /><b>Navštivte naši prostornou prodejnu</b>, odkud můžete nahlédnout i do zlatnické dílny a osobně se vám budou věnovat kvalifikované asistentky prodeje.'
+    meeting: 'Sjednejte si osobní schůzku'
+
+readArticle: 'Přečtěte si článek'
+personalMeetingBtn: 'Sjednejte si osobní schůzku'
+
+engagementRingsOffer:
+    diamond: 'Zásnubní prsteny<br />s diamanty'
+    white: 'Zásnubní prsteny<br />z bílého zlata'
+    whiteDiamond: 'Zásnubní prsteny<br />z bílého zlata s diamanty'
+    offer: 'Nabídka zásnubních prstenů'
+
+weddingRingsOffer:
+    rings: 'Snubní prsteny'
+    classic: 'Snubní prsteny Classic'
+    design: 'Snubní prsteny Design'
+    exclusive: 'Snubní prsteny Exclusive'
+    offer: 'Nabídka snubních prstenů'
+    choose: 'Jak v JK probíhá výběr snubních prstenů?'
+	
+
+customJewerly:
+    title: 'Přejete si šperk na zakázku?'
+    text1: 'Přejete-li si zachytit jedinečný životní okamžik v prstenech na míru, rádi pro vás vytvoříme'
+    link: 'šperk na zakázku'
+    text2: 'Ve spolupráci s našimi designéry se stanete součástí tvorby a odnesete si tak klenot, který bude v ideálním případě zdobit vaši ruku po zbytek života.'
+    customProduction: 'Zakázková výroba'
+
+
+

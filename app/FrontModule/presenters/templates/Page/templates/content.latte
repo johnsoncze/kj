@@ -1,0 +1,18 @@
+<section class="PageHeader">
+    <div class="PageHeader-bg" style="background-image: url(/www/assets/front/images/layout/bg-kolekce.jpg);"></div>
+    <div class="Container Grid">
+        <div class="Grid-cell u-size12of12">
+            {control breadcrumb:white}
+
+            <h1 class="Text-title u-mt--25 u-md-mb--0">{$page->getName()}</h1>
+        </div>
+    </div>
+</section>
+
+<section class="Background">
+    <div class="Container u-textCenter u-mt--20 u-sm-mt--0 u-mb--90 u-sm-mb--50">
+
+        {$page->getContent()|noescape}
+
+    </div>
+</section>

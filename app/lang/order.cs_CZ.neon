@@ -1,0 +1,139 @@
+comment: 'Vaše poznámka k objednávce:'
+
+title: Objednávka č.
+
+ordered: Objednáno
+
+billingInformation: Fakturační údaje
+deliveryDetails: Doručovací údaje
+
+email:
+    cancelled:
+        subject: Objednávka byla stornována
+        body:
+            title: Vaše objednávka byla stornována
+            description: 'Rádi bychom Vás informovali, že Vaše objednávka %code% byla stornována.'
+            farewall: 'Přejeme hezký den.'
+    stopped:
+        subject: Objednávka byla zrušena
+        body:
+            title: Vaše objednávka byla zrušena
+            description: 'Rádi bychom Vás informovali, že Vaše objednávka %code% byla zrušena.'
+            farewall: 'Přejeme hezký den.'
+    readyforpickup:
+        subject: Objednávka je připravena na naší prodejně
+        body:
+            title: Objednávka už tu na Vás čeká
+            description1: 'Dobrá zpráva!'
+            description2: 'Vše je připraveno a už si můžete vyzvednout Vaši objednávku %code%.'
+            delay: 'V případě, že si pro zboží přijdete později než za 14 dní, dejte nám vědět.'
+            farewall1: 'Velmi děkujeme za Váš nákup'
+            farewall2: 'a brzy na viděnou!'
+    sent:
+        subject: 'Zabaleno, odesláno. Zásilka bude brzy u Vás'
+        body:
+            title: 'Objednávka je už na cestě k Vám'
+            description1: 'Vaši objednávku %code% jsme vyřídili. Zboží jsme důkladně zabalili a pojištěnou zásilku předali dopravci, kterého jste si vybrali.'
+            carrier:
+                title: Dopravce Vás brzy kontaktuje
+                description: 'Očekávejte zprávu o přesném termínu doručení.'
+            farewall: 'Děkujeme Vám a přejeme hezký den.'
+    confirmation:
+        subject: Přijali jsme Vaši objednávku %code%
+        body:
+            title: Děkujeme za Vaši objednávku
+            subtitle: Hned začneme vše připravovat.
+            product:
+                title: Co jste si objednali
+            transferPayment:
+                title: Přáli jste si zaplatit převodem na účet
+                description: Posíláme tedy platební údaje
+                bankAccount: Číslo účtu
+                variableSymbol: Variabilní symbol
+                price: Částka k úhradě
+                description2: 'Jakmile platba dorazí na náš účet, zpracujeme dále Vaši objednávku, dle termínu dodání.'
+            tracking:
+                title: Sledujte stav své objednávky
+                description:
+                    part1: Podívejte se do
+                    part2: detailu objednávky
+                    part3: ve svém JK účtu
+                    part5: 'Až vše připravíme, napíšeme Vám také e-mail.'
+            information:
+                title: Údaje o objednávce
+            question:
+                title: 'Máte otázku?'
+                description:
+                    part1: 'Jsme tu pro Vás na čísle %telephone% nebo napište na'
+            farewall:
+                description: 'Ještě jednou děkujeme, moc si vážíme Vaší přízně'
+    paymentGateway:
+        cancelled:
+            subject: Platba se nezdařila či byla zrušena
+            body:
+                title: Platba neproběhla úspěšně
+                description1: 'Rádi bychom Vás informovali, že platba Vaší objednávky %code% neproběhla úspěšně.'
+                description2: 'Platbu můžete opakovat kliknutím na'
+                anchor: 'tento odkaz'
+                farewall: 'Děkujeme Vám a přejeme hezký den.'
+        paid:
+            subject: Potvrzení o zaplacení objednávky
+            body:
+                title: Platba proběhla úspěšně
+                description1: 'Rádi bychom Vás informovali, že platba Vaší objednávky %code% proběhla úspěšně.'
+                farewall: 'Děkujeme Vám a přejeme hezký den.'
+
+list:
+    column:
+        code:
+            label: Objednávka
+        createDate:
+            label: Datum vytvoření
+        state:
+            label: Stav
+        action:
+            label: Akce
+    cta:
+        detail:
+            label: Detail
+
+message:
+    error:
+        send: 'Nastala chyba při odesílání objednávky. Zkuste to znovu. Pokud chyba přetrvává, prosím, kontaktujte nás.'
+
+newOrder: 'Nová objednávka|Nové objednávky|Nových objednávek'
+
+state:
+    new: Nová
+    accepted: Přijatá
+    readyForPickUp: K vyzvednutí na prodejně
+    sent: Odeslaná
+    completed: Vyřízená
+    cancelled: Storno
+    returned: Vrácená
+    stopped: Zrušená
+    test: Test
+
+price:
+    summaryWithVat: Celková cena s DPH
+    summaryDiscount: Cenové zvýhodnění
+
+product:
+    title: Co jste si objednali
+
+property:
+    addDate: Datum vytvoření
+    state: Stav
+    code: Číslo objednávky
+    added: Datum vytvoření
+    comment: Poznámka
+
+relatedProduct:
+    title: Pořiďte i další výjimečné produkty
+    description: 'Šperky ze soupravy, které se vzájemně doplňují, hodinky nebo kvalitní doplňky'
+
+payment:
+    gateway:
+        waitingForRedirect: 'Chvilku strpení, budete přesměrováni do platební brány..'
+        requestError: 'Při vytváření požadavku na platbu došlo k chybě. Pro nový požadavek obnovte stránku, či nás kontaktujte.'
+    paidAlready: Objednávka byla již zaplacena.

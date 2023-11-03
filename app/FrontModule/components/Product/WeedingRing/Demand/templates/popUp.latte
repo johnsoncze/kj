@@ -1,0 +1,129 @@
+<div class="pb-overlay"></div>
+<div id="weeding-ring-demand" class="pb-popup-container">
+    <div class="pb-popup pb-popup--padding-wide">
+        <div class="pb-popup-heading">{_form.demand.weedingRing.title}</div>
+        <div class="pb-popup-content">
+            <div class="Grid">
+                <div class="Grid-cell u-size12of12 u-sm-size6of12 u-mt--20">
+                    <div>
+                            <fieldset class="Form-fieldset">
+                                <div class="Form-row">
+                                    <div class="TextField">
+                                        <label class="Form-label">{_form.opportunity.input.firstName.label}<span class="Form-mandatory">*</span></label>
+                                        <input n:name="opportunityForm-firstName" class="TextField-input">
+                                    </div>
+                                </div>
+
+                                <div class="Form-row">
+                                    <div class="TextField">
+                                        <label class="Form-label">{_form.opportunity.input.lastName.label}<span class="Form-mandatory">*</span></label>
+                                        <input n:name="opportunityForm-lastName" class="TextField-input">
+                                    </div>
+                                </div>
+
+                                <div class="Form-row">
+                                    <label class="Form-label">{_form.opportunity.input.preferredContact.label}</label>
+                                    <div class="RadioField u-textCenter u-w--100-pcn">
+                                        {var sexItems = $form->getComponent('opportunityForm-preferredContact')->getItems()}
+                                        {foreach $sexItems as $key => $name}
+                                            <label><input type="radio" n:name="opportunityForm-preferredContact:{$key}" class="RadioField-input">
+                                                <span class="RadioField-label"><span class="RadioField-labelText">{$name}</span></span>
+                                            </label>
+                                        {/foreach}
+                                    </div>
+                                </div>
+
+                                <div class="Form-row">
+                                    <div class="TextField">
+                                        <label class="Form-label">E-mail<span class="Form-mandatory">*</span></label>
+                                        <input n:name="opportunityForm-email" class="TextField-input">
+                                    </div>
+                                </div>
+
+                                <div class="Form-row">
+                                    <div class="TextField">
+                                        <label class="Form-label">{_form.opportunity.input.telephone.label}<span class="Form-mandatory">*</span></label>
+                                        <input n:name="opportunityForm-telephone" class="TextField-input">
+                                    </div>
+                                </div>
+
+                                <div class="Form-row">
+                                    <div class="TextField">
+                                        <label class="Form-label">{_form.opportunity.input.comment.label}<span class="Form-mandatory">*</span></label>
+                                        <textarea n:name="opportunityForm-comment" class="TextField-input TextField-input--multiline"></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="Form-row{if $customer} u-displayNone{/if}">
+                                    <div class="CheckboxField">
+                                        <label>
+                                            <input type="checkbox" n:name="opportunityForm-personalData" class="CheckboxField-input">
+                                            <span class="CheckboxField-label">
+                                            <span class="CheckboxField-labelText">{_form.registration.label.personalData}<span class="Form-mandatory">*</span></span>
+                                                {_form.registration.gdpr.link.text1} <a href="{plink Page:detail, url => 'gdpr'}" target="_blank">{_form.registration.gdpr.link.text2}</a>.
+                                            </span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="Form-row">
+                                    <div class="Form-buttons">
+                                        <input class="Button" value="{_form.opportunity.input.submit.label}" n:name="submit">
+                                    </div>
+                                </div>
+                            </fieldset>
+                    </div>
+                </div>
+                <div class="Grid-cell u-size12of12 u-sm-size6of12 u-mt--20">
+                    <div class="Background Background--silver u-p--20">
+                        <h2 class="Heading--subTitle">{_opportunity.overview.title}</h2>
+                            <table class="Basket-productsTable">
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <img src="{if $product->getPhoto()}{thumbnailPath 100, 100, $product->getPhoto(), $product->getUploadFolder()}{else}{imagePlaceholder 100, 100}{/if}"
+                                                 class="Basket-productsImage" alt="{$product->getTranslation()->getName()}" width="100" height="100">
+                                        </td>
+                                        <td class="Basket-productTitle">
+                                            <div class="Basket-productsTitle">{$product->getTranslation()->getName()}</div>
+                                            <div class="Basket-productsCode">{$product->getCode()}</div>
+                                            <div class="u-pt--10">
+                                                <b>{_product.weedingRingPair.demand.male.size.label} {_product.ring.size.label|lower}:</b> <span id="wr-recapitulation-male-size"></span><br>
+                                                <b>{_product.weedingRingPair.demand.female.size.label} {_product.ring.size.label|lower}:</b> <span id="wr-recapitulation-female-size"></span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                        <div class="u-pt--20{if !$diamondList} u-displayNone{/if}">
+                            <h3 class="Heading--subTitle u-mb--0">{_form.diamondQuality.label}</h3>
+                            <span id="wr-recapitulation-diamond-quality"></span>
+                        </div>
+
+                        <div class="u-pt--20">
+                            <h3 class="Heading--subTitle u-mb--0">{_form.productionTime.label2}</h3>
+                            <span id="wr-recapitulation-production-time"></span>
+                        </div>
+
+                        <hr>
+                        <div class="u-textRight u-pt--20 u-pr--40 u-pl--20">
+                            <span class="Product-option-label">{_order.price.summaryWithVat}</span>
+                            <span class="Basket-productsPrice u-fontSize--22"><span id="wr-recapitulation-summary-price"></span> {_price.currency.label}</span>
+                            <div class="Timeline-desc u-mt--5">{_product.weedingRingPair.demand.price.info|noescape}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pb-popup-close js-popup-close">
+            <div class="SearchBoxHeader-control">
+                <button type="button" class="IconLink ">
+                    <svg role="img" class="Icon Icon--medium IconLink-icon">
+                        <use xlink:href="#symbol-cancel"></use>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

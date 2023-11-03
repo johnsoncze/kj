@@ -1,0 +1,1 @@
+drop table shopping_cart_payment_translation;

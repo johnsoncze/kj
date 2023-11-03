@@ -1,0 +1,2 @@
+ALTER TABLE `diamond` ADD `d_default_quality_id` INT NULL AFTER `d_size`, ADD INDEX (`d_default_quality_id`);
+ALTER TABLE `diamond` ADD FOREIGN KEY (`d_default_quality_id`) REFERENCES `product_parameter`(`pp_id`) ON DELETE NO ACTION ON UPDATE CASCADE;

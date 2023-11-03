@@ -1,0 +1,38 @@
+<form n:name="form">
+    <div class="Grid u-pt--30">
+        <div class="Grid-cell u-size12of12">
+            <div class="Form-section-title Form-section-title--noborder u-ml--20 u-mr--20 u-mb--10 u-textCenter u-sm-textLeft">{_header.menu.search.subtitle}</div>
+        </div>
+    </div>
+    <div class="Grid u-pb--20">
+        <div class="Grid-cell u-size12of12 u-sm-size9of12">
+            <fieldset class="Form-fieldset">
+                <div class="Form-row Form-row--full">
+                    <div class="TextField">
+                        <input class="TextField-input" n:name="query">
+                    </div>
+                    <div class="Control-sm-group">
+                        {input personFullName}
+                        {input companyFullName}
+                        {input gRecaptchaResponse}
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+        <div class="Grid-cell u-size12of12 u-sm-size2of12 u-textCenter u-sm-textRight">
+            <div class="Form-buttons">
+                <input class="Button" n:name="submit">
+            </div>
+        </div>
+        <div class="Grid-cell u-size12of12 u-sm-size1of12 u-displayNone u-sm-displayBlock u-textRight">
+            <div class="SearchBoxHeader-control">
+                <button type="button" class="IconLink js-searchBox-toggle">
+                    <svg role="img" class="Icon Icon--medium IconLink-icon">
+                        <use xlink:href="#symbol-cancel"></use>
+                    </svg>
+                </button>
+
+            </div>
+        </div>
+    </div>
+</form>

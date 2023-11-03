@@ -1,0 +1,218 @@
+{block content}
+{*
+{cache 'hp-carousel', expire => '30 minutes'}
+<section class="BannerCarousel">
+    <div class="js-banner-carousel">
+        {include bannerCarousel,
+        subtitle1 => 'TVOŘÍME ORIGINÁLNÍ',
+        subtitle2 => 'šperky.',
+        subtitle3 => 'řemeslo, hodnota, design.',
+        title => 'DESIGN',
+        cta => 'Prohlédnout',
+        bannerDesktop => '/assets/front/user_content/images/hp-banner1.jpg',
+        bannerMobile => '/assets/front/user_content/images/hp-banner1-mobile.jpg',
+        align => "BannerCarousel-textRight",
+        color => "u-colorDarkGreen",
+        lazy => false,
+        }
+        {include bannerCarousel,
+        subtitle1 => 'CTÍME ZLATNICKÉ',
+        subtitle2 => 'šperky.',
+        subtitle3 => 'řemeslo, hodnota, design.',
+        title => 'ŘEMESLO',
+        cta => 'Prohlédnout',
+        bannerDesktop => '/assets/front/user_content/images/hp-banner2.jpg',
+        bannerMobile => '/assets/front/user_content/images/hp-banner2-mobile.jpg',
+        align => "BannerCarousel-textLeft",
+        color => "u-colorWhite",
+        lazy => true,
+        }
+        {include bannerCarousel,
+        subtitle1 => 'POUŽÍVÁME POUZE KVALITNÍ',
+        subtitle2 => 'šperky.',
+        subtitle3 => 'řemeslo, hodnota, design.',
+        title => 'MATERIÁLY',
+        cta => 'Prohlédnout',
+        bannerDesktop => '/assets/front/user_content/images/hp-banner3.jpg',
+        bannerMobile => '/assets/front/user_content/images/hp-banner3-mobile.jpg',
+        align => "BannerCarousel-textRight",
+        color => "u-colorGold",
+        lazy => true,
+        }
+        {include bannerCarousel,
+        subtitle1 => 'VYTVÁŘÍME TRVALÉ',
+        subtitle2 => 'šperky.',
+        subtitle3 => 'řemeslo, hodnota, design.',
+        title => 'HODNOTY',
+        cta => 'Prohlédnout',
+        bannerDesktop => '/assets/front/user_content/images/hp-banner4.jpg',
+        bannerMobile => '/assets/front/user_content/images/hp-banner4-mobile.jpg',
+        align => "BannerCarousel-textLeft",
+        color => "u-colorGold",
+        lazy => true,
+        }
+        {include bannerCarousel,
+        subtitle1 => 'RUČNĚ VYRÁBÍME ŠPERKY PRO',
+        subtitle2 => 'šperky.',
+        subtitle3 => 'řemeslo, hodnota, design.',
+        title => 'HLUBOKÉ VZTAHY',
+        bannerDesktop => '/assets/front/user_content/images/hp-banner5.jpg',
+        bannerMobile => '/assets/front/user_content/images/hp-banner5-mobile.jpg',
+        align => "BannerCarousel-textRight",
+        color => "u-colorDarkGreen",
+        lazy => true,
+      }
+    </div>
+</section>
+{/cache}
+*}
+
+{if $holidayCustomerDiscountRateActive}
+    <div class="b u-mb--40 u-sm-mb--60" style="background: #f8f1ea;">
+        <div class="Container b__container">
+            <div class="b__content u-textCenter u-md-textRight">
+                <h2 class="b__title Heading">MIMOŘÁDNÉ VÁNOČNÍ<br class="u-displayNone u-xs-displayBlock"> {$loggedCustomerDiscountRate}% ZVÝHODNĚNÍ</h2>
+                <p class="b__subtitle u-textSecondary u-textUppercase">na nákup šperků a&nbsp;hodinek<br class="u-displayNone u-xs-displayBlock"> pro registrované zákazníky</p>
+                <p class="u-mb-0"><b>Pro <a href="/ucet/prihlaseni"><u>registrované zákazníky</u></a> jsme spustili<br class="u-displayNone u-xs-displayBlock"> oblíbenou vánoční akci: cenové zvýhodnění {$loggedCustomerDiscountRate}&nbsp;%.</b><br class="u-displayNone u-xs-displayBlock"> Využijte speciální příležitost k&nbsp;nákupu šperků&nbsp;JK či hodinek a&nbsp;potěšte<br class="u-displayNone u-xs-displayBlock"> sebe i&nbsp;své blízké. <a href="/katalogy/2022" target="_blank">Inspirujte se v&nbsp;našem novém katalogu.</a></p>
+            </div>
+        </div>
+
+        <picture class="b__bg">
+            <source media="(max-width: 991px)" srcset="{$baseUrl}/assets/front/images/layout/b-zvyhodneni-mobile.jpg">
+            <source media="(min-width: 992px)" srcset="{$baseUrl}/assets/front/images/layout/b-zvyhodneni.jpg">
+            <img src="{$baseUrl}/assets/front/images/layout/b-zvyhodneni.jpg" alt="" loading="lazy">
+        </picture>
+
+    </div>
+{else}
+    <section class="Index-Banner-Container">
+		<div class="Index-Banner-Text-Container Container">
+			<h2 class="Heading"><span>{_homepage.banner.headerSupport}</span><br />{_homepage.banner.headerMarriage}</h2>
+			<p class="Index-Banner-Text-Subtitle u-mb--0 u-mt--10 u-displayNone u-lg-displayBlock">{_homepage.banner.invite}
+			<p class="u-mb--0 u-mt--10 u-lg-mt--0 Index-Banner-Text-Desc">{_homepage.banner.textPart1} <a href="{plink Category:default, url => 'snubni-prsteny'}">{_homepage.banner.textLink1}</a> a <a href="{plink Category:default, url => 'zasnubni-prsteny'}">{_homepage.banner.textLink2}</a> {_homepage.banner.textPart2}.
+			</p>
+		</div>
+	</section>
+	
+	{*
+    <div class="b u-mb--40 u-sm-mb--60" style="background: #dbdfe2;">
+        <div class="Container b__container">
+            <div class="b__content u-textCenter u-md-textRight">
+                <h2 class="b__title Heading"><span style="font-weight: 400">PODPORUJEME</span> <br class="u-displayNone u-xs-displayBlock">NOVÁ MANŽELSTVÍ</h2>
+                <p class="b__subtitle u-textSecondary u-mt--20 u-mb--0"><b>Srdečně vás zveme do naší prodejny.</b></p>
+                <p class="u-mb--0 u-mt--0">Poskytujeme individuální poradenství a konzultaci <br>při výběru <a href="/kategorie/snubni-prsteny">snubních</a> a <a href="/kategorie/zasnubni-prsteny">zásnubních</a> prstenů.
+                </p>
+            </div>
+        </div>
+
+        <picture class="b__bg">
+            <source media="(max-width: 991px)" srcset="{$baseUrl}/assets/front/images/layout/b-snubni-zasnubni.jpg">
+            <source media="(min-width: 992px)" srcset="{$baseUrl}/assets/front/images/layout/b-snubni-zasnubni.jpg">
+            <img src="{$baseUrl}/assets/front/images/layout/b-snubni-zasnubni.jpg" alt="" loading="lazy">
+        </picture>
+    </div>
+	*}
+{/if}
+
+{*cache 'hp-collectionSlider-'.$cacheLogged, expire => '30 minutes'*}
+    {control collectionSlider}
+{*/cache*}
+{* {control categoryList} *}
+
+{include '../_partials/listaZarukyDark.latte'}
+
+<section class="GetToKnow">
+	<div class="Container Grid u-px--0 u-sm-px--20">
+		<div class="GetToKnow-item GetToKnow-item--bg1 u-sm-mb--100">
+		</div>
+		<div class="GetToKnow-item GetToKnow-item--text u-sm-mb--100">
+			<div class="GetToKnow-content GetToKnow-content--right">
+				<h2 class="GetToKnow-title Heading Heading--section">
+					<span>{_homepage.getKnow.story.title}</span><br /> {_homepage.getKnow.story.subTitle}
+				</h2>
+				<p class="GetToKnow-text u-colorBrownDarkTransparent u-textLineHeight--large">
+					{_homepage.getKnow.story.description|noescape}
+				</p>
+				<a class="Button Button--arrow" href="{plink Page:detail, url => 'o-jk'}">{_homepage.getKnow.story.anchor}</span></a>
+			</div>
+		</div>
+		<div class="GetToKnow-item GetToKnow-item--text">
+			<div class="GetToKnow-content GetToKnow-content--left">
+				<h2 class="GetToKnow-title Heading Heading--section">
+					<span>{_homepage.getKnow.philosophy.title}</span> {_homepage.getKnow.philosophy.design}, {_homepage.getKnow.philosophy.craft} <span>{_homepage.getKnow.philosophy.and|noescape}</span>{_homepage.getKnow.philosophy.materials}
+				</h2>
+				<p class="GetToKnow-text u-colorBrownDarkTransparent u-textLineHeight--large u-mb--20">
+					{_homepage.getKnow.philosophy.description|noescape}
+				</p>
+
+				<a class="Button Button--arrow u-mr--20 u-mb--30" href="{plink Page:detail, url => 'design-vyroba'}">{_homepage.getKnow.philosophy.workshopAnchor}</a>
+				<a class="Button Button--arrow" href="{plink Page:detail, url => 'zakazkova-vyroba'}">{_homepage.getKnow.philosophy.productionAnchor}</a>
+
+			</div>
+		</div>
+		<div class="GetToKnow-item GetToKnow-item--bg2">
+		</div>
+	</div>
+</section>
+
+{cache 'hp-news', expire => '30 minutes'}
+{control newsLastArticle:featured}
+
+<section class="u-textCenter u-pb--60 u-pt--40 u-sm-pb--60">
+    <div class="Container">
+        <h2 class="Heading Heading--section u-mb--30 u-sm-mb--60 Blog-Section-Header">
+            <span>{_homepage.blog.title}</span> {_homepage.blog.onOurBlog}
+        </h2>
+        {control newArticles}
+        <div class="u-textCenter  u-sm-mb--10">
+            <a class="u-textUppercase Button Button--arrow Button--dark-brown" href="{plink Article:list, url => 'blog'}">{_article.featured.allBlog}</a>
+        </div>
+
+    </div>
+</section>
+{/cache}
+
+{define bannerCarousel}
+    <div class="BannerCarousel-item">
+        <div class="Container">
+            <div class="BannerCarousel-content">
+                <div n:ifset="$subtitle1" class="BannerCarousel-subTitleUp {$align} {$color} u-mt--10  u-textUppercase">
+                    {$subtitle1}
+                </div>
+                <div class="BannerCarousel-title {$align} {$color} Heading Heading--section u-mb--20 u-sm-mb--30">
+                  {$title}
+                </div>
+                <div class="BannerCarousel-subTitle BannerCarousel-subTitleLower u-colorGold u-textUppercase ">
+                  {$subtitle2}
+                  <div class="BannerCarousel-subTitle u-colorDarkGreen u-textUppercase ">
+                    {$subtitle3}
+                  </div>
+                </div>
+            </div>
+        </div>
+        <picture>
+            <source media="(min-width: 620px)" srcset="{$bannerDesktop}" />
+            <source srcset="{$bannerMobile}" />
+            <img
+                    class="BannerCarousel-image"
+                    src="{$bannerDesktop}"
+                    {if $lazy}loading="lazy"{/if}
+            />
+        </picture>
+        <div n:ifset="$url" class="BannerCarousel-product">
+            <a href="{$url}" class="BannerCarousel-productImage Link--noUnderline">
+                <img
+                        src="{$bannerForegroundImage}"
+                        alt="{$bannerForegroundImageDescription}"
+                        {if $lazy}loading="lazy"{/if}
+                />
+            </a>
+            <div class="BannerCarousel-productText u-displayNone u-md-displayBlock">
+                <a href="{$url}" class="Link Link--lineBefore">
+                    {$bannerForegroundImageDescription}
+                    <span class="Link--hover"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+{/define}

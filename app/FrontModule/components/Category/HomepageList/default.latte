@@ -1,0 +1,14 @@
+<section class="Signpost">
+    <div class="Signpost-container Container">
+        <h2 class="Signpost-title Heading Heading--section">
+            {_category.homepage.list.title|noescape}
+        </h2>
+        <ul class="Signpost-list">
+            {foreach $categories as $category}
+                <li class="Signpost-item">
+                    <a class="Signpost-link Link" href="{plink Category:default, url => $category->getUrl()}">{$category->getName()}</a>
+                </li>
+            {/foreach}
+        </ul>
+    </div>
+</section>

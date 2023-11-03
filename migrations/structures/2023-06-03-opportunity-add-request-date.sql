@@ -1,0 +1,1 @@
+ALTER TABLE `opportunity` ADD `opp_request_date` VARCHAR(100) NULL DEFAULT NULL AFTER `opp_telephone`;

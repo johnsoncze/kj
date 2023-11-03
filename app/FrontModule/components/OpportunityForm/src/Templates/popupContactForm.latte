@@ -1,0 +1,97 @@
+<div class="pb-overlay"></div>
+<div id="{$popUpId}" class="pb-popup-container Opportunity-form">
+    <div class="pb-popup pb-popup--padding-wide">
+        <div class="pb-popup-heading">{$title}</div>
+        <div class="pb-popup-content">
+            <div class="Grid">
+                <div class="Grid-cell u-size12of12 u-mt--20">
+                    <div>
+                        <form n:name="form">
+
+                            <fieldset class="Form-fieldset">
+                                <div class="Form-row u-mw--100-pcn">
+                                    <div class="TextField">
+                                        <label class="Form-label">{_form.opportunity.input.firstName.label}<span class="Form-mandatory">*</span></label>
+                                        <input n:name="opportunityForm-firstName" class="TextField-input">
+                                    </div>
+                                </div>
+
+                                <div class="Form-row u-mw--100-pcn">
+                                    <div class="TextField">
+                                        <label class="Form-label">{_form.opportunity.input.lastName.label}<span class="Form-mandatory">*</span></label>
+                                        <input n:name="opportunityForm-lastName" class="TextField-input">
+                                    </div>
+                                </div>
+
+                                <div class="Form-row u-mw--100-pcn u-textCenter">
+                                    <label class="Form-label">{_form.opportunity.input.preferredContact.label}</label>
+                                    <div class="RadioField u-textCenter u-w--100-pcn">
+                                        {var sexItems = $form->getComponent('opportunityForm-preferredContact')->getItems()}
+                                        {foreach $sexItems as $key => $name}
+                                            <label><input type="radio" n:name="opportunityForm-preferredContact:{$key}" class="RadioField-input">
+                                                <span class="RadioField-label"><span class="RadioField-labelText">{$name}</span></span>
+                                            </label>
+                                        {/foreach}
+                                    </div>
+                                </div>
+
+                                <div class="Form-row u-mw--100-pcn">
+                                    <div class="TextField">
+                                        <label class="Form-label">E-mail<span class="Form-mandatory">*</span></label>
+                                        <input n:name="opportunityForm-email" class="TextField-input">
+                                    </div>
+                                </div>
+
+                                <div class="Form-row u-mw--100-pcn">
+                                    <div class="TextField">
+                                        <label class="Form-label">{_form.opportunity.input.telephone.label}<span class="Form-mandatory">*</span></label>
+                                        <input n:name="opportunityForm-telephone" class="TextField-input">
+                                    </div>
+                                </div>
+
+                                <div class="Form-row u-mw--100-pcn">
+                                    <div class="TextField">
+                                        <label class="Form-label">{_form.opportunity.input.comment.label}<span class="Form-mandatory">*</span></label>
+                                        <textarea n:name="opportunityForm-comment" class="TextField-input TextField-input--multiline"></textarea>
+                                    </div>
+
+                                    <div class="Control-sm-group">
+                                        {input personFullName}
+                                        {input companyFullName}
+                                        {input gRecaptchaResponse}
+                                    </div>
+                                </div>
+
+                                <div class="Form-row u-mw--100-pcn{if $hasCustomer} u-displayNone{/if}">
+                                    <div class="CheckboxField">
+                                        <label>
+                                            <input type="checkbox" n:name="opportunityForm-personalData" class="CheckboxField-input">
+                                            <span class="CheckboxField-label">
+                                                <span class="CheckboxField-labelText">{_form.registration.label.personalData}<span class="Form-mandatory">*</span></span>
+                                                {_form.registration.gdpr.link.text1} <a href="{plink Page:detail, url => 'gdpr'}" target="_blank">{_form.registration.gdpr.link.text2}</a>.
+                                                </span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </fieldset>
+
+                            <div class="Form-buttons u-mt--20 u-sm-mt--30">
+                                <input class="Button" value="{_form.opportunity.input.submit.label}" n:name="submit">
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pb-popup-close js-popup-close">
+            <div class="SearchBoxHeader-control">
+                <button type="button" class="IconLink ">
+                    <svg role="img" class="Icon Icon--medium IconLink-icon">
+                        <use xlink:href="#symbol-cancel"></use>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

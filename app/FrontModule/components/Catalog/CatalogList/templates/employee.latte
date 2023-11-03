@@ -1,0 +1,30 @@
+{if $items}
+	
+    <section class="Background">
+        <div class="Container">
+
+            <div class="Grid Worker-wrapper u-textCenter u-pt--0 u-sm-pt--30 u-md-pt--70 u-pb--0 u-md-pb--70 slick-worker-carousel">
+                {foreach $items as $item}
+                    <div class="Grid-cell Worker-item u-size12of12 u-sm-size4of12 u-mt--20 u-sm-mt--0">
+                        <div class="Worker Worker-key--{$iterator->counter}">
+                            <div class="Worker-thumbnail">
+                                <img src="{if $item->getPhoto()}{thumbnailPath 140, 140, $item->getPhoto(), $item::getUploadFolder($item)}{else}{imagePlaceholder 140, 140}{/if}" class="Worker-image" alt="{$item->getTranslation()->getTitle()}">
+                            </div>
+                            <div class="Worker-content">
+                                <h3 class="Worker-name">{$item->getTranslation()->getTitle()}</h3>
+                                <span class="Worker-branch">{$item->getTranslation()->getSubtitle()}</span>
+                                <p class="Worker-desc">{$item->getTranslation()->getText()|noescape}</p>
+                                {if $item->getTranslation()->getAbout()}
+                                    <p class="Worker-read-more">PŘEČTĚTE SI VÍCE</p>
+                                    <div class="Worker-about">{$item->getTranslation()->getAbout()|noescape}</div>
+                                {/if}
+                            </div>
+                        </div>
+                    </div>
+                {/foreach}
+            </div>
+
+        </div>
+    </section>
+
+{/if}

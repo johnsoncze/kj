@@ -1,0 +1,6 @@
+{block canonical}
+	<link rel="canonical" href="{plink //Category:default, url => $category->getUrl()}" />
+{/block}
+{block content}
+{capture $anchor}{_category.brand.anchor}{/capture}
+{include '../default.latte', showTitle => TRUE, categoryDescriptionAnchor => $anchor}

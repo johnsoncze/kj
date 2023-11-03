@@ -1,0 +1,18 @@
+<div class="Product-options Meta-small-block">
+    <div class="Product-option-row">
+{*        <div class="Product-option-info">*}
+{*            <div class="Product-option-title">{_product.availability.label}</div>*}
+{*        </div>*}
+        <div class="u-pt--5 u-mt--5 Product-option-dropdown Product-option-info-value-phonecenter">
+            <div class="Product-option-label u-textUppercase u-text {if $product->getProduct()->isInStock() === FALSE} u-textRegular u-colorGold ProductCard-availability--notAvailable{else} u-textBold u-colorGreen{/if}">{$product->getState()->getTranslation()->getValue()}</div>
+{*                {if $product->getProduct()->isInStock() === TRUE}*}
+{*                    <a href="#contactModal" class="Product-option-desc Product-option-link js-popup-opener">{_store.location.title}</a>*}
+{*                {/if}*}
+
+        </div>
+    </div>
+</div>
+
+{if $product->getProduct()->isInStock() === TRUE}
+    {control contactModal}
+{/if}

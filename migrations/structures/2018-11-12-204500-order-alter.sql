@@ -1,0 +1,1 @@
+ALTER TABLE `order` ADD `o_transfer_payment` TINYINT(1) NULL AFTER `o_payment_gateway_transaction_state`;

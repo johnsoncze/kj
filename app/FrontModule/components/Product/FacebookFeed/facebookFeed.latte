@@ -1,0 +1,36 @@
+{contentType application/xml; charset=utf-8}
+{cache tags => [$control::CACHE_TAG, App\Product\Product::PRODUCT_FEED_CACHE_TAG]}
+{var $baseUrl = rtrim($linkGenerator->link('Front:Homepage:default'), '/')}
+<?xml version="1.0"?>
+<rss xmlns:g="http://base.google.com/ns/1.0" version="2.0">
+    <channel>
+        <title>{$presenter->context->getParameters()['facebookFeed']['title']}</title>
+        <link rel="self" href="{$baseUrl}"/>
+        <description>{_('general.meta.description')}</description>
+        {foreach $products as $product}
+            <item>
+                <g:id>{$product->p_code}</g:id>
+                <g:mpn>{$product->p_code}</g:mpn>
+                <g:title>{$product->pt_google_merchant_title ?: ($product->pt_name . ' ' . $product->p_code)}</g:title>
+                <g:description>{(trim(html_entity_decode($product->pt_description)) ?: $control->getDefaultProductDescription())|striptags}</g:description>
+                <g:link>{$linkGenerator->link('Front:Product:detail', ['url' => $product->pt_url])}</g:link>
+                <g:image_link n:inner-if="$product->p_photo">{$baseUrl}{$fileManager->getFile($product->p_photo, App\Product\Product::getUploadFolderByProductId($product->p_id))}</g:image_link>
+                <g:brand n:inner-if="$product->p_google_merchant_brand_text !== NULL">{$product->p_google_merchant_brand_text}</g:brand>
+                <g:condition>new</g:condition>
+                <g:availability>{if $product->p_stock > 0}in stock{elseif $product->p_empty_stock_state == 3}preorder{else}out of stock{/if}</g:availability>
+                {if $product->p_stock == 0 && $product->p_empty_stock_state == 3}
+                <g:availability_date>{$availabulityDate}</g:availability_date>
+                {/if}
+                <g:price>{$product->p_price|number:2:'.':''} CZK</g:price>
+                {*<g:shipping>
+                    <g:country>CZ</g:country>
+                    <g:service>Standard</g:service>
+                    <g:price>100.00 CZK</g:price>
+                </g:shipping>*}
+                <g:google_product_category>{$product->p_google_merchant_category ?: App\FrontModule\Components\Product\GoogleMerchantFeed\GoogleMerchantFeed::guessGoogleProductCategoryByProductName($product->pt_name)}</g:google_product_category>
+                <g:custom_label_0>{$product->pt_name}</g:custom_label_0>
+                <g:adult>no</g:adult>
+            </item>
+        {/foreach}
+    </channel>
+</rss>{/cache}

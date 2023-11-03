@@ -1,0 +1,10 @@
+{label photo/}
+{input photo}
+
+{if $catalog instanceof \App\Catalog\Catalog && $catalog->getPhoto() !== NULL}
+    <div class="thumbnail-body file-wrapper">
+        <hr>
+        {thumbnailLink 100, 100, $catalog->getPhoto(), \App\Catalog\Catalog::getUploadFolder($catalog)}
+        <a href="{link deletePhoto!, id => $catalog->getId()}" class="btn btn-danger btn-xs delete-file"><i class="fa fa-trash-o" aria-hidden="true"></i> odstranit</a>
+    </div>
+{/if}

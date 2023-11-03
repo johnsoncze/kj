@@ -1,0 +1,29 @@
+{if $products}
+    <div class="ProductGrid">
+    {foreach $products as $product}
+        <div class="ProductGrid-item">
+            {var $lazy = $iterator->getCounter() > 4}
+            {cache 'list-product-' . ($user->isLoggedIn()?'logged':'anonymous') . ($lazy?'-lazy':'-notlazy') . $product->getProduct()->getId(), expire => '30 minutes'}
+                {var $product_ID = 'product_' . $product->getProduct()->getId()}
+                {control $product_ID $lazy}
+            {/cache}
+        </div>
+        {if $iterator->counter === 4 && count($products) > 4}
+            </div>
+
+            <div class="u-mt--30">
+                <a role="button" class="Button more-products">Více</a>
+            </div>
+
+            <div class="ProductGrid more-products-body" style="display: none">
+        {/if}
+    {/foreach}
+    </div>
+{/if}
+
+<script>
+    $('.more-products').on('click', function() {
+        $(this).parent('div').remove();
+        $('.more-products-body').show();
+    });
+</script>

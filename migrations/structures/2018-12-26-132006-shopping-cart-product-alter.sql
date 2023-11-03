@@ -1,0 +1,1 @@
+ALTER TABLE `shopping_cart_product` DROP `scp_production_time`;

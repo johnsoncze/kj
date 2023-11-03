@@ -1,0 +1,140 @@
+availability:
+    label: Dostupnost
+
+badge:
+    new:
+        title: Novinka
+    limited:
+        title: Limitovaná edice
+    bestseller:
+        title: Nejprodávanější
+    goodprice:
+        title: Výhodná cena
+    rare:
+        title: Výjimečný šperk
+
+benefit:
+    delivery:
+        title: Bezpečné doručení
+        description: 'produkt <b><a href="/stranka/zpusob-dopravy">bezpečně doručíme</a><br> kamkoli</b> v ČR i zahraničí'
+    exchange:
+        title: Výměna produktu
+        description: 'Pokud bude třeba, nenošený<br> produkt vám <b>vyměníme za jiný.</b>'
+    service:
+        title: Celoživotní záruka
+        description: 'součástí nákupu <b>certifikát<br> pravosti, krabička, <a href="/stranka/sluzby#warranty">doživotní<br> záruka</a></b> a každé dva roky <b><a href="/stranka/sluzby#warranty">servis</a><br> zdarma</b>'
+    shop:
+        title: Celoživotní záruka
+        description: '<b><a href="/stranka/prodejna">reprezentativní prodejna</a><br><a href="/stranka/kontakt">v Praze 4</a></b> se zlatnickou dílnou<br>a parkingem'
+    size:
+        adjustment:
+            title: Upravení velikosti zdarma
+            description: Velikost prstenu vám rádi zdarma upravíme během pár dnů.
+
+demand:
+    time:
+        title: Poptat jinou dobu dodání
+
+shoppingCart:
+    add:
+        title: Do košíku
+
+delivery:
+    free: Doprava zdarma
+    readyToSend: Ihned k odeslání
+
+diamond:
+    quality:
+        label: Kvalita diamantů
+        help:
+            anchor: Jak poznáte kvalitu
+
+discount:
+    label: Registrujte se pro 10% zvýhodnění
+
+discovery:
+    title: Objevte
+
+gender:
+    male:
+        label: Pánský
+    female:
+        label: Dámský
+
+information:
+    title: Poznejte
+    subTitle: 'Produkt, který <br>má skutečnou <br>hodnotu'
+    goldBlock:
+        title: Zlato jako ušlechtilý kov
+        description: 'Již tisíce let lidé milují tento přírodní materiál pro jeho vysoký lesk, tvrdost a hodnotu, která v&nbsp;čase roste.'
+        quality:
+            title: Neustálá kontrola kvality
+            description: 'JK šperky prochází ve všech fázích výroby detailní kontrolou kvality. Jedině tak lze zaručit, aby vám šperk dělal radost po celá desetiletí.'
+    about:
+        title: O produktu
+    specification:
+        title: Specifikace produktu
+
+similarCategory:
+    title: Kam dál?
+
+not.products: Žádné produkty.
+not.found: Produkt s id "%id%" nebyl nalezen.
+not.found.general: Produkt nebyl nalezen.
+
+production:
+    missing: Vyberte dobu výroby.
+    title: Termín dodání
+    4_6_weeks: Běžně do 4 týdnů
+    help:
+        title: Potřebujete to rychleji?
+
+stock:
+    zero: Produkt není v současné době skladem.
+    zeroWithName: 'Produkt %name% není v současné době skladem.'
+    unavailable: Produkt není v požadovaném množství skladem.
+    unavailableWithName: 'Produkt %name% není v požadovaném množství skladem.'
+
+product: Produkt
+property:
+    code:
+        title: Kód
+        titleFront: Kód zboží
+deliveryTime: Termín dodání
+price: Vaše cena
+ring:
+    size:
+        label: Velikost
+quantity: Množství
+quantityUnit: ks
+
+related:
+    crossSelling:
+        title: Nezapomeňte
+        subTitle: Pečujte o svůj šperk
+        description: O profesionální čištění se postaráme my – každé 2 roky. Základní péči snadno <br>zvládnete sami. I ta dělá kouzla.
+    set:
+        title: Pořiďte i další produkty ze soupravy
+        description: 'Jeden patří k druhému – tvoří harmonický celek, který ženu rozzáří a vyzdvihne její osobnost'
+
+similarCategoryList:
+    title: Vybírejte podle svého vkusu
+    subTitle: Další produkty JK
+
+weedingRingPair:
+    demand:
+        size:
+            input:
+                label: Velikost
+            help:
+                anchor: Jak zjistíte velikost?
+        male:
+            size:
+                label: Pánský
+        female:
+            size:
+                label: Dámský
+        price:
+            info: 'Cena za pár. Prsteny lze objednat i jednotlivě.'
+    message:
+        calculationError: Při výpočtu došlo k chybě. O této chybě jsme byli informováni. Obnovte stránku a zkuste to prosím znovu.

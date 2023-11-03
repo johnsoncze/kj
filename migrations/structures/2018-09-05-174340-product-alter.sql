@@ -1,0 +1,1 @@
+ALTER TABLE `product` ADD COLUMN `p_zbozi_cz_category` TEXT NULL DEFAULT NULL;

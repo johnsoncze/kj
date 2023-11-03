@@ -1,0 +1,336 @@
+.Timeline {
+    text-align: left;
+
+    @media @media-lg-min {
+        padding-top: 100px;
+    }
+}
+
+.Timeline--progressline {
+    position: relative;
+    padding-left: 40px;
+
+    &::before {
+        content: "";
+        position: absolute;
+        margin-left: 0;
+        left: 0;
+        top: 10px;
+        bottom: 20px;
+        width: 2px;
+        background: @color-brown-dark;
+    }
+
+    @media @media-sm-min {
+        padding-left: 70px;
+    }
+
+    @media @media-lg-min {
+        padding-left: 0;
+
+        &::before {
+            margin-left: -26px;
+            left: 50%;
+            top: 150px;
+            bottom: 80px;
+        }
+    }
+
+    .Timeline-year {
+        position: relative;
+        display: inline-block;
+        margin-bottom: 20px;
+        padding: 0 8px;
+        width: 70px;
+        text-align: center;
+        background: @color-brown-dark;
+        font-family: @font-secondary;
+        font-size: @font-size-base;
+        color: @color-white;
+        font-weight: 400;
+        text-indent: 5px;
+        left: -40px;
+        border-radius: @border-radius-larger @border-radius-larger @border-radius-larger 0;
+
+        @media @media-sm-min {
+            position: absolute;
+            top: 0;
+            //letter-spacing: 0.3em;
+            font-size: @font-size-larger;
+            left: -70px;
+            border-radius: @border-radius-larger @border-radius-larger @border-radius-larger 0;
+        }
+
+        @media @media-lg-min {
+            top: 80px;
+            left: ~"calc(50% - 94px)";
+            border-radius: @border-radius-larger @border-radius-larger 0 @border-radius-larger;
+        }
+    }
+
+    .Timeline-row--reverse {
+        .Timeline-year {
+
+            @media @media-lg-min {
+                left: ~"calc(50% - 26px)";
+                border-radius: @border-radius-larger @border-radius-larger @border-radius-larger 0;
+            }
+        }
+    }
+}
+
+.Timeline-row {
+    position: relative;
+    width: 100%;
+
+    @media @media-sm-min {
+        display: flex;
+        align-items: center;
+    }
+
+    @media @media-lg-min {
+        margin-top: -40px;
+    }
+}
+
+.Timeline-row--reverse {
+
+    @media @media-sm-min {
+        flex-direction: row-reverse;
+    }
+}
+
+.Timeline-item {
+    align-items: left;
+
+    @media @media-sm-min {
+        align-items: center;
+    }
+}
+
+.Timeline-content {
+    display: inline-block;
+    padding: 0;
+
+    @media @media-sm-min {
+        padding: 0 40px;
+        max-width: 500px;
+    }
+
+    @media @media-md-min {
+        padding: 0 70px;
+        max-width: 500px;
+    }
+}
+
+.Timeline-content--right {
+
+    @media @media-lg-min {
+        padding-right: 20px;
+    }
+}
+
+.Timeline-title {
+    margin-bottom: 20px;
+    //letter-spacing: 0.22em;
+    font-family: @font-secondary;
+    font-size: @font-size-large;
+    color: @color-brown-dark;
+    font-weight: 400;
+    line-height: 1.3em;
+
+    @media @media-sm-min {
+        margin-bottom: 30px;
+        //letter-spacing: 0.3em;
+        font-size: @font-size-larger;
+        line-height: 1.4em;
+    }
+}
+
+.Timeline-subtitle {
+    margin-top: 35px;
+    margin-bottom: 20px;
+    //letter-spacing: 0.22em;
+    font-size: @font-size-smallest;
+    color: @color-brown-dark;
+    font-weight: 600;
+    line-height: 1.9em;
+    text-transform: uppercase;
+
+    @media @media-sm-min {
+        margin-bottom: 30px;
+        //letter-spacing: 0.3em;
+        font-size: @font-size-smaller;
+        line-height: 2.4em;
+    }
+}
+
+.Timeline-desc {
+    //letter-spacing: 0.07em;
+    font-size: @font-size-small;
+    color: @color-brown-dark-alpha-70;
+    font-weight: 400;
+    line-height: 2.0em;
+}
+
+.Timeline-desc-img {
+    display: none;
+
+    @media @media-sm-min {
+        display: block;
+        width: 33.333333333333%;
+    }
+}
+
+.Timeline-desc-img-main {
+    display: block;
+    width: 100%;
+
+    @media @media-sm-min {
+        width: 33.333333333333%;
+    }
+}
+
+.Timeline-images {
+    display: inline-block;
+    margin-top: 1.5em;
+    margin-bottom: 1em;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px;
+    text-align: center;
+    position: relative;
+    left: -0.5em;
+    width: 160px;
+    height: 160px;
+
+    @media @media-sm-min {
+        margin-top: 0;
+        margin-left: 40px;
+        padding: 0;
+        width: 240px;
+        height: 240px;
+        text-align: left;
+        left: 0;
+    }
+
+    @media @media-md-min {
+        margin-top: 0;
+        margin-left: 70px;
+        padding: 0;
+        width: 300px;
+        height: 300px;
+        text-align: left;
+        left: 0;
+    }
+
+    @media @media-lg-min {
+        margin-top: 0;
+        margin-left: 70px;
+        padding: 0;
+        width: 410px;
+        height: 410px;
+        text-align: left;
+        left: 0;
+    }
+}
+
+.Timeline-image-primary {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: @border-radius-larger;
+}
+
+.Timeline-image-secondary {
+    position: absolute;
+    top: -1.5em;
+    left: 1.5em;
+    border-radius: @border-radius-larger;
+
+    @media @media-sm-min {
+        top: -40px;
+        left: 40px;
+    }
+}
+
+.Timeline-image-stone-1 {
+    position: absolute;
+    left: -38px;
+    bottom: 1em;
+    width: 38px;
+    height: 66px;
+    background: url(/assets/front/images/layout/timeline-stone-1.png) 0 0 no-repeat;
+    background-size: 100% auto;
+
+    @media @media-lg-min {
+        left: -96px;
+        bottom: 1.5em;
+        width: 96px;
+        height: 151px;
+    }
+}
+
+.Timeline-image-stone-2 {
+    position: absolute;
+    right: -30px;
+    bottom: 2.5em;
+    width: 30px;
+    height: 60px;
+    background: url(/assets/front/images/layout/timeline-stone-2.png) 0 0 no-repeat;
+    background-size: 100% auto;
+
+    @media @media-lg-min {
+        right: -66px;
+        bottom: 7.5em;
+        width: 66px;
+        height: 109px;
+    }
+}
+
+.Timeline-image-stone-3 {
+    position: absolute;
+    left: 20px;
+    bottom: -22px;
+    width: 60px;
+    height: 45px;
+    background: url(/assets/front/images/layout/timeline-stone-3.png) 0 0 no-repeat;
+    background-size: auto 100%;
+
+    @media @media-lg-min {
+        left: 30px;
+        bottom: -52px;
+        width: 211px;
+        height: 149px;
+    }
+}
+
+.Timeline-image-ornament-1 {
+    display: none;
+    position: absolute;
+    margin-left: -110px;
+    left: 50%;
+    top: -152px;
+    width: 220px;
+    height: 112px;
+    background: url(/assets/front/images/layout/ornament-collection.png) 0 0 no-repeat;
+
+    @media @media-sm-min {
+        display: block;
+    }
+}
+
+.Timeline-image-ornament-2 {
+    display: none;
+    position: absolute;
+    margin-left: -110px;
+    left: 50%;
+    bottom: -216px;
+    width: 220px;
+    height: 256px;
+    background: url(/assets/front/images/layout/ornament-collection.png) 0 100% no-repeat;
+
+    @media @media-sm-min {
+        display: block;
+    }
+}

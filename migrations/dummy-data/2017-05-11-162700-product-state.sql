@@ -1,0 +1,1 @@
+INSERT INTO `product_state` (`ps_id`, `ps_sort`) VALUES(1, 1), (2, 2);

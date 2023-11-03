@@ -1,0 +1,59 @@
+<form n:name="form" class="exit-watcher">
+    <div class="form-group">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="row">
+                    <div class="col-xs-6">
+                        {label language}
+                    </div>
+                    <div class="col-xs-6 text-right">
+                        {if $pageEntity === NULL}
+                            <a href="{plink Page:add}" class="confirm-exit">Vybrat jiný jazyk</a>
+                        {/if}
+                    </div>
+                </div>
+                {input language}
+            </div>
+            <div class="col-sm-6">
+                <div class="row">
+                    <div class="col-xs-6">
+                        {label type}
+                    </div>
+                    <div class="col-xs-6 text-right">
+                        {if $pageEntity === NULL}
+                            <a href="{plink Page:add}" class="confirm-exit">Vybrat jiný typ</a>
+                        {/if}
+                    </div>
+                </div>
+                {input type}
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="row">
+            <div class="col-xs-9">
+                {label name}
+                {input name}
+            </div>
+            <div class="col-xs-3">
+                {label status}
+                {input status}
+            </div>
+        </div>
+    </div>
+    {control form-urlForm}
+    {var $defaultControls = ['language', 'type', 'name', 'status', 'parentPageId', 'submit']}
+    {foreach $form->getComponents() as $c}
+        {if $c instanceof \Nette\Forms\IControl && !in_array($c->getName(), $defaultControls)}
+            <div class="form-group">
+                {label $c->getName()/}
+                {input $c->getName()}
+            </div>
+        {/if}
+    {/foreach}
+    {control form-seoForm}
+    {control form-ogForm}
+    <div class="form-group">
+        {input submit}
+    </div>
+</form>

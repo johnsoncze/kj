@@ -1,0 +1,160 @@
+<div id="cookie-detail" class="pb-popup-container">
+    <div class="pb-overlay"></div>
+    <div class="pb-popup pb-popup--padding-wide">
+        <div class="pb-popup-heading">
+            NASTAVENÍ COOKIES
+        </div>
+        <div class="pb-popup-content">
+            <div class="cookie-flex">
+                <div class="cookie-title">Použité cookies</div>
+            </div>
+            <p>
+                Cookie soubory, které jsou použité na těchto stránkách jsou rozděleny do kategorií a níže si můžete zjistit více o každé kategorii a povolit nebo zamítnout některé nebo všechny z nich. Jakmile zakážete kategorie, které byly předtím povoleny, budou zakázány všechny služby, které používají cookies přiřazené do této kategorie. <a n:href="Page:detail cookies">Zjistit více</a> o tom, jak používáme cookies.
+            </p>
+            <div class="cookie-flex">
+                <div class="cookie-title">Nutné soubory cookies</div>
+                <div class="cookie-toggle">
+                    <svg role="img" class="Icon Icon--medium IconLink-icon">
+                        <use xlink:href="#symbol-cancel"></use>
+                    </svg>
+                    <label class="toggle-switch">
+                        <input type="checkbox" checked="checked" disabled>
+                        <span class="toggle-slider"></span>
+                    </label>
+                    <svg role="img" class="Icon Icon--medium IconLink-icon">
+                        <use xlink:href="#symbol-check-mark"></use>
+                    </svg>
+                </div>
+            </div>
+            <p>
+                Některé soubory cookie jsou vyžadovány, aby byla zajištěna základní funkčnost. Bez těchto cookies nebude web fungovat správně. Ve výchozím nastavení jsou povoleny a nelze je zakázat.
+            </p>
+            <div class="cookie-flex">
+                <div class="cookie-title">Analytické soubory cookies</div>
+                <div class="cookie-toggle">
+                    <svg role="img" class="Icon Icon--medium IconLink-icon">
+                        <use xlink:href="#symbol-cancel"></use>
+                    </svg>
+                    <label class="toggle-switch">
+                        <input type="checkbox" {if $cookies_analytics}checked="checked"{/if} class="cookieAgreement" data-type="cookies_analytics">
+                        <span class="toggle-slider"></span>
+                    </label>
+                    <svg role="img" class="Icon Icon--medium IconLink-icon">
+                        <use xlink:href="#symbol-check-mark"></use>
+                    </svg>
+                </div>
+            </div>
+            <p>
+                Analytické soubory cookie nám pomáhají vylepšovat naše webové stránky shromažďováním informací a podáváním zpráv o jeho používání.
+            </p>
+            <div class="cookie-flex">
+                <div class="cookie-title">Marketingové cookies</div>
+                <div class="cookie-toggle">
+                    <svg role="img" class="Icon Icon--medium IconLink-icon">
+                        <use xlink:href="#symbol-cancel"></use>
+                    </svg>
+                    <label class="toggle-switch">
+                        <input type="checkbox" {if $cookies_marketing}checked="checked"{/if} class="cookieAgreement" data-type="cookies_marketing">
+                        <span class="toggle-slider"></span>
+                    </label>
+                    <svg role="img" class="Icon Icon--medium IconLink-icon">
+                        <use xlink:href="#symbol-check-mark"></use>
+                    </svg>
+                </div>
+            </div>
+            <p>
+                Marketingové soubory cookie se používají ke sledování návštěvníků napříč webovými stránkami, které majitelům stránek umožňují zobrazovat relevantní a poutavé reklamy.
+            </p>
+            <div class="cookie-flex cookie-flex--buttons">
+                <div class="cookie-buttons">
+                    <button class="Button cookieAllowAll">Povolit vše</button>
+                    <button class="Button brown cookieDenyAll">Zamítnout vše</button>
+                </div>
+                <div class="cookie-buttons">
+                    <button class="Button brown" id="saveCookieAgreement">Uložit nastavení</button>
+                </div>
+            </div>
+        </div>
+        <div class="pb-popup-close">
+            <div class="SearchBoxHeader-control">
+                <button type="button" class="IconLink js-popup-close">
+                    <svg role="img" class="Icon Icon--medium IconLink-icon">
+                        <use xlink:href="#symbol-cancel"></use>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="cookie-agreement" {if $cookieBarHidden}style="display: none;"{/if}>
+    <div class="cookie-title">
+        INFORMACE O COOKIES NA TÉTO STRÁNCE
+    </div>
+    <p>
+        Soubory cookie používáme ke shromažďování a analýze informací o výkonu a používání webu, zajištění fungování funkcí ze sociálních médií a ke zlepšení a přizpůsobení obsahu.<br>
+        <a class="cookie-detail-open js-popup-opener" href="#cookie-detail">Podrobnější nastavení.</a>
+    </p>
+    <div class="cookie-buttons">
+        <button id="cookie-consent" class="Button cookieAllowAll">Povolit vše</button>
+        <a class="cookie-detail-open js-popup-opener Button" href="#cookie-detail">Upřesnit nastavení</a>
+    </div>
+</div>
+
+<script>
+    $('#cookie-agreement #cookie-consent').click(function () {
+
+    });
+    $('.cookie-detail-open').click(function () {
+        $('#cookie-agreement')[0].classList.add('is-hidden')
+    })
+    $('#cookie-detail .pb-popup-close button').click(function () {
+        $('#cookie-agreement')[0].classList.remove('is-hidden')
+    })
+    $('#cookie-detail .pb-overlay').click(function () {
+        $('#cookie-agreement')[0].classList.remove('is-hidden')
+    })
+
+    function setCookieAgreement(type, val) {
+        let date = new Date();
+        date.setFullYear(date.getFullYear() + 2);
+        document.cookie = type + '=' + val + '; path=/; expires=' + date.toGMTString();
+    }
+
+    function hideCookieBar() {
+        var date = new Date();
+        date.setFullYear(date.getFullYear() + 2);
+        document.cookie = 'cookieBarHidden=1; path=/; expires=' + date.toGMTString();
+
+        const $popupCloseEl = $('.pb-popup');
+        const $popupCloseOverlayEl = $('.pb-overlay');
+        $popupCloseEl.removeClass('is-open');
+        $popupCloseOverlayEl.removeClass('show');
+
+        jQuery('#cookie-agreement').hide();
+    }
+
+    $('#saveCookieAgreement').click(function () {
+        $('.cookieAgreement').each(function () {
+            setCookieAgreement($(this).data('type'), $(this).prop('checked') ? 1 : 0)
+        })
+        hideCookieBar()
+    })
+
+    $('.cookieAllowAll').click(function () {
+        $('.cookieAgreement').each(function () {
+            setCookieAgreement($(this).data('type'), 1)
+            $(this).prop('checked', true)
+        })
+        hideCookieBar()
+
+    })
+
+    $('.cookieDenyAll').click(function () {
+        $('.cookieAgreement').each(function () {
+            setCookieAgreement($(this).data('type'), 0)
+            $(this).prop('checked', false)
+        })
+        hideCookieBar()
+    })
+</script>

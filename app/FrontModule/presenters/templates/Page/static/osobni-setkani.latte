@@ -1,0 +1,60 @@
+{block content}
+<section class="PageHeader">
+    <div class="PageHeader-bg" style="background-image: url(/www/assets/front/images/layout/b-snubni-zasnubni.jpg);"></div>
+</section>
+
+<div class="Container Grid">
+	<div class="Grid-cell u-size12of12 u-mt--0">
+		{control breadcrumb}
+	</div>
+</div>
+
+<div class="Container Container--slim u-textCenter">
+	<h1 class="u-mt--25 u-mb--50 personalMeeting-header">{_pageStatic.meeting.title}</h1>
+
+    <div class="personalMeeting-text-wrapper u-mb--80">
+        {_pageStatic.meeting.topText|noescape}
+		
+		<div class="personalMeeting-form-wrapper u-mt--50">
+			{control meetingForm}			
+		</div>
+		
+    </div>
+	
+</div>
+
+<div class="Background Background--silver">
+    <div class="Container">
+        <div class="u-pb--45 u-xs-pb--110 u-sm-pb--80 u-md-pb--75 u-pt--40 u-md-pt--80 u-textCenter u-md-textLeft">
+            <h2 class="u-textCenter u-mb--20 personalMeeting-header u-mb--70">{_pageStatic.meeting.titleStore|noescape}</h2>
+
+            <div class="Grid personalMeeting-shop-text u-mb--40 u-md-mb--80">
+                <div class="Grid-cell u-size5of12 u-sm-max-size2of2 u-mb--30 u-md-mb--0">
+					{$parameters['project']['address']}<br />
+					{_pageStatic.meeting.addressBuilding|noescape}<br /><br />					
+					
+					<b>{control openingHours:today}</b><br /><br />
+					
+					{control openingHours:listNoTable}<br />
+					
+					<a class="Button Button--arrow" href="{plink Page:detail, url => 'kontakt'}">{_pageStatic.meeting.howGet}</a>
+                </div>
+                <div class="Grid-cell u-size7of12 u-sm-max-size2of2">
+					<img src="/assets/front/images/layout/osobni-schuzka-1.jpg" class="u-pl--0 u-md-pl--40" />
+                </div>
+            </div>			
+			
+            <div class="Grid personalMeeting-shop-text personalMeeting-shop-grid-center u-mb--20 u-md-md--60">
+                <div class="Grid-cell u-size7of12 u-sm-max-size2of2 personalMeeting-shop-order-1">
+					<img src="/assets/front/images/layout/osobni-schuzka-2.jpg" class="u-pr--0 u-md-pr--40" />
+                </div>
+                <div class="Grid-cell u-size5of12 u-sm-max-size2of2 personalMeeting-shop-order-2 u-mb--30 u-md-mb--0">
+                    {_pageStatic.meeting.bottomText}
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+				

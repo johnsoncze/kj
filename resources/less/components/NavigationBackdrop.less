@@ -1,0 +1,11 @@
+.NavigationBackdrop {
+
+}
+
+@media @media-desktop-menu {
+    .NavigationList-item:hover + .NavigationBackdrop {
+        visibility: visible;
+        opacity: 1;
+        transition-delay: @navigation-delay-short;
+    }
+}

@@ -1,0 +1,29 @@
+{if $order}
+    <div class="Grid u-pt--90">
+        <div class="Grid-cell u-size12of12">
+            <h2>{_account.overview.lastOrder.title}</h2>
+            <table class="table table-responsive">
+                <thead>
+                <tr>
+                    <th>{_order.list.column.code.label}</th>
+                    <th>{_order.list.column.createDate.label}</th>
+                    <th>{_price.label.default}</th>
+                    <th n:if="$order->isGatewayPaymentAvailable()">&nbsp;</th>
+                    <th>{_order.list.column.state.label}</th>
+                    <th>{_order.list.column.action.label}</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td width="20%">{$order->getCode()}</td>
+                    <td width="20%">{$order->getAddDate()|date:"d.m.Y H:i:s"}</td>
+                    <td style="min-width: 150px">{App\Helpers\Prices::toUserFriendlyFormat($order->getSummaryPrice())} {_price.currency.label}</td>
+                    <td n:if="$order->isGatewayPaymentAvailable()"><a href="{plink PaymentGateway:createRequest, token => $order->getToken()}" class="Button">Opakovat platbu</a></td>
+                    <td width="20%">{_$order->getStateTranslationKey()}</td>
+                    <td width="15%"><a class="Link--simple" href="{plink Account:orderDetail, code => $order->getCode()}">{_order.list.cta.detail.label}</a></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+{/if}

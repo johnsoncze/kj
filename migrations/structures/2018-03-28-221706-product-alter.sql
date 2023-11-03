@@ -1,0 +1,1 @@
+ALTER TABLE `product` ADD `p_is_completed` TINYINT(1) NOT NULL DEFAULT '1' AFTER `p_state`;

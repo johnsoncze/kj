@@ -1,0 +1,1 @@
+ALTER TABLE `collection_list_product` ADD `clp_type` VARCHAR(15) NOT NULL AFTER `clp_product_id`, ADD INDEX (`clp_type`);

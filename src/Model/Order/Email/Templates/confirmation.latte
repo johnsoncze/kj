@@ -1,0 +1,279 @@
+{layout '../../../Email/templates/@layout.latte'}
+
+{block content}
+<!--[if (mso)|(IE)]>
+<table class="layout" cellpadding="0" cellspacing="0" align="center" bgcolor="#FCFCFC">
+<![endif]-->
+
+<!--[if (mso)|(IE)]>
+<tr>
+<td colspan="2" class="column" valign="top" style="width: 600px;">
+<![endif]-->
+
+{capture $title}{_order.email.confirmation.body.title}{/capture}
+{capture $subtitle}{_order.email.confirmation.body.subtitle}{/capture}
+{include header, title => $title, subtitle => $subtitle}
+
+<!--[if (mso)|(IE)]>
+</td>
+</tr>
+<![endif]-->
+
+
+<!--[if (mso)|(IE)]>
+</table>
+<![endif]-->
+
+<!--[if (mso)|(IE)]>
+<table class="layout" cellpadding="0" cellspacing="0" align="center" bgcolor="#FCFCFC">
+<![endif]-->
+
+<!--[if (mso)|(IE)]>
+<tr>
+    <td colspan="2" class="column" valign="top" style="width: 600px;">
+<![endif]-->
+<div class="column" style="font-family: Arial, Tahoma, Georgia, Times, serif; float: left; width: 100%;">
+    <div class="spacing" style="margin: 0;">
+
+        <table width="100%" cellpadding="0" cellspacing="0" align="center" bgcolor="#FCFCFC">
+            <tr>
+                <td class="column" valign="top" style="width: 100%;">
+                    <h2 style="margin: 20px; font-family: Arial, Tahoma, Georgia, Times, serif; color: #3d3417; font-size: 20px; font-weight: 500; text-align: left; text-transform: uppercase;">
+                        {_order.email.confirmation.body.product.title}
+                    </h2>
+                </td>
+            </tr>
+        </table>
+
+    </div>
+</div>
+<!--[if (mso)|(IE)]>
+</td>
+</tr>
+<![endif]-->
+
+
+<!--[if (mso)|(IE)]>
+</table>
+<![endif]-->
+
+<!--[if (mso)|(IE)]>
+<table class="layout" cellpadding="0" cellspacing="0" align="center" bgcolor="#FCFCFC">
+<![endif]-->
+
+<!--[if (mso)|(IE)]>
+<tr>
+    <td colspan="2" class="column" valign="top" style="width: 600px;">
+<![endif]-->
+<div class="column" style="font-family: Arial, Tahoma, Georgia, Times, serif; float: left; width: 100%;">
+    <div class="spacing" style="margin: 0;"><!--
+                      --><table
+                width="100%" cellpadding="0" cellspacing="0"><tr><td align="center" height="1" style="border-top: 1px solid #D8DFE5;"></td></tr></table><!--
+                    --></div>
+</div>
+<!--[if (mso)|(IE)]>
+</td>
+</tr>
+<![endif]-->
+
+{foreach $order->getProducts() as $product}
+    {var $catalogProduct = $product->getCatalogProduct()}
+    {var $translation = $catalogProduct->getTranslation()}
+    {capture $link}{link Front:Product:detail, url => $translation->getUrl()}{/capture}
+    {capture $imgSrc}{if $catalogProduct->getPhoto()}{thumbnailPath 90, 90, $catalogProduct->getPhoto(), $catalogProduct->getUploadFolder()}{/if}{/capture}
+    {include productRow,
+    link => $link,
+    name => $translation->getName(),
+    code => $product->getCode(),
+    imgSrc => $imgSrc,
+    quantity => $product->getQuantity(),
+    price => $product->getSummaryPrice(),
+    parameters => $product->getParameters(),
+    discountPct => $product->getDiscount(),
+    discountAmount => $product->getQuantity() * ($product->getUnitPriceBeforeDiscount() - $product->getUnitPrice()),
+    priceBeforeDiscount => $product->getQuantity() * ($product->getUnitPriceBeforeDiscount()),
+    productionTimeName => $product->getTranslatedProductionTimeName()}
+    {if $iterator->isLast() !== TRUE}{include line}{/if}
+{/foreach}
+
+{include line}
+
+{capture $paymentTitle}{_payment.title}{/capture}
+{include textRow, title => $paymentTitle, description => $order->getPaymentName()}
+
+{include line}
+
+{capture $deliveryTitle}{_delivery.title}{/capture}
+{include textRow, title => $deliveryTitle, description => $order->getDeliveryName()}
+
+{include line}
+
+{include emptyRow}
+{include priceSummaryRow, price => $order->getSummaryPrice(), discount => $order->getSummaryPriceBeforeDiscount() - $order->getSummaryPrice()}
+
+<!--[if (mso)|(IE)]>
+</table>
+<![endif]-->
+
+<!--[if (mso)|(IE)]>
+<table class="layout" cellpadding="0" cellspacing="0" align="center" bgcolor="#FCFCFC">
+<![endif]-->
+
+<!--[if (mso)|(IE)]>
+<tr>
+    <td colspan="2" class="column" valign="top" style="width: 600px;">
+<![endif]-->
+<div class="column" style="font-family: Arial, Tahoma, Georgia, Times, serif; float: left; width: 100%;">
+    <div class="spacing" style="margin: 0;">
+
+        <table width="100%" cellpadding="0" cellspacing="0" align="center">
+            <tr>
+                <td class="column" valign="top" style="width: 100%;" height="20"></td>
+            </tr>
+        </table>
+
+        {if $order->isTransferPayment()}
+
+        <table width="100%" cellpadding="0" cellspacing="0" align="center" style="background: #F6F3F3;">
+            <tr>
+                <td class="column" valign="top" style="width: 100%;">
+                    <h2 style="margin: 20px; font-family: Arial, Tahoma, Georgia, Times, serif; color: #3d3417; font-size: 20px; font-weight: 500; text-align: left; text-transform: uppercase;">
+                        {_order.email.confirmation.body.transferPayment.title}
+                    </h2>
+                    <p style="margin: 20px; font-family: Arial, Tahoma, Georgia, Times, serif; color: #3d3417; font-size: 14px; font-weight: 500; text-align: left;">
+                        {_order.email.confirmation.body.transferPayment.description}. <br>
+                        {_order.email.confirmation.body.transferPayment.bankAccount}: {$configParameters['project']['bankAccount']} <br>
+                        {_order.email.confirmation.body.transferPayment.variableSymbol}: {$order->getCode()|substr: 1} <br>
+                        {_order.email.confirmation.body.transferPayment.price}: {\App\Helpers\Prices::toUserFriendlyFormat($order->getSummaryPrice())} {_price.currency.label}
+                    </p>
+                    <p style="margin: 20px; font-family: Arial, Tahoma, Georgia, Times, serif; color: #3d3417; font-size: 14px; font-weight: 500; text-align: left;">
+                        {_order.email.confirmation.body.transferPayment.description2}
+                    </p>
+                </td>
+            </tr>
+        </table>
+
+        {/if}
+
+        <table width="100%" cellpadding="0" cellspacing="0" align="center" bgcolor="#FCFCFC">
+            <tr>
+                <td class="column" valign="top" style="width: 100%;">
+                    <h2 style="margin: 20px; font-family: Arial, Tahoma, Georgia, Times, serif; color: #3d3417; font-size: 20px; font-weight: 500; text-align: left; text-transform: uppercase;">
+                        {_order.email.confirmation.body.information.title}
+                    </h2>
+                </td>
+            </tr>
+        </table>
+
+        <table width="100%" cellpadding="0" cellspacing="0" align="center" bgcolor="#FCFCFC">
+            <tr>
+                <td class="column" valign="top" style="width: 100%;">
+                    <p style="margin: 0 20px 20px; font-family: Arial, Tahoma, Georgia, Times, serif; color: #3d3417; font-size: 14px; font-weight: 500; text-align: left;">
+                        <strong>{_order.property.code}:</strong> {$order->getCode()}<br>
+                        <strong>{_order.property.addDate}:</strong> {$order->getAddDate()|date:"d.m.Y H:i:s"}<br>
+                        <strong>{_order.property.comment}:</strong> {fill $order->getComment()}
+                    </p>
+                </td>
+            </tr>
+        </table>
+
+        <table width="100%" cellpadding="0" cellspacing="0" align="center" bgcolor="#FCFCFC">
+            <tr>
+                <td class="column" valign="top" style="width: 100%;">
+                    <h2 style="margin: 20px; font-family: Arial, Tahoma, Georgia, Times, serif; color: #3d3417; font-size: 20px; font-weight: 500; text-align: left; text-transform: uppercase;">
+                        {_order.billingInformation}
+                    </h2>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="column" valign="top" style="width: 100%;">
+                    <p style="margin: 0 20px 20px; font-family: Arial, Tahoma, Georgia, Times, serif; color: #3d3417; font-size: 14px; font-weight: 500; text-align: left;">
+                        {var $countryTranslationCode = App\Location\State::getTranslationKey($order->getBillingAddressCountry())}
+                        {$order->getCustomerFirstName()} {$order->getCustomerLastName()}
+                        <br />
+                        {$order->getBillingAddressStreet()},
+                        {$order->getBillingAddressPostcode()} {$order->getBillingAddressCity()}<br>
+                        {_$countryTranslationCode}<br>
+                        {$order->getCustomerEmail()}, {$order->getCustomerTelephone()}
+                    </p>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="column" valign="top" style="width: 100%;">
+                    <h2 style="margin: 20px; font-family: Arial, Tahoma, Georgia, Times, serif; color: #3d3417; font-size: 20px; font-weight: 500; text-align: left; text-transform: uppercase;">
+                        {_order.deliveryDetails}
+                    </h2>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="column" valign="top" style="width: 100%;">
+                    <p style="margin: 0 20px 20px; font-family: Arial, Tahoma, Georgia, Times, serif; color: #3d3417; font-size: 14px; font-weight: 500; text-align: left;">
+                        {var $countryTranslationCode = $order->getDeliveryAddressCountry() ? App\Location\State::getTranslationKey($order->getDeliveryAddressCountry()) : App\Location\State::getTranslationKey($order->getBillingAddressCountry())}
+                        {if $order->getDeliveryAddressCompany()}{$order->getDeliveryAddressCompany()}<br>{/if}
+                        {if $order->getDeliveryAddressFirstName()}{$order->getDeliveryAddressFirstName()} {$order->getDeliveryAddressLastName()}{else}{$order->getCustomerFirstName()} {$order->getCustomerLastName()}{/if}<br>
+                        {if $order->getDeliveryAddressStreet()}{$order->getDeliveryAddressStreet()}{else}{$order->getBillingAddressStreet()}{/if}<br>
+                        {if $order->getDeliveryAddressPostcode()}{$order->getDeliveryAddressPostcode()}{else}{$order->getBillingAddressPostcode()}{/if}
+                        {if $order->getDeliveryAddressCity()}{$order->getDeliveryAddressCity()}{else}{$order->getBillingAddressCity()}{/if}<br>
+                        {_$countryTranslationCode}
+                    </p>
+                </td>
+            </tr>
+        </table>
+
+        {if $order->getCustomerId()}
+            <table width="100%" cellpadding="0" cellspacing="0" align="center" bgcolor="#FCFCFC">
+                <tr>
+                    <td class="column" valign="top" style="width: 100%;">
+                        <h2 style="margin: 20px; font-family: Arial, Tahoma, Georgia, Times, serif; color: #3d3417; font-size: 20px; font-weight: 500; text-align: left; text-transform: uppercase;">
+                            {_order.email.confirmation.body.tracking.title}
+                        </h2>
+                        <p style="margin: 0 20px 20px; font-family: Arial, Tahoma, Georgia, Times, serif; color: #3d3417; font-size: 14px; font-weight: 500; text-align: left;">
+                            {_order.email.confirmation.body.tracking.description.part1}
+                            <a href="{link Front:Account:orderDetail, code => $order->getCode()}" style="color: #C0A772;">{_order.email.confirmation.body.tracking.description.part2}</a>
+                            {_order.email.confirmation.body.tracking.description.part3}.
+                            {_order.email.confirmation.body.tracking.description.part5}
+                        </p>
+                    </td>
+                </tr>
+            </table>
+        {/if}
+
+        <table width="100%" cellpadding="0" cellspacing="0" align="center" bgcolor="#FCFCFC">
+            <tr>
+                <td class="column" valign="top" style="width: 100%;">
+                    <h2 style="margin: 20px; font-family: Arial, Tahoma, Georgia, Times, serif; color: #3d3417; font-size: 20px; font-weight: 500; text-align: left; text-transform: uppercase;">
+                        {_order.email.confirmation.body.question.title}
+                    </h2>
+                    <p style="margin: 0 20px 20px; font-family: Arial, Tahoma, Georgia, Times, serif; color: #3d3417; font-size: 14px; font-weight: 500; text-align: left;">
+                        {_order.email.confirmation.body.question.description.part1, [telephone => $configParameters['project']['telephone']]}
+                        <a href="mailto:{$configParameters['project']['email']}" style="color: #C0A772;">{$configParameters['project']['email']}</a>.
+                    </p>
+                </td>
+            </tr>
+        </table>
+
+        <table width="100%" cellpadding="0" cellspacing="0" align="center" bgcolor="#FCFCFC">
+            <tr>
+                <td class="column" valign="top" style="width: 100%;">
+                    <p style="margin: 0 20px 20px; font-family: Arial, Tahoma, Georgia, Times, serif; color: #3d3417; font-size: 14px; font-weight: 500; text-align: left; margin: 20px;">
+                        {_order.email.confirmation.body.farewall.description}.
+                    </p>
+                </td>
+            </tr>
+        </table>
+
+        <br>
+
+    </div>
+</div>
+<!--[if (mso)|(IE)]>
+</td>
+</tr>
+<![endif]-->
+
+<!--[if (mso)|(IE)]>
+</table>
+<![endif]-->

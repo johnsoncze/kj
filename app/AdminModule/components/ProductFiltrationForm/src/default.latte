@@ -1,0 +1,75 @@
+{if $parameters}
+    <div class="well">
+        <b>Nastavena filtrace dle parametrů:</b><br>
+        {foreach $groups as $group}
+            {$group->getTranslation()->getName()}:
+            {foreach $parameters[$group->getId()] as $parameter}
+                <span class="label label-default">{$parameter->getTranslation()->getValue()} <a href="{link removeParameter!, $parameter->getId()}"
+                                                                                                style="color:white;"><i
+                                class="fa fa-times-circle"></i></a></span>
+            {/foreach}<br>
+        {/foreach}
+    </div>
+{/if}
+<a role="button" data-toggle="collapse" href="#filtration" aria-expanded="false" aria-controls="collapseExample">
+    <i class="fa fa-caret-right"></i> Filtrace dle parametrů
+</a>
+<div class="collapse p-t-20" id="filtration">
+    <div class="well">
+        <form n:name="form">
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-6">
+                        {label group/}
+                        {input group}
+                    </div>
+                    <div class="col-sm-6">
+                        {label parameter/}
+                        <div id="parameterSelectLoading" style="display: none"><i
+                                    class="fa fa-spinner fa-pulse fa-3x fa-fw" aria-hidden="true"></i></div>
+                        <div id="parameterSelect">
+                            {input parameter}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {input submit}
+        </form>
+    </div>
+</div>
+<script>
+    $('select[name="group"]').change(function () {
+        var parameterSelect = $('select[name="parameter"]');
+        var parameterSelectWrapper = $('#parameterSelect');
+        var parameterSelectLoading = $('#parameterSelectLoading');
+
+        parameterSelectWrapper.hide();
+        parameterSelectLoading.show();
+        parameterSelectWrapper.find('option').remove(); //remove all options
+
+        {capture $dataKey}{$control->getName()|noescape}-groupId{/capture}
+        $.nette.ajax({
+            url: {link getParameterList!},
+            data: { {$dataKey}: $(this).val()},
+            success: function (data) {
+                if (data) {
+                    parameterSelect.append('<option value="">- Vyberte -</option>'); //default
+                    $.each(data, function (item, index) {
+                        parameterSelect.append('<option value="' + index + '">' + item + '</option>');
+                    });
+                }
+                parameterSelectLoading.hide();
+                parameterSelectWrapper.show();
+            }
+        });
+    });
+</script>
+<script>
+    $('a[role="button"][href="#filtration"]').click(function () {
+        $(this).html(function (i, old) {
+            var show = "<i class=\"fa fa-caret-down\"></i> Filtrace dle parametrů";
+            var hide = "<i class=\"fa fa-caret-right\"></i> Filtrace dle parametrů";
+            return old == show ? hide : show;
+        });
+    });
+</script>

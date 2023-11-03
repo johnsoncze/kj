@@ -1,0 +1,19 @@
+<p>{if $resultCount > 0}{_search.result.text, $resultCount, [count => $resultCount, query => $query]|noescape}{else}{_search.result.no.text, $resultCount, [query => $query]|noescape}{/if}</p>
+
+<form n:name="form">
+    <div class="Grid">
+        <div class="Grid-cell u-sm-size2of12"></div>
+
+        <div class="Grid-cell u-sm-size6of12 u-size12of12">
+            <div class="TextField">
+                <input n:name="query" class="TextField-input">
+            </div>
+        </div>
+
+        <div class="Grid-cell u-sm-size2of12 u-size12of12 u-xs-mt--10 u-sm-mt--0 u-md-mt--0">
+            <div class="Form-buttons">
+                <input n:name="submit" class="Button">
+            </div>
+        </div>
+    </div>
+</form>

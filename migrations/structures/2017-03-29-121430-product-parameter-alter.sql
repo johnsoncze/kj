@@ -1,0 +1,1 @@
+ALTER TABLE `product_parameter` ADD `pp_sort` INT NOT NULL AFTER `pp_product_parameter_group_id`;

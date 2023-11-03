@@ -1,0 +1,1 @@
+ALTER TABLE `category_filtration_group` ADD `cfg_sort` INT NOT NULL AFTER `cfg_update_date`;

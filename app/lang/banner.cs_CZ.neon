@@ -1,0 +1,29 @@
+help:
+    header: Potřebujete poradit?
+    text: 'Kontaktujte nás na e-mailu <b>info@jk.cz</b> nebo telefonu <b>+420&nbsp;241&nbsp;091&nbsp;761</b>.<br />Vše společně probereme nebo domluvíme <b>osobní schůzku</b> v naší prodejně a zlatnické dílně.'
+    button: Rezervovat termín
+
+angels:
+    text1: 'Andělé a andělíčci jsou velmi osobními šperky. Předáte spolu s nimi lásku i prosbu o ochranu obdarovaného.<br /><br />Je to dar, který nikdy nezevšední. Možná Vás zaujme naše nabídka '
+    link1: '<b>zlatých řetízků</b>'
+    text2: 'V případě Vašeho zájmu nabízíme i výrobu '
+    link2: '<b>šperků na zakázku</b>'
+
+design:
+    header: Originální design a zlatnické řemeslo
+    text: 'Díky vlastnímu originálnímu autorskému designu jsou šperky JK jedinečné. Zároveň s tím v naší zlatnické dílně ctíme poctivé tradiční řemeslo, které doplňujeme o nejmodernější technologie. Vzniká tak radost z krásy a stav výjimečnosti'
+    button: Ukázat zlatnickou dílnu
+
+miss:
+    header: 'Karolína Kokešová,<br /><span>Miss Global 2019</span>'
+    text: 'zlatý přívěsek s diamanty z kolekce Andělé a andělíčci'
+    button: Více o šperku
+
+warranty:
+    header: 'Trvalá hodnota a&nbsp;doživotní záruka'
+    text: 'Díky ušlechtilým materiálům – zlatu, diamantům a pravým přírodním kamenům nejvyšších kvalit, získávají šperky JK vysokou a trvalou hodnotu, která v čase stoupá. Ke všem šperkům navíc poskytujeme každé dva roky garanční servis zdarma, čímž získáte naši doživotní záruku.'
+
+workshop:
+    header: 'Prodejna a zlatnická dílna'
+    text: 'Želetavská 1525/1, Praha 4 Brumlovka,<br />přízemí budovy Filadelfie'
+    button: Více o prodejně

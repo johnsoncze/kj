@@ -1,0 +1,32 @@
+{if $product->isWeedingRingPair() === FALSE}
+    <div class="u-mt--5  ">
+        <div n:if="$product->isWeedingRingPair() === FALSE" class="Product-option-info-title-phonecenter u-textUppercase u-colorGold">{_product.delivery.free}</div>
+        {*        <div n:if="$loggedCustomerDiscountRate > 0" class="Product-option-info-title-phonecenter u-textUppercase u-colorGold">{$translator->translate('category.template.default.benefit.loggedCustomerDiscount.title', ['percent' => $loggedCustomerDiscountRate])}</div>*}
+       {* <span n:if="$hasWeedingRingDiscount === TRUE" class="Product-option-text">{_category.template.default.benefit.weedingRingDiscount.title}</span> *}
+    </div>
+    <div n:if="$product->isDiscountAllowed()" class="Product-option-info-value-phonecenter u-colorGold u-mt--5 u-pb--10">
+        {*dump $product->getTmpDiscount()*}
+
+        {if $customer && !$product->isGiftVoucher()}
+            {if $loggedCustomerBirthdayDiscountRate}
+                Speciální narozeninové zvýhodnění (-{$loggedCustomerBirthdayDiscountRate}%)
+            {elseif $loggedCustomerDiscountRate}
+                Speciální zvýhodnění (akce -{$loggedCustomerDiscountRate}%) pro přihlášené
+            {elseif $product->getTmpDiscount()}
+                Speciální zvýhodnění (akce -25%) na skladové modely Tissot
+            {else}
+                {_category.template.default.benefit.discount.description}
+            {/if}
+        {elseif !$product->isGiftVoucher()}
+            <a href="{plink Sign:up}" class=" Product-option-link">
+                {if $loggedCustomerDiscountRate}
+                    Registrujte se pro {$loggedCustomerDiscountRate}% zvýhodnění
+                {elseif $product->getTmpDiscount()}
+                    Registrujte se pro 25% zvýhodnění
+                {else}
+                    {_product.discount.label}
+                {/if}
+            </a>
+        {/if}
+    </div>
+{/if}

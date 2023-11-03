@@ -1,0 +1,1 @@
+ALTER TABLE `payment` ADD `py_external_system_id` INT NOT NULL AFTER `py_id`, ADD UNIQUE (`py_external_system_id`);

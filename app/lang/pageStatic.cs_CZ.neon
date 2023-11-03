@@ -1,0 +1,330 @@
+aboutUs:
+    title: O JK
+    introduction:
+        title: Tvoříme originální kolekce<br>ručně vyrobených šperků
+        description: 'Nabízíme jedinečnost. Kolekce šperků s vlastními příběhy,<br> precizní ruční práce zlatníků a především porozumění duši<br> zákazníka – to jsou pilíře naší práce a hodnoty, ve které věříme.<br> Díky nim vám dokážeme nabídnout šperk, který dokonale vystihne<br> osobnost a ukáže hloubku vašeho vztahu.'
+        cta: Prohlédněte si kolekce
+    owners:
+        title: Začínali jsme u stolu v garsonce
+        citation: 'Vybavuje se mi, když mě Jitka v únoru 1991 poprvé zavedla ke zlatnickému stolu. Oněměl jsem úžasem, když jsem viděl, jak se pod jejíma rukama mění kus nehezkého silného drátu ve zlatý prsten.'
+        description: 'Od té doby už uplynula řada let a událo se mnoho věcí. Žádná z nich nám ale nepřináší větší radost než zákazníci, kteří se k nám vracejí a se kterými postupně prožíváme jejich nejšťastnější chvíle – zásnuby, svatbu, narození dětí i narozeniny.'
+        description2: 'Přes veškeré moderní technologie, které dnes máme k dispozici, zůstáváme okouzleni tradičním řemeslem a s láskou v něm pokračujeme. Mikroskopy, lasery, modeláž z vosku, 3D tiskárny či moderní licí technologie naši ruční práci jen precizují. Veškerá výroba se odehrává v naší zlatnické dílně, která je součástí JK prodejny v budově Filadelfie.'
+    goldsmithWorkshop:
+        title: Nahlédněte do zlatnické dílny
+        anchor: Přejít do dílny
+    team:
+        title: Náš tým žije pro svou práci
+        citation: 'Co dělá naši práci kvalitní? Je to láska k řemeslu, vzájemné sdílení zkušeností a pozorné naslouchání zákazníkovi.'
+        description: 'Spolu s Jitkou a Dušanem tvoří tým JK designéři a zlatníci, odborné asistentky, pracovníci ve výrobě a administrativě. Některé z nich poznáte při výběru či tvorbě vašeho šperku nebo je zahlédnete při práci přes prosklenou stěnu zlatnické dílny.<br><br> Šperk je velice osobní předmět, který zůstane ve vaší rodině navždy. Správný výběr či návrh je klíčový, proto budeme po celou dobu s vámi.'
+        anchor: Poznejte tým
+    timeline:
+        1990:
+            year: 1990
+            title: Talent od dětství
+            description: 'Už od dětství je Jitka velmi kreativní. Maminka vnímá její nadání a vede ji ke zlatnickému řemeslu. Brzy se ukazuje, že tato cesta je správná. Nejlepší možný směr nabírá hned v začátcích tvorby pod dohledem věhlasných prvorepublikových mistrů.'
+        1991:
+            year: 1991
+            title: Osudový rok
+            description: 'Rok 1991 otevírá novou životní etapu. Nejenže Jitka získává živnostenský list pro obor zlatnické výroby, ale v Den svatého Valentýna potkává svého životního partnera Dušana – později manžela a spolumajitele firmy JK.'
+        1992:
+            year: 1991-1992
+            title: Zlatnicí ve Venezuele
+            description: 'Díky Dušanovi se naskytne jedinečná pracovní příležitost a Jitka odjíždí na déle než rok do exotického Caracasu. Odtud si odváží nejen nadšení z jiného přístupu k zákazníkovi, ale také odhodlání začít vyrábět designové šperky s přírodními kameny i u nás.'
+        1996_1:
+            year: 1992–1996
+            title: Zakázky pro přátele
+            description: 'Po návratu z Venezuely získáváme první zakázky – většinou od přátel a známých, kteří Jitčinu práci doporučují dál. Klientů přichází čím dál více a stůl v garsonce časem přestává stačit. Pronajímáme si tedy sušárnu.'
+        1996_2:
+            year: 1996
+            title: První zlatnický obchod
+            description: 'Zájem zákazníků roste dál, až opouštíme dílnu v sušárně a otevíráme první obchod pod značkou Zlatnictví – hodiny Jitka Kudláčková.'
+        1998:
+            year: 1998
+            title: Stěhování a rozkvět firmy
+            description: 'Prodejna a sídlo firmy se stěhuje na rušnější žižkovskou ulici, na Seifertovu třídu č. 48. Obchod je zde mnohem živější a zákazníci rychle přibývají. Velmi je zajímá dění ve zlatnické dílně, což nás později inspiruje při návrhu prostor ve Filadelfii. Firma vzkvétá a zůstává na této adrese dlouhých 12 let.'
+        2009:
+            year: 2000–2009
+            title: Šperky Jitka Kudláčková
+            description: 'Vnímáme oblíbenost vznikajících obchodních center, proto dva roky provozujeme butik ve Slovanském domě a od roku 2002 také obchod v Paláci Flora. Firma nyní používá název Šperky Jitka Kudláčková a pracuje u nás asi 20 zaměstnanců.'
+            description2: 'Důležitým momentem je nápad vytvořit tematické kolekce. Začínáme na nich pracovat a nabízíme i renomované značky hodinek.'
+        2010:
+            year: 2009–2010
+            title: JK Jitka Kudláčková
+            description: 'Záleží nám na spokojenosti klientů a chceme jim nabídnout pohodlnější prostory pro nákup i sjednání zakázky a také možnost parkování. Zároveň přemýšlíme, jak jim umožnit náhled do zlatnické dílny. Po několika letech hledání nás nadchne významný developerský počin Radima Passera – BB centrum a jeho dominanta, budova Filadelfie. Zde se naplní všechny naše představy.'
+            description2: 'Zároveň vzniká značka a nové logo JK Jitka Kudláčková, které používáme dodnes.'
+        2014:
+            year: 2014
+            title: Kolekce s příběhem
+            description: 'Klienti oceňují naše prostory ve Filadelfii a jejich filozofii, proto po 12 letech opouštíme Palác Flora. Co je však důležitější – připravujeme nové JK kolekce. Každá z nich má svůj příběh a téma. Vznikají s určitým cílem. Všechny šperky tvoříme pod střechou JK, od prvních nápadů a skic až po finální umělecký skvost.'
+        today:
+            year: dnes
+            title: Nové vize a neustávající rozvoj
+            description: 'Stále na sobě pracujeme, abychom mohli našim klientům nabízet ještě lepší služby:'
+            description2: 'Vstupujeme do online světa a tvoříme webovou prezentaci, propojenou s obchodem ve Filadelfii.'
+            description3: 'Představujeme nové kolekce a rozšiřujeme stávající o nové unikátní šperky. Vyrábíme šperky podle přání zákazníků. Zároveň nabízíme renomované značky švýcarských hodinek.'
+            description4: 'Ručíme za kvalitu své práce, proto zavádíme celoživotní záruku spojenou s pravidelným servisem našich šperků.'
+            description5: 'Spolupracujeme se známými osobnostmi, které se stávají ambasadory našich šperků a kolekcí.'
+
+
+contact:
+    contactForm:
+        title: Napište nám
+    title: Kontakt
+    subtitle: Jsme tu pro vás
+    storeTitle: Navštivte naši prodejnu v Praze
+    address:
+        title: Adresa
+        in:
+            title: IČ
+        vatId:
+            title: DIČ
+    navigation:
+        title: Kudy k nám
+        publicTransport:
+            title: MHD
+        car:
+            title: Autem
+        parking:
+            title: Parkování
+    openingHours:
+        title: Otevírací doba
+
+customProduction:
+    title: Zakázková výroba
+    personalMeeting: 'Sjednejte si<span class="font-source-serif">osobní schůzku</span> v naší prodejně<br />se zlatnickou dílnou'
+    introduction:
+        title: Darujte jedinečný osobní šperk
+        subtitle: Tvoříme trvalé hodnoty
+        description: 'Chcete předat šperk, který má vyjádřit hluboký cit, poděkování či úctu milovanému člověku. Takový, jaký ještě nikdo nenosí. Možná již znáte každý jeho detail, možná vaše představa teprve vzniká.<br />V obou případech pro vás šperk rádi vytvoříme – tak, aby nadchl krásou a precizním ručním zpracováním a byl v dokonalém souladu s osobností obdarovaného. Na základě důvěry vznikají výjimečná díla'
+    steps:
+        header: 6 kroků na cestě k jedinečnému šperku
+        step1:
+            title: Začínáme skicou nebo ve 3d
+            description: "Ať už je na počátku jakákoli inspirace, idea se vždy musí vizualizovat."
+        step2:
+            title: Volíme způsob výroby
+            description: "Na základě návrhu šperku volíme tradiční nebo moderní zpracování šperku či jejich kombinaci."
+        step3:
+            title: Ctíme zlatnické řemeslo
+            description: "Zapojujeme veškerý náš um a zlaté polotovary ve formě plechu nebo drátu zpracujeme do požadovaného tvaru."
+        step4:
+            title: Ovládáme metodu ztraceného vosku
+            description: "Šperk či jeho polotovar modelujeme ručně pomocí skalpelu, elektrického nože nebo technologie 3D tisku."
+        step5:
+            title: Fasování vyžaduje preciznost
+            description: "Náročná disciplína usazování kamenů se provádí ručně s pomocí mikroskopů a zaručuje špičkovou přesnost a pevnost."
+        step6:
+            title: Závěrečné leštění šperk rozzáří
+            description: "Na výrobě šperku se stráví desítky až stovky hodin, finální leštění a povrchová úprava z něj nakonec vytvoří skutečný skvost."
+    lineSteps:
+        step1: "Povíte nám<br />svoji představu"
+        step2: "Navrhneme<br />základní podobu"
+        step3: "Připravíme<br />cenovou nabídku"
+        step4: "Začneme tvořit<br />šperk"
+        step5: "Pozveme vás<br />na zkoušku"
+        step6: "Předáme<br />hotový šperk"
+    meeting:
+        topText: "Zakázková výroba šperků má mnoho podob a ať už začnete na zelené louce, nebo si pouze necháváte nějaký šperk upravit, vložte do toho srdce, tak se nikdy nespletete.<br /><br />Pokud se přesto bojíte a nechcete riskovat, vezměte člověka, pro něhož je šperk určen, s sebou, ať řekne svou vlastní představu.<br /><br />Radost, kterou z dárku bude mít, se tím určitě nezmenší."
+        title: "Sjednejte si osobní schůzku"
+        subtitle: "Zanechte nám své kontaktní údaje pro individuální bezplatnou schůzku pro výběr šperku či zakázkovou výrobu."
+
+    contact:
+        title: Přejete si šperk na míru?
+        anchor: Sjednejte si schůzku
+        collectionLinkAnchor: Prohlédněte si naše kolekce
+    benefit:
+        counseling: 'Poradenství k péči o šperk'
+    price:
+        title: Kolik stojí zakázková výroba?
+        description: 'Váš šperk bude jedinečný originál. Abychom jej dokázali nacenit, musíme znát všechny potřebné informace a navrhnout ideální postup výroby. Výsledná cena se bude odvíjet od času věnovaného přípravě designu, dále od ceny použitých materiálů, náročnosti výroby a od vašich požadavků na rychlost zpracování.'
+        subtitle: Na kdy šperk potřebujete?
+        description2: 'Hotový šperk většinou předáváme do 4 týdnů. Po dohodě ale výrobu dokážeme urychlit.'
+    calculation:
+        title: Máte zájem o nezávaznou kalkulaci?
+        visit: Navštivte nás na prodejně
+        or: nebo nám
+        contact: napište
+
+services:
+    title: Služby
+    introduction:
+        title: Svěřte vše do našich rukou
+        description: 'Těšíte se na rozzářené oči a úsměv své milované<br> nebo chcete udělat radost sami sobě. Hledáte jedinečný a kvalitní šperk – a nejen<br> ten u nás získáte. Nabídneme inspiraci, provedeme vás výběrem šperku<br> a pak se o něj budeme dlouhé roky starat, stejně jako o vztah s vámi.'
+    selection:
+        title: Vybereme správný šperk i hodinky
+        description: 'Nabízíme vám své mnohaleté zkušenosti a poradenství. Provedeme vás našimi originálními kolekcemi, povyprávíme jejich příběhy a společně vybereme ten pravý šperk pro vás nebo vaši ženu.'
+        cta: 'Prohlédněte si kolekce'
+        watch:
+            description: 'Ke krásnému šperku patří také kvalitní hodinky. Předvybíráme dámské i pánské hodinky renomovaných značek, které vám rádi představíme. Možná společně vybereme i kazetu, natahovač či šperkovnici.'
+            cta: Prohlédněte si hodinky
+    consultation:
+        title: 'Cítíte, že potřebujete rozsáhlejší konzultaci?'
+        description: 'Poradí vám naše odborné asistentky nebo přímo majitelé firmy. Na schůzku s nimi přineste své šperky, které jsou pro vás, či vaši ženu, důležité. Společně vyberete ty, které mají stále schopnost posilovat osobnost. Můžeme je upravit do nové podoby nebo je doplnit o nové šperky – tak, aby vyzařovaly tu správnou energii.'
+        cta: Sjednejte si schůzku
+    customProduction:
+        title: Tvoříme osobní šperky na zakázku
+        description: 'Hledáte skutečně jedinečný šperk, jaký ještě nikdo nenosí. Takový, který vyjádří hloubku vašich citů a ukáže, že rozumíte duši obdarovaného. Dokážeme jej pro vás navrhnout a vyrobit.'
+        cta: Více o zakázkové výrobě
+    catalog:
+        title: Nejnovější JK katalog
+        cta: Stáhnout v PDF
+        collapseAnchor: Všechny JK katalogy
+    care:
+        block1:
+            title: Doživotní záruka na šperky JK
+            subtitle: Pečujeme o vaše šperky
+            description: 'Aby vám klenot dělal radost celý život, je potřeba se o něj starat. Navštivte nás <b>každé 2 roky</b> a přineste nám jej k <b>bezplatné kontrole</b>. Při dodržení této pravidelné péče na váš JK šperk platí <b>celoživotní záruka</b>.'
+        block2:
+            title: 'Jak pravidelný servis probíhá?'
+            description: 'Podíváme se, jestli je šperk v pořádku, a zdarma jej vyleštíme. Pokud objevíme závažnější opotřebení, doporučíme placenou opravu. Tu provedeme do 4 týdnů v naší zlatnické dílně.'
+    repair:
+        title: Poškodil se váš šperk? Přineste jej k nám
+        description: 'Nabízíme <b>opravy a celkovou renovaci šperků</b>. Od leštění přes úpravy velikostí až po doplnění kamenů. Rádi zajistíme rhodiování nebo matování povrchu, zkrátíme řetízek nebo na šperk doplníme rytinu.'
+        watch:
+            title: Záruční i pozáruční servis hodinek
+            description: 'Na počkání zkrátíme či vyměníme řemínek u hodinek, které jste u nás zakoupili. Stejně tak zajístíme záruční i pozáruční servis značek hodinek, které nabízíme.'
+    buyingGold:
+        title: Vykupujeme zlato
+        description: 'Máte doma zlaté šperky, které už nenosíte? Nebo jejich zlomky? Koupíme je od vás, nebo jejich hodnotu odečteme z ceny šperku, který si u nás vyberete.'
+        description2: 'Nejlepší je, pokud je zlato označené platnými puncovními značkami, nebo je ve ztavené formě s označením ryzosti z puncovního úřadu.'
+        description3: 'Pokud žádné označení nemá, provedeme zkoušku ryzosti. Výjimkou je ryzí zlato (24 kt), které přijímáme pouze s platnou puncovní značkou.'
+        price:
+            title: 'Ceny, za které zlato vykupujeme'
+            carats: karátů
+
+showroom:
+    title: Prodejna
+    video:
+        cta: Přehrát video
+    introduction:
+        title: Navštivte naši prodejnu v Praze
+        description: 'Výběr správného šperku potřebuje čas. Chcete se nerušeně<br> rozhlédnout a připomenout si milovaného člověka, váš vztah<br> a společné chvíle. Abyste si nákup užili, potřebujete prostor a možná<br> vás potěší i odborná rada od usměvavé asistentky. Na to vše jsme mysleli,<br> když jsme zařizovali naši reprezentativní prodejnu.'
+    history:
+        timeline1:
+            description: 'Bylo to dlouhé hledání, ale se šťastným koncem. Moderní budova Filadelfie nám umožnila propojit prostornou prodejnu se salónkem a zlatnickou dílnou. Na jednom místě si tak prohlédnete naše šperky, cokoli s námi v soukromí proberete a můžete nahlédnout i přímo do dílny.'
+        timeline2:
+            description: 'Jsme tu pro vás 6 dní v týdnu, od rána až do večera. Naše odborné asistentky vám pomohou s výběrem šperku a poradí, jak se o něj starat. Mají roky zkušeností a dokážou se vcítit i do vašeho blízkého, kterého chcete šperkem překvapit. A můžete se zde setkat i s majiteli firmy, kteří si rádi přicházejí s klienty popovídat.'
+        timeline3:
+            description: 'Víme, jak je pro vás důležité bezproblémové parkování. I proto sídlíme v budově Filadelfie v BB Centru, která nabízí velkorysé podzemní parkoviště. Z Pražského okruhu i dálnice D1 je to k nám na Brumlovku kousek.'
+    lounge:
+        timeline1:
+            title: Salónek s průhledem do dílny
+            description: 'Využijte intimního prostředí našeho salónku a v klidu a pohodlí vybírejte dárek pro vaše nejbližší.'
+        timeline2:
+            description: 'Zajímá vás, jak probíhá výroba šperků? Nahlédněte oknem v salónku do zlatnické dílny přímo pod ruce zlatníků.'
+    team:
+        title: Tým JK
+        subtitle: Poznejte
+        anchor: Přejít na tým
+    contact:
+        title: Jak se k nám dostanete?
+        cta: Přejít na kontakt
+
+goldsmithWorkshop:
+    title: Zlatnická<br>dílna
+    video:
+        cta: Přehrát video
+    soul:
+        title: 'Poznejte místo, kde šperk <br>získá svou duši'
+        description: 'Každý den v naší dílně vznikají v rukou zlatníků jedinečné<br> šperkařské skvosty. Hlavní ingrediencí při výrobě JK<br> šperků je originální nápad, vysoký podíl ruční práce<br> a kvalitní materiály – zlato, drahé kameny a perly. Stačí<br> jen vybrat ten, který bude právě pro vás připomínkou<br> vzácných životních okamžiků.'
+    timeline1:
+        title: Jak vzniká šperk
+        subtitle: Začínáme skicou
+        description: 'Na úplném počátku návrhu šperku vždy stojí nápad. Designér čerpá ze vzpomínek, představ i&nbsp;pocitů. Inspirací tak může být krása přírody, daleký vesmír, emoce, a&nbsp;nebo stačí pohled na zajímavý kámen či výjimečnou perlu. Ideu pak načrtne na papír nebo připraví vizualizaci v&nbsp;počítači.'
+    timeline2:
+        subtitle: Volíme způsob výroby
+        description: 'Jakmile je skica šperku hotová, je potřeba určit metodu, kterou šperk vytvoříme. Dle povahy návrhu volíme buď tradiční rukodělné zpracování, metodu ztraceného vosku, nebo kombinaci obojího.'
+    timeline3:
+        title: Ctíme zlatnické řemeslo
+        description: 'Vidět zlatníka při práci s&nbsp;drahým kovem je neuvěřitelný rukodělný koncert. Zlaté polotovary ve formě plechu nebo drátu nejdříve válcuje a&nbsp;protahuje, následně řeže, ohýbá a&nbsp;spojuje letováním.'
+    timeline4:
+        description: 'Již po staletí se k tomu používá oheň v&nbsp;různých formách. Zlatník dosahuje mistrovství až léty praxe. S&nbsp;drahým kovem se postupně sžívá, učí se jej tvarovat a&nbsp;vtisknout mu duši.'
+        html:
+            description: 'Mnohé se na tomto prastarém řemesle nemění. Jsou to postupy, základní nářadí, fortel a&nbsp;znalost vlastností zlata, případně dalších drahých kovů.'
+            cta: Prohlédněte si kolekce
+    technology:
+        timeline1:
+            subtitle: 'Ovládáme metodu <br>ztraceného vosku'
+            description: 'Metoda ztraceného vosku s následným odléváním vyžaduje velkou kreativitu a dovednost. Je totiž nutné šperk, nebo jeho polotovar, nejprve vymodelovat ze speciálního vosku.'
+        timeline2:
+            description: 'Zlatník model z vosku ponoří do nádoby se sádrou a vloží do žhavé pece. Vosk se ze sádry po několika hodinách odpaří. Vznikne tak dutina, do které se vlije zlato nebo jiný drahý kov. <br><br> Jakmile kov ztuhne, zlatník jej vysvobodí ze sádrového cylindru a následuje fáze pilování, začišťování a zjemňování povrchu kovu.'
+        timeline3:
+            subtitle: 'Fasování vyžaduje preciznost'
+            description: 'Usazování kamenů – fasování – provádíme ručně s&nbsp;použitím mikroskopů, pomocí kterých dosahujeme velké přesnosti. Fasér zvolí dle stylu šperku typ uchycení kamene, např. formou krapen nebo-li drápků, drážek, neviditelného či tlakového usazení.'
+        timeline4:
+            subtitle: 'Závěrečné leštění šperk rozzáří'
+            description: 'Důležitým krokem je finální leštění a povrchová úprava šperku, které zúročí desítky až stovky hodin strávených výrobou konkrétního šperku. Z původně nevzhledného polotovaru se konečně vyklube zářivý skvost.'
+    team:
+        title: Náš tým žije pro svou práci
+        subtitle: Poznejte
+        anchor: Poznejte tým
+    contact:
+        title: Nahlédněte do zlatnické dílny
+        description: 'Vždy jsme chtěli vybudovat místo, ve kterém bude zlatnické řemeslo co nejblíže lidem, pro které šperky tvoříme. V naší prodejně v Praze tak můžete nejen šperky vybírat, ale oknem ve stěně salonku také pozorovat, jak pod rukama našich zkušených zlatníků a fasérů vznikají. <br><br>Při velkém zájmu o návštěvu dílny pořádáme exkurze s odborným výkladem a možností si některé zlatnické úkony osahat. Spojte se s námi, rádi s vámi domluvíme detaily návštěvy.'
+        foottext: 'Jak nás můžete kontaktovat?'
+        linkCallAnchor: 'Zavolejte na prodejnu'
+        linkEmailAnchor: 'Napište nám'
+
+team:
+    title: Náš tým
+    introduction:
+        title: 'Seznamte se s naším týmem'
+        description: 'Roky zkušeností, láska k řemeslu a chuť tvořit – přesně to nás spojuje.<br> Hýčkáme si tvůrčí atmosféru a dobré vztahy jak uvnitř týmu,<br> tak i s každým zákazníkem. Pak mohou vznikat neopakovatelné<br> umělecké kolekce se šperky, které vyjádří vaši duši<br> a podpoří, co chcete sdělit.'
+    jitka:
+        position: 'Designerka a spolumajitelka'
+        citation: 'Jakmile jsem objevila skutečné poslání naší práce, vše začalo dávat hlubší smysl. Naše šperky prohlubují a upevňují vztahy v rodině,<br>mezi mužem a ženou i mezi přáteli.<br> Právě pro ně tvoříme krásu s trvalou hodnotou.'
+    dusan:
+        position: 'Výkonný ředitel a spolumajitel'
+        citation: 'Přestože používáme moderní způsoby a nástroje, základ bude<br> vždy důležitý.<br class="mobile-only"> A tímto základem je zlatnické řemeslo.'
+    team:
+        title: Společně objevíme ten pravý šperk
+    hiring:
+        title: Přidejte se k nám
+        description1: 'Pracujte s lidmi, kteří milují své řemeslo. Kteří se chtějí stále rozvíjet a učit se – třeba i od vás. Rádi na oplátku předají, co umí.'
+        description2: 'Napište nám o svých zkušenostech a připojte svůj životopis. Rádi vás poznáme.'
+        description3: 'Poslat životopis na '
+        anchor: 'dusan@jk.cz'
+        subject: Práce v JK
+        jobVacancy:
+            title: Volné pozice
+            none: 'Právě teď nehledáme nové kolegy. Rádi si ale pročteme váš životopis a když se naskytne příležitost, ozveme se vám.'
+representative_catalog:
+    title: Katalogy
+    introduction:
+        title: 'Zde najdete naše interaktivní katalogy'
+        description: 'U jednotlivých produktů jsou vloženy odkazy přímo do e-shopu pro Váš pohodlný nákup. V případě zájmu o tištěnou verzi katalogu nás neváhejte kontaktovat na <a href="mailto:info@jk.cz" style="text-decoration: none">info@jk.cz</a>'
+    download: stáhnout
+    view: prohlédnout
+
+meeting:
+    title: Sjednání osobní schůzky
+    topText: 'Zanechte nám své kontaktní údaje pro individuální bezplatnou schůzku v naší prodejně a zlatnické dílně na Praze 4.'
+    titleStore: 'Prodejna<br />a zlatnické dílna'
+    bottomText: 'Vaše přání probereme v intimním prostředí našeho salónku s průhledem do zlatnické dílny, můžete tedy nahlédnout přímo pod ruce zlatníků.'
+    addressBuilding: 'Brumlovka, přízemí budovy Filadelfie'
+    howGet: 'Jak se k nám dostanete'
+
+meetingConfirm:
+    title: Sjednání osobní schůzky
+    topText: 'Děkujeme za Váš zájem.<br />Náš specialista se Vám ozve s potvrzením termínu.'
+    discount: 'V rámci našeho věrnostního programu získáte při registraci 10% zvýhodnění. Při uvedení data narození obdržíte jednou ročně 15% zvýhodnění.'
+    registration: 'Vytvořit nový účet'
+    storeTitle: 'Prodejna<br />a zlatnická dílna'
+    customTitle: 'Zakázková výroba'
+    customText: 'Chcete prsten, jaký ještě nikdo nenosí? Možná již znáte každý jeho detail, možná vaše představa teprve vzniká nebo chcete upravit některý z našich designů? Šperk pro vás rádi vytvoříme – tak, aby nadchl krásou a precizním ručním zpracováním a byl v dokonalém souladu s vaší osobností.'
+    customBtn: 'Zakázková výroba'
+    addressBuilding: 'Brumlovka, přízemí budovy Filadelfie'
+    aboutStore: 'Více o prodejně'
+
+meetingForm:
+    name: Jméno
+    surname: Příjmení
+    email: E-mail
+    phone: Telefon
+    preferredDate: Preferovaný čas a datum
+    note: Poznámka
+    newsletter: 'Chci odebírat newsletter (rozesíláme 1x měsíčně)'
+    submit: Odeslat
+
+meetingEmail:
+    filledData: Zadané údaje

@@ -1,0 +1,45 @@
+<div class="Basket-freeDelivery">
+    <svg role="img" class="Icon Icon--benefit">
+        <use xlink:href="#symbol-truck"></use>
+    </svg>
+    <span class="Heading--subTitle">{_shopping-cart.delivery.free}</span>
+</div>
+
+<form n:name="form" class="u-pt--10">
+    <fieldset class="Form-fieldset">
+        <div id="delivery-section" class="Form-section-title">{_delivery.title}</div>
+        {foreach $delivery as $d}
+            <div class="RadioField u-displayBlock u-mt--5">
+                <label><input n:name="delivery:{$d->getId()}" class="RadioField-input">
+                    <span class="RadioField-label">
+                        <span id="delivery-{$d->getId()}" class="RadioField-labelText">
+                            {$d->getTranslation()->getName()}
+                        </span>
+                    </span>
+                </label>
+                {if $d->isStore()}
+                    <a href="#contactModal" class="js-popup-opener">{_delivery.store.address.label}</a>
+                {/if}
+            </div>
+        {/foreach}
+    </fieldset>
+
+    <fieldset class="Form-fieldset u-mt--10 u-sm-mt--30">
+        <div id="payment-section" class="Form-section-title">{_payment.title}</div>
+        {foreach $payment as $p}
+            <div class="RadioField u-displayBlock u-mt--5">
+                <label><input n:name="payment:{$p->getId()}" class="RadioField-input">
+                    <span class="RadioField-label">
+                        <span id="payment-{$p->getId()}" class="RadioField-labelText">
+                            {$p->getTranslation()->getName()}
+                        </span>
+                    </span>
+                </label>
+            </div>
+        {/foreach}
+    </fieldset>
+
+    <div class="u-displayNone">
+        {input submit}
+    </div>
+</form>

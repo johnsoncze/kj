@@ -1,0 +1,13 @@
+{block contentAdmin}
+<div class="row">
+    <div class="col-xs-6">
+        <b>Jazyk:</b> {$languageEntity->getName()}
+        <span class="p-l-5"></span>
+        <b>Modul:</b> {$module->getName()}
+    </div>
+    <div class="col-xs-6 text-right">
+        <a href="{plink ArticleCategory:sort}"><i class="fa fa-pencil" aria-hidden="true"></i> Změnit</a>
+    </div>
+</div>
+<hr>
+{control sortForm}

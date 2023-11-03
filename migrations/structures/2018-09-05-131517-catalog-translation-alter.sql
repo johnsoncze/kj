@@ -1,0 +1,1 @@
+ALTER TABLE `catalog_translation` ADD `ctgt_file_size` INT NULL AFTER `ctgt_file`;

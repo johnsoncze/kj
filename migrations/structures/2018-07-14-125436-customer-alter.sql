@@ -1,0 +1,1 @@
+ALTER TABLE `customer` ADD `cus_hear_about_us` VARCHAR(5) NULL AFTER `cus_password`, ADD `cus_hear_about_us_comment` VARCHAR(255) NULL AFTER `cus_hear_about_us`;

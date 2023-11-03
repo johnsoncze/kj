@@ -1,0 +1,1 @@
+ALTER TABLE `product` CHANGE `p_external_system_id` `p_external_system_id` MEDIUMINT(9) NULL;

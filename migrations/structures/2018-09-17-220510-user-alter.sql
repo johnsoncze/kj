@@ -1,0 +1,2 @@
+ALTER TABLE `user`
+CHANGE `u_name` `u_name` VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_czech_ci NOT NULL;

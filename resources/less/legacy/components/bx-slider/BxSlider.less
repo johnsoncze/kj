@@ -1,0 +1,186 @@
+.bx-wrapper .bx-loading,
+.bx-wrapper .bx-prev,
+.bx-wrapper .bx-next,
+.bx-wrapper .bx-controls-auto .bx-start,
+.bx-wrapper .bx-controls-auto .bx-stop {
+    background-image: none;
+}
+
+.bx-wrapper {
+    margin-bottom: 0;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+}
+
+.bx-wrapper img {
+    display: initial;
+}
+
+.bxSlider-wrapper-default {
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 0 0 transparent;
+    border: 0 none;
+    background: transparent;
+}
+
+
+div:not(.BannerCarousel) .bx-wrapper .bx-viewport {
+    height: auto !important;
+}
+
+.bx-wrapper .bx-controls.bx-has-pager {
+    margin-bottom: 30px;
+}
+
+.bx-wrapper .bx-controls.bx-has-controls-direction .bx-controls-direction {
+    @media @media-sm-max {
+        display: none;
+    }
+}
+
+.bx-wrapper .bx-controls-auto,
+.bx-wrapper .bx-pager {
+    bottom: 0;
+}
+
+
+/*
+    controls dot
+*/
+
+.bxSlider-controls-dot-link {
+    background: @color-white;
+    border: 1px solid @color-gold;
+    margin: 0 7px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+}
+
+.bxSlider-controls-dot-link-active {
+    background: @color-gold;
+}
+
+
+/*
+    arrow link
+*/
+
+.bxSlider-pager-arrow-link {
+    margin-top: 10px;
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    transition: all 0.25s ease;
+
+    &:after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        margin-top: -10px;
+        width: 0;
+        height: 0;
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+    }
+
+    &:hover {
+        transform: scale(1.5);
+    }
+}
+
+.bxSlider-pager-arrow-link-prev {
+    .bxSlider-pager-arrow-link;
+
+    border-right: 10px solid @color-gold;
+
+    &:after {
+        left: 2px;
+        border-right: 10px solid @color-white;
+    }
+}
+
+.bxSlider-pager-arrow-link-next {
+    .bxSlider-pager-arrow-link;
+
+    border-left: 10px solid @color-gold;
+
+    &:after {
+        right: 2px;
+        border-left: 10px solid @color-white;
+    }
+}
+
+.bxSlider-pager-arrow-link-prev--silver {
+    .bxSlider-pager-arrow-link-prev;
+
+    border-right-color: @color-gold;
+
+    &:after {
+        border-right-color: @color-silver;
+    }
+}
+
+.bxSlider-pager-arrow-link-next--silver {
+    .bxSlider-pager-arrow-link-next;
+
+    border-left-color: @color-gold;
+
+    &:after {
+        border-left-color: @color-silver;
+    }
+}
+
+
+/*
+    arrow image
+*/
+
+.bxSlider-pager-arrow-image {
+    width: 0;
+    height: 0;
+
+    &:after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        margin-top: -20px;
+        width: 91px;
+        height: 48px;
+        background: url(../images/pagination-arrow.png) no-repeat left center;
+        background-size: contain;
+        transition: all 0.25s ease;
+    }
+
+    &:hover {
+        // transform: scale(1.1);
+    }
+}
+
+.bxSlider-pager-arrow-image-prev {
+    .bxSlider-pager-arrow-image;
+
+    &:after {
+        left: -80px;
+    }
+
+    &:hover:after {
+        left: -90px;
+    }
+}
+
+.bxSlider-pager-arrow-image-next {
+    .bxSlider-pager-arrow-image;
+
+    &:after {
+        right: -80px;
+        transform: rotate(180deg);
+    }
+
+    &:hover:after {
+        right: -90px;
+    }
+}

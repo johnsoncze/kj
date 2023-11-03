@@ -1,0 +1,47 @@
+{block content}
+<div class="Background--silver OrderFinish__main-container">
+
+    {include 'partials/progress.latte'}
+
+    <div class="Container Container--slimer OrderFinish">
+        <div class="Basket-step">
+
+            <h1 class="User-page-title OrderFinish__heading1">JAK SI PŘEJETE OBJEDNÁVKU DOKONČIT?</h1>
+
+            <h2 class="User-page-title OrderFinish__heading2">REGISTROVANÝ ZÁKAZNÍK</h2>
+            <p class="OrderFinish__text OrderFinish__text--subheading">REGISTROVANÍ ZÁKAZNÍCI ZÍSKÁVAJÍ <b>10% CENOVÉ ZVÝHODNĚNÍ</b></p>
+
+            <div class="Form-buttons OrderFinish__reg-button-container u-mt--20 u-sm-mt--30">
+                <a class="Button OrderFinish__reg-button" n:href="Sign:up">
+                    Vytvořit nový účet
+                </a>
+            </div>
+
+
+                    <section class="Registration-form">
+
+                        <p>JIŽ MÁM ÚČET, CHCI SE PŘIHLÁSIT</p>
+
+                        {control signInForm:frontendDefault}
+
+                        <div class="OrderFinish__divider"></div>
+
+                        <h2 class="User-page-title OrderFinish__heading2">HOST</h2>
+                        <p>DOKONČIT OBJEDNÁVKU BEZ REGISTRACE</p>
+
+                         {if $shoppingCart !== NULL && $shoppingCart->hasProducts()}
+                            <div class="OrderFinish__next-button">
+                                <a n:href="step3" class="Button brown" id="nextStep">
+                                    POKRAČOVAT K DODACíM úDAJůM
+                                </a>
+                            </div>
+                        {/if}
+
+                    </section>
+
+
+    </div>
+
+    <div class="OrderFinish__divider OrderFinish__divider--full"></div>
+    {control benefit}
+</div>

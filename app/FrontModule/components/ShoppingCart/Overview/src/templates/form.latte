@@ -1,0 +1,186 @@
+<section class="Basket-products">
+
+    <table class="Basket-productsTable">
+
+        <tbody n:snippet="productBody">
+        {if $shoppingCart !== NULL && $shoppingCart->getProducts()}
+            {foreach $shoppingCart->getProducts() as $product}
+                {var productDTO = $product->getCatalogProduct() ? $shoppingCart->getProductDTOByProductId($product->getCatalogProduct()->getId()) : NULL}
+                {var $visibleParameters = $productDTO ? $productDTO->getVisibleParameters() : []}
+                <tr>
+                    <td>
+                        {if $product->getCatalogProduct()}<a href="{plink Product:detail, url => $product->getCatalogProduct()->getTranslation()->getUrl()}">{/if}
+                            <img src="{if $product->getCatalogProduct() && $product->getCatalogProduct()->getPhoto()}{thumbnailPath 100, 100, $product->getCatalogProduct()->getPhoto(), $product->getCatalogProduct()->getUploadFolder()}{else}{imagePlaceholder 100, 100}{/if}"
+                                 class="Basket-productsImage" alt="{$product->getTranslatedName()}" style="max-width: 100px; max-height: 100px">
+                            {if $product->getCatalogProduct()}</a>{/if}
+                    </td>
+                    <td class="Basket-productTitle">
+                        <div class="Basket-productsTitle">{if $product->getCatalogProduct()}<a
+                                href="{plink Product:detail, url => $product->getCatalogProduct()->getTranslation()->getUrl()}"
+                                class="Link--simple Link--noUnderline">{$product->getTranslatedName()}</a>{else}{$product->getTranslatedName()}{/if}
+                        </div>
+                        <div class="Basket-productsCode u-colorBrown">{if $productDTO}{$productDTO->getState()->getTranslation()->getValue()}{else}{_shopping-cart.product.unavailableLabel}{/if}</div>
+                        <div class="Basket-productsCode">{if $product->getCatalogProduct()}{$product->getCatalogProduct()->getCode()}{/if}</div>
+                       {* {if $productDTO && $productDTO->getState()->isProduction()}
+                            <div class="Basket-productionForm">
+                                <form n:name="productionForm_{$product->getProductId()}">
+                                    {label productionTime}:<br>
+                                    *}{*Temporary disabled because JK: selectbox contains only one option*}{*
+                                    <div class="u-displayNone">
+                                        {input productionTime}
+                                    </div>
+                                    <div class="Basket-productsCode">{_product.production.4_6_weeks}</div>
+                                </form>
+                            </div>
+                        {/if}*}
+                        {if $visibleParameters}
+                            <div class="Basket-productsParam">
+                                {foreach $visibleParameters as $parameter}
+                                    {$parameter->getGroup()->getTranslation()->getName()}: {$parameter->getTranslation()->getValue()}{if $iterator->isLast() !== TRUE}
+                                    <br>{/if}
+                                {/foreach}
+                            </div>
+                        {/if}
+                    </td>
+                    <td>
+                        {snippet 'productQuantity_' . $product->getHash()}
+                            <div class="Basket-productsAmount">
+                                <label class="decrease-quantity-label quantity-{$product->getQuantity()}">
+                                    <input type="button" n:if="$product->getQuantity() !== 1"
+                                       class="reduceQuantity decrease-quantity ecc-remove"
+                                       data-product-hash="{$product->getHash()}"
+                                       data-product-id="{$product->getProductId()}"
+                                       data-product-code="{$product->getCatalogProduct()->getCode()}"
+                                       data-action="decrease"
+                                       value="-">
+                                </label>
+                                <span id="quantity-{$product->getProductId()}">{$product->getQuantity()} {_product.quantityUnit}</span>
+                                <label class="increase-quantity-label">
+                                    <input type="button" class="reduceQuantity increase-quantity"
+                                       data-product-hash="{$product->getHash()}"
+                                       data-action="increase" value="+">
+                                </label>
+                                <a href="{link removeProduct! $product->getHash()}"
+                           data-product-id="{$product->getProductId()}"
+                           data-product-code="{$product->getCatalogProduct()->getCode()}"
+                           data-product-name="{$product->getTranslatedName()}"
+                           data-price-without-vat="{$product->getUnitPriceWithoutVat()|number:2:".":""}"
+                           data-product-brand="{if $productDTO && $productDTO->getBrand()}{$productDTO->getBrand()->getName()|noescape}{else}null{/if}"
+                           data-category="{if $product->getProductId() && isset($productCategories[$product->getProductId()])}{$productCategories[$product->getProductId()]->getTextNavigation()|noescape}{else}null{/if}"
+                           data-stock="{if $product->isInStock()}skladovy{else}neskladovy{if $productDTO && $productDTO->getBrand()} {$productDTO->getBrand()->getName()|noescape}{/if}{/if}"
+                           onclick="return confirm({_shopping-cart.overview.removeProduct.confirm, [name => $product->getTranslatedName()]})"
+                           class="ecc-remove product-remove u-textColor--red"><svg role="img" class="Icon">
+                                <use xlink:href="#symbol-cancel"></use>
+                            </svg></a>
+                            </div>
+                        {/snippet}
+                    </td>
+                    <td>
+                        {snippet 'productPrice_' . $product->getHash()}
+                            <div class="Basket-productsPrice">
+                                {if $product->getDiscount()}
+                                    <strike class="u-fontSize--14">{\App\Helpers\Prices::toUserFriendlyFormat($product->getSummaryPriceBeforeDiscount())} {_price.currency.label}</strike>
+                                    <br>
+                                    -{$product->getDiscount()} %
+                                    <br>
+                                {/if}
+                                {\App\Helpers\Prices::toUserFriendlyFormat($product->getSummaryPrice())} {_price.currency.label}
+                            </div>
+                        {/snippet}
+                    </td>
+                    <!--<td><a href="{link removeProduct! $product->getHash()}"
+                           data-product-id="{$product->getProductId()}"
+                           data-product-code="{$product->getCatalogProduct()->getCode()}"
+                           data-product-name="{$product->getTranslatedName()}"
+                           data-price-without-vat="{$product->getUnitPriceWithoutVat()|number:2:".":""}"
+                           data-product-brand="{if $productDTO && $productDTO->getBrand()}{$productDTO->getBrand()->getName()|noescape}{else}null{/if}"
+                           data-category="{if $product->getProductId() && isset($productCategories[$product->getProductId()])}{$productCategories[$product->getProductId()]->getTextNavigation()|noescape}{else}null{/if}"
+                           data-stock="{if $product->isInStock()}skladovy{else}neskladovy{if $productDTO && $productDTO->getBrand()} {$productDTO->getBrand()->getName()|noescape}{/if}{/if}"
+                           onclick="return confirm({_shopping-cart.overview.removeProduct.confirm, [name => $product->getTranslatedName()]})"
+                           class="ecc-remove u-textColor--red"><svg role="img" class="Icon">
+                                <use xlink:href="#symbol-cancel"></use>
+                            </svg></a></td>-->
+                </tr>
+            {/foreach}
+        {/if}
+        </tbody>
+    </table>
+
+    {if $shoppingCart === NULL || !$shoppingCart->getProducts()}
+        <div class="u-textCenter">{_shopping-cart.overview.empty.title}
+            <div class="u-mt--20">
+                <a href="{plink Homepage:default}" class="Product-link-big">
+                            <span class="Link-animation u-md-displayInit Link Link--lineBefore">{_shopping-cart.overview.empty.cta}
+                                <span class="Link--hover"></span></span>
+                </a>
+            </div>
+        </div>
+    {/if}
+
+</section>
+
+{if $shoppingCart !== NULL && $shoppingCart->hasProducts()}
+    {snippet summary}
+        <hr>
+        <div class="u-pt--20 u-pr--35 u-pl--20 product-container">
+            <span class="Product-option-label">{_order.price.summaryWithVat}</span>
+            <span class="Basket-productsPrice u-fontSize--22">{\App\Helpers\Prices::toUserFriendlyFormat($shoppingCart->getPrice()->summaryPrice)} {_price.currency.label}</span>
+        </div>
+    {/snippet}
+{/if}
+
+<script>
+    {if $showMeasuringCodes === TRUE && $cookies_analytics}
+        $(document).on('click', '.ecc-remove', function () {
+            var input = $(this);
+            var productId = input.attr('data-product-id');
+            dataLayer.push({
+                'event': 'eec.removeFromCart',
+                'ecommerce': {
+                    'currencyCode': 'CZK',
+                    'remove': {
+                        'products': [{
+                            'name': input.attr('data-product-name'),
+                            'id': input.data('product-code'),
+                            'price': input.attr('data-price-without-vat'),
+                            'brand': input.attr('data-product-brand'),
+                            'quantity': $('#quantity-' + productId).val(),
+                            'category': input.attr('data-category'),
+                            'dimension2': input.attr('data-stock')
+                        }]
+                    }
+                }
+            });
+        });
+    {/if}
+
+    $(document).on('click', '.reduceQuantity', function () {
+        var action = $(this).attr('data-action');
+        var productHash = $(this).attr('data-product-hash');
+
+        $.nette.ajax({
+            url: {link reduceQuantity!},
+            data: { productHash: productHash, reduce: action},
+            success: function (res) {
+                if (res.error !== undefined && !alert(res.error)) {
+                    //reload because run validity of shopping cart
+                    window.location.reload();
+                }
+            }
+        });
+    });
+
+    $(document).ready(function () {
+        $(document).on('change', '.set-production', function () {
+            var productHash = $(this).attr('data-product-hash');
+            var productionTimeId = $(this).val();
+
+            if (productionTimeId) {
+                $.nette.ajax({
+                    url: {link setProduction!},
+                    data: { productHash: productHash, productionTimeId: productionTimeId }
+                });
+            }
+        });
+    });
+</script>

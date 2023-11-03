@@ -1,0 +1,6 @@
+{block canonical}
+	<link rel="canonical" href="{plink //Category:default, url => $category->getUrl()}" />
+{/block}
+
+{block content}
+{include '../default.latte', breadcrumbRender => 'white', titleClass => 'u-textColor--white'}

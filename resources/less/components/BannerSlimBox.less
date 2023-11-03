@@ -1,0 +1,31 @@
+.BannerSlimBox {
+    position: relative;
+}
+
+.BannerSlimBox-media {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 160px;
+    height: 230px;
+    border-radius: @border-radius-large;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: @color-brown-dark;
+
+    @media @media-sm-min {
+        width: 250px;
+        height: 350px;
+        border-radius: @border-radius-larger;
+    }
+
+    @media @media-md-min {
+        width: 450px;
+        height: 650px;
+    }
+}
+
+.BannerSlimBox-media--bottom {
+    margin-top: 40px;
+    margin-right: 40px;
+}

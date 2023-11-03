@@ -1,0 +1,8 @@
+<ul class="nav nav-tabs">
+    <li data-nav="{App\Catalog\Catalog::TYPE_REPRESENTATIVE_CATALOG}"><a href="{plink Catalog:default, type => App\Catalog\Catalog::TYPE_REPRESENTATIVE_CATALOG}">{App\Catalog\Catalog::getTypes()[App\Catalog\Catalog::TYPE_REPRESENTATIVE_CATALOG]['translation']}</a></li>
+    <li data-nav="{App\Catalog\Catalog::TYPE_EMPLOYEE}"><a href="{plink Catalog:default, type => App\Catalog\Catalog::TYPE_EMPLOYEE}">{App\Catalog\Catalog::getTypes()[App\Catalog\Catalog::TYPE_EMPLOYEE]['translation']}</a></li>
+    <li data-nav="{App\Catalog\Catalog::TYPE_JOB_VACANCY}"><a href="{plink Catalog:default, type => App\Catalog\Catalog::TYPE_JOB_VACANCY}">{App\Catalog\Catalog::getTypes()[App\Catalog\Catalog::TYPE_JOB_VACANCY]['translation']}</a></li>
+</ul>
+<script>
+    {*$('li[data-nav="{$type|noescape}"]').addClass('active');*}
+</script>

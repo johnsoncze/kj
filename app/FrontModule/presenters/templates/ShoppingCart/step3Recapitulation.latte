@@ -1,0 +1,169 @@
+{block content}
+<div class="Background--gradient-top-100-ebebeb Recap">
+
+    {include 'partials/progress.latte'}
+
+    <div class="Container Container--slimer Recap__container">
+        <div class="Basket-step u-pb--90">
+
+            <h1 class="User-page-title Recap__heading1">REKAPITULACE OBJEDNÁVKY</h1>
+
+            <div class="Grid">
+                <div class="Grid-cell u-size12of12 u-md-size6of12">
+{*                      {control contactInformationForm}*}
+                        {control shoppingCartOverview:recapitulation}
+                </div>
+                <div class="Grid-cell u-size12of12 u-md-size6of12">
+                        {control shoppingCartOverview:bar}
+                </div>
+            </div>
+
+            {* {control buttonNavigation} *}
+
+    <section class="Basket-buttons Recap__buttons">
+    <hr class="Recap__divider">
+        <div class="recapHolder">
+            <style>
+                .recapHolder {
+                    margin-top: 20px;
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                }
+
+                .checkboxes {
+                    grid-column: 2 /-1;
+                    text-align: right !important;
+                }
+
+                .checkboxHolder {
+                    text-align: left !important;
+                    display: inline-block;
+                }
+
+                .backToDelivery {
+                    display: none;
+                }
+
+                .sendOrder {
+                    grid-column: 2 /-1;
+                    text-align: right !important;
+                }
+
+                .backToShop {
+                    grid-row: span 2;
+                    align-self: start;
+                    justify-self: start;
+                    grid-row-start: 1;
+                    margin-left: 0px !important;
+                    margin-right: 0px !important;
+                }
+
+                .checkboxHolder div {
+                    margin-bottom: 10px;
+                }
+
+                .checkboxes input[type='checkbox'] {
+                    display: none;
+                }
+
+                .sendButton {
+                    display: inline-block !important;
+                }
+
+                @media screen and (max-width: 767px) {
+                    .recapHolder {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                    }
+
+                    .backToShop {
+                        align-self: center;
+                        justify-self: center;
+                        order: 4;
+                    }
+
+                    .backToDelivery {
+                        display: block;
+                        margin-top: 45px;
+                    }
+                }
+
+            </style>
+
+            <div class="backToShop u-textCenter u-sm-textLeft u-mt--0">
+                <a href="{plink Homepage:default}" class="Product-link-big">
+                    <span class="Link-animation u-md-displayInit Link Link--lineBefore">ZPĚT K NÁKUPU<span class="Link--hover"></span></span>
+                </a>
+            </div>
+
+            <form class="checkboxes">
+                <div class="checkboxHolder">
+                    <div>
+                        <label>
+                            <input type="checkbox" name="terms" class="CheckboxField-input">
+                            <span class="CheckboxField-label">
+                            <span class="CheckboxField-labelText">
+                                Souhlasím s <a href="/stranka/obchodni-podminky">Obchodními podmínkami</a>.
+                            </span>
+                        </span>
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                            <input type="checkbox" name="noheureka" class="CheckboxField-input">
+                            <span class="CheckboxField-label">
+                            <span class="CheckboxField-labelText">
+                                Nesouhlasím se zasláním dotazníků Ověřeno zákazníky
+                            </span>
+                        </span>
+                        </label>
+                    </div>
+                </div>
+            </form>
+
+            <div class="backToDelivery u-textCenter u-sm-textLeft Recap__back-to-delivery">
+                <a href="{plink ShoppingCart:step3}" class="Product-link-big">
+                    <span class="Link-animation u-md-displayInit Link Link--lineBefore">Zpět na dodací údaje<span class="Link--hover"></span></span>
+                </a>
+            </div>
+
+
+            <div class="sendOrder u-textCenter u-sm-textRight Recap__button  error-msg-container">
+                <a href="{plink step4}" class="Button sendButton" id="nextStep">Odeslat objednávku
+                    <svg role="img" class="Icon Icon--benefit">
+                        <use xlink:href="#symbol-arr-right"></use>
+                    </svg>
+                </a>
+            </div>
+
+
+        </div>
+
+    </section>
+
+        </div>
+    </div>
+
+
+    {control benefit}
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('#nextStep').click(function (event) {
+            if ($('[name="terms"]').is(':checked')) {
+                $('#nextStep').parent().removeAttr('data-error-msg')
+            } else {
+                event.preventDefault();
+                $('#nextStep').parent().attr('data-error-msg', ' Potvrďte souhlas s našimi Obchodními podmínkami');
+            }
+        });
+
+        $('[name="noheureka"]').change(function () {
+            let date = new Date();
+            date.setFullYear(date.getFullYear() + 1);
+            document.cookie = 'noheureka=' + ($(this).prop('checked') ? 1 : 0) + '; path=/; expires=' + date.toGMTString();
+        });
+    });
+</script>

@@ -1,0 +1,15 @@
+{if $products}
+    <section class="Background">
+        <div class="Related">
+
+            <div class="Container u-pt--90 u-sm-pt--160 u-pb--30 u-sm-pb--90">
+                <div class="Related-title-small">{_product.related.crossSelling.title}</div>
+                <h2 class="Related-title">{_product.related.crossSelling.subTitle}</h2>
+                <p class="Related-desc u-pl--10 u-pr--10">{_product.related.crossSelling.description|noescape}</p>
+
+                {control productList:more}
+            </div>
+
+        </div>
+    </section>
+{/if}

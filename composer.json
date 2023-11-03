@@ -1,0 +1,42 @@
+{
+	"name": "nette/web-project",
+	"description": "Nette: Standard Web Project",
+	"type": "project",
+	"license": ["MIT", "BSD-3-Clause", "GPL-2.0", "GPL-3.0"],
+	"require": {
+		"php": ">=7.4 <7.5",
+		"nette/application": "2.4.16",
+		"nette/bootstrap": "^2.4.1",
+		"nette/caching": "^2.5",
+		"nette/database": "^2.4",
+		"nette/di": "^2.4",
+		"nette/finder": "^2.4",
+		"nette/forms": "^2.4",
+		"nette/http": "^2.4",
+		"nette/mail": "^2.4",
+		"nette/robot-loader": "^2.4",
+		"nette/safe-stream": "^2.3",
+		"nette/security": "^2.4",
+		"nette/utils": "^2.4",
+		"latte/latte": "^2.4",
+		"tracy/tracy": "^2.4",
+		"kdyby/translation": "2.6.0",
+		"nextras/migrations": "^3.0",
+		"kdyby/console": "^2.7",
+		"kdyby/events": "^3.0",
+		"kdyby/monolog": "^1.3",
+		"nextras/mail-panel": "^2.3",
+		"guzzlehttp/guzzle": "^6.3",
+		"mobiledetect/mobiledetectlib": "^2.8",
+		"heureka/overeno-zakazniky": "^3.0",
+		"haltuf/ecomail-nette": "@dev",
+		"o5/grido": "3.0",
+		"sentry/sdk": "^3.2"
+	},
+	"require-dev": {
+		"nette/tester": "^1.6",
+		"phpstan/phpstan": "^0.6.3",
+		"phpstan/phpstan-nette": "^0.6.2"
+	},
+	"minimum-stability": "stable"
+}

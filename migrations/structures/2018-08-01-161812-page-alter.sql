@@ -1,0 +1,1 @@
+ALTER TABLE `page` ADD `p_template` VARCHAR(30) NULL AFTER `p_setting`;

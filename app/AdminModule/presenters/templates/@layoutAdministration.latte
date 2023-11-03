@@ -1,0 +1,150 @@
+{layout '@layout.latte'}
+{block content}
+    <div class="navbar navbar-default navbar-fixed-top">
+
+        <div class="container">
+            <div class="navbar-header">
+                <a href="{plink Homepage:default}" class="navbar-brand">{$presenter->context->getParameters()["administration"]["title"]}</a>
+                <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="navbar-collapse collapse" id="navbar-main">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false" id="eshop"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                            E-shop<span class="caret"></span></a>
+                        <ul class="dropdown-menu" aria-labelledby="eshop">
+                            <li style="width: 220px"><a href="{plink Order:default}">Objednávky <span n:if="$newOrderCount->getCount()" class="badge badge-pill badge-dark pull-right">{$newOrderCount->getCount()}</span></a></li>
+                            <li><a href="{plink Demand:default}">Poptávky <span n:if="$newDemandCount->getCount()" class="badge badge-pill badge-dark pull-right">{$newDemandCount->getCount()}</span></a></li>
+                            <li class="divider"></li>
+                            <li><a href="{plink Customer:default}">Zákazníci</a></li>
+                            <li class="divider"></li>
+                            <li><a href="{plink Category:default}">Kategorie</a></li>
+                            <li><a href={plink Product:default}>Produkty</a></li>
+                            <li><a href={plink ProductParameterGroup:default}>Skupiny parametrů</a></li>
+                            <li class="divider"></li>
+                            <li><a href={plink Diamond:default}>Ceník diamantů</a></li>
+                            {*<li><a href={plink Delivery:default}>Doprava</a></li>*}
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false" id="eshop"><i class="fa fa-envelope" aria-hidden="true"></i>
+                            Žádosti<span class="caret"></span></a>
+                        <ul class="dropdown-menu" aria-labelledby="eshop">
+                            <li><a href="{plink ContactForm:default}"> Kontaktní formulář <span n:if="$newContactFormMessageCount->getCount()" class="badge badge-pill badge-dark pull-right">{$newContactFormMessageCount->getCount()}</span></a></li>
+                            <li style="width: 220px"><a href="{plink StoreMeeting:default}">Žádosti o schůzku <span n:if="$newStoreMeetingCount->getCount()" class="badge badge-pill badge-dark pull-right">{$newStoreMeetingCount->getCount()}</span></a></li>
+                            <li><a href="{plink Newsletter:default}">Žádosti o newsletter</a></li>
+                            <li><a href="{plink PersonalMeeting:default}">Snubní prsteny</a></li>
+                        </ul>
+                    </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="content" aria-expanded="false"><i class="fa fa-file-text-o" aria-hidden="true"></i>
+                                Obsah<span class="caret"></span></a>
+                            <ul class="dropdown-menu" aria-labelledby="content">
+                                <li><a href="{plink Page:default}">{_presenter.admin.page.default}</a></li>
+                                <li class="divider"></li>
+                                <li><a href="{plink Article:default}">{_presenter.admin.article.default}</a></li>
+                                <li class="divider"></li>
+                                <li><a href="{plink PromoArticle:default}">{_presenter.admin.promoarticle.default}</a></li>
+                                <li class="divider"></li>
+                                <li><a href="{plink Catalog:default}">{_presenter.admin.catalog.default}</a></li>
+                            </ul>
+                        </li>
+                    {*<li class="dropdown">*}
+                        {*<a href="#" class="dropdown-toggle" data-toggle="dropdown" id="content" aria-expanded="false"><i class="fa fa-life-ring" aria-hidden="true"></i> Ostatní<span class="caret"></span></a>*}
+                        {*<ul class="dropdown-menu" aria-labelledby="content">*}
+                            {*<li><a href="">Kontaktní formulář</a></li>*}
+                            {*<li class="divider"></li>*}
+                            {*<li><a href="">Logy</a></li>*}
+                        {*</ul>*}
+                    {*</li>*}
+                    <li><a href="{plink Setting:default}"><i class="fa fa-cogs"></i> Nastavení</a></li>
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="{plink :Front:Homepage:default}" target="_blank"><i class="fa fa-external-link"></i> Přejít na web</a></li>
+                    <li><a href="{plink Profile:default}"><i class="fa fa-user-circle-o"
+                                                             aria-hidden="true"></i> {$user->getIdentity()->getEntity()->getEmail()}
+                        </a></li>
+                    <li><a href="{plink Sign:out}"><i class="fa fa-lock" aria-hidden="true"></i></a></li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+    <div class="container">
+        <div class="m-t-100">
+            {include flashMessages}
+            {ifset $backLink}
+                <div class="form-group p-b-20">
+                    <a href="{$backLink["href"]}"
+                       class="btn btn-default btn-xs"><i class="fa fa-arrow-left" aria-hidden="true"></i> Zpět na {$backLink["anchor"]}</a>
+                </div>
+            {/ifset}
+            <div class="row">
+                <div class="col-sm-6">
+                    <h1>{$title|noescape}</h1>
+                </div>
+                <div class="col-sm-6 text-right">
+                    {block nextToTitle}{/block}
+                </div>
+            </div>
+        </div>
+        {control breadcrumbNavigation}
+        <div class="p-t-20">
+            <div class="row">
+                <div class="col-sm-12">
+                    {block contentAdmin}
+                    {/block}
+                </div>
+            </div>
+        </div>
+    </div>
+{/block}
+
+{block scriptAdmin}
+    <script>
+        CKEDITOR.replace('ckEditor', {
+            filebrowserUploadUrl: {$ckEditorUploadPath|noescape},
+            extraPlugins: 'videoembed',
+            toolbarGroups: [
+                { name: 'document', groups: [ 'mode', 'document', 'doctools' ] },
+                { name: 'clipboard', groups: [ 'clipboard', 'undo' ] },
+                { name: 'editing', groups: [ 'find', 'selection', 'spellchecker', 'editing' ] },
+                '/',
+                { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ] },
+                { name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi', 'paragraph' ] },
+                { name: 'links', groups: [ 'links' ] },
+                { name: 'insert', groups: [ 'insert' ] },
+                '/',
+                { name: 'styles', groups: [ 'styles' ] },
+                { name: 'colors', groups: [ 'colors' ] },
+                { name: 'tools', groups: [ 'tools' ] },
+                { name: 'others', groups: [ 'others' ] }
+            ]
+        });
+
+        CKEDITOR.replace('ckEditor2', {
+            filebrowserUploadUrl: {$ckEditorUploadPath|noescape},
+            extraPlugins: 'videoembed',
+            toolbarGroups: [
+                { name: 'document', groups: [ 'mode', 'document', 'doctools' ] },
+                { name: 'clipboard', groups: [ 'clipboard', 'undo' ] },
+                { name: 'editing', groups: [ 'find', 'selection', 'spellchecker', 'editing' ] },
+                '/',
+                { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ] },
+                { name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi', 'paragraph' ] },
+                { name: 'links', groups: [ 'links' ] },
+                { name: 'insert', groups: [ 'insert' ] },
+                '/',
+                { name: 'styles', groups: [ 'styles' ] },
+                { name: 'colors', groups: [ 'colors' ] },
+                { name: 'tools', groups: [ 'tools' ] },
+                { name: 'others', groups: [ 'others' ] }
+            ]
+        });
+    </script>
+{/block}

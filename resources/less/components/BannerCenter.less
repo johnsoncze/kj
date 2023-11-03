@@ -1,0 +1,29 @@
+.BannerCenter {
+    position: relative;
+    height: auto;
+    padding: 10px 0 60px;
+    background-position: center top;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    @media @media-xs-min {
+        padding: 60px 30px;
+    }
+
+    @media @media-md-min {
+        height: 600px;
+    }
+}
+
+.BannerCenter .Text-subtitle {
+    .Text-block-title-small();
+
+    display: block;
+}
+
+.BannerCenter .Text-title {
+    .Text-block-title();
+
+    //line-height: 2.2em;
+    color: @color-white;
+}

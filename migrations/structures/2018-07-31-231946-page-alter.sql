@@ -1,0 +1,2 @@
+ALTER TABLE `page` ADD `p_article_module_id` INT NULL AFTER `p_parent_page_id`, ADD INDEX (`p_article_module_id`);
+ALTER TABLE `page` ADD FOREIGN KEY (`p_article_module_id`) REFERENCES `article_module`(`am_id`) ON DELETE RESTRICT ON UPDATE CASCADE;

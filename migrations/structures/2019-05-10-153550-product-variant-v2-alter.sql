@@ -1,0 +1,2 @@
+ALTER TABLE `product_variant_v2` ADD `pv_parent_variant_id` INT NULL AFTER `pv_parameter_group_id`, ADD INDEX (`pv_parent_variant_id`);
+ALTER TABLE `product_variant_v2` ADD FOREIGN KEY (`pv_parent_variant_id`) REFERENCES `product_variant_v2`(`pv_id`) ON DELETE CASCADE ON UPDATE CASCADE;

@@ -1,0 +1,31 @@
+{contentType application/xml; charset=utf-8}
+{cache tags => [$control::CACHE_TAG, App\Product\Product::PRODUCT_FEED_CACHE_TAG]}
+<?xml version="1.0"?>
+<SHOP xmlns="http://www.zbozi.cz/ns/offer/1.0">
+    {var $maxProducts = 500}
+    {for $i = 0; $i <= $control->getProductsCount()->getCount();}
+        {var $productDtos = $control->getProductDtos($maxProducts, $i)}
+        {foreach $productDtos as $productDto}
+            {var $product = $productDto->getProduct()}
+            {var $productTranslation = $product->getTranslation()}
+            <SHOPITEM>
+                <PRODUCTNAME>{$productTranslation->getName()}</PRODUCTNAME>
+                <DESCRIPTION>{$productTranslation->getDescription()|striptags}</DESCRIPTION>
+                <URL>{$linkGenerator->link('Front:Product:detail', ['url' => $productTranslation->getUrl()])}</URL>
+                <PRICE_VAT>{$product->getPrice()|number:2:'.':''}</PRICE_VAT>
+                <DELIVERY_DATE>{if $product->isInStock()}0{else}28{/if}</DELIVERY_DATE>
+                <CATEGORYTEXT n:if="$product->getZboziCzCategory()">{$product->getZboziCzCategory()}</CATEGORYTEXT>
+                <ITEM_ID>{$product->getCode()}</ITEM_ID>
+                <IMGURL n:if="$product->getPhoto()">{rtrim($linkGenerator->link('Front:Homepage:default'), '/')}{$fileManager->getFile($product->getPhoto(), $product->getUploadFolder())}</IMGURL>
+                <CUSTOM_LABEL_0>{$product->getPriceLabel()}</CUSTOM_LABEL_0>
+                <PARAM n:foreach="$productDto->getProductParameterList() as $value">
+                    <PARAM_NAME>{$value['group']->getTranslation()->getFiltrationTitle()}</PARAM_NAME>
+                    <VAL>{foreach $value['parameters'] as $parameter}{$parameter->getTranslation()->getValue()}{sep}, {/sep}{/foreach}</VAL>
+                </PARAM>
+            </SHOPITEM>
+        {/foreach}
+        {php unset($products)}
+        {var $i += $maxProducts}
+    {/for}
+</SHOP>
+{/cache}

@@ -1,0 +1,94 @@
+
+
+<header class="Header">
+    <div class="Header-item u-displayNone u-sm-displayBlock">
+        <div class="u-mb--10">
+          <a href="tel:{php echo str_replace(['+', ' '], ['00', ''], $parameters['project']['telephone'])}" class="Header-link u-displayInlineBlock u-mr--10">
+              <svg role="img" class="Icon Icon--offset Header-item--icon"><use xlink:href="#symbol-phone" /></svg>
+              {$parameters['project']['telephone']}
+          </a>
+          <br />
+          <a href="mailto:{$parameters['project']['email']}" class="Header-link">
+              <svg role="img" class="Icon Icon--offset Header-item--icon"><use xlink:href="#symbol-envelope" /></svg>
+              {$parameters['project']['email']}
+          </a>
+          <br />
+          <a href="/stranka/prodejna" title="Prodejna" class="Header-link Header-item--address">
+              <svg role="img" class="Icon Icon--offset Header-item--icon"><use xlink:href="#symbol-store" /></svg>
+              {$parameters['project']['address']}<br />
+              <svg role="img" class="Icon Icon--offset Header-item--icon Header-item--hidden"><use xlink:href="#symbol-store" /></svg>			  
+			  {$parameters['project']['addressBuilding']}
+          </a>
+          <br />
+          <a href="/stranka/prodejna" title="Prodejna" class="Header-link">
+              <svg role="img" class="Icon Icon--offset Header-item--icon"><use xlink:href="#symbol-clock" /></svg>
+              {control openingHours:today}
+          </a>
+        </div>
+    </div>
+
+    <div class="Header-item Header-item--logo">
+        <a href="{plink Homepage:default}">
+            <img class="Header-logo" src="/assets/front/images/JK-logo-claim-web.svg" alt="{$parameters['project']['name']}" width="163" height="56">
+        </a>
+    </div>
+
+    <div class="Header-item Header-item--links">
+        {if $templateNavigation === TRUE}
+            <div class="Header-control u-sm-displayNone">
+                <button type="button" class="IconLink js-navigation-toggle">
+                    <svg role="img" class="Icon Icon--medium IconLink-icon">
+                        <use xlink:href="#symbol-menu" />
+                    </svg>
+                    {_header.menu.menu.title}
+                </button>
+            </div>
+            <div class="Header-control u-sm-displayNone">
+                <a href="#" class="IconLink js-searchBox-desktop-toggle">
+                    <svg role="img" class="Icon Icon--medium IconLink-icon">
+                        <use xlink:href="#symbol-search" />
+                    </svg>
+                    {_header.menu.search.title}
+                </a>
+            </div>
+        {/if}
+        <div class="Header-control">
+        <a href="{plink Favourite:default}" class="IconLink u-colorGold u-mt--0 u-sm-mt--5">
+                <svg  role="img" class="Icon Icon--big IconLink-icon">
+                    <use xlink:href="#symbol-heart" />
+                </svg>
+				<span class="u-displayNone u-sm-displayInlineBlock">{_header.menu.favourites.title}</span>
+				(<span id="Header-favourite-num">{control favouriteTopOverview:topOverview}</span>)
+            </a>
+        </div>
+        <div class="Header-control u-positionRelative">
+        <a href="{if $loggedUser}{plink Account:default}{else}{plink Sign:in}{/if}" class="IconLink u-colorGold" id="a-user">
+                <svg  role="img" class="Icon Icon--big IconLink-icon">
+                    <use xlink:href="#symbol-user" />
+                </svg>
+				<span class="u-displayNone u-sm-displayInlineBlock">{if $loggedUser}{$loggedUser->getEntity()->getFirstName()|truncate:9,'..'}{else}{_header.menu.account.title}{/if}</span>
+				<span class="Header-isLogged">
+				{if $loggedUser}
+                  <svg role="img" class="Icon Icon--medium IconLink-icon">
+                      <use xlink:href="#symbol-checked" />
+                  </svg>				
+				{/if}</span>
+            </a>
+        </div>
+
+        {if $templateNavigation === TRUE}
+            <div class="Header-control Header-control--cart">
+              <a href="{plink goToShoppingCart!}"  class="IconLink IconLink-darkbg">
+                  <svg style="margin-top:7px;" role="img" class="Icon Icon--bag IconLink-icon-white">
+                      <use xlink:href="#symbol-bag" />
+                  </svg>
+                  <div class="u-displayInlineBlock u-textLeft">
+                      <div class="u-md-displayBlock">Nákupní </div>
+                      <div class="u-md-displayBlock">košík</div>
+                  </div>
+              </a>
+                {snippet shoppingCartOverview}{control shoppingCartOverview:small}{/snippet}
+            </div>
+        {/if}
+    </div>
+</header>

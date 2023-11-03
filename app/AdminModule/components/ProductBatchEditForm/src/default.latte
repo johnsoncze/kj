@@ -1,0 +1,30 @@
+{form form}
+    <div class="row">
+        <div class="col-xs-12 col-sm-6">
+            <h4>
+                Vyberte varianty, u kterých se má změna projevit
+            </h4>
+            <div id="products-batch--checkboxlist" class="checkboxlist-container">
+                <a class="btn btn-info btn-sm" class="js--check-all" onclick="$(this).closest('.checkboxlist-container').find('[type=checkbox]').prop('checked', true)">Vybrat vše</a>
+                <a class="btn btn-danger btn-sm" class="js--check-all" onclick="$(this).closest('.checkboxlist-container').find('[type=checkbox]').prop('checked', false)">Zrušit výběr</a>
+                <br><br>
+                {input product_id}
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-6">
+            <h4>
+                Vyberte obrázky
+            </h4>
+            <hr>
+            {label main_image /}
+            {input main_image}
+            <hr>
+            {label additional_images /}
+            {input additional_images}
+            <hr>
+
+            {input submit}
+        </div>
+    </div>
+
+{/form}

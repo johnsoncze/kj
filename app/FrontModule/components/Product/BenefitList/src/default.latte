@@ -1,0 +1,40 @@
+<section class="u-pt--40 u-md-pt--70 u-textCenter Background--gray-lighter">
+    <h2 class="u-textCenter u-textUppercase u-mb--25">Výhody nákupu v jk</h2>
+    <div class="Container Grid u-justifyContentCenter">
+        {*        <div class="Grid u-textCenter u-pt--0 u-sm-pt--50 u-sm-pb--50 u-md-pt--70 u-pb--20 u-md-pb--70 js-benefits-carousel">*}
+            {var $benefitCount = count($benefits)}
+            {var $gridSize = 12 % $benefitCount === 0 ? 12 : 10}
+            {var $mdColumnSize = $gridSize / $benefitCount}
+            {foreach $benefits as $benefit}
+            <div class="Grid-cell u-sm-size6of12 u-md-size{$mdColumnSize}of{$gridSize} u-mt--20 u-sm-mt--0 js-item u-textCenter">
+                {*                        <div class="Benefit Benefit-key--0">*}
+                {*                            <div class="Benefit-body">*}
+                <svg role="img" class="Icon Icon--biggest u-mb--10 u-md-mb--20 u-colorGold">
+                    <use xlink:href="#symbol-{$benefit->getIcon()|noescape}"/>
+                </svg>
+                {*                                <h3 class="Benefit-title">{_$benefit->getTitle()}</h3>*}
+                <p class="Benefit-desc u-textUppercase">{_$benefit->getDescription()|noescape}</p>
+                {*                            </div>*}
+                {*                        </div>*}
+            </div>
+        {/foreach}
+{*        </div>*}
+    </div>
+    <div class="container u-mt--35" style="display: flex; flex-direction: column; align-items: center">
+        <h2 class="u-textCenter u-textUppercase">{_company.preview.goldsmithWorkroom.title}</h2>
+        <p class="Timeline-desc u-mb--5 u-sm-pr--20 u-sm-pl--20" style="max-width: 1000px">{_company.preview.goldsmithWorkroom.description|noescape}<br>
+        {_company.preview.goldsmithWorkroom.description2|noescape}</p>
+        <div class="u-mt--1">
+            <a href="{plink Page:detail, url => 'o-jk'}" class="">
+                        <span class="Link-animation u-md-displayInit u-colorGold link-underline u-textUppercase Link--lineBefore">{_company.preview.goldsmithWorkroom.cta}
+                            <span
+                                    class="Link--hover"></span></span>
+            </a>
+        </div>
+        <div class="u-mt--50" style="display: flex; width: 100%">
+            <img class="Timeline-desc-img Timeline-desc-img-main" src="{$basePath}/assets/front/images/layout/timeline1.png">
+            <img class="Timeline-desc-img" src="{$basePath}/assets/front/images/layout/timeline2.png">
+            <img class="Timeline-desc-img" src="{$basePath}/assets/front/images/layout/timeline3.png">
+        </div>
+    </div>
+</section>

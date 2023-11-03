@@ -1,0 +1,32 @@
+{if $categories}
+    <section class="Background">
+        <div class="Collection-items Container">
+
+            <div class="Grid u-pb--80 u-sm-pb--120">
+
+                {foreach $categories as $category}
+                    {var $collectionProductPhoto = $control->getCollectionProductPhoto($category)}
+                    <div class="Grid-cell u-size12of12 u-xs-size6of12 u-sm-size3of12 u-mt--70 u-sm-mt--80 u-md-mt--120">
+                        <div class="Collection-item u-textCenter">
+                            <div class="Collection-item-content">
+                                <div class="Collection-item-images">
+                                    <a href="{plink Category:default, url => $category->getUrl(), _image => 'true'}">
+                                        <img src="{if $category->getMenuImage()}{thumbnailPath 280, 261, $category->getMenuImage(), $category->getUploadFolder()}{else}{imagePlaceholder 280, 261}{/if}" alt="{$category->getName()}">
+                                    </a>
+                                </div>
+                                <h3 class="Collection-item-title u-mt--25 u-mb--5 u-textSecondary">{$category->getName()}</h3>
+                                <a href="{plink Category:default, url => $category->getUrl(), _image => 'true'}"
+                                   class="Collection-link-big">
+                                    <span class="Link-animation u-md-displayInit Link Link--lineBefore">{_collection.list.cta|noescape}
+                                        <span class="Link--hover"></span></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                {/foreach}
+
+            </div>
+
+        </div>
+    </section>
+{/if}

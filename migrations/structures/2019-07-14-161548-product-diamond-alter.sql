@@ -1,0 +1,1 @@
+ALTER TABLE product_diamond DROP FOREIGN KEY product_diamond_ibfk_3;

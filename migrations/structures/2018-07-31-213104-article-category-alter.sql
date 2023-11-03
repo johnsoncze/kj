@@ -1,0 +1,2 @@
+ALTER TABLE `article_category` ADD `ac_module_id` INT NOT NULL AFTER `ac_language_id`, ADD INDEX (`ac_module_id`);
+ALTER TABLE `article_category` ADD FOREIGN KEY (`ac_module_id`) REFERENCES `article_module`(`am_id`) ON DELETE RESTRICT ON UPDATE CASCADE;

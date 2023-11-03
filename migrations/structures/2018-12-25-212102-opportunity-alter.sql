@@ -1,0 +1,1 @@
+ALTER TABLE `opportunity` CHANGE `opp_type` `opp_type` VARCHAR(25) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;

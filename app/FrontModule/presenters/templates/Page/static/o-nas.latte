@@ -1,0 +1,79 @@
+{block content}
+<section class="PageHeader">
+    <div class="PageHeader-bg" style="background-image: url(/www/assets/front/images/layout/banner-jk-sklo.jpg);"></div>
+    <div class="Container Grid">
+        <div class="Grid-cell u-size12of12">
+            {control breadcrumb:white}
+
+            <h1 class="Text-title u-mt--25 u-md-mb--0 u-textColor--white">{_pageStatic.aboutUs.title|noescape}</h1>
+        </div>
+    </div>
+</section>
+
+<section class="Background">
+    <div class="Container u-textCenter u-mt--20 u-sm-mt--0">
+
+        <img class="u-mb--15" src="/assets/front/images/layout/jk-min.png" alt="JK">
+
+        <h2 class="Text-block-title-larger u-textCenter u-mb--20">{_pageStatic.aboutUs.introduction.title|noescape}</h2>
+
+        <p class="Text-block-paragraph-ornament-bot-center u-textCenter u-mt--30 u-mb--80">{_pageStatic.aboutUs.introduction.description|noescape}</p>
+
+        <p><a href="{plink Category:default, url => 'kolekce-jk'}" class="Link Link-big">{_pageStatic.customProduction.contact.collectionLinkAnchor}</a></p>
+
+    </div>
+</section>
+
+<section class="Background">
+    <div class="Container">
+        <div class="u-pt--30 u-mb--40 u-sm-mb--0 u-pb--50 u-md-pb--70">
+            {control aboutUs-ownersTimeline}
+        </div>
+    </div>
+</section>
+
+<section class="Background">
+    <div class="Container">
+        <div class="u-mb--40 u-sm-mb--0 u-pb--80 u-md-pb--140">
+            <div class="u-textCenter">
+                <a role="button" class="Link Link-big timeline-year-toggle u-fontSize--14 u-cursorPointer">JK v čase</a>
+            </div>
+            <div class="u-pt--30 u-sm-pt--90 u-md-pt--70 timeline-year-content u-displayNone">
+                {control aboutUs-timelineYear}
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="BannerCenter" style="background-image: url('/www/assets/front/images/layout/bg-team.jpg');">
+    <div class="Container Grid">
+        <div class="Grid-cell u-size12of12 u-textCenter u-pt--90 u-pb--50 u-sm-pt--145 u-sm-pb--80">
+
+            <h2 class="Text-title u-mt--30">{_pageStatic.aboutUs.goldsmithWorkshop.title}</h2>
+
+            <a href="{plink Page:detail, url => 'design-vyroba'}" class="Button u-mt--30">{_pageStatic.aboutUs.goldsmithWorkshop.anchor}</a>
+
+        </div>
+    </div>
+</section>
+
+<div class="Background Background--silver">
+    <div class="Container">
+        <div class="u-textLeft u-mt--30 u-xs-mt--140 u-sm-mt--240 u-maxWidth--1060">
+            <img src="/assets/front/images/layout/zlatnicka-dilna-banner-1.jpg" alt="Zlatnická dílna" class="Image--radius-10 u-mt--ofset-2x40 u-sm-mt--ofset-2x70">
+        </div>
+
+        <div class="u-pb--10 u-xs-pb--30 u-sm-pb--80 u-md-pb--140">
+            {control aboutUs-teamTimeline}
+        </div>
+    </div>
+</div>
+{/block}
+
+{block footerScript}
+<script>
+    $(document).on('click', '.timeline-year-toggle', function() {
+        $('.timeline-year-content').toggleClass('u-displayNone');
+    })
+</script>
+{/block}

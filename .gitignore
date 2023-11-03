@@ -1,0 +1,15 @@
+/app/config/config.local.neon
+/app/bootstrap.php
+/www/upload/
+/vendor/
+.idea/
+**/.DS_Store
+.DS_Store
+/node_modules
+/resources/periskop-import-folder/upload/in/backup/
+/resources/periskop-import-folder/upload/in/processing/
+/resources/periskop-import-folder/upload/out/backup/
+/www/feed/heureka.xml
+yarn.lock
+tmp/
+/nbproject/private/

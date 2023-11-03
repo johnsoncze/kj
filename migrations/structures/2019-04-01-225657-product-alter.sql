@@ -1,0 +1,1 @@
+ALTER TABLE `product` DROP `p_is_new`;

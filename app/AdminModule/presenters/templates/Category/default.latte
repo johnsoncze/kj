@@ -1,0 +1,15 @@
+{block nextToTitle}
+    <a href="{plink Category:sort}"
+       class="btn btn-default btn-sm"><i class="fa fa-sort"></i> Řadit</a>
+    <a href="{plink Category:add}" class="btn btn-default btn-sm"><i class="fa fa-plus" aria-hidden="true"></i>
+        Přidat</a>
+{/block}
+{block contentAdmin}
+<div class="row">
+    <div class="col-sm-3">
+        {control categoryNavigationTree}
+    </div>
+    <div class="col-sm-9">
+        {control categoryList}
+    </div>
+</div>

@@ -1,0 +1,26 @@
+.form-field-label() {
+    // .letter-spacing(320);
+
+    display: block;
+    margin: 0 @form-field-spacing-x 10px;
+    font-weight: 700;
+    font-size: @font-size-tiny;
+    text-transform: uppercase;
+}
+
+.form-field-label-required() {
+    content: '*';
+}
+
+.form-field-label-disabled() {
+    color: @color-gray;
+}
+
+.form-field-description() {
+    padding: 1rem @form-field-spacing-x 0;
+    font-size: @font-size-smallest;
+}
+
+.form-field-description-error() {
+    color: @color-red-lighter;
+}

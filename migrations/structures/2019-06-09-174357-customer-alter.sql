@@ -1,0 +1,1 @@
+ALTER TABLE `customer` CHANGE `cus_password` `cus_password` VARCHAR(50) CHARACTER SET utf8 COLLATE utf8_bin NULL DEFAULT NULL;

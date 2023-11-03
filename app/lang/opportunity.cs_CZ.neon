@@ -1,0 +1,61 @@
+address:
+    title: Kde a kdy nás najdete
+
+email:
+    contactForm:
+        information:
+            title: Kontaktní údaje
+        subject: Přijali jsme Váš dotaz
+        body:
+            title: Děkujeme za Váš email
+            question:
+                title: 'Píšete nám:'
+            prefferedContact:
+                title: Preferovaný způsob kontaktu
+            comment:
+                title: Poznámka
+            description1: 'Brzy se s Vámi spojíme'
+            description2: 'Na většinu dotazů a přání obvykle'
+            description3: 'odpovídáme během několika hodin,'
+            description4: 'nejpozději do druhého pracovního dne.'
+            farewall: 'Děkujeme Vám a přejeme hezký den.'
+    subject: Děkujeme za zájem o sjednání schůzky
+    body:
+        title: Brzy společně vybereme termín schůzky
+        description1: 'Obvykle odpovídáme během několika hodin,'
+        description2: 'nejpozději do druhého pracovního dne.'
+    product:
+        demand:
+            subject: Přijali jsme Vaši poptávku
+            body:
+                title: Děkujeme za Vaši poptávku
+                subtitle: 'Váš požadavek k nám v pořádku dorazil. Děkujeme za něj i za Vaši přízeň.'
+                product:
+                    title: O jaké zboží máte zájem
+                description1: 'Dostupnost vybraného zboží pro Vás zjišťujeme,'
+                description2: 'ozveme se během několika hodin,'
+                description3: 'nejpozději do druhého pracovního dne.'
+                farewall: 'Přejeme Vám hezký den.'
+        subject: Připravíme pro Vás vybrané produkty
+        body:
+            title: Sejdeme se u nás ve Filadelfii
+            description1: 'Moc nás těší, že si přijdete osobně prohlédnout naše produkty.'
+            description2: 'Představíme Vám je, povyprávíme o jejich příběhu i materiálech'
+            description3: 'a ukážeme, jak sluší. Snadno tak spolu zjistíme, zda jsou to ty pravé.'
+            product:
+                title: 'Co pro Vás připravíme'
+            description4: 'Vyčkejte až se Vám ozveme a domluvíme se na termínu schůzky.'
+            description5: 'Těšíme se na Vás v naší prodejně.'
+
+new:
+    storeMeeting: 'Nová žádost o schůzku|Nové žádosti o schůzku|Nových žádostí o schůzku'
+
+preferredcontact:
+    telephone: Zavolejte mi
+    email: Napište mi e-mail
+state:
+    new: Nová
+    finished: Dokončená
+
+overview:
+    title: Vybrané produkty

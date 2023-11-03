@@ -1,0 +1,14 @@
+<div class="jumbotron">
+    <h4>SEO - optimalizace pro vyhledávače</h4>
+    {if $parentForm->getComponent($name . "-" . \App\Components\SeoFormContainer\IndexFollowForm\IndexFollowForm::NAME, FALSE)}
+        {$parentForm->getComponent($name . "-" . \App\Components\SeoFormContainer\IndexFollowForm\IndexFollowForm::NAME)->render()}
+    {/if}
+    <div class="form-group">
+        {$parentForm->getComponent($name . "-titleSeo")->getLabel()}
+        {$parentForm->getComponent($name . "-titleSeo")->getControl()}
+    </div>
+    <div class="form-group">
+        {$parentForm->getComponent($name . "-descriptionSeo")->getLabel()}
+        {$parentForm->getComponent($name . "-descriptionSeo")->getControl()}
+    </div>
+</div>

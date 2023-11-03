@@ -1,0 +1,43 @@
+<form n:name="form" class="exit-watcher">
+    <div class="row">
+        <div class="col-xs-6">
+            <div class="form-group">
+                {label name/}
+                {input name}
+            </div>
+        </div>
+        <div class="col-xs-6">
+            <div class="form-group">
+                {label filtrationTitle/}
+                {input filtrationTitle}
+            </div>
+        </div>
+        <div class="col-xs-6">
+            <div class="form-group">
+                {label filtrationType/}
+                {input filtrationType}
+            </div>
+        </div>
+        <div class="col-xs-3">
+            <div class="form-group">
+                {label sort/}
+                {input sort}
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        {label help/}
+        {input help}
+    </div>
+    <div class="form-group">
+        {label visibleOnProductDetail/}
+        {input visibleOnProductDetail}
+        <br>
+        {label visibleInOrder/}
+        {input visibleInOrder}
+    </div>
+    <div class="form-group">
+        {input submit}
+        {input \App\Components\ProductParameterGroupForm\ProductParameterGroupForm::SUBMIT_ADD_NEW}
+    </div>
+</form>

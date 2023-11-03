@@ -1,0 +1,308 @@
+@item-pb: 50px;
+@item-pb-xxs: 50px;
+@item-pb-sm: 60px;
+@item-pb-md: 80px;
+@item-pb-lg: 120px;
+@item-pb-xl: 150px;
+
+.BannerCarousel {
+    position: relative;
+    margin-bottom: 30px;
+
+    @media @media-md-min {
+        margin-bottom: 0;
+    }
+
+    .bx-viewport {
+        overflow: visible !important;
+    }
+
+    .bx-controls {
+        position: relative;
+        bottom: 20vw;
+
+        max-width: 1150px;
+
+        @media screen and (min-width: 450px) {
+            bottom: 15vw;
+        }
+
+        @media @media-sm-min {
+            bottom: 13vw;
+        }
+
+        @media @media-md-min {
+            bottom: 12vw;
+        }
+
+        @media @media-lg-min {
+            bottom: 11vw;
+        }
+
+        @media screen and (min-width: 1280px) {
+            left: 50%;
+            transform: translate(-50%, 0);
+        }
+    }
+
+    .bx-wrapper .bx-controls.bx-has-pager {
+
+        //left: 5%;
+        //margin-bottom: 0;
+    }
+
+    .bx-pager {
+        position: absolute;
+        left:5%;
+        width: auto;
+        padding-top: 0;
+        text-align: left;
+        @media screen and (min-width: 1280px) {
+            left:0;
+        }
+    }
+
+    .bx-pager-item {
+        display: inline-block;
+        width: 25px;
+        margin-right: 5px;
+        line-height: 1.5;
+        background: none;
+
+        @media @media-sm-min {
+            width: 25px;
+        }
+
+        @media @media-md-min {
+            width: 25px;
+        }
+    }
+
+    .bx-pager.bx-default-pager .bx-pager-link {
+        position: relative;
+
+        display: block;
+        width: auto;
+        height: auto;
+        margin: 0;
+        padding-bottom: 6px;
+        color: @color-gold;
+        text-decoration: none;
+        font-family: @font-secondary;
+        font-size: 0;
+        letter-spacing: normal;
+        //font-weight: 700;
+        text-indent: 0;
+        border-bottom: 5px solid fade(@color-gold, 20%);
+        border-radius: 0;
+        background: none;
+
+
+        &:hover,
+        &:focus {
+            background: none;
+        }
+
+        &::before {
+            content: "0";
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            display: block;
+            visibility: hidden;
+            width: 100%;
+            height: 5px;
+            background-color: @color-gold;
+            transition: none;
+            transform: scaleX(0);
+            transform-origin: left;
+        }
+
+        &.active {
+            background: none;
+
+            &::after {
+                visibility: visible;
+                transform: scaleX(1);
+                transition: transform 8s ease-in-out;
+            }
+        }
+    }
+}
+
+.ProductCarousel-heading {
+	font-size: 28px;
+	line-height: 32px;
+    margin-bottom: 17px;
+	color: @color-gold;
+
+    @media @media-sm-min {
+		font-size: 42px;
+		line-height: 50px;
+        margin-bottom: 60px;
+    }
+}
+
+.ProductCarousel-heading span {
+	font-weight: 300;
+	display: block;
+}
+
+.BannerCarousel-item {
+    position: relative;
+    padding-bottom: 55px;
+    background-color: @primary-bg;
+}
+
+.BannerCarousel-image {
+    width: 100%;
+}
+
+.BannerCarousel-content {
+    position: absolute;
+    left: 5%;
+    top: 25px;
+    width: 90%;
+    min-width: 170px;
+    max-width: 1150px;
+    height: inherit;
+
+    @media only screen and (min-width: 1335px) {
+      margin-left: auto;
+      margin-right: auto;
+      left: 0;
+      right: 0;
+      width: 1200px;
+    }
+}
+
+.BannerCarousel-subTitleUp {
+    font-size: @font-size-larger;
+    font-family: @font-secondary;
+}
+
+.BannerCarousel-title {
+    font-size: @font-size-xxx-large;
+    font-family: @font-secondary;
+    //font-weight: 1000;
+    margin-top: -10px;
+}
+
+.BannerCarousel-subTitle {
+    font-size: @font-size-base;
+    //font-weight:100;
+    // @media @media-xs-max {
+    //     font-size: @font-size-base;
+    // }
+}
+
+.BannerCarousel-subTitleLower {
+      position: absolute;
+      top: 17vw;
+      @media screen and (max-width: 620px) {
+          top: 105vw;
+      }
+}
+
+.BannerCarousel-textRight {
+    text-align: right;
+    @media screen and (max-width: 620px) {
+        text-align: left;
+    }
+}
+
+.BannerCarousel-subTitleInner {
+    @media @media-xs-max {
+        display: inline-block;
+        padding-top: 5px;
+    }
+}
+
+.BannerCarousel-product {
+    position: absolute;
+    bottom: 0;
+    right: 30px;
+    display: inline-block;
+    z-index: @depth-banner-carousel-product;
+
+    @media @media-md-min {
+        display: flex;
+        justify-content: flex-end;
+        right: 70px;
+        height: 240px;
+    }
+
+    @media @media-lg-min {
+        height: 400px;
+    }
+
+    @media @media-xl-min {
+        height: 500px;
+        bottom: -50px;
+    }
+}
+
+.BannerCarousel-productImage {
+    display: block;
+    margin-right: 10px;
+    margin-left: auto;
+
+    img {
+        display: block !important;
+        height: 150px;
+    }
+
+    @media @media-sm-min {
+        img {
+            height: 180px;
+        }
+    }
+
+    @media @media-md-min {
+        img {
+            height: 240px;
+        }
+    }
+
+    @media @media-lg-min {
+        img {
+            height: 400px;
+        }
+    }
+
+    @media @media-xl-min {
+        margin-right: 15px;
+
+        img {
+            height: 500px;
+        }
+    }
+}
+
+.BannerCarousel-productText {
+    align-self: flex-end;
+    width: 160px;
+
+    a {
+        display: block;
+        font-size: @font-size-tiny;
+        line-height: 1.9;
+
+        &::before,
+        &::after {
+            top: 6px;
+        }
+    }
+
+    @media @media-lg-min {
+        margin-bottom: 30px;
+    }
+
+    @media @media-xl-min {
+        margin-bottom: 100px;
+    }
+}

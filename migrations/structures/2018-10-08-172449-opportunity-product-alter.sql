@@ -1,0 +1,1 @@
+ALTER TABLE `opportunity_product` ADD `oppp_discount` DECIMAL(19,3) NOT NULL AFTER `oppp_vat`;

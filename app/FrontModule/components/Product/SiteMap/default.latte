@@ -1,0 +1,21 @@
+{contentType application/xml; charset=utf-8}
+{cache tags => [$control->getCacheId()]}
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    {var $maxProducts = 500}
+    {var $productCount = $control->getProductsCount()->getCount()}
+    {for $i = 0; $i <= $productCount;}
+        {var $products = $control->getProducts($maxProducts, $i)}
+        {foreach $products as $product}
+            {var $productTranslation = $product->getTranslation($language->getPrefix())}
+            <url>
+                <loc>{$linkGenerator->link('Front:Product:detail', ['url' => $productTranslation->getUrl()])}</loc>
+                <changefreq>hourly</changefreq>
+                <priority>1.00</priority>
+            </url>
+        {/foreach}
+        {php unset($products)}
+        {var $i += $maxProducts}
+    {/for}
+</urlset>
+{/cache}

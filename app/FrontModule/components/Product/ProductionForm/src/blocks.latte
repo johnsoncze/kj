@@ -1,0 +1,10 @@
+{define fasterProductionRow}
+    <div class="Product-option-row{ifset $class} {$class}{/ifset}">
+        <div class="Product-option-info-title">
+            <div class="Product-option-title">{_product.production.help.title}</div>
+        </div>
+        <div class="Product-option-info-value">
+            <div class="Product-option-label"><a href="#{\App\FrontModule\Components\OpportunityForm\OpportunityForm::PRODUCT_DEMAND_POPUP_ID}" class="Product-option-link js-popup-opener">Kdy?</a></div>
+        </div>
+    </div>
+{/define}

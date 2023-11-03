@@ -1,0 +1,86 @@
+.TextField-label {
+    .form-field-label();
+}
+
+.TextField-label--required::after {
+    .form-field-label-required();
+}
+
+.TextField-label--disabled {
+    .form-field-label-disabled();
+}
+
+.TextField-input {
+    width: 100%;
+    height: @form-field-height;
+    padding: 0.933333rem @form-field-spacing-x 0.666666rem;
+    font-size: 1rem;
+    line-height: 1.466666;
+    text-align: left;
+    color: @form-field-color;
+    border: 1px solid @form-field-border-color;
+    border-radius: 1.5rem;
+
+    &:focus {
+        border-color: @form-field-focus-border-color;
+        outline: none;
+    }
+
+    &::placeholder {
+        opacity: 1;
+        color: @form-field-placeholder-color;
+    }
+}
+
+.Form-label--info + .TextField-input {
+    border-color: @color-gold;
+}
+
+.TextField-input--multiline {
+    height: auto;
+    min-height: @form-field-height;
+    max-height: 1000px;
+    border-radius: @border-radius-larger;
+    resize: vertical;
+}
+
+.TextField-input--flat {
+    border-color: transparent;
+}
+
+.TextField-description {
+    .form-field-description();
+}
+
+.TextField-input[disabled] {
+    color: @color-gray;
+    background-color: @color-gray-lighter;
+    cursor: not-allowed;
+}
+
+.TextField--hasError .TextField-input {
+    border-color: @color-red;
+}
+
+.TextField--hasError .TextField-description {
+    .form-field-description-error();
+}
+
+// errors
+.TextField-input.has-error {
+    border-color: @color-red;
+    border-width: 2px;
+}
+
+form {
+    .TextField {
+        position: relative;
+    }
+    .help-block.text-danger {
+        color: @color-red;
+        position: absolute;
+
+        bottom: 3px;
+        right: 17px;
+    }
+}

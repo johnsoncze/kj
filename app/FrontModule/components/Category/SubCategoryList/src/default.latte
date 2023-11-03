@@ -1,0 +1,30 @@
+{if $categories || $groups}
+    <section class="u-pt--40 u-md-pt--70 u-textCenter">
+        <div class="Container Container--slim Grid u-justifyContentCenter category-subcategory-carousel">
+
+            {foreach $categories as $c}
+                {include categoryPreview, url => $linkGenerator->link('Front:Category:default', ['url' => $c->getUrl()]), image => $c->getMenuImage(), title => $c->getName(), imageFolder => $c->getUploadFolder()}
+            {/foreach}
+
+            {foreach $groups as $group}
+                {php $group->setCategory($category)}
+                {include categoryPreview, url => $group->getFrontendLink($linkGenerator), image => $group->getThumbnailImage(), title => $group->getName(), imageFolder => $group->getUploadFolder($category)}
+            {/foreach}
+
+        </div>
+    </section>
+{/if}
+
+{define categoryPreview}
+    <div class="Grid-cell u-size1of3 u-sm-size1of5">
+
+        <a href="{$url}" class="ImageLink">
+            <div class="ImageLink-imageBox">
+                <img src="{if $image}{thumbnailPath 140, 140, $image, $imageFolder}{else}{imagePlaceholder 140, 140}{/if}" style="max-width: 130px; max-height: 130px"
+                     class="ImageLink-image" alt="{$title}"/>
+            </div>
+            <h4 class="ImageLink-text u-colorGold">{$title}</h4>
+        </a>
+
+    </div>
+{/define}

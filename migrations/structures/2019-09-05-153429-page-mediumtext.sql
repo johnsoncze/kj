@@ -1,0 +1,1 @@
+ALTER TABLE `page` CHANGE `p_content` `p_content` mediumtext COLLATE 'utf8_czech_ci' NULL AFTER `p_name`;

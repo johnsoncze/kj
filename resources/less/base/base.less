@@ -1,0 +1,104 @@
+// stylelint-disable selector-max-universal
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+// stylelint-enable
+
+html {
+  font-size: @base-font-size;
+}
+
+body {
+  // .//letter-spacing(@base-//letter-spacing);
+
+  font-size: 1em;
+  line-height: 1.5;
+  font-family: @font-primary;
+  -webkit-font-smoothing: antialiased;
+  color: @base-text-color;
+  background-color: @primary-bg;
+}
+
+header,
+main,
+footer {
+  display: block;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+dl {
+  margin-top: 0;
+}
+
+p {
+  margin-bottom: 2em;
+}
+
+ul {
+  list-style-type: none;
+}
+
+ul ul {
+  list-style-type: none !important;
+}
+
+ul ul ul {
+  list-style-type: none;
+}
+
+// TODO: too specific, refactor to utility?
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+}
+
+.error-msg-container[data-error-msg] {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  @media @media-md-max {
+    display: block;
+  }
+
+  &::before {
+    display: inline;
+    color: @color-gold;
+    content: attr(data-error-msg);
+    text-transform: uppercase;
+    font-family: @font-primary;
+    font-weight: 600;
+
+    @media @media-md-max {
+      display: none;
+      content: none;
+    }
+  }
+
+  #nextStep {
+    margin-left: 20px;
+
+    @media @media-md-max {
+      margin-left: auto;
+    }
+  }
+}

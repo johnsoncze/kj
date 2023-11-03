@@ -1,0 +1,171 @@
+<form n:name="form">
+
+    <fieldset class="Form-fieldset">
+        <div class="Form-row">
+            <div class="TextField">
+                <label for="name" class="Form-label">{_form.registration.label.name}<span class="Form-mandatory">*</span></label>
+                <input n:name="name" class="TextField-input">
+            </div>
+        </div>
+        <div class="Form-row">
+            <div class="TextField">
+                <label for="surname" class="Form-label">{_form.registration.label.surname}<span class="Form-mandatory">*</span></label>
+                <input n:name="surname" class="TextField-input">
+            </div>
+        </div>
+        <div class="Form-row u-textCenter">
+            <label class="Form-label">{_customer.property.sex.title}</label>
+                {var sexItems = $form->getComponent('sex')->getItems()}
+                {foreach $sexItems as $key => $name}
+                    <div class="RadioField">
+                        <label>
+                            <input type="radio" n:name="sex:{$key}" class="RadioField-input">
+                            <span class="RadioField-label"><span class="RadioField-labelText">{$name}</span></span>
+                        </label>
+                    </div>
+                {/foreach}
+        </div>
+        <div class="Form-row">
+            <div class="TextField">
+                <label for="email" class="Form-label">E-mail<span class="Form-mandatory">*</span></label>
+                <input n:name="email" class="TextField-input">
+            </div>
+        </div>
+        <div class="Form-row">
+            <div class="TextField">
+                <label for="password" class="Form-label">{_form.registration.label.password}<span class="Form-mandatory">*</span></label>
+                <input n:name="password" class="TextField-input">
+            </div>
+        </div>
+        <div class="Form-row">
+            <div class="TextField">
+                <label for="confirmPassword" class="Form-label">{_form.registration.label.confirmPassword}<span class="Form-mandatory">*</span></label>
+                <input n:name="confirmPassword" class="TextField-input">
+            </div>
+        </div>
+        <div class="Form-row">
+            <div class="CheckboxField">
+                <label>
+                    <input type="checkbox" n:name="contact" class="CheckboxField-input contact-toggle">
+                    <span class="CheckboxField-label">
+                        <span class="CheckboxField-labelText">{_form.registration.label.contact}</span>
+                    </span>
+                </label>
+            </div>
+        </div>
+    </fieldset>
+
+    <fieldset class="Form-fieldset u-mt--30 js-fieldset-register-extended{if !$form->getComponent('contact')->isFilled()} u-displayNone{/if} contact-content">
+        <div class="Form-section-title">{_form.registration.section.birthday.title}</div>
+
+        <div class="Form-row DateField">
+            <div class="DateField-group">
+                <div class="SelectField">
+                    {input App\FrontModule\Components\BirthdayFormContainer\BirthdayFormContainer::NAME . '-day'}
+                </div>
+                <div class="SelectField">
+                    {input App\FrontModule\Components\BirthdayFormContainer\BirthdayFormContainer::NAME . '-month'}
+                </div>
+                <div class="SelectField">
+                    {input App\FrontModule\Components\BirthdayFormContainer\BirthdayFormContainer::NAME . '-year'}
+                </div>
+            </div>
+
+            <div class="DateField-description">{_form.registration.section.birthday.description}</div>
+        </div>
+
+    </fieldset>
+
+    <fieldset class="Form-fieldset u-mt--30 js-fieldset-register-extended{if !$form->getComponent('contact')->isFilled()} u-displayNone{/if} contact-content">
+        <div class="Form-section-title">{_form.registration.section.contact.title}</div>
+
+        <div class="Form-row">
+            <div class="TextField">
+                <label for="street" class="Form-label">{_form.contact.label.street}</label>
+                <input n:name="street" class="TextField-input">
+            </div>
+        </div>
+
+        <div class="Form-row">
+            <div class="TextField">
+                <label for="city" class="Form-label">{_form.contact.label.city}</label>
+                <input n:name="city" class="TextField-input">
+            </div>
+        </div>
+
+        <div class="Form-row">
+            <div class="TextField">
+                <label for="postCode" class="Form-label">{_form.contact.label.postCode}</label>
+                <input n:name="postCode" class="TextField-input">
+            </div>
+        </div>
+
+        <div class="Form-row">
+            <div class="SelectField">
+                <label for="state" class="SelectField-label">{_form.contact.label.state}</label>
+                <div class="Form-item-col Form-item-col--0">
+                    {input state}
+                </div>
+            </div>
+        </div>
+
+        <div class="Form-row">
+            <div class="TextField">
+                <label for="telephone" class="Form-label">{_form.contact.label.telephone}</label>
+                <input n:name="telephone" class="TextField-input">
+            </div>
+        </div>
+    </fieldset>
+
+    <fieldset class="Form-fieldset u-mt--30 js-fieldset-register-extended">
+        <div class="Form-section-title">{_form.registration.section.hearAboutUs.title}</div>
+
+        <div class="Form-row">
+            <div class="SelectField">
+                <div class="Form-item-col Form-item-col--0">
+                    {input hearAboutUs}
+                </div>
+            </div>
+        </div>
+
+        <div class="Form-row">
+            <div class="TextField">
+                <label for="hearAboutUsComment" class="Form-label">{_form.hearAboutUs.label.comment}</label>
+                <textarea n:name="hearAboutUsComment" class="TextField-input TextField-input--multiline"></textarea>
+            </div>
+        </div>
+
+    </fieldset>
+
+    <fieldset class="Form-fieldset u-mt--30">
+        <div class="Form-row">
+            <div class="CheckboxField">
+                <label>
+                    <input type="checkbox" n:name="personalData" class="CheckboxField-input">
+                    <span class="CheckboxField-label">
+                        <span class="CheckboxField-labelText">{_form.registration.label.personalData}<span class="Form-mandatory">*</span></span>
+                        {_form.registration.gdpr.link.text1} <a href="{plink Page:detail, url => 'gdpr'}" target="_blank">{_form.registration.gdpr.link.text2}</a>.
+                    </span>
+                </label>
+            </div>
+            <div class="Control-sm-group">
+                {input personFullName}
+                {input companyFullName}
+                {input gRecaptchaResponse}
+            </div>
+        </div>
+    </fieldset>
+
+    <div class="Form-buttons u-mt--20 u-sm-mt--30">
+        <input class="Button" n:name="submit">
+    </div>
+
+</form>
+
+{block footerScript}
+    <script>
+        $(document).on('click', '.contact-toggle', function() {
+            $('.contact-content').toggleClass('u-displayNone');
+        })
+    </script>
+{/block}

@@ -1,0 +1,124 @@
+{block content}
+<div class="Background--gradient-top-100-ebebeb">
+
+    {include 'partials/progress.latte'}
+
+    <div class="Container Container--slimer">
+        <div class="Basket-step u-pb--90">
+
+            <h1 class="User-page-title u-pt--40">{$title}</h1>
+
+            <div class="Grid BasketRecapGrid">
+                <div class="Grid-cell u-size12of12 u-md-size6of12 u-m-mb-2">
+                    {control deliveryForm}
+                </div>
+                <div class="Grid-cell u-size12of12 u-md-size6of12 u-xs-pt--20">
+                    {control shoppingCartOverview:bar}
+                </div>
+            </div>
+
+            {control buttonNavigation}
+
+        </div>
+    </div>
+
+    {control benefit}
+</div>
+
+{if $shoppingCart && $shoppingCart->hasAvailableProduct() === TRUE}
+    {control opportunityForm:productStoreMeeting}
+{/if}
+
+<script>
+    const allowed = JSON.parse({$allowed});
+    const deliveryText = 'Vyberte způsob dopravy'
+    const paymentText = 'Vyberte způsob platby'
+
+    $(document).ready(function () {
+        $('#nextStep').click(function(){
+            event.preventDefault();
+
+            if($('[name=delivery]:checked').length < 1) {
+                // no payment is chosen
+                $('#delivery-section').attr('data-error-msg', deliveryText)[0].scrollIntoView()
+                $('#nextStep').parent().attr('data-error-msg', deliveryText)
+                return;
+            } else {
+                $('#delivery-section').removeAttr('data-error-msg')
+                $('#nextStep').parent().removeAttr('data-error-msg')
+            }
+
+            if($('[name=payment]:checked').length < 1) {
+                // no payment is chosen
+                $('#payment-section').attr('data-error-msg', paymentText)[0].scrollIntoView()
+                $('#nextStep').parent().attr('data-error-msg', paymentText)
+                return;
+            } else {
+                $('#payment-section').removeAttr('data-error-msg')
+                $('#nextStep').parent().removeAttr('data-error-msg')
+            }
+
+            $('#deliveryFormSubmit').click();
+        });
+
+        // reloading payment label
+        $('[name=payment]').change(function(e){
+            const id = $(this).attr('value');
+            $('#payment-label').text(($('#payment-'+id).text()));
+        });
+
+        // OnChange event on every delivery field
+        $('[name=delivery]').change(function(e){
+            const id = $(this).attr('value');
+            // Reload delivery text label
+            $('#delivery-label').text(($('#delivery-'+id).text()));
+
+            $('[name=payment]').each(function(element){
+                // Note: find method is not supported in older browsers
+                // we use filter instead
+                const value = $(this).attr('value')
+                const isAllowed =
+                    allowed[id]
+                        .filter(function(allowedId){
+                            return allowedId === value
+                        })
+                        .length > 0
+
+                // Make payments disabled
+                if (isAllowed) {
+                    $(this).removeAttr('disabled')
+                } else {
+                    $(this).attr('disabled', true)
+                    $(this).prop('checked', false)
+                }
+            });
+        });
+        $('[name=delivery]:checked').change();
+    });
+</script>
+
+<script n:if="$cookies_marketing">
+    {if $shoppingCart !== NULL && $shoppingCart->hasProducts()}
+    dataLayer.push({ ecommerce: null });  // Clear the previous ecommerce object.
+    dataLayer.push({
+        event: "add_shipping_info",
+        ecommerce: {
+            currency: "CZK",
+            value: {$shoppingCart->getPrice()->summaryPrice},
+            items: [
+                {foreach $ga4Cart as $product}
+                {
+                    item_id: {$product['item_id']},
+                    item_name: {$product['item_name']},
+                    price: {$product['price']},
+                    quantity: {$product['quantity']}
+                }{if $iterator->isLast() !== TRUE},{/if}
+                {/foreach}
+            ]
+        }
+    });
+    {/if}
+
+</script>
+
+{control contactModal}

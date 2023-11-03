@@ -1,0 +1,5 @@
+<div class="file-wrapper">
+    <hr>
+    <a href="{$fileManager->getFile($catalog->getTranslation()->getFile(), App\Catalog\Catalog::getUploadFolder($catalog))}" target="_blank">{$catalog->getTranslation()->getFile()}</a><br>
+    <a href="{link deleteFile!, id => $catalog->getTranslation()->getId()}" class="btn btn-danger btn-xs delete-file"><i class="fa fa-trash-o" aria-hidden="true"></i> odstranit</a>
+</div>

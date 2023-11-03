@@ -1,0 +1,29 @@
+console:
+    commands:
+        - App\Category\Command\SiteMapCommand
+        - App\Category\Product\Sorting\Sorter\SorterCommand
+
+        - App\Customer\Activation\SendRequestCommand
+        - App\Customer\Command\SetBirthdayCoupons
+        - App\Customer\Command\SetOnceBirthdayCoupons
+
+        - App\Page\Command\SiteMapCommand
+
+        - App\Periskop\Customer\Import\CustomerImportCommand
+        - App\Periskop\Order\StateImportCommand
+        - App\Periskop\Product\Import\ProductImportCommand
+        - App\Periskop\Product\Import\ProductStockImportCommand
+        - App\Periskop\Xml\ImportXmlCommand
+
+        - App\Product\Command\GenerateUrlCommand
+        - App\Product\Command\GoogleMerchantCommand
+        - App\Product\Command\FacebookFeedCommand
+        - App\Product\Command\HeurekaFeedGenerateCommand
+        - App\Product\Command\ProductFeedGenerateCommand
+        - App\Product\Command\ProductFeedGenerateDataCommand
+        - App\Product\Command\SiteMapCommand
+        - App\Product\Command\ZboziCzFeedGenerateCommand
+
+        - App\Order\Command\AcceptedStateCommand
+        - App\Product\Command\CheckProductsImages
+        - App\Email\MailSendCommand

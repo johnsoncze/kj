@@ -1,0 +1,1 @@
+ALTER TABLE `category_filtration_group` ADD INDEX (`cfg_status`);

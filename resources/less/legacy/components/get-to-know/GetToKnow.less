@@ -1,0 +1,229 @@
+.GetToKnow {
+
+    @media @media-sm-min {
+        padding: 110px 0px;
+    }
+}
+
+.GetToKnow-title {
+    margin-bottom: 28px;
+    color: @color-brown;
+	font-size: 28px;
+	line-height: 32px;
+	font-weight: bold;
+
+    @media @media-sm-min {
+		font-size: 42px;
+		line-height: 50px;
+    }
+}
+
+.GetToKnow-title span {
+	font-weight: 300;
+}
+
+.GetToKnow-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+	text-align: center;
+
+    @media @media-sm-min {
+        min-height: 400px;
+		text-align: left;
+    }
+
+    &:nth-child(1) {
+        order: 2;
+    }
+
+    &:nth-child(2) {
+        order: 1;
+    }
+
+    &:nth-child(3) {
+        order: 3;
+
+        @media @media-sm-min {
+            align-items: flex-end;
+        }
+    }
+
+    &:nth-child(4) {
+        order: 4;
+    }
+
+    &:nth-child(-n+4) {
+        @media @media-sm-min {
+            order: 0;
+        }
+    }
+}
+
+.GetToKnow-item--bg1 {
+    position: relative;
+    padding-bottom: 100%;
+    background-image: url(../images/layout/know-bg1.jpg);
+    background-size: cover;
+	background-position: center;
+
+    @media @media-sm-min {
+		width: 52%;
+        padding-bottom: 0;
+    }
+
+}
+
+.GetToKnow-item--bg2 {
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    padding-bottom: 100%;
+	background-image: url(../images/layout/know-bg2.jpg);
+	background-size: cover;
+	background-position: center;
+
+    @media @media-sm-min {
+		width: 52%;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+
+}
+
+.GetToKnow-item--text,
+.GetToKnow-item--bg2 {
+    padding-left: 20px;
+    padding-right: 20px;
+
+    @media @media-sm-min {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+.GetToKnow-item--text {
+    padding-top: 60px;
+    padding-bottom: 60px;
+
+    @media @media-sm-min {
+		width: 48%;
+        padding-top: 0;
+        padding-bottom: 0
+    }
+}
+
+.GetToKnow-sign {
+    position: absolute;
+    display: inline-block;
+    bottom: -5px;
+    right: 20px;
+    width: 121px;
+    height: 61px;
+    background-image: url(../images/layout/jk-sign-mobile.png);
+
+    @media @media-sm-min {
+        bottom: -30px;
+        right: 25px;
+        width: 401px;
+        height: 118px;
+        background-image: url(../images/layout/jk-sign.png);
+    }
+}
+
+.GetToKnow-content {
+    max-width: 602px;
+}
+
+.GetToKnow-content--right {
+    padding-left: 0;
+
+    @media @media-sm-min {
+        margin-right: auto;
+        padding-left: 60px;
+        padding-right: 20px;
+    }
+
+    @media @media-md-min {
+        padding-left: 80px;
+    }
+
+    @media @media-lg-min {
+        padding-left: 64px;
+    }
+}
+
+.GetToKnow-content--left {
+    padding-right: 0;
+
+    @media @media-sm-min {
+        padding-right: 60px;
+    }
+
+    @media @media-md-min {
+        padding-right: 80px;
+    }
+
+    @media @media-lg-min {
+        padding-right: 64px;
+    }
+}
+
+.GetToKnow-text {
+    margin-bottom: 20px;
+    font-size: 20px;
+    @media @media-sm-min {
+        margin-bottom: 33px;
+    }
+}
+
+.GetToKnow-link {
+    position: relative;
+    margin-bottom: 50px;
+    width: 140px;
+    height: 130px;
+
+    @media @media-sm-min {
+        width: 300px;
+        height: 280px;
+        max-width: 46%;
+    }
+
+    .Link-inner {
+        display: inline-block;
+        width: 200px;
+
+        @media @media-xs-max {
+            width: 170px;
+
+            &:before,
+            &:after {
+                top: 5px;
+            }
+        }
+
+        @media @media-sm-min {
+            width: 200px;
+            margin-top: 46px;
+            margin-left: 10px;
+        }
+
+        @media @media-md-min {
+            width: 210px;
+        }
+    }
+}
+
+.GetToKnow-link-xs {
+  display: none;
+  width: 100%;
+  text-align: center;
+
+  @media @media-xs-max {
+    display: block;
+    -webkit-box-ordinal-group: 5;
+    -ms-flex-order: 4;
+    order: 4;
+  }
+}

@@ -1,0 +1,73 @@
+<section class="Basket-buttons Recap__buttons">
+    <hr class="Recap__divider">
+    <div class="Grid Recap-buttons-container">
+
+        <div n:ifset="$data['back']['anchor2']" class="Grid-cell u-textCenter u-md-textLeft stepBack">
+            <a href="{plink $data['back']['route']}" class="Product-link-big">
+                <span class="Link-animation u-md-displayInit Link Link--lineBefore">{_$data['back']['anchor2']}<span class="Link--hover"></span></span>
+            </a>
+        </div>
+        {dump $data}
+        <div class="Grid-cell u-textCenter u-sm-textRight error-msg-container Recap__button">
+            <a href="{ifset $data['next']['route']}{plink $data['next']['route']}{else}#{/ifset}" class="Button {if $data['next']['anchor'] === "shopping-cart.step.step1.next.anchor" || $data['next']['anchor'] === "shopping-cart.step.step2.next.anchor" || $data['next']['anchor'] === "shopping-cart.step.step3.next.anchor"}Button--brown{/if}" id="nextStep">{_$data['next']['anchor']}
+                <svg role="img" class="Icon Icon--benefit">
+                    <use xlink:href="#symbol-arr-right"></use>
+                </svg>
+            </a>
+        </div>
+
+        <div class="Grid-cell u-textCenter u-md-textLeft hpBack">
+            <a href="{plink Homepage:default}" class="Product-link-big">
+                <span class="Link-animation u-md-displayInit Link Link--lineBefore">{_$data['back']['anchor']}<span class="Link--hover"></span></span>
+            </a>
+        </div>
+    </div>
+
+</section>
+
+{*
+<section class="Basket-buttons u-pt--20">
+    <hr>
+    <div class="Grid u-pt--30">
+        <div class="Grid-cell u-size12of12 u-sm-size4of12 u-textCenter u-sm-textLeft u-pt--10">
+            <a href="{plink $data['back']['route']}" class="Product-link-big">
+                <span class="Link-animation u-md-displayInit Link Link--lineBefore">{_$data['back']['anchor']}<span class="Link--hover"></span></span>
+            </a>
+        </div>
+
+        {if $presenter->isLinkCurrent('ShoppingCart:step3Recapitulation')}
+        <form>
+            <div class="CheckboxField">
+                <label>
+                    <input type="checkbox" name="terms" class="CheckboxField-input">
+                    <span class="CheckboxField-label">
+                            <span class="CheckboxField-labelText">
+                                {_form.shoppingCart.contactInformation.input.terms.label, [link => $linkGenerator->link('Front:Page:detail', ['url' => 'obchodni-podminky'])]|noescape}
+                            </span>
+                        </span>
+                </label>
+            </div>
+        </form>
+
+        <div class="Grid-cell u-size12of12 u-sm-size8of12 u-textCenter u-sm-textRight u-mt--20 u-sm-mt--0 u-md-mt--0">
+            <a href="{ifset $data['next']['route']}{plink $data['next']['route']}{else}#{/ifset}" class="Button {if $data['next']['anchor'] !== "shopping-cart.step.step3.next.anchor"}brown{/if}" id="nextStep">{_$data['next']['anchor']}
+                <svg role="img" class="Icon Icon--benefit">
+                    <use xlink:href="#symbol-arr-right"/>
+                </svg>
+            </a>
+        </div>
+        {else}
+        <div class="Grid-cell u-size12of12 u-sm-size8of12 u-textCenter u-sm-textRight u-mt--20 u-sm-mt--0 u-md-mt--0 u-md-pr--25">
+            <div class="error-msg-container">
+                <a href="{ifset $data['next']['route']}{plink $data['next']['route']}{else}#{/ifset}" class="Button {if $data['next']['anchor'] !== "shopping-cart.step.step3.next.anchor"}brown{/if}" id="nextStep">{_$data['next']['anchor']}
+                    <svg role="img" class="Icon Icon--benefit">
+                        <use xlink:href="#symbol-arr-right"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+        {/if}
+    </div>
+
+</section>
+*}

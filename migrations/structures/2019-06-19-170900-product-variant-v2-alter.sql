@@ -1,0 +1,1 @@
+ALTER TABLE product_variant_v2 RENAME TO product_variant;

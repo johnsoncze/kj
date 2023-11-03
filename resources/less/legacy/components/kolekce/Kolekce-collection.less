@@ -1,0 +1,50 @@
+.Collection-blockquote {
+    .Text-blockquote-ornament;
+    max-width: 740px;
+}
+
+.Collection-main-content-overlay {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+
+    &.Collection-main-content-overlay--slim {
+        max-width: 1060px;
+    }
+
+    .Collection-main-content-bg-image--slim {
+        max-width: 90%;
+    }
+
+    .Collection-main-content-image {
+        position: absolute;
+        right: 20px;
+        bottom: -170px;
+
+        @media @media-sm-max {
+            right: 15px;
+            bottom: -40px;
+            width: 70px;
+        }
+    }
+}
+
+.Collection-main-content {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 900px;
+    text-align: left;
+}
+
+.Collection-main-heading {
+    font-family: @font-secondary;
+    //letter-spacing: 0.18em;
+    font-size: @font-size-largest;
+    color: @color-brown-dark;
+}
+
+.Collection-main-desc {
+    //letter-spacing: 0.07em;
+    font-size: @font-size-base;
+    color: @color-brown-dark-alpha-70;
+}

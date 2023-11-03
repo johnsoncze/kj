@@ -1,0 +1,101 @@
+{block content}
+
+{var $videoId = 'goldsmithWorkshopVideo'}
+{capture $videoFrame}<iframe width="100%" height="400" id="videoPopup" src="https://www.youtube.com/embed/lNptPtD3aUs?version=3&enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>{/capture}
+{include popup, id => $videoId, title => $title, content => $videoFrame}
+
+<section class="PageHeaderVideo PageHeader--tall PageHeader--light"
+         style="background-image: url('/www/assets/front/images/layout/bg-zlatnicka-dilna-video.jpg');">
+    <video class="slider__video" autoplay="" muted="" loop="">
+        <source src="/assets/front/user_content/video/jk-vyroba.mp4" type="video/mp4"/>
+        Your browser does not support the video tag.
+    </video>
+
+    <div class="Wave" aria-hidden="true">
+        <svg class="Wave-mask" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 238" preserveAspectRatio="none">
+            <path d="M960,92.2C770.9,32.8,569.7,0,361,0C237.8,0,117.1,11.2,0,32.6V238h1920v-85.9c-116.5,21.1-236.4,32.2-359,32.2 c-209.4,0-411.3-32.2-601.1-92"
+                  fill="#ffffff"/>
+        </svg>
+    </div>
+
+    <div class="Container Grid">
+        <div class="Grid-cell u-size12of12">
+            {control breadcrumb:white}
+            <h1 class="Text-title u-mt--70 u-xs-mt--120 u-sm-mt--150 u-md-mb--0">{$title|noescape}</h1>
+
+            <div class="PageHeader-link u-mt--20">
+                <a href="#{$videoId}" class="Link Product-link-big js-popup-opener u-positionRelative u-textShadow--none">
+                    ► {_pageStatic.goldsmithWorkshop.video.cta}
+                </a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="Background">
+    <div class="Container u-textCenter u-mt--20 u-sm-mt--0">
+
+        <img class="u-mb--15" src="/assets/front/images/layout/jk-min.png" alt="JK">
+
+        <h2 class="Text-block-title-larger u-textCenter u-mb--20">{_pageStatic.goldsmithWorkshop.soul.title|noescape}</h2>
+
+        <p class="Text-block-paragraph-ornament-bot-center u-textCenter u-mt--30 u-mb--80">{_pageStatic.goldsmithWorkshop.soul.description|noescape}</p>
+
+        <div class="u-textCenter">
+            <img src="/assets/front/user_content/images/zlatnicka-dilna-ring.jpg" alt="Zlaté snubní prsteny"
+                 class="u-mt--30">
+        </div>
+
+    </div>
+</section>
+
+<div class="u-textCenter">
+    <img src="/assets/front/user_content/images/zlatnicka-dilna-banner-ring.jpg" alt="Zlaté snubní prsteny"
+         class="u-mt--40 u-sm-mt--80">
+</div>
+
+<section class="Background">
+    <div class="Container">
+        <div class="u-pt--30 u-sm-pt--90 u-md-pt--130 u-mb--40 u-sm-mb--0 u-pb--80 u-md-pb--110">
+            {control goldsmithWorkshopPage-soulTimeline}
+        </div>
+    </div>
+</section>
+
+<div class="Background Background--silver">
+    <div class="Container">
+        <div class="u-textLeft u-mt--30 u-sm-mt--140 u-maxWidth--1060">
+            <img src="/assets/front/images/layout/zlatnicka-dilna-banner-1.jpg" alt="Zlatnická dílna" class="Image--radius-10 u-mt--ofset-2x40 u-sm-mt--ofset-2x70">
+        </div>
+
+        <div class="u-pb--10 u-xs-pb--30 u-sm-pb--80 u-md-pb--140">
+            {control goldsmithWorkshopPage-craftTimeline}
+        </div>
+    </div>
+</div>
+
+<div class="Background">
+    <div class="Container">
+        <div class="u-mt--0 u-sm-mt--110 u-pb--60 u-sm-pb--140">
+            {control goldsmithWorkshopPage-technologyTimeline}
+        </div>
+    </div>
+</div>
+
+<section class="BannerCenter" style="background-image: url('/www/assets/front/images/layout/bg-team.jpg');">
+    <div class="Container Grid">
+        <div class="Grid-cell u-size12of12 u-textCenter u-pt--90 u-pb--50 u-sm-pt--145 u-sm-pb--80">
+
+            <p class="Text-subtitle u-mt--30 u-md-mb--0">{_pageStatic.goldsmithWorkshop.team.subtitle}</p>
+
+            <h2 class="Text-title u-mt--30">{_pageStatic.goldsmithWorkshop.team.title}</h2>
+
+            <a href="{plink Page:detail, url => 'tym'}" class="Button u-mt--30">{_pageStatic.goldsmithWorkshop.team.anchor}</a>
+
+        </div>
+    </div>
+</section>
+
+{control goldsmithWorkshopPage-contact}
+{control contactForm:popupContactForm}

@@ -1,0 +1,64 @@
+{block contentAdmin}
+<div class="row">
+    <div class="col-xs-6">
+        <b>Kód:</b> {$opportunity->getCode()}<br>
+        <b>Datum vytvoření:</b> {$opportunity->getAddDate()|date:"d.m.Y H:i:s"}
+    </div>
+    <div class="col-xs-6 text-right">
+        {control stateForm}
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-xs-6">
+        <h4>Kontaktní údaje</h4>
+        <table class="table table-striped">
+            <tr>
+                <th scope="row" style="width: 40%">Id zákazníka</th>
+                <td>{if $opportunity->getCustomerId() !== NULL}<a href="{plink Customer:detail, id => $opportunity->getCustomerId()}">{$opportunity->getCustomerId()}</a>{else}-{/if}</td>
+            </tr>
+            <tr>
+                <th scope="row">Příjmení</th>
+                <td>{$opportunity->getLastName()}</td>
+            </tr>
+            <tr>
+                <th scope="row">Křestní jméno</th>
+                <td>{$opportunity->getFirstName()}</td>
+            </tr>
+            <tr>
+                <th scope="row">Telefon</th>
+                <td>{fill $opportunity->getTelephone()}</td>
+            </tr>
+            <tr>
+                <th scope="row">E-mail</th>
+                <td>{if $opportunity->getEmail() !== NULL}<a href="mailto:{$opportunity->getEmail()}">{$opportunity->getEmail()}</a>{else}-{/if}</td>
+            </tr>
+            <tr>
+                <th scope="row">Preferovaný způsob kontaktu</th>
+                <td>{\App\Opportunity\Opportunity::getPreferredContactValues($opportunity->getPreferredContact())['translationKey']|translate}</td>
+            </tr>
+        </table>
+    </div>
+    <div class="col-xs-6">
+        <h4>Doplňující údaje</h4>
+        <table class="table table-striped">
+            <tr>
+                <th scope="row" style="width: 40%">Odesláno ze stránky</th>
+                <td>{$opportunity->getAbsolutePageUrl($linkGenerator)}</td>
+            </tr>
+            <tr>
+                <th scope="row">Poznámka</th>
+                <td>{fill $opportunity->getComment()}</td>
+            </tr>
+            <tr>
+                <th scope="row">Preferovaný termín</th>
+                <td>{$opportunity->getRequestDate()}</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+{ifset $products}
+<h3>Produkty</h3>
+{control opportunityProductList}
+{/ifset}

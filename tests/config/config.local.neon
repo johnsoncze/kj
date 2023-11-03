@@ -1,0 +1,11 @@
+database:
+	dsn: 'mysql:host=127.0.0.1;dbname=jk_tests'
+	user: root
+	password: root
+
+parameters:
+    comgate:
+        url: https://payments.comgate.cz/v1.0
+        secret: 6564cafbf628aefaf379fb43e05c4329
+        storeId: 136537
+        test: true

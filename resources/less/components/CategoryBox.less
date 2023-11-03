@@ -1,0 +1,465 @@
+.CategoryBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 62px;
+
+    @media @media-lg-min {
+        position: relative;
+        overflow: hidden;
+    }
+}
+
+.CategoryBox-mediaContainer {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 40px;
+    margin-bottom: 1.75rem;
+
+    @media @media-sm-min {
+        padding-bottom: 60px;
+        margin-bottom: 3.5rem;
+    }
+
+    @media @media-lg-min {
+        padding-bottom: 110px;
+    }
+}
+
+.CategoryBox-media {
+    position: relative;
+    width: 160px;
+    height: 230px;
+    border-radius: @border-radius-large;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: @color-brown-dark;
+
+    @media @media-sm-min {
+        width: 240px;
+        height: 345px;
+    }
+
+    @media @media-lg-min {
+        width: 440px;
+        height: 650px;
+        border-radius: @border-radius-larger;
+    }
+}
+
+.CategoryBox-media--top {
+    top: 40px;
+    left: -40px;
+    opacity: 0.9;
+    margin-right: -20px;
+
+    @media @media-sm-min {
+        top: 60px;
+        left: -60px;
+    }
+
+    @media @media-lg-min {
+        top: 110px;
+        left: -110px;
+    }
+}
+
+.CategoryBox-media--bottom {
+    right: -40px;
+    margin-left: -20px;
+
+    @media @media-lg-min {
+        right: -60px;
+    }
+
+    @media @media-lg-min {
+        right: -110px;
+    }
+}
+
+.CategoryBox-description {
+    max-width: 26rem;
+
+    @media @media-lg-min {
+        position: absolute;
+        top: unit((110 + 170), px);
+        left: calc(50% - 110px + 70px);
+        max-width: 20.5rem;
+        color: @color-white;
+    }
+}
+
+.CategoryBox-title {
+    margin-bottom: 0.75em;
+    font-weight: 400;
+    font-size: @font-size-large;
+    font-family: @font-secondary;
+    color: @color-brown-dark;
+
+    @media @media-lg-min {
+        // .//letter-spacing(180);
+
+        margin-bottom: 1.5em;
+        font-size: @font-size-largest;
+        color: inherit;
+    }
+}
+
+.CategoryBox-text {
+    line-height: 1.8;
+    color: @color-brown-dark-alpha-70;
+
+    @media @media-lg-min {
+        color: @color-white-alpha-70;
+    }
+}
+
+
+
+.CategoryBox-bannerContainer {
+	display: block;
+	width: 280px;
+	text-align: center;
+	
+    @media @media-sm-min {
+		text-align: left;
+		width: auto; 
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+    }	
+}
+
+.CategoryBox-contentDark {
+	background-color: @color-brown-dark;
+	color: @color-white;
+	padding: 20px 15px;
+	font-size: 20px;
+	line-height: 29px;
+	
+    @media @media-sm-min {
+		padding: 20px 30px;		
+	}
+}
+
+.CategoryBox-contentLight {
+	background-color: @color-gold;
+	color: @color-white;
+	padding: 20px 15px;
+	font-size: 20px;
+	line-height: 29px;
+	
+    @media @media-sm-min {
+		padding: 20px 30px;		
+	}
+}
+
+.CategoryBox-smaller.CategoryBox-contentLight, .CategoryBox-smaller.CategoryBox-contentDark {
+	font-size: 16px;
+	line-height: 22px;
+}
+
+.CategoryBox-contentDark h3 {
+	color: @color-gold;
+	font-size: 32px;
+	line-height: 36px;
+	font-weight: bold;
+	text-transform: uppercase;
+	margin-bottom: 20px;
+	font-family: 'Source Serif Pro';
+	
+    @media @media-sm-min {
+		font-size: 36px;
+		line-height: 40px;
+	}	
+}
+
+.CategoryBox-contentLight h3 {
+	color: @color-brown-dark;
+	font-size: 32px;
+	line-height: 36px;
+	font-weight: bold;
+	text-transform: uppercase;
+	margin-bottom: 20px;
+	font-family: 'Source Serif Pro';
+	
+    @media @media-sm-min {
+		font-size: 36px;
+		line-height: 40px;
+	}	
+}
+
+.CategoryBox-contentLight h3 span {
+	font-weight: 300;
+}
+
+.CategoryBox-smaller h3 {
+	font-size: 25px;
+	line-height: 30px;
+	
+    @media @media-sm-min {
+		font-size: 25x;
+		line-height: 30px;
+	}	
+}
+
+.CategoryBox-contentDark h3	 {
+	font-size: 26px;
+	line-height: 32px;
+	
+    @media @media-sm-min {
+		font-size: 26px;
+		line-height: 32px;
+	}	
+}
+
+.CategoryBox-bannerBtn {
+	color: @color-white;
+	border-color: @color-white;
+	margin-top: 20px;
+	background: url(/assets/front/images/button-arrow-white.svg) no-repeat right 14px top 14px;
+}
+
+.CategoryBox-img {
+	background-size: cover;
+	width: 280px;
+	height: 423px;
+	
+    @media @media-sm-min {
+		width: auto;
+	}	
+}
+
+.Category-relatedPageWrapper {
+	position: relative;
+}
+
+.Category-relatedPageDefault {
+	background-color: @color-gold;
+	color: #ffffff;
+	font-size: 14px;
+	text-transform: uppercase;
+	margin: auto;
+	margin-top: -100px;
+	z-index: 1000;
+
+    @media @media-sm-min {
+		position: absolute;
+		right: 0px;
+		bottom: -40px;
+	}	
+}
+
+.Category-relatedPageDefaultPaging {
+    @media @media-sm-max {
+		display: none;
+	}	
+}
+
+.Category-relatedPageDefault a {
+	vertical-align: middle;
+	display: table-cell;	
+	width: 190px;
+	height: 190px;
+	text-align: center;
+	text-decoration: none;
+}
+
+
+.Category-relatedPageScrolled {
+	display: none;
+	position: fixed;
+	bottom: 0px;
+	left: 50%;
+	height: 45px; 
+	transform: translateX(-50%);	
+	background-color: @color-gold;
+	color: #ffffff;
+	font-size: 14px;
+	text-transform: uppercase;
+	z-index: 10000;
+	 
+    @media @media-sm-min {
+		bottom: auto;
+		top: 0px;
+		transform: none;	
+	}		
+}
+
+.Category-relatedPageScrolledPaging {
+    @media @media-sm-max {
+		display: block;
+	}
+}
+
+.Category-relatedPageScrolled a {
+	width: 190px;
+	padding: 12px 0px;
+	display: inline-block;
+	text-align: center;
+	text-decoration: none;
+}
+
+.Category-relatedPageDefault span {
+	color: @color-brown-dark;
+	font-size: 28px;
+	line-height: 30px;
+	display: block;
+	margin: 8px 0px;
+}
+
+
+.CategoryCollection-fixedBtnWrapper {
+	position: relative;
+}
+
+.CategoryCollection-fixedBtn {
+	position: fixed;
+	bottom: 0px;
+	left: 50%;
+	transform: translateX(-50%);	
+	background-color: @color-gold;
+	color: #ffffff;
+	font-size: 14px;
+	text-transform: uppercase;
+	margin: auto;
+	margin-top: -100px;
+	z-index: 1000;
+
+    @media @media-sm-min {
+		position: absolute;
+		right: 0px;
+		bottom: -45px;
+		left: auto;
+		transform: none;
+	}	
+}
+
+.CategoryCollection-fixedBtn a {
+	vertical-align: middle;
+	display: table-cell;	
+	width: 190px;
+	height: 45px;
+	text-align: center;
+	text-decoration: none;
+}
+
+
+.CategoryCollection-fixedBtnScrolled {
+	position: fixed;
+	z-index: 10000;
+	margin-top: 0px;
+	
+    @media @media-sm-min {
+		top: 0px;
+		bottom: auto;
+		right: auto;
+	}		
+}
+
+.CategoryCollection-header {
+	font-weight: 700 !important;
+}
+
+.CategoryCollection-header span {
+	display: block;
+	font-weight: 300;
+}
+
+.CategoryCollection-icon {
+	display: block;
+	margin: 20px auto;
+	margin-bottom: 15px;
+	font-size: 68px;
+}
+
+.CategoryCollection-benefit-header {
+	text-transform: uppercase;
+	color: @color-gold;
+	font-size: 26px;
+	line-height: 30px;
+	max-width: 200px;
+	text-align: center;
+	font-family: "Source Serif Pro";
+	font-weight: normal;
+	margin: auto;
+	margin-bottom: 20px;
+}
+
+.CategoryCollection-benefit-desc {
+	font-size: 14px;
+	line-height: 21px;
+}
+
+.Category-subcategoryCarouselDots {
+	padding: 0px;
+}
+
+.Category-subcategoryCarouselDots button {
+	background: #fff;
+	border: 1px solid #3d3417;
+	margin: 0 10px;
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	font-size: 0;
+	padding: 0;
+}
+
+.Category-subcategoryCarouselDots li {
+  display: inline-block;
+}
+
+.Category-subcategoryCarouselDots .slick-active button {
+  background: #3d3417;
+}
+
+.Category-subcategoryCarouselPrev {
+	width: 0;
+	height: 0;
+	left: -20px;	
+	top: 70px;
+	position: absolute;
+	margin-top: -16px;
+	outline: 0;
+	z-index: 9999;	
+}
+
+.Category-subcategoryCarouselPrev::after {
+	content: "";
+	position: absolute;
+	top: 50%;
+	margin-top: -20px;
+	width: 91px;
+	height: 48px;
+	background: url(../images/chevron-left.svg) center center no-repeat !important;
+	transition: all .25s ease;
+}
+
+
+
+.Category-subcategoryCarouselNext {
+	width: 0;
+	height: 0;
+	right: 70px;	
+	top: 70px;
+	position: absolute;
+	margin-top: -16px;
+	outline: 0;
+	z-index: 9999;	
+	
+	@media @media-sm-min {
+		right: 70px;	
+		top: 340px;
+    }		
+}
+
+.Category-subcategoryCarouselNext::after {
+	content: "";
+	position: absolute;
+	top: 50%;
+	margin-top: -20px;
+	width: 91px;
+	height: 48px;
+	background: url(../images/chevron-right.svg) center center no-repeat !important;
+	transition: all .25s ease;	
+}

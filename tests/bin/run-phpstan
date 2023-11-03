@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+php vendor/bin/phpstan analyse -l 1 -c tests/config/config.phpstan.neon src

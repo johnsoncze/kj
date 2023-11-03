@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+php tests/dbmigrations.php structures basic-data dummy-data --reset
+php vendor/nette/tester/src/tester.php tests

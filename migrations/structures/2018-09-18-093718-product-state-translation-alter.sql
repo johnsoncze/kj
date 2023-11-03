@@ -1,0 +1,1 @@
+ALTER TABLE `product_state_translation` ADD INDEX (`pst_value`);

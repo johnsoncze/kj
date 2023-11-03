@@ -1,0 +1,1 @@
+ALTER TABLE `product` ADD `p_featured` TINYINT(1) NOT NULL DEFAULT '0' AFTER `p_code`;

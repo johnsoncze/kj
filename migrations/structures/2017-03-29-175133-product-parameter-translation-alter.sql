@@ -1,0 +1,1 @@
+ALTER TABLE `product_parameter_translation` ADD `ppt_url` VARCHAR(255) NOT NULL AFTER `ppt_product_parameter_id`;

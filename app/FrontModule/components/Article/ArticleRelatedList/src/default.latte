@@ -1,0 +1,16 @@
+{if $articles}
+    <div class="Background Background--rose-lighter">
+        <div class="Container">
+            <div class="u-pb--10 u-xs-pb--30 u-sm-pb--80 u-md-pb--140 u-textCenter">
+                <h2 class="ArticleRelated-header u-pt--50">{_article.relatedList.title}</h2>
+                <div class="u-pt--10">
+                    {control list:List}
+                </div>
+				
+				<div class="u-textCenter u-mt--50">
+					<a class="u-textUppercase Button Button--arrow Button--dark-brown" href="{plink Article:list, url => 'novinky'}">{_article.featured.allBlog}</a>
+				</div>
+            </div>
+        </div>
+    </div>
+{/if}

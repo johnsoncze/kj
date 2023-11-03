@@ -1,0 +1,159 @@
+{*Send the order to GTM only once*}
+{block gtmDataLayerScript}
+
+{/block}
+{block content}
+<div class="Background--gradient-top-100-ebebeb">
+    <div class="Container Container--slimer">
+        <div class="Basket-step u-pb--90">
+            <h2 class="Text-block-title-larger u-textCenter u-mb--20 u-pt--40">{_shopping-cart.step.step4.subtitle}</h2>
+            <p class="Text-block-desc u-textCenter">{_shopping-cart.step.step4.description|noescape}</p>
+            <div class="u-pt--10">
+                {if isset($order) && $order->isRequiredPaymentGateway() === TRUE && $order->isPaidByPaymentGateway() === FALSE}
+                    <h3 class="Heading--subTitle u-textCenter u-textLetterSpacing--07 u-pt--20">{_order.payment.gateway.waitingForRedirect}</h3>
+                    <script>
+                        $(document).ready(function () {
+                            window.setTimeout(function () {
+                                window.location.href = {plink PaymentGateway:createRequest, token => $order->getToken()};
+                            }, 3000);
+                        });
+                    </script>
+                    {else}
+                    <div class="u-pt--10 u-textCenter">
+                        <a href="{plink Homepage:default}" class="Product-link-big">
+                            <span class="Link-animation u-md-displayInit Link Link--lineBefore">{_shopping-cart.step.step4.homepage.anchor}<span class="Link--hover"></span></span>
+                        </a>
+                    </div>
+                {/if}
+            </div>
+        </div>
+    </div>
+</div>
+{if $order && $order->wasSentToEETracking() === FALSE}
+    <script n:if="$cookies_analytics">
+        dataLayer.push({
+            'ecommerce': {
+                'purchase': {
+                    'actionField': {
+                        'id': {$order->getId()},
+                        'affiliation': {$order->getDeliveryName() . '/' . $order->getPaymentName()},
+                        'revenue': {$order->getProductSummaryPriceWithoutVat()|number:"2":".":""},
+                        'tax': {$order->getProductSummaryPriceVat()|number:"2":".":""},
+                        'shipping': {$order->getDeliveryAndPaymentSummaryPriceWithoutVat()|number:"2":".":""},
+                        'coupon': {$order->wasAppliedBirthdayDiscount() === TRUE ? 'BIRTHDAY_COUPON' : NULL}
+                    },
+                    'products': [
+                        {var $products = $order->getProducts()}
+                        {foreach $products as $product}
+                        {var $category = isset($categories[$product->getProductId()]) ? '"' . $categories[$product->getProductId()]->getTextNavigation() . '"' : NULL}
+                        {var $brand = isset($brands[$product->getProductId()]) ? $brands[$product->getProductId()]->getValue() : NULL}
+                        {
+                            'name': {$product->getName()},
+                            'id': {$product->getCode()},
+                            'price': {$product->getUnitPriceWithoutVat()|number:"2":".":""},
+                            'brand': {if $brand}{$brand}{else}null{/if},
+                            'quantity': {$product->getQuantity()},
+                            'category': {if $category !== NULL}{$category}{else}null{/if},
+                            'dimension2': {if $product->wasInStock()}'skladovy'{else}'neskladovy{if $brand} {$brand}{/if}'{/if}
+                        }{if $iterator->isLast() !== TRUE},{/if}
+                        {/foreach}
+                    ]
+                }
+            },
+            'event': 'trackTransaction',
+            'email': {$order->getCustomerEmail()}
+        });
+        dataLayer.push({ ecommerce: null });  // Clear the previous ecommerce object.
+        dataLayer.push({
+            event: "purchase",
+            ecommerce: {
+                'transaction_id': {$order->getId()},
+                'value': {$order->getProductSummaryPriceWithoutVat()|number:"2":".":""},
+                'tax': {$order->getProductSummaryPriceVat()|number:"2":".":""},
+                'shipping': {$order->getDeliveryAndPaymentSummaryPriceWithoutVat()|number:"2":".":""},
+                'currency': "CZK",
+                'coupon': {$order->wasAppliedBirthdayDiscount() === TRUE ? 'BIRTHDAY_COUPON' : NULL},
+                'items': [
+                    {var $products = $order->getProducts()}
+                    {foreach $products as $product}
+                    {var $category = isset($categories[$product->getProductId()]) ? '"' . $categories[$product->getProductId()]->getTextNavigation() . '"' : NULL}
+                    {var $brand = isset($brands[$product->getProductId()]) ? $brands[$product->getProductId()]->getValue() : NULL}
+                    {
+                        'item_id': {$product->getCode()},
+                        'item_name': {$product->getName()},
+                        'price': {$product->getUnitPriceWithoutVat()|number:"2":".":""},
+                        'item_brand': {if $brand}{$brand}{else}null{/if},
+                        'quantity': {$product->getQuantity()},
+                        'item_category': {if $category !== NULL}{$category}{else}null{/if},
+                        'item_category2': {if $product->wasInStock()}'skladovy'{else}'neskladovy{if $brand} {$brand}{/if}{/if}
+                    }{if $iterator->isLast() !== TRUE},{/if}
+                    {/foreach}
+                ]
+            }
+        });
+
+    </script>
+    <script n:if="$cookies_marketing">
+        window.ecotrack('addTrans',
+                {$order->getId()},             // ID objednávky (integer) - povinné
+            'jk.cz', // jméno obchodu
+                {$order->getProductSummaryPriceWithoutVat()|number:"2":".":""},              // celkem - povinné
+                {$order->getProductSummaryPriceVat()|number:"2":".":""},               // daň
+                {$order->getDeliveryAndPaymentSummaryPriceWithoutVat()|number:"2":".":""},               // doprava
+            // 'Praha',            // město
+            // 'Praha',            // okres / kraj
+            // 'ČR'                // země
+        );
+        {var $products = $order->getProducts()}
+        var sambaOrder = [];
+        {foreach $products as $product}
+        window.ecotrack('addItem',
+                {$order->getId()},           // ID objednávky (integer) - povinné
+                {$product->getCode()},           // SKU/code - povinné
+                {$product->getName()},         // název produktu
+            '',         // kategorie / variace produktu
+                {$product->getUnitPrice()},              // cena za jednotku - povinné
+                {$product->getQuantity()}               // množství - povinné
+        );
+        {/foreach}
+        window.ecotrack('trackTrans');
+    </script>
+
+    {*Send the order to Heureka*}
+    <script n:if="$cookies_marketing">
+        var _hrq = _hrq || [];
+        _hrq.push(['setKey', 'CA2FD970FA76E0E7EEFF0D6DAA976CB2']);
+        _hrq.push(['setOrderId', {$order->getId()}]);
+        {var $products = $order->getProducts()}
+        {foreach $products as $product}
+        _hrq.push(['addProduct',{$product->getName()},{$product->getUnitPriceWithoutVat()|number:"2":".":""},{$product->getQuantity()}]);
+        {/foreach}
+        _hrq.push(['trackOrder']);
+
+        (function() {
+            var ho = document.createElement('script'); ho.type = 'text/javascript'; ho.async = true;
+            ho.src = 'https://im9.cz/js/ext/1-roi-async.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ho, s);
+        })();
+    </script>
+    {*Send the order to Zbozi*}
+    <script n:if="$cookies_marketing">
+        (function(w,d,s,u,n,k,c,t){
+            w.ZboziConversionObject=n;w[n]=w[n]||function(){
+                (w[n].q=w[n].q||[]).push(arguments)};w[n].key=k;c=d.createElement(s);
+            t=d.getElementsByTagName(s)[0];c.async=1;c.src=u;t.parentNode.insertBefore(c,t)
+        })(window,document,"script","https://www.zbozi.cz/conversion/js/conv-v3.js","zbozi","140289");
+
+        // zapnutí testovacího režimu
+        // zbozi("useSandbox");
+
+        // nastavení informací o objednávce
+        zbozi("setOrder",{
+            "orderId": {$order->getId()}
+        });
+
+        // odeslání
+        zbozi("send");
+    </script>
+
+{/if}

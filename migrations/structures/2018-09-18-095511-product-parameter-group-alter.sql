@@ -1,0 +1,1 @@
+ALTER TABLE `product_parameter_group` DROP `ppg_help`;

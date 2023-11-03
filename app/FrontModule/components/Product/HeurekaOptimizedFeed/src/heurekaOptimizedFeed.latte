@@ -1,0 +1,26 @@
+{contentType application/xml; charset=utf-8}
+{cache tags => [$control::CACHE_TAG, App\Product\Product::PRODUCT_FEED_CACHE_TAG]}
+<?xml version="1.0" encoding="utf-8"?>
+<SHOP>
+    {var $maxProducts = 100000}
+    {var $baseUrl = rtrim($linkGenerator->link('Front:Homepage:default'), '/')}
+    {foreach $control->getProductsData($maxProducts) as $productRow}
+        <SHOPITEM>
+            <ITEM_ID>{$productRow->p_code}</ITEM_ID>
+            <PRODUCT>{$productRow->pt_name} {$productRow->p_code}</PRODUCT>
+            <PRODUCTNAME>{$productRow->pt_name} {$productRow->p_code}</PRODUCTNAME>
+            <EAN>{$productRow->p_code}</EAN>
+            <CATEGORYTEXT>{$productRow->p_heureka_category}</CATEGORYTEXT>
+            {var $entityDecodedDescription = html_entity_decode($productRow->pt_description)}<DESCRIPTION>{$entityDecodedDescription|striptags|noescape|trim}</DESCRIPTION>
+            <URL>{$linkGenerator->link('Front:Product:detail', ['url' => $productRow->pt_url])}</URL>
+            <DELIVERY_DATE>{if $productRow->is_in_stock}0{else}28{/if}</DELIVERY_DATE>
+            <IMGURL n:if="$productRow->p_photo">{$baseUrl}{$fileManager->getFile($productRow->p_photo, App\Product\Product::getUploadFolderByProductId($productRow->p_id))}</IMGURL>
+            <PRICE_VAT>{$productRow->p_price|number:2:'.':''}</PRICE_VAT>
+            <PARAM n:foreach="$control->getProductParametersList($productRow->p_id) as $parameterRow">
+                <PARAM_NAME>{$parameterRow->ppgt_filtration_title}</PARAM_NAME>
+                <VAL>{$parameterRow->param_values}</VAL>
+            </PARAM>
+        </SHOPITEM>
+    {/foreach}
+</SHOP>
+{/cache}

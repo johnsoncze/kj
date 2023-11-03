@@ -1,0 +1,95 @@
+{block content}
+<div class="Background--gradient-top-100-ebebeb">
+
+    {include 'partials/progress.latte'}
+
+    <div class="Container Container--slimer">
+        <div class="Basket-step u-pb--90">
+
+            <h1 class="User-page-title u-pt--40">Fakturační údaje</h1>
+            {if !$user->isLoggedIn()}
+                <p class="OrderFinish__text OrderFinish__text--subheading u-font-size-1">JAKO <a href="/ucet/registrace">REGISTROVANÝ ZÁKAZNÍK</a> ZÍSKÁTE <b>10% CENOVÉ ZVÝHODNĚNÍ</b></p>
+            {/if}
+            <div class="Grid BasketRecapGrid">
+                <div class="Grid-cell u-size12of12 u-md-size6of12 u-m-mb-2">
+                    {control contactInformationForm}
+                </div>
+                <div class="Grid-cell u-size12of12 u-md-size6of12">
+                    {control shoppingCartOverview:bar}
+                </div>
+            </div>
+
+            {control buttonNavigation}
+
+        </div>
+    </div>
+
+    {control benefit}
+</div>
+
+{*{if $shoppingCart && $shoppingCart->hasAvailableProduct() === TRUE}*}
+{*    {control opportunityForm:productStoreMeeting}*}
+{*{/if}*}
+
+<!-- <script n:syntax="off">
+    $(document).ready(function () {
+        $('#nextStep').click(function () {
+            event.preventDefault();
+
+            let formOk = validateForm('frm-contactInformationForm-form')
+
+            const errorText = $('.Form-label--info').first().text()
+            if (errorText) {
+                $('#nextStep').parent().attr('data-error-msg', errorText)
+            } else {
+                $('#nextStep').parent().removeAttr('data-error-msg')
+            }
+
+            if (formOk) {
+                $('#contactInformationSubmit').click();
+            }
+        });
+
+        $('#frm-contactInformationForm-form').submit(function () {
+            let errorText = null
+            $('*[data-validate-pattern]').each(function () {
+                if ($(this).prop('required')) {
+                    if (!$(this).val().match($(this).data('validate-pattern'))) {
+                        errorText = $(this).data('invalid-msg')
+                    }
+                }
+            })
+
+            if (errorText) {
+                $('#nextStep').parent().attr('data-error-msg', errorText)
+                return false
+            } else {
+                $('#nextStep').parent().removeAttr('data-error-msg')
+                return true
+            }
+        });
+
+        $('#another-delivery-address').change(function () {
+            if ($(this).prop('checked')) {
+                $('#another-delivery-section').find('input').not('#frm-contactInformationForm-form-delivery-company').not('#frm-contactInformationForm-form-delivery-telephone').each(function () {
+                    $(this).attr('required', true)
+                })
+            } else {
+                $('#another-delivery-section').find('input').each(function () {
+                    $(this).attr('required', false)
+                })
+            }
+        })
+    });
+</script> -->
+
+<script n:syntax="off">
+    $('#nextStep').click(function () {
+        event.preventDefault();
+
+        var success = Nette.validateForm($('#frm-contactInformationForm-form')[0]);        
+        if (success) {
+            $('#contactInformationSubmit').click();
+        }
+    });
+</script>

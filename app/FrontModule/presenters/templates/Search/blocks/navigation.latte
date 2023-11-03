@@ -1,0 +1,22 @@
+<div class="User-navi">
+    <div class="Grid u-pt--40">
+
+        {if $result[App\FrontModule\Presenters\SearchPresenter::PRODUCT_RESULT]['count']}
+            <div class="Grid-cell u-size4of12 u-sm-max-size12of12">
+                <a href="{plink Search:default}" class="User-navi-link {$presenter->isLinkCurrent() ? active}">{_search.result.navigation.product.title} ({$result[App\FrontModule\Presenters\SearchPresenter::PRODUCT_RESULT]['count']})</a>
+            </div>
+        {/if}
+
+        {if $result[App\FrontModule\Presenters\SearchPresenter::CATEGORY_RESULT]['count']}
+            <div class="Grid-cell u-size4of12 u-sm-max-size12of12">
+                <a href="{plink Search:category}" class="User-navi-link {$presenter->isLinkCurrent() ? active}">{_search.result.navigation.category.title} ({$result[App\FrontModule\Presenters\SearchPresenter::CATEGORY_RESULT]['count']})</a>
+            </div>
+        {/if}
+
+        {if $result[App\FrontModule\Presenters\SearchPresenter::ARTICLE_RESULT]['count']}
+            <div class="Grid-cell u-size4of12 u-sm-max-size12of12">
+                <a href="{plink Search:article}" class="User-navi-link {$presenter->isLinkCurrent() ? active}">{_search.result.navigation.article.title} ({$result[App\FrontModule\Presenters\SearchPresenter::ARTICLE_RESULT]['count']})</a>
+            </div>
+        {/if}
+    </div>
+</div>

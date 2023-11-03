@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+sh tests/bin/run-phpstan
+sh tests/bin/run-tests

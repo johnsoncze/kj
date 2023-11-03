@@ -1,0 +1,1 @@
+ALTER TABLE `product_parameter_group` ADD `ppg_variant_type` VARCHAR(10) NOT NULL AFTER `ppg_id`;

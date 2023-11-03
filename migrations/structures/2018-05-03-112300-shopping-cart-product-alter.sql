@@ -1,0 +1,1 @@
+ALTER TABLE `shopping_cart_product` ADD `scp_production_time` VARCHAR(20) NULL AFTER `scp_vat`;

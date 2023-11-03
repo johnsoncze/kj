@@ -1,0 +1,92 @@
+.CheckboxField {
+    position: relative;
+    display: inline-block;
+}
+
+.CheckboxField-input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+
+.CheckboxField-label {
+    position: relative;
+    display: inline-block;
+    padding-left: @form-field-spacing-x;
+    font-size: @font-size-small;
+    color: @color-brown-dark-alpha-70;
+    cursor: pointer;
+
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+    }
+
+    &::before {
+        width: 16px;
+        height: 16px;
+        border: 2px solid @color-gold;
+        border-radius: @border-radius;
+    }
+
+    &::after {
+        top: 3px;
+        left: 3px;
+        width: 10px;
+        height: 10px;
+    }
+}
+
+.Dropdown-color .CheckboxField-label {
+    padding-left: @form-field-spacing-x-color;
+}
+
+.Dropdown-color .CheckboxField-label .CheckboxField-color {
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: cyan;
+}
+
+.CheckboxField-labelText--required::after {
+    .form-field-label-required();
+}
+
+.CheckboxField-description {
+    .form-field-description();
+}
+
+.CheckboxField--hasError .CheckboxField-description {
+    .form-field-description-error();
+}
+
+// stylelint-disable selector-max-specificity
+.CheckboxField-input:focus + .CheckboxField-label::before {
+    box-shadow: 0 0 10px @color-gold;
+}
+
+.CheckboxField-input:checked + .CheckboxField-label::after {
+    background-image: data-uri('image/svg+xml;charset=UTF-8', 'ui/inline_images/checkmark-green.svg');
+}
+
+.CheckboxField-input:disabled + .CheckboxField-label {
+    color: @color-brown-dark-alpha-40;
+    cursor: not-allowed;
+
+    &::before {
+        border-color: @color-gray-light-alt;
+        background-color: @color-gray-lightest;
+    }
+}
+
+.CheckboxField-input:disabled:checked + .CheckboxField-label::after {
+    background-image: data-uri('image/svg+xml;charset=UTF-8', 'ui/inline_images/checkmark-gray.svg');
+}

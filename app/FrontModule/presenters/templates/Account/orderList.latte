@@ -1,0 +1,21 @@
+{block content}
+
+<main class="Background Background--gradient-top-100-ebebeb">
+    <div class="Container Container--slimer">
+
+        {include 'partials/breadcrumb.latte'}
+        {include 'partials/menu.latte'}
+
+        <div class="Grid u-pb--90">
+
+            <div class="Grid-cell u-size12of12">
+
+                <h1 class="User-page-title">{_account.menu.orders.label}</h1>
+
+                {control orderList}
+
+            </div>
+        </div>
+
+    </div>
+</main>

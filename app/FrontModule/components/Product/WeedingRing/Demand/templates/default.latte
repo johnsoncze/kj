@@ -1,0 +1,132 @@
+{import '../../../ProductionForm/src/blocks.latte'}
+{import '../../../VariantList/src/helpers.latte'}
+
+<form n:name="form" class="Product-options">
+        <div class="Product-option-row">
+            <div class="Product-option-info-title">
+                <div class="Product-option-title">
+                    {_product.weedingRingPair.demand.size.input.label}
+                    {if $ringSizeParameterGroup} {include infoTooltip, group => $ringSizeParameterGroup}{/if}
+                </div>
+            </div>
+            <div class="Product-option-dropdown" style="40%">
+                <div class="Product-option-item u-pl--5">
+                    <div class="SelectField SelectField--inline">
+                        <label class="SelectField-label">
+                            {_product.weedingRingPair.demand.male.size.label}:
+                        </label>
+                        {input maleSize}
+                    </div>
+                </div>
+                <div class="Product-option-item u-pl--5">
+                    <div class="SelectField SelectField--inline">
+                        <label class="SelectField-label">
+                            {_product.weedingRingPair.demand.female.size.label}:
+                        </label>
+                        {input femaleSize}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {if $form->getComponent('diamond', FALSE) !== NULL}
+            <div class="Product-option-row">
+                <div class="Product-option-info-title">
+                    <div class="Product-option-title">{_product.diamond.quality.label}{if $diamondParameterGroup} {include infoTooltip, group => $diamondParameterGroup}{/if}</div>
+                </div>
+                <div class="Product-option-dropdown" style="width: 40%">
+                    <div class="SelectField SelectField--inline">
+                        {input diamond}
+                    </div>
+                </div>
+            </div>
+        {/if}
+
+        <div class="Product-option-row">
+            <div class="Product-option-info-title">
+                <div class="Product-option-title">{_form.productionTime.label}</div>
+            </div>
+            <div class="Product-option-dropdown" style="width: 40%">
+                <div class="SelectField SelectField--inline">
+                    {*Temporary disabled because JK: selectbox contains only one option*}
+                    <div class="u-displayNone">
+                        {input productionTimeForm-productionTime}
+                    </div>
+                    <div class="Product-option-label">
+                        {_product.production.4_6_weeks}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {include fasterProductionRow}
+
+    {control metaSmallBlock}
+
+    <div class="u-textCenter u-mt--25">
+        {if $customer}
+            <div class="Product-total-price-old u-mb--5">
+                <strike><span id="weeding-ring-summary-price-before-discount">{\App\Helpers\Prices::toUserFriendlyFormat($product->getPrice())}</span> {_price.currency.label}</strike>
+            </div>
+        {/if}
+        <div class="Product-total-price"><span id="weeding-ring-summary-price">{\App\Helpers\Prices::toUserFriendlyFormat($customer ? $product->calculatePriceByCustomer($customer) : $product->getPrice())}</span> {_price.currency.label}</div>
+        <div class="Timeline-desc u-mt--5">{_product.weedingRingPair.demand.price.info|noescape}</div>
+    </div>
+
+    <div class="u-mt--30 u-textCenter">
+        <a href="#weeding-ring-demand" class="Button js-popup-opener">{_form.demand.weedingRing.action}</a>
+    </div>
+
+    {include 'popUp.latte', form => $form, diamondList => $diamondList}
+
+</form>
+
+<script>
+    $(document).ready(function () {
+        var maleSize = $('select[name="maleSize"]');
+        var femaleSize = $('select[name="femaleSize"]');
+        var productionTimeForm = $('select[name="productionTimeForm[productionTime]"]');
+        var diamond = $('select[name="diamond"]');
+        var summaryPriceBeforeDiscount = $('#weeding-ring-summary-price-before-discount');
+        var summaryPrice = $('#weeding-ring-summary-price');
+
+        refreshRecapitulationData();
+
+        {capture $tmp1}{$control->getName()|noescape}-{$control::MALE_SIZE_ID|noescape}{/capture}
+        {capture $tmp2}{$control->getName()|noescape}-{$control::FEMALE_SIZE_ID|noescape}{/capture}
+        {capture $tmp3}{$control->getName()|noescape}-{$control::PRODUCTION_TIME|noescape}{/capture}
+        {capture $tmp4}{$control->getName()|noescape}-{$control::DIAMOND_QUALITY_ID|noescape}{/capture}
+
+        $('.calculate').on('change', function () {
+            $.nette.ajax({
+                url: {link calculate!},
+                data: {
+                    {$tmp1}: maleSize.val(),
+                    {$tmp2}: femaleSize.val(),
+                    {$tmp3}: productionTimeForm.val(),
+                    {$tmp4}: diamond.val()
+                },
+                success: function (data) {
+                    if (data.code == 0) {
+                        summaryPriceBeforeDiscount.html(data.summaryPriceBeforeDiscount);
+                        summaryPrice.html(data.summaryPrice);
+                        refreshRecapitulationData();
+                        return;
+                    }
+                    alert({_product.weedingRingPair.message.calculationError});
+                },
+                error: function () {
+                    alert({_product.weedingRingPair.message.calculationError});
+                }
+            });
+        });
+
+        function refreshRecapitulationData() {
+           $('#wr-recapitulation-male-size').html(maleSize.children(':selected').text());
+           $('#wr-recapitulation-female-size').html(femaleSize.children(':selected').text());
+           $('#wr-recapitulation-diamond-quality').html(diamond.children(':selected').text());
+           $('#wr-recapitulation-production-time').html(productionTimeForm.children(':selected').text());
+           $('#wr-recapitulation-summary-price').html(summaryPrice.html());
+        }
+    });
+</script>

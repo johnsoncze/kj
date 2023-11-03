@@ -1,0 +1,119 @@
+admin.article.add: Přidat článek
+admin.article.edit: Upravit článek
+admin.article.default: Články
+
+admin.promoarticle.default: Promo články
+admin.promoarticle.add: Přidat promo článek
+admin.promoarticle.edit: Upravit promo článek
+
+admin.articlecategory.default: Rubriky
+admin.articlecategory.add: Přidat rubriku
+admin.articlecategory.edit: Upravit rubriku
+admin.articlecategory.remove: Smazat rubriku
+admin.articlecategory.sort: Řazení
+
+admin.catalog.default: Seznamy
+admin.catalog.add: Přidat
+admin.catalog.edit: Upravit
+admin.catalog.sort: Řadit
+
+admin.category.add: Přidat kategorii
+admin.category.collectionlist: Pokročilé nastavení
+admin.category.default: Kategorie
+admin.category.editassociated: Související kategorie
+admin.category.editassociatedproduct: Související produkty
+admin.category.edit: Upravit kategorii
+admin.category.editfiltration: Filtrace
+admin.category.editfiltrationcombination: Skupiny parametrů filtrace
+admin.category.editfiltrationcombinationadd: Přidat skupinu parametrů filtrace
+admin.category.editfiltrationcombinationedit: Upravit skupinu parametrů filtrace
+admin.category.editparameter: Parametry produktů
+admin.category.filtrationsort : Řazení filtrace
+admin.category.representativeproductsort: Řazení preprezentativních produktů
+admin.category.sortfiltrationcombination: Řazení kombinací
+admin.category.sort: Řazení kategorií
+
+admin.categoryfiltration.default: Filtrace
+admin.categoryfiltration.add: Přidat filtraci
+admin.categoryfiltration.edit: Upravit filtraci
+admin.categoryfiltration.sort: Řazení filtrace
+
+admin.contactform.default: Kontaktní formulář
+admin.contactform.detail: Zpráva
+
+admin.customer.default: Zákazníci
+admin.customer.detail: Zákazník
+
+admin.delivery.default: Doprava
+
+admin.demand.default: Poptávky
+admin.demand.detail: Poptávka
+
+admin.diamond.default: Ceník diamantů
+
+admin.homepage.default: Přehled
+
+admin.language.default: Jazyky
+
+admin.newsletter.default: Žádosti o newsletter
+
+admin.sign.in: Přihlášení
+
+admin.order.default: Objednávky
+admin.order.detail: Objednávka
+
+admin.page.default: Stránky
+admin.page.add: Přidat stránku
+admin.page.edit: Upravit stránku
+admin.page.sort: Řazení stránek
+
+admin.payment.default: Platba
+
+admin.product.default: Produkty
+admin.product.add: Přidat produkt
+admin.product.edit: Upravit produkt
+admin.product.editcomponent: Komponenty
+admin.product.editvariant: Varianty
+admin.product.editparameter: Parametry
+admin.product.editrelated: Související produkty
+admin.product.editbatch: Dávkové úpravy
+admin.product.editproductsearchengine: Zbožové vyhledávače
+admin.product.generatevariant: Generování variant
+admin.product.notcompleted: Rozpracované produkty
+admin.product.view: Přehled produktu
+
+admin.productparameter.default: Parametry
+admin.productparameter.add: Přidat parametr
+admin.productparameter.edit: Upravit parametr
+admin.productparameter.sort: Řadit parametry
+
+admin.productparametergroup.default: Skupiny parametrů
+admin.productparametergroup.add: Přidat skupinu
+admin.productparametergroup.edit: Upravit skupinu
+admin.productparametergroup.lock: Návaznosti
+
+admin.productstate.default: Stavy
+
+admin.profile.default: Profil
+admin.profile.changepassword: Změna hesla
+
+admin.password.forgotten: Zapomenuté heslo
+admin.password.new: Nastavení nového hesla
+
+admin.setting.default: Nastavení
+
+admin.store.default: Otevírací doba prodejny
+
+admin.storemeeting.default: Žádosti o schůzku
+admin.storemeeting.detail: Žádost o schůzku
+
+admin.personalmeeting.default: Žádosti o schůzku - Snubní prsteny
+admin.personalmeeting.detail: Žádost o schůzku - Snubní prsteny
+
+
+admin.user.default: Uživatelé
+admin.user.add: Přidat uživatele
+admin.user.edit: Upravit uživatele
+
+admin.tools.default: Další nastavení
+admin.tools.salutation: Oslovení

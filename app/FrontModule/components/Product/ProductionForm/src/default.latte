@@ -1,0 +1,45 @@
+{import 'blocks.latte'}
+<div class="Product-options Meta-small-block u-pt--5 u-mt--20">
+    <div class="Product-option-row Product-option-row--stackable">
+{*        <div class="Product-option-info">*}
+{*            <div class="Product-option-title">{_form.productionTime.label}</div>*}
+{*        </div>*}
+        <div class="{*Product-option-dropdown*}Product-option-info-title">
+            <div class="SelectField">
+                <form n:name="form">
+                    {*Temporary disabled because JK: selectbox contains only one option*}
+                    <div class="u-displayNone">
+                        {input productionTimeForm-productionTime}
+                    </div>
+                    <div class=" Product-option-label u-textUppercase">
+                        {_product.production.4_6_weeks}
+                    </div>
+                    {input submit}
+                </form>
+            </div>
+        </div>
+        <div class="Product-option-info-value u-textUppercase">
+            <div class="Product-option-label" style="font-weight: 300; text-decoration: underline;"><a href="#{\App\FrontModule\Components\OpportunityForm\OpportunityForm::PRODUCT_DEMAND_POPUP_ID}" class="Product-option-link js-popup-opener">Potřebujete to rychleji?</a></div>
+        </div>
+    </div>
+</div>
+
+<script>
+    {capture $dataKey}{$control->getName()|noescape}-{$control::PRODUCTION_TIME_KEY|noescape}{/capture}
+    $(document).ready(function () {
+        $('.calculate-production').on('change', function() {
+            $.nette.ajax({
+                url: {link calculate!},
+                data: {
+                    {$dataKey}: $(this).val()
+                },
+                success: function (data) {
+                    if (data.code == 0) {
+                        $('#Product-price-before-discount').html(data.priceBeforeDiscount);
+                        $('#Product-price').html(data.price)
+                    }
+                }
+            });
+        });
+    });
+</script>

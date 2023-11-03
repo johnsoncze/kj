@@ -1,0 +1,132 @@
+{if $items}
+
+    <section class="Background">
+        <div class="Container">
+
+
+
+          <div class="Grid u-textCenter">
+              <div class="Grid-cell u-size12of12" style="margin-bottom: 40px">
+                  <div class="">
+                      <h3 style="font-weight: normal; text-transform: uppercase;">AKTUÁLNÍ KATALOG 2023/2024</h3>
+                      <span class=""></span>
+                  </div>
+                  <div class="">
+                      <a href="/katalogy/2023/"><img src="/katalogy/jk_katalog_2023_2024.jpg" class=""></a>
+                  </div>
+                  <div class="">
+                      <a href="/katalogy/2023/" style=" text-decoration: none;" target="_blank"><img style="height:1em; margin-right:0.5em; margin-bottom: -2px;" src="/assets/front/images/view.png">prohlédnout</a>
+                      <a href="/katalogy/jk_katalog_2023_2024.pdf" style=" text-decoration: none;" download="JK katalog" target="_blank"><img style="height:1em; margin-left:1em; margin-right:0.5em; margin-bottom: -2px;" src="/assets/front/images/download.png">stáhnout</a>
+                  </div>
+              </div>
+
+              <div class="Grid-cell u-size12of12" style="border-top: 1px solid #ddd;">
+
+                  <h3 style="font-weight: normal; text-transform: uppercase;  padding-top: 20px;">ARCHIV KATALOGŮ</h3>
+
+                  <div class="">
+                      <h4 style="font-weight: normal; text-transform: uppercase;">KATALOG 2022/2023</h4>
+                      <span class=""></span>
+                  </div>
+                  <div class="">
+                      <a href="/katalogy/2022/"><img src="/katalogy/jk_katalog_2022_2023.jpg" class=""></a>
+                  </div>
+                  <div class="">
+                      <a href="/katalogy/2022/" style=" text-decoration: none;" target="_blank"><img style="height:1em; margin-right:0.5em; margin-bottom: -2px;" src="/assets/front/images/view.png">prohlédnout</a>
+                      <a href="/katalogy/jk_katalog_2022_2023.pdf" style=" text-decoration: none;" download="JK katalog" target="_blank"><img style="height:1em; margin-left:1em; margin-right:0.5em; margin-bottom: -2px;" src="/assets/front/images/download.png">stáhnout</a>
+                  </div>
+
+
+                  <div class="" style="padding-top: 50px">
+                      <h4 style="font-weight: normal; text-transform: uppercase;">KATALOG 2021/2022</h4>
+                      <span class=""></span>
+                  </div>
+                  <div class="">
+                      <a href="/katalogy/2021/"><img src="/katalogy/jk_katalog_2021_2022.jpg" class=""></a>
+                  </div>
+                  <div class="">
+                      <a href="/katalogy/2021/" style=" text-decoration: none;" target="_blank"><img style="height:1em; margin-right:0.5em; margin-bottom: -2px;" src="/assets/front/images/view.png">prohlédnout</a>
+                      <a href="/katalogy/jk_katalog_2021_2022.pdf" style=" text-decoration: none;" download="JK katalog" target="_blank"><img style="height:1em; margin-left:1em; margin-right:0.5em; margin-bottom: -2px;" src="/assets/front/images/download.png">stáhnout</a>
+                  </div>
+
+
+                  <div class="" style="padding-top: 50px">
+                      <h4 style="font-weight: normal; text-transform: uppercase;">KATALOG 2020/2021</h4>
+                      <span class=""></span>
+                  </div>
+                  <div class="">
+                      <a href="/katalogy/2020/"><img src="/katalogy/jk_katalog_2020_2021.jpg" class=""></a>
+                  </div>
+                  <div class="">
+                      <a href="/katalogy/2020/" style=" text-decoration: none;" target="_blank"><img style="height:1em; margin-right:0.5em; margin-bottom: -2px;" src="/assets/front/images/view.png">prohlédnout</a>
+                      <a href="/katalogy/jk_katalog_2020_2021.pdf" style=" text-decoration: none;" download="JK katalog" target="_blank"><img style="height:1em; margin-left:1em; margin-right:0.5em; margin-bottom: -2px;" src="/assets/front/images/download.png">stáhnout</a>
+                  </div>
+
+
+                  <div class="" style="padding-top: 50px">
+                      <h4 style="font-weight: normal; text-transform: uppercase;">KATALOG 2019</h4>
+                      <span class=""></span>
+                  </div>
+                  <div class="">
+                      <a href="/katalogy/2019/"><img src="/katalogy/jk_katalog_2019.jpg" class=""></a>
+                  </div>
+                  <div class="">
+                      <a href="/katalogy/2019/" style=" text-decoration: none;" target="_blank"><img style="height:1em; margin-right:0.5em; margin-bottom: -2px;" src="/assets/front/images/view.png">prohlédnout</a>
+                      <a href="/katalogy/jk_katalog_2019.pdf" style=" text-decoration: none;" download="JK katalog" target="_blank"><img style="height:1em; margin-left:1em; margin-right:0.5em; margin-bottom: -2px;" src="/assets/front/images/download.png">stáhnout</a>
+                  </div>
+              </div>
+
+
+{*
+              {foreach $items as $item}
+                  <div class="Grid-cell u-size12of12">
+                    <div class="">
+                        <h3 style="font-weight: normal; text-transform: uppercase;">{$item->getTranslation()->getTitle()}</h3>
+                        <span class="">{$item->getTranslation()->getSubtitle()}</span>
+                        <p class="">{$item->getTranslation()->getText()|noescape}</p>
+                    </div>
+                    <div class="">
+                    <img src="{if $item->getPhoto()}{thumbnailPath 300, 300, $item->getPhoto(), $item::getUploadFolder($item)}{else}{imagePlaceholder 300, 300}{/if}" class="">
+                    </div>
+                    {if $item instanceof \App\Catalog\Catalog && $item->getTranslation()->getFile()}
+                      <div class="" >
+                        <a href="https://www.jk.cz/www/katalogy/2021/" style=" text-decoration: none;" target="_blank"><img style="height:1em; margin-right:0.5em; margin-bottom: -2px;" src="/assets/front/images/view.png">{_pageStatic.representative_catalog.view|noescape}</a>
+                        <a href="{$fileManager->getFile($item->getTranslation()->getFile(), App\Catalog\Catalog::getUploadFolder($item))}" style=" text-decoration: none;" download="JK katalog" target="_blank"><img style="height:1em; margin-left:1em; margin-right:0.5em; margin-bottom: -2px;" src="/assets/front/images/download.png">{_pageStatic.representative_catalog.download|noescape}</a>
+                      </div>
+                    {/if}
+                  </div>
+              {/foreach}
+*}
+          </div>
+
+<!--
+            <div class="Grid u-textCenter u-pt--0 u-sm-pt--30 u-md-pt--70 u-pb--20 u-md-pb--70 js-worker-carousel">
+                {foreach $items as $item}
+                    <div class="Grid-cell u-size12of12 u-sm-size4of12 u-mt--20 u-sm-mt--0 js-item">
+                        <div class="Worker Worker-key--{$iterator->counter}">
+                            <div class="Worker-thumbnail">
+                                <img src="{if $item->getPhoto()}{thumbnailPath 140, 140, $item->getPhoto(), $item::getUploadFolder($item)}{else}{imagePlaceholder 140, 140}{/if}" class="Worker-image">
+                            </div>
+                            <div class="Worker-content">
+                                <h3 class="Worker-name">{$item->getTranslation()->getTitle()}</h3>
+                                <span class="Worker-branch">{$item->getTranslation()->getSubtitle()}</span>
+                                <p class="Worker-desc">{$item->getTranslation()->getText()|noescape}</p>
+
+                            </div>
+                            {if $item instanceof \App\Catalog\Catalog && $item->getTranslation()->getFile()}
+                              <div class="file-wrapper">
+                                  <hr>
+                                  <a href="{$fileManager->getFile($item->getTranslation()->getFile(), App\Catalog\Catalog::getUploadFolder($item))}" target="_blank">{$item->getTranslation()->getFile()}</a><br>
+                              </div>
+
+                            {/if}
+                        </div>
+                    </div>
+                {/foreach}
+            </div>
+-->
+
+        </div>
+    </section>
+
+{/if}

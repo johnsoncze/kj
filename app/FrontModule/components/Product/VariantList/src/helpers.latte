@@ -1,0 +1,3 @@
+{define infoTooltip}
+    <span n:if="$group->getTranslation()->getHelp()" class="tooltip {if !$deviceDetect->isMobile()}js-tooltip-hover{else}js-tooltip-touch{/if} tooltipstered" title="{$group->getTranslation()->getHelp()}">i</span>
+{/define}

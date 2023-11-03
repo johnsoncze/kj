@@ -1,0 +1,7 @@
+{block contentAdmin}
+{include 'navigation.latte'}
+<p>
+    <b>Jméno:</b> {$user->getIdentity()->getEntity()->getName()}<br>
+    <b>E-mail:</b> {$user->getIdentity()->getEntity()->getEmail()}<br>
+    <b>Datum přidání:</b> {$user->getIdentity()->getEntity()->getAddDate()|date:"d.m.Y H:i:s"}<br>
+</p>

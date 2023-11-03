@@ -1,0 +1,25 @@
+machine:
+
+  php:
+    version: 7.0.17
+
+  timezone: Europe/Prague
+
+  services:
+    - mysql
+
+database:
+  pre:
+    - echo "[mysqld]" | sudo tee -a /etc/mysql/my.cnf
+    - echo 'sql-mode="NO_ENGINE_SUBSTITUTION"' | sudo tee -a /etc/mysql/my.cnf
+    - sudo service mysql restart
+
+test:
+  post:
+    - sh tests/bin/run-tests
+
+deployment:
+  staging:
+    branch: staging
+    commands:
+      - ./bin/deployment_stagingserver.sh

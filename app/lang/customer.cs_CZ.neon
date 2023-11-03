@@ -1,0 +1,71 @@
+activated.already: Uživatelský účet je již aktivován.
+activation.expired: Žádost o aktivaci vypršela. Zašlete novou žádost o aktivaci.
+activation.request: Na e-mail jsme Vám zaslali novou žádost o dokončení registrace.
+activation.request.error: Zaslání žádosti se nezdařilo. Možná máte účet již aktivní nebo došlo k chybě. Zkuste to znovu.
+activation.success: Aktivace byla úspěšná. Nyní se můžete přihlásit.
+
+birthdayCoupon:
+    canNotBeApplied: Pro uplatnění narozeninového zvýhodnění nemáte bohužel nárok.
+
+email:
+    activation:
+        request:
+            subject: Aktivujte svůj účet na webu JK
+    forgottenPassword:
+        request:
+            subject: Žádost o změnu hesla
+            body:
+                title: Nastavte si nové heslo
+                description1: 'Nedávno někdo pro Váš účet vedený k emailu %email% na webu'
+                description2: 'zažádal o nastavení nového hesla.'
+                description3: 'Pro nastavení nového hesla klikněte na'
+                anchor: 'tento odkaz'
+                description4: 'Pokud jste o nastavení nového hesla nežádali, tuto zprávu ignorujte.'
+    storeRegistration:
+        subject: Aktivujte svůj účet na webu JK
+        body:
+            description2: 'a děkujeme za registraci na naší prodejně.'
+            description3: 'Už jsme Vám založili osobní účet na'
+            ourWeb: 'našem webu'
+            description4: 'Stačí jeden krok a můžete jej začít používat.'
+            activation:
+                title: Aktivujte svůj účet
+                click: 'Klikněte na'
+                reference: 'tento odkaz'
+                password: 'Poté si nastavte heslo, pomocí kterého se budete přihlašovat ke svému účtu.'
+                expiration: 'Odkaz bude aktivní do %date%.'
+                reActivation1: 'Kdykoli ale můžete'
+                reActivation2: 'poslat další žádost o nastavení hesla'
+            farewall: 'Těšíme se na další setkání.'
+    registration:
+        subject: Seznamte se s JK účtem a Vašimi výhodami
+        body:
+            title: Vítejte v JK
+            description1: Máme upřímnou radost z Vašeho zájmu o JK sortiment
+            description2: i z registrace na webu
+            description3: 'V této chvíli už máte svůj osobní JK účet, ke kterému se kdykoli snadno'
+            signIn: přihlásíte
+            description5: '– stačí zadat Váš e-mail a heslo.'
+            benefit:
+                title: Nyní už můžete využívat výhody našich stálých zákazníků
+                benefit1: trvalé 10 % zvýhodnění na nabízený sortiment
+                benefit2: jednorázové 15% narozeninové zvýhodnění
+                benefit4: pozvánky na společenské akce pro klienty JK
+                benefit3: 'informace o nových kolekcích, produktech a akcích'
+                benefit5: 'tištěný katalog plný inspirace'
+            product:
+                title: Prohlédněte si aktuální nabídku
+                description1: 'Všechny kolekce šperků, hodinky a doplňky'
+                description2: 'najdete na webu'
+                description3: 'Zde můžete rovnou objednávat'
+                description4: 'nebo Vám zboží rádi osobně představíme'
+                description5: 'a připravíme k vyzkoušení na naší prodejně v Praze.'
+            farewall: 'Těšíme se na Vás!'
+
+email.exists: 'Uživatelský účet s e-mailem %email% již existuje.'
+externalsystemid.exists: 'Uživatelský účet s id %id% externího systému již existuje.'
+not.found: Uživatelský účet nebyl nalezen.
+
+property:
+    sex:
+        title: Pohlaví

@@ -1,0 +1,60 @@
+{block content}
+<section class="PageHeader OurTeam">
+    <div class="PageHeader-bg" style="background-image: url(/www/assets/front/user_content/images/nas-tym.jpg);"></div>
+    <div class="Container Grid">
+        <div class="Grid-cell u-size12of12">
+            {control breadcrumb}
+
+            <h1 class="Text-title u-mt--25 u-md-mb--0">{_pageStatic.team.title|noescape}</h1>
+        </div>
+    </div>
+</section>
+
+<section class="Background">
+    <div class="Container u-textCenter u-mt--20 u-sm-mt--0">
+
+        <img class="u-mb--15" src="/assets/front/images/layout/jk-min.png" alt="JK">
+
+        <h2 class="Text-block-title-larger u-textCenter u-mb--20">{_pageStatic.team.introduction.title|noescape}</h2>
+
+        <p class="Text-block-paragraph-ornament-bot-center u-textCenter u-mt--30 u-mb--80">{_pageStatic.team.introduction.description|noescape}</p>
+
+    </div>
+</section>
+
+<div class="Background Background--silver OurTeam-owners">
+    <div class="Container">
+        <div class="u-pb--10 u-xs-pb--30 u-sm-pb--65 u-md-pb--65">
+            {control teamPage-ownerTimeline}
+        </div>
+    </div>
+</div>
+
+<div class="Background">
+    <div class="Container">
+        <div class="u-pb--10 u-xs-pb--30 u-sm-pb--80 u-md-pb--140 u-pt--80">
+            {control employeeList}
+        </div>
+    </div>
+</div>
+
+<div class="Background Hiring">
+    <div class="Container">
+        <div class="u-pb--10 u-xs-pb--30 u-sm-pb--80 u-md-pb--140 u-pt--0 u-md-pt--80">
+            <h3 class="Timeline-title">{_pageStatic.team.hiring.title}</h3>
+            <div class="Grid">
+                <div class="Grid-cell u-sm-size1of2">
+                    <p class="Timeline-desc">{_pageStatic.team.hiring.description1}</p>
+                    <p class="Timeline-desc">{_pageStatic.team.hiring.description2}</p>
+                    <p class="Timeline-desc Hiring-send">{_pageStatic.team.hiring.description3}<a href="mailto:dusan@jk.cz?subject={_pageStatic.team.hiring.subject}" class="Link Link-big">{_pageStatic.team.hiring.anchor}</a></p>
+                </div>
+                <div class="Grid-cell u-sm-size1of2 Hiring-pos">
+                    <div class="u-sm-pl--40">
+                        <h3 class="Timeline-subtitle u-mt--0">{_pageStatic.team.hiring.jobVacancy.title}</h3>
+                        {control jobVacancyList}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

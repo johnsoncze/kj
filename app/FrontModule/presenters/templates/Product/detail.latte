@@ -1,0 +1,193 @@
+{var $priceWithoutVat = $loggedUser ? $product->getPriceAfterDiscountWithoutVat(\App\Customer\Customer::DISCOUNT) : $product->getPriceWithoutVat()}
+
+{block gtmDataLayerScript}
+    <script n:if="$cookies_analytics">
+        dataLayer.push({
+            'ecommerce': {
+                'detail': {
+                    'products': [{
+                        'name': {$product->getTranslation()->getName()},
+                        'id': {$product->getCode()},
+                        'price': {$priceWithoutVat|number:2:".":""},
+                        'brand': {if $productDTO->getBrand()}{$productDTO->getBrand()->getName()}{else}null{/if},
+                        'category': {if $productDTO->getCategory()}{$productDTO->getCategory()->getTextNavigation()}{else}null{/if},
+                        'dimension2': {if $product->isInStock()}'skladovy'{else}'neskladovy{if $productDTO->getBrand()} {$productDTO->getBrand()->getName()|noescape}{/if}'{/if}
+                    }]
+                }
+            }
+        });
+    </script>
+{/block}
+
+{block canonical}
+	<link rel="canonical" href="{plink //Product:detail, url => $productDTO->getProduct()->getTranslation()->getUrl()}" />
+{/block}
+
+{block headStyle}
+    <link type="text/css" rel="stylesheet" href="/www/vendor/light-gallery/dist/css/lightgallery.min.css" />
+{/block}
+
+{block footerScript}
+    <script src="/vendor/light-gallery/dist/js/lightgallery-all.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $(".light-gallery").lightGallery({
+                selector: '.item-photo',
+                getCaptionFromTitleOrAlt: false,
+                autoplayControls: false,
+                zoom: false,
+                fullScreen: false,
+                share: false,
+                download: false,
+                thumbnail: false
+            });
+        });
+    </script>
+{/block}
+
+{block content}
+
+<main>
+    <div class="Grid Container u-pb--50 u-sm-pb--80 u-lg-pb--115">
+
+        {control breadcrumb}
+
+        <section class="Product">
+
+            {control photoGallery}
+
+            <div class="Product-info u-mt--60 u-md-mt--0">
+
+{*                <img class="u-mb--15" src="/assets/front/images/layout/jk-min.png" alt="JK">*}
+
+                <h1 class="Text-block-title-larger u-mb--10 u-positionRelative">
+					<div class="Product-favourite">
+						{control favouriteProductHeart:productHeart $product->getId()}
+					</div>					
+					{$product->getTranslation()->getName()}
+					<span style="font-size: 13px; color:#aaa">({$product->getCode()})</span>
+				</h1>
+
+                {control photoGallery:mobile}
+
+                <p {*n:if="$product->getTranslation()->getShortDescription()"*} class="Product-text-block-desc-small u-mb--1em">
+                    {control collectionPreview:description}
+                    {$product->getTranslation()->getShortDescription()|noescape|trim}
+                </p>
+                <p n:if="$product->getTranslation()->getDescription()" class="Product-text-block-desc-small u-mb--1em">
+                     {$product->getTranslation()->getDescription()|noescape|trim}
+                </p>
+
+                {control information}
+                {control collectionPreview:asParameter}
+
+                {control productVariantList}
+
+                {if $product->isWeedingRingPair() === TRUE}
+                    {control weedingRingDemand}
+                {else}
+                    {if $productDTO->getState()->isProduction()}
+                        {control productionForm}
+                        {else}
+                        {control stockInfo}
+                    {/if}
+                    {control metaSmallBlock}
+                    <div class="Product-options">
+                    <div class="Product-option-row Product-option-row--stackable Product-option-row-phonecenter">
+                    {control priceBlock}
+                    {if $product->isInStock() === TRUE}
+                        <div class="u-mt--5 u-mb--5 Product-option-info-value-phonecenter Product-option-order-block">
+                        {control orderBlock}
+                        {control showOnStoreForm:productStoreMeeting}
+                            </div>
+
+
+                    {elseif $productDTO->getState()->isProduction() === TRUE}
+                        <div class="u-mt--5 u-mb--5 Product-option-info-value-phonecenter Product-option-order-block">
+                        {control orderBlock}
+                        </div>
+                    {else}
+                        <div class="">
+                            <a href="#{\App\FrontModule\Components\OpportunityForm\OpportunityForm::PRODUCT_DEMAND_POPUP_ID}" class="Button js-popup-opener" style="padding: 0.85rem 2rem 0.9rem;">{_form.demand.action}</a>
+                        </div>
+                        {control demandForm:productDemand}
+                    {/if}
+                    </div>
+                    </div>
+                    {if $product->isInStock() === TRUE}
+                        <div class="Product-options">
+                        <div class="Product-option-row Product-option-row--stackable Product-option-row-phonecenter">
+                            <div class="u-mb--10 u-mt--10 Product-option-info-title-phonecenter">
+                            </div>
+                            <div class="u-colorGold u-mt--5 Product-option-info-value-phonecenter Product-option-order-block" style="display: block;">
+                                &nbspnebo
+                                <a href="#{\App\FrontModule\Components\OpportunityForm\OpportunityForm::PRODUCT_STORE_MEETING_POPUP_ID}" class="js-popup-opener link-underline u-textUppercase">
+                                    {_form.opportunity.storeMeeting.product.anchor}
+                                </a>
+                            </div>
+                        </div>
+                        </div>
+                    {/if}
+
+                {/if}
+                {control productSimilarList:similar}
+                {control productSetList:related}
+
+            </div>
+        </section>
+    </div>
+</main>
+
+
+
+{control benefitList}
+{control collectionPreview}
+{*{control similarCategoryList}*}
+
+{if $productDTO->getState()->isProduction()}
+    {control demandForm:productDemand}
+{/if}
+
+<script>
+    $(document).ready(function() {
+        $('.addToShoppingCart').click(function (e) {
+            e.preventDefault();
+            var targetUrl = e.target.href;
+            var isProduction = $(this).hasClass('production');
+            {if $showMeasuringCodes === TRUE && $cookies_analytics}
+            dataLayer.push({
+                'event': 'eec.addToCart',
+                'ecommerce': {
+                    'currencyCode': 'CZK',
+                    'add': {
+                        'products': [{
+                            'name': {$product->getTranslation()->getName()},
+                            'id': {$product->getCode()},
+                            'price': {$priceWithoutVat|number:2:".":""},
+                            'quantity': 1,
+                            'brand': '{if $productDTO->getBrand()}{$productDTO->getBrand()->getName()|noescape}{else}null{/if}',
+                            'category': '{if $productDTO->getCategory()}{$productDTO->getCategory()->getTextNavigation()|noescape}{else}null{/if}',
+                            'dimension2': {if $product->isInStock()}'skladovy'{else}'neskladovy{if $productDTO->getBrand()} {$productDTO->getBrand()->getName()|noescape}{/if}'{/if}
+                        }]
+                    }
+                },
+                'eventCallback': function() {
+                    redirect(targetUrl, isProduction);
+                },
+                'eventTimeout': 2000
+            });
+            {else}
+                redirect(targetUrl, isProduction);
+            {/if}
+
+            function redirect(targetUrl, isProduction) {
+                if (isProduction) {
+                    $('#{\App\FrontModule\Components\Product\ProductionForm\ProductionForm::SUBMIT_BUTTON_ID|noescape}').click();
+                } else {
+                    window.location = targetUrl;
+                }
+            }
+        });
+
+    });
+</script>

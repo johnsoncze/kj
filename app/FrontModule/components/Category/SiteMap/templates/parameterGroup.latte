@@ -1,0 +1,22 @@
+{contentType application/xml; charset=utf-8}
+{cache $control->getGroupCacheId()}
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    {var $max = 10}
+    {var $count = $control->getGroupCount()->getCount()}
+    {var $categories = $control->findCategories()}
+    {for $i = 0; $i <= $count;}
+        {var $groups = $control->findGroups($max, $i)}
+        {foreach $groups as $group}
+            {php $group->setCategory($categories[$group->getCategoryId()])}
+            <url>
+                <loc>{$group->getFrontendLink($linkGenerator)}</loc>
+                <changefreq>hourly</changefreq>
+                <priority>1.00</priority>
+            </url>
+        {/foreach}
+        {php unset($groups)}
+        {var $i += $max}
+    {/for}
+</urlset>
+{/cache}

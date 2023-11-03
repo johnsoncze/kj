@@ -1,0 +1,9 @@
+{block nextToTitle}
+    <a href="{plink Product:add, completed => 'false'}" class="btn btn-default btn-sm"><i class="fa fa-plus" aria-hidden="true"></i> Přidat</a>
+{/block}
+
+{block contentAdmin}
+{control productFiltrationForm}
+<hr>
+{include 'templates/menu.latte'}
+{control productNotCompletedList}

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+	<title>{ifset $title}{$title|noescape} | {$parameters['project']['name']}{else}{$parameters['project']['name']} | {_general.meta.title}{/ifset}</title>
+
+	{capture $defTitle}{ifset $title}{$title} | {$parameters['project']['name']}{else}{$parameters['project']['name']} | {_general.meta.title}{/ifset}{/capture}
+	{capture $defDesc}{ifset $metaDescription}{$metaDescription|noescape}{else}{_general.meta.description}{/ifset}{/capture}
+	{php $ogTitle = isset($ogTitle)?$ogTitle:$defTitle}
+	{php $ogDescription = isset($ogDescription)?$ogDescription:$defDesc}
+
+	<meta property="og:title" content="{$ogTitle|noescape}"/>
+	<meta property="og:description" content="{$ogDescription|noescape}" />
+	<meta property="og:url" content="{$ogPrefix}{$ogUrl}" />
+	<meta property="og:image" content="{$ogPrefix}{$ogImage}" />
+
+	<meta name="twitter:title" content="{$ogTitle|noescape}" />
+	<meta name="twitter:description" content="{$ogDescription|noescape}" />
+	<meta n:ifset="$ogImage" name="twitter:image" content="{$ogPrefix}{$ogImage}" />
+
+	<meta name="description" content="{ifset $metaDescription}{$metaDescription|noescape}{else}{_general.meta.description}{/ifset}">
+	<meta name="robots" content="{$index === TRUE ? 'index' : 'noindex'},{$follow === TRUE ? 'follow' : 'nofollow'}">
+
+	{block canonical}{/block}
+
+    {block headStyle}{/block}
+
+	<link rel="stylesheet" href="/assets/front/css/main.min.css?v={$mainCssVersion}" />
+
+	<meta name="msapplication-TileColor" content="#ffffff" />
+	<meta name="msapplication-TileImage" content="/assets/front/images/layout/favicon/mstile-144x144.png" />
+	<meta name="msapplication-config" content="/assets/front/images/images/layout/favicon/browserconfig.xml" />
+	<meta name="theme-color" content="#ffffff" />
+
+	<link rel="apple-touch-icon" sizes="57x57" href="/assets/front/images/favicon/apple-touch-icon-57x57.png" />
+	<link rel="apple-touch-icon" sizes="60x60" href="/assets/front/images/favicon/apple-touch-icon-60x60.png" />
+	<link rel="apple-touch-icon" sizes="72x72" href="/assets/front/images/favicon/apple-touch-icon-72x72.png" />
+	<link rel="apple-touch-icon" sizes="76x76" href="/assets/front/images/favicon/apple-touch-icon-76x76.png" />
+	<link rel="apple-touch-icon" sizes="114x114" href="/assets/front/images/favicon/apple-touch-icon-114x114.png" />
+	<link rel="apple-touch-icon" sizes="120x120" href="/assets/front/images/favicon/apple-touch-icon-120x120.png" />
+	<link rel="apple-touch-icon" sizes="144x144" href="/assets/front/images/favicon/apple-touch-icon-144x144.png" />
+	<link rel="apple-touch-icon" sizes="152x152" href="/assets/front/images/favicon/apple-touch-icon-152x152.png" />
+	<link rel="apple-touch-icon" sizes="180x180" href="/assets/front/images/favicon/apple-touch-icon-180x180.png" />
+	<link rel="icon" type="image/png" href="/assets/front/images/favicon/favicon-32x32.png" sizes="32x32" />
+	<link rel="icon" type="image/png" href="/assets/front/images/favicon/android-chrome-192x192.png" sizes="192x192" />
+	<link rel="icon" type="image/png" href="/assets/front/images/favicon/favicon-16x16.png" sizes="16x16" />
+	<link rel="mask-icon" href="/assets/front/images/favicon/safari-pinned-tab.svg" color="#ffffff" />
+	<link rel="shortcut icon" href="/assets/front/images/favicon/favicon.ico" />
+
+	{if $showMeasuringCodes === TRUE}
+	<script n:if="$cookies_marketing && $cookies_analytics" >var dataLayer = dataLayer || [];</script>
+    <!-- Ecomail starts -->
+    <script type="text/javascript" n:if="$cookies_marketing">
+        <!-- Ecomail starts -->
+        ;(function(p,l,o,w,i,n,g){ if(!p[i]){ p.GlobalSnowplowNamespace=p.GlobalSnowplowNamespace||[];
+            p.GlobalSnowplowNamespace.push(i);p[i]=function(){ (p[i].q=p[i].q||[]).push(arguments)
+            };p[i].q=p[i].q||[];n=l.createElement(o);g=l.getElementsByTagName(o)[0];n.async=1;
+            n.src=w;g.parentNode.insertBefore(n,g)}}(window,document,"script","//d70shl7vidtft.cloudfront.net/ecmtr-2.4.2.js","ecotrack"));
+        window.ecotrack('newTracker', 'cf', 'd2dpiwfhf3tz0r.cloudfront.net', { /* Initialise a tracker */
+            appId: 'jkjitkakudlackova'
+        });
+        window.ecotrack('setUserIdFromLocation', 'ecmid');
+        window.ecotrack('trackPageView');
+        <!-- Ecomail stops -->
+        {if $loggedUser && $loggedUser->getEntity()}
+        window.ecotrack('setUserId', {$loggedUser->getEntity()->getEmail()});
+        {/if}
+    </script>
+    <!-- Ecomail stops -->
+	{block gtmDataLayerScript}{/block}
+	<!-- Google Tag Manager -->
+		<script>
+		{if isset($remarketingCode) && $cookies_analytics}dataLayer.push({$remarketingCode->getDataInJson()|noescape});{/if}
+		(function(w,d,s,l,i){ w[l]=w[l]||[];w[l].push({'gtm.start':
+		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		})(window,document,'script','dataLayer',{$googleTagManagerId});
+		</script>
+		<!-- End Google Tag Manager -->
+	{/if}
+
+	<script>
+		WebFontConfig = {
+			google: { families: ['EB Garamond:400,700:latin-ext'] }
+		};
+		(function() {
+			var wf = document.createElement('script');
+			wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+					'://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js';
+			wf.type = 'text/javascript';
+			wf.async = 'true';
+			var s = document.getElementsByTagName('script')[0];
+			s.parentNode.insertBefore(wf, s);
+		})();
+	</script>
+
+	<script src="/vendor/jquery-3.1.1/jquery-3.1.1.min.js"></script>
+	<script src="https://www.google.com/recaptcha/api.js?render={$recaptchaSiteKey}"></script>
+	<script defer data-domain="jk.cz" src="https://stats.devels.cz/js/plausible.js"></script>
+
+</head>
+
+<body>
+	{if $showMeasuringCodes === TRUE}
+		<!-- Google Tag Manager (noscript) -->
+		<noscript>
+			<iframe src="https://www.googletagmanager.com/ns.html?id={$googleTagManagerId}" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+		</noscript>
+		<!-- End Google Tag Manager (noscript) -->
+	{/if}
+
+    {*if $holidayCustomerDiscountRateActive && !$popupShown}
+		{include '_partials/popup.latte'}
+	{/if*}
+
+	{include flashMessageBlock, flashes => $flashes}
+	<div class="HeaderContainer">
+	{include '_partials/header.latte'}
+	{if $templateNavigation === TRUE}
+		{include '_partials/navigation.latte'}
+	{/if}
+	{include '_partials/searchForm.latte'}
+	</div>
+
+	{include content}
+
+	{if $templateFooter === TRUE}
+		{if !$presenter->isLinkCurrent('Homepage:default')}
+			{include '_partials/listaZarukyLight.latte'}
+		{/if}
+		<div class="Footer-wrap">
+			{if $loggedUser === NULL || $loggedUser !== NULL && $loggedUser->getEntity()->wantNewsletter() !== TRUE}
+				{control newsletterSubscriptionForm}
+			{/if}
+			{include '_partials/footerNavigation.latte'}
+		</div>
+	{/if}
+
+	<div class="Footer-wrap" n:if="isset($templateFooterSimple) && $templateFooterSimple === true">
+		{include '_partials/footerNavigation.latte'}
+	</div>
+
+	<div class="Copyright">
+		<div class="Copyright-container Container">
+			<p class="Copyright-text">Copyright &copy; 1991-{php echo date('Y')} {$parameters['project']['name']}. {_footer.rights}</p>
+		</div>
+	</div>
+
+	{include '_partials/cookieAgreement.latte'}
+	{include '_partials/meeting_popup.latte'}
+
+    {block scripts}
+
+		<script src="/assets/front/js/main.min.js?v={$mainJsVersion}"></script>
+
+		<!-- Forms -->
+		<script src="/vendor/nette/netteForms.min.js"></script>
+		<script src="/vendor/nette.ajax/nette.ajax.min.js"></script>
+
+		<!-- Live Nette validation -->
+		<script src="https://cdn.jsdelivr.net/gh/contributte/live-form-validation@v1.9.0/live-form-validation.js"></script>
+		<script n:syntax="off">
+			LiveForm.setOptions({
+					// messageErrorPrefix: 'Error: ',
+					wait: 500
+			});
+		</script>
+
+		<script src="/assets/front/js/temporary.js?v={php echo time();}"></script>
+		<script src="/assets/front/js/utils.js"></script>
+		{if $showMeasuringCodes === TRUE && $gtmData}
+			<script n:if="$cookies_analytics">
+                if (typeof dataLayer !== 'undefined') {
+                    {foreach $gtmData as $data}
+                    	dataLayer.push({php echo json_encode($data, JSON_UNESCAPED_UNICODE + JSON_UNESCAPED_SLASHES)});
+                    {/foreach}
+                }
+			</script>
+		{/if}
+        {php $gtmDataLayer->removeData()}
+    {/block}
+
+	{block footerScript}{/block}
+	{include '_partials/svg/symbols.latte'}
+
+</body>
+</html>
+
+{define flashMessageBlock}
+	{if $flashes}
+		<div n:foreach="$flashes as $flash">
+			{var type = str_replace(['danger', 'info'], ['error', 'default'], $flash->type)}
+			{var icon = str_replace(['danger', 'success'], ['cancel', 'check-mark'], $flash->type)}
+			<div class="Flash-message Flash-message--{$flash->type}" style="border-radius: unset; background: url('/www/assets/front/images/layout/flash-message-{$type}-bg.png') 0 0 no-repeat; background-size: cover;">
+				<div class="Flash-message-flex">
+					<div class="Flash-message-ring" style="margin-right: .5em;">
+						<svg role="img" class="Flash-message-icon-success Icon">
+							<use xlink:href="#symbol-{$icon}"></use>
+						</svg>
+					</div>
+					<div class="Flash-message-title">{$flash->message}</div>
+				</div>
+			</div>
+		</div>
+	{/if}
+{/define}
+
+{define popup}
+	<div class="pb-overlay"></div>
+	<div id="{$id}" class="pb-popup-container">
+		<div class="pb-popup pb-popup--padding-wide">
+			<div class="pb-popup-heading">{$title}</div>
+			<div class="pb-popup-content">{$content|noescape}</div>
+			<div class="pb-popup-close js-popup-close">
+				<div class="SearchBoxHeader-control">
+					<button type="button" class="IconLink ">
+						<svg role="img" class="Icon Icon--medium IconLink-icon">
+							<use xlink:href="#symbol-cancel"></use>
+						</svg>
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+{/define}

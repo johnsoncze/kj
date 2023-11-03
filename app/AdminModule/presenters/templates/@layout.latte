@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="robots" content="noindex,nofollow">
+
+    <title>{ifset $title}{$title|striptags} | {/ifset}JK</title>
+    <link type="image/x-icon" rel="shortcut icon" href="/www/files/favicon.ico">
+
+    {*Vendors*}
+    <link type="text/css" rel="stylesheet" href="/www/vendor/bootstrap-daterangepicker/daterangepicker.css">
+    <link type="text/css" rel="stylesheet" href="/www/vendor/o5-grido/assets/dist/css/grido.min.css">
+    <link type="text/css" rel="stylesheet" href="/www/vendor/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="/www/vendor/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link type="text/css" rel="stylesheet" href="/www/vendor/bootswatch-flatly/style.min.css">
+    <link type="text/css" rel="stylesheet" href="/www/vendor/select2-4.0.3/dist/css/select2.min.css">
+    <link type="text/css" rel="stylesheet" href="/www/vendor/jquery-ui-1.12/jquery-ui.min.css">
+    <link type="text/css" rel="stylesheet" href="/www/vendor/redhead-1.0.0/css/style.css?v={$redheadStyleCss}">
+    <link type="text/css" rel="stylesheet" href="/www/vendor/redhead-1.0.0/css/nette.form.error.css">
+    <script src="/vendor/jquery-3.1.1/jquery-3.1.1.min.js"></script>
+    <script src="/vendor/ckeditor/ckeditor.js?v=2"></script>
+    {*Vendors end*}
+
+    {*Fancybox*}
+    <link rel="stylesheet" href="/www/vendor/fancyapps-fancyBox/source/jquery.fancybox.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="/www/vendor/fancyapps-fancyBox/source/helpers/jquery.fancybox-thumbs.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="/www/vendor/fancyapps-fancyBox/source/helpers/jquery.fancybox-buttons.css" type="text/css" media="screen">
+    <script type="text/javascript" src="/vendor/fancyapps-fancyBox/source/jquery.fancybox.pack.js"></script>
+    {*Fancybox end*}
+
+    {*Own styles*}
+    <link type="text/css" rel="stylesheet" href="/assets/admin/css/grido.css">
+    <link type="text/css" rel="stylesheet" href="/assets/admin/css/select2.css?v={$selectStyleCss}">
+    <link type="text/css" rel="stylesheet" href="/assets/admin/css/style.css?v={$adminStyleCss}">
+    {*Own styles end*}
+
+</head>
+
+<body>
+
+{include content}
+
+{block scripts}
+
+    {*Vendors*}
+    <script src="/vendor/moment-js-2.22.1/moment-with-locales.js"></script>
+    <script src="/vendor/bootstrap-daterangepicker/daterangepicker.js"></script>
+    <script src="/vendor/select2-4.0.3/dist/js/select2.min.js"></script>
+    <script src="https://nette.github.io/resources/js/netteForms.min.js"></script>
+    <script src="/vendor/redhead-1.0.0/js/nette.form.error.js?v=20174455"></script>
+    <script src="/vendor/o5-grido/assets/dist/js/grido.min.js"></script>
+    <script src="/vendor/o5-grido/assets/js/plugins/grido.daterangepicker.js"></script>
+    <script src="/vendor/jquery-ui-1.12/jquery-ui.min.js"></script>
+    <script src="/vendor/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="/vendor/nette.ajax/nette.ajax.js"></script>
+    {*Vendors end*}
+
+    {*Fancybox*}
+    <script type="text/javascript" src="/vendor/fancyapps-fancyBox/lib/jquery.mousewheel-3.0.6.pack.js"></script>
+    <script type="text/javascript" src="/vendor/fancyapps-fancyBox/source/helpers/jquery.fancybox-buttons.js"></script>
+    <script type="text/javascript" src="/vendor/fancyapps-fancyBox/source/helpers/jquery.fancybox-media.js"></script>
+    <script type="text/javascript" src="/vendor/fancyapps-fancyBox/source/helpers/jquery.fancybox-thumbs.js"></script>
+    <script type="text/javascript" src="/vendor/jquery-datepicker-locale/cs.js"></script>
+    {*Fancybox end*}
+
+    <script type="text/javascript" src="/www{$parameters['assets']['baseDir']}/admin/js/jk.js"></script>
+    <script>
+        {capture $dataName}{$presenter->getName().":".$presenter->getAction()|noescape}{/capture}
+        $(document).ready(function(){
+            var li = $('li[data-nav={$dataName}]');
+            if (li.length) {
+                li.addClass("active");
+            }
+            $('[data-toggle="tooltip"]').tooltip();
+            $( ".datepicker" ).datepicker({
+                dateFormat: 'dd.mm.yy',
+                language : 'cs'
+            });
+            $(".select2").select2({ width: '100%' });
+        });
+    </script>
+    <script>
+        var links = $('ul.action.menu-disabled > li:not(:first) > a');
+        if (links.length){
+            links.css('cursor', 'no-drop');
+            links.attr('href', '#');
+            links.attr('data-toggle', 'tooltip').attr('title', 'Nejprve uložte formulář');
+        }
+    </script>
+    <script>
+        var confirmExitClass = 'confirm-exit';
+        var dataConfirmExit = 'data-' + confirmExitClass;
+        function handleConfirmExit() {
+            $('a.' + confirmExitClass).attr(dataConfirmExit, 'true');
+        }
+        var form = $('form.exit-watcher input, form.exit-watcher select, form.exit-watcher textarea');
+        form.keyup(handleConfirmExit);
+        form.change(handleConfirmExit);
+        $(document).on('click', 'a[' + dataConfirmExit + '="true"]', function(event){
+            if (!confirm('Opravdu si přejete opustit formulář? Neuložená data budou ztracena.')){
+                event.preventDefault();
+            }
+        });
+    </script>
+{/block}
+{block scriptAdmin}{/block}
+{block scriptBottom}{/block}
+</body>
+</html>
+
+{define renderFormErrors}
+    <div class="form-errors" n:if="$form->hasErrors()">
+        <div n:foreach="$form->errors as $error" class="alert alert-danger alert-dismissible">{$error}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+        </div>
+    </div>
+{/define}
+
+{define flashMessages}
+    <div n:foreach="$flashes as $flash" class="alert alert-{$flash->type} alert-dismissable">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span></button>
+        {$flash->message|noescape}
+    </div>
+{/define}

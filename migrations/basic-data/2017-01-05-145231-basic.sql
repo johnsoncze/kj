@@ -1,0 +1,1 @@
+INSERT INTO `language` (`lan_id`, `lan_prefix`, `lan_name`, `lan_default`, `lan_active`, `lan_add_date`) VALUES (NULL, 'cs', 'Čeština', '1', '1', CURRENT_TIMESTAMP);

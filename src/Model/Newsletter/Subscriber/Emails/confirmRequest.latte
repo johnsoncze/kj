@@ -1,0 +1,77 @@
+{layout '../../../Email/templates/@layout.latte'}
+
+{block content}
+<!--[if (mso)|(IE)]>
+<table class="layout" cellpadding="0" cellspacing="0" align="center" bgcolor="#FCFCFC">
+<![endif]-->
+
+<!--[if (mso)|(IE)]>
+<tr>
+    <td colspan="2" class="column" valign="top" style="width: 600px;">
+<![endif]-->
+
+{capture $title}{_newsletter.subscriber.confirm.email.title}{/capture}
+{include header, title => $title}
+
+<!--[if (mso)|(IE)]>
+</td>
+</tr>
+<![endif]-->
+
+
+<!--[if (mso)|(IE)]>
+</table>
+<![endif]-->
+
+<!--[if (mso)|(IE)]>
+<table class="layout" cellpadding="0" cellspacing="0" align="center" bgcolor="#FCFCFC">
+<![endif]-->
+
+<!--[if (mso)|(IE)]>
+<tr>
+    <td colspan="2" class="column" valign="top" style="width: 600px;">
+<![endif]-->
+<div class="column" style="font-family: Arial, Tahoma, Georgia, Times, serif; float: left; width: 100%;">
+    <div class="spacing" style="margin: 0;">
+
+        <table width="100%" cellpadding="0" cellspacing="0" align="center">
+            <tr>
+                <td class="column" valign="top" style="width: 100%;" height="20"></td>
+            </tr>
+        </table>
+
+        <table width="100%" cellpadding="0" cellspacing="0" align="center" bgcolor="#FCFCFC">
+            <tr>
+                <td class="column" valign="top" style="width: 100%;">
+                    <p style="margin: 0 20px 20px; font-family: Arial, Tahoma, Georgia, Times, serif; color: #3d3417; font-size: 14px; font-weight: 500; text-align: left;">
+                        {_newsletter.subscriber.confirm.email.text}<br><br>
+                        <a style="display: inline-block;padding: 1rem 2rem .8rem;" href="{link Front:Newsletter:confirmSubscription, email => $subscriber->getEmail(), token => $subscriber->getConfirmToken()}">
+                            <img src="{link Front:Homepage:default}assets/front/user_content/email/confirm_news.jpg?v=1" alt="{_newsletter.subscriber.confirm.email.cta}">
+                        </a>
+                    </p>
+                </td>
+            </tr>
+        </table>
+
+        <table width="100%" cellpadding="0" cellspacing="0" align="center" bgcolor="#FCFCFC">
+            <tr>
+                <td class="column" valign="top" style="width: 100%;">
+                    <p style="margin: 0 20px 20px; font-family: Arial, Tahoma, Georgia, Times, serif; color: #3d3417; font-size: 14px; font-weight: 500; text-align: left; margin: 20px;">
+                        {_newsletter.subscriber.confirm.email.farewall}
+                    </p>
+                </td>
+            </tr>
+        </table>
+
+        <br>
+
+    </div>
+</div>
+<!--[if (mso)|(IE)]>
+</td>
+</tr>
+<![endif]-->
+
+<!--[if (mso)|(IE)]>
+</table>
+<![endif]-->

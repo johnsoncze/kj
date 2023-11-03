@@ -1,0 +1,189 @@
+{if $customer !== NULL && $customer->hasBirthdayCoupon() === TRUE && $shoppingCart->getEntity()->isAppliedBirthdayCoupon() !== TRUE && $shoppingCart->hasProductWithDiscountAllowed()}
+    {include birthdayDiscount, apply => TRUE}
+{/if}
+{if $shoppingCart->getEntity()->isAppliedBirthdayCoupon() === TRUE}
+    {include birthdayDiscount, apply => FALSE}
+{/if}
+
+<form n:name="form">
+
+    <fieldset class="Form-fieldset">
+        <div class="Form-row">
+            <div class="TextField">
+                <label class="Form-label">{_form.opportunity.input.firstName.label}<span class="Form-mandatory">*</span></label>
+                <input n:name="contact-firstName" class="TextField-input">
+            </div>
+        </div>
+
+        <div class="Form-row">
+            <div class="TextField">
+                <label class="Form-label">{_form.opportunity.input.lastName.label}<span class="Form-mandatory">*</span></label>
+                <input n:name="contact-lastName" class="TextField-input">
+            </div>
+        </div>
+
+        <div class="Form-row">
+            <div class="TextField">
+                <label class="Form-label">E-mail<span class="Form-mandatory">*</span></label>
+                <input n:name="contact-email" class="TextField-input">
+            </div>
+        </div>
+
+        <div class="Form-row">
+            <div class="TextField">
+                <label class="Form-label">{_form.opportunity.input.telephone.label}<span class="Form-mandatory">*</span></label>
+                <input n:name="contact-telephone" class="TextField-input">
+            </div>
+        </div>
+
+        <div class="Form-row">
+            <div class="TextField">
+                <label class="Form-label">{_form.contact.label.street}<span class="Form-mandatory">*</span></label>
+                <input n:name="contact-street" class="TextField-input">
+            </div>
+        </div>
+
+        <div class="Form-row">
+            <div class="TextField">
+                <label class="Form-label">{_form.contact.label.city}<span class="Form-mandatory">*</span></label>
+                <input n:name="contact-city" class="TextField-input">
+            </div>
+        </div>
+
+        <div class="Form-row">
+            <div class="TextField">
+                <label class="Form-label">{_form.contact.label.postCode}<span class="Form-mandatory">*</span></label>
+                <input n:name="contact-postCode" class="TextField-input">
+            </div>
+        </div>
+
+        <div class="Form-row">
+            <div class="SelectField">
+                <label class="Form-label">{_form.contact.label.state}<span class="Form-mandatory">*</span></label>
+                {input contact-state}
+            </div>
+        </div>
+
+        <div class="Form-row">
+            <div class="CheckboxField">
+                <label>
+                    <input id="another-delivery-address" type="checkbox" n:name="deliveryAddress" class="CheckboxField-input delivery-toggle">
+                    <span class="CheckboxField-label">
+                        <span class="CheckboxField-labelText">
+                            {_form.shoppingCart.contactInformation.input.deliveryAddress.label}
+                        </span>
+                    </span>
+                </label>
+            </div>
+        </div>
+    </fieldset>
+
+    <fieldset id="another-delivery-section" class="Form-fieldset{if !$form->getComponent('deliveryAddress')->isFilled()} u-displayNone{/if} delivery-content">
+        <div class="Form-section-title Form-section-title--upercase">{_order.deliveryDetails}</div>
+
+        <div class="Form-row">
+            <div class="SelectField">
+                <label class="Form-label">{_form.shoppingCart.contactInformation.input.company.label}</label>
+                <input n:name="delivery-company" class="TextField-input">
+            </div>
+        </div>
+
+        <div class="Form-row">
+            <div class="TextField">
+                <label class="Form-label">{_form.opportunity.input.firstName.label}<span class="Form-mandatory">*</span></label>
+                <input n:name="delivery-firstName" class="TextField-input">
+            </div>
+        </div>
+
+        <div class="Form-row">
+            <div class="TextField">
+                <label class="Form-label">{_form.opportunity.input.lastName.label}<span class="Form-mandatory">*</span></label>
+                <input n:name="delivery-lastName" class="TextField-input">
+            </div>
+        </div>
+
+        <div class="Form-row">
+            <div class="TextField">
+                <label class="Form-label">{_form.opportunity.input.telephone.label}</label>
+                <input n:name="delivery-telephone" class="TextField-input">
+            </div>
+        </div>
+
+        <div class="Form-row">
+            <div class="TextField">
+                <label class="Form-label">{_form.contact.label.street}<span class="Form-mandatory">*</span></label>
+                <input n:name="delivery-street" class="TextField-input">
+            </div>
+        </div>
+
+        <div class="Form-row">
+            <div class="TextField">
+                <label class="Form-label">{_form.contact.label.city}<span class="Form-mandatory">*</span></label>
+                <input n:name="delivery-city" class="TextField-input">
+            </div>
+        </div>
+
+        <div class="Form-row">
+            <div class="TextField">
+                <label class="Form-label">{_form.contact.label.postCode}<span class="Form-mandatory">*</span></label>
+                <input n:name="delivery-postCode" class="TextField-input">
+            </div>
+        </div>
+
+        <div class="Form-row">
+            <div class="SelectField">
+                <label class="Form-label">{_form.contact.label.state}<span class="Form-mandatory">*</span></label>
+                {input delivery-state}
+            </div>
+        </div>
+    </fieldset>
+
+    <fieldset class="Form-fieldset">
+        <div class="Form-row">
+            <div class="TextField">
+                <label class="Form-label">{_form.opportunity.input.comment.label}</label>
+                <textarea n:name="comment" class="TextField-input TextField-input--multiline"></textarea>
+            </div>
+            <div class="Control-sm-group">
+                {input personFullName}
+                {input companyFullName}
+                {input gRecaptchaResponse}
+            </div>
+        </div>
+
+{*        <div class="Form-row">*}
+{*            <div class="CheckboxField">*}
+{*                <label>*}
+{*                    <input type="checkbox" n:name="terms" class="CheckboxField-input">*}
+{*                    <span class="CheckboxField-label">*}
+{*                        <span class="CheckboxField-labelText">*}
+{*                            {_form.shoppingCart.contactInformation.input.terms.label, [link => $linkGenerator->link('Front:Page:detail', ['url' => 'obchodni-podminky'])]|noescape}*}
+{*                        </span>*}
+{*                    </span>*}
+{*                </label>*}
+{*            </div>*}
+{*        </div>*}
+    </fieldset>
+
+    <div class="u-displayNone">
+        {input submit}
+    </div>
+
+</form>
+
+<script>
+    $(document).on('click', '.delivery-toggle', function() {
+        $('.delivery-content').toggleClass('u-displayNone');
+    })
+</script>
+
+{define birthdayDiscount}
+    <div class="u-borderRoundedLarge u-p--20 Background--silver u-mb--20 Basket-birthdayDiscountBlock">
+        <svg role="img" class="Icon Icon--benefit">
+            <use xlink:href="#symbol-discount"></use>
+        </svg>
+        <a href="{if $apply === TRUE}{link applyBirthdayDiscount!}{else}{link removeBirthdayDiscount!}{/if}"
+           class="Link--simple u-textUppercase Link--noUnderline"
+           >{if $apply === TRUE}{_shopping-cart.birthdaycoupon.apply}{else}{_shopping-cart.birthdaycoupon.remove}{/if} {\App\Customer\Customer::BIRTHDAY_DISCOUNT} %</a>
+    </div>
+{/define}

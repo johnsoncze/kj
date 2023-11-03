@@ -1,0 +1,26 @@
+<form n:name="form" class="exit-watcher">
+    <div class="form-group">
+        <div class="row">
+            <div class="col-xs-6">
+                {label language/}
+                <span class="pull-right">{if $articleCategoryEntity === NULL}
+                <a href="{plink ArticleCategory:add}" class="confirm-exit">Vybrat jiný jazyk</a>
+                    {/if}</span>
+                {input language}
+            </div>
+            <div class="col-xs-6">
+                {label module/}
+                {input module}
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        {label name/}
+        {input name}
+    </div>
+    {control form-urlForm}
+    {control form-seoForm}
+    <div class="form-group">
+        {input submit}
+    </div>
+</form>

@@ -1,0 +1,1 @@
+ALTER TABLE `product` ADD `p_heureka_category` TEXT NULL AFTER `p_zbozi_cz_category`;

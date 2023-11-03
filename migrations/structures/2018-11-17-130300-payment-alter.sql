@@ -1,0 +1,1 @@
+ALTER TABLE `payment` ADD `py_transfer` TINYINT(1) NOT NULL AFTER `py_credit_card`;

@@ -1,0 +1,77 @@
+{if $products}
+
+    <div class="ProductGrid">
+        {foreach $products as $product}
+        {*
+        <pre>
+        {dumpe($category->id)}
+        </pre>
+         *}
+            <div class="ProductGrid-item">
+                {var $lazy = $iterator->getCounter() > 4}
+                {cache 'list-product-' . ($user->isLoggedIn()?'logged':'anonymous') . ($lazy?'-lazy':'-notlazy') . $product->getProduct()->getId(), expire => '30 minutes'}
+                    {var $product_ID = 'product_' . $product->getProduct()->getId()}
+                    {control $product_ID $lazy}
+                {/cache}
+            </div>
+
+            {if $iterator->getCounter() === 8}
+                <div class="ProductGrid-item ProductGrid-item--featuredLeft">
+                    <div class="CategoryBox">
+                        {if ($category->id == 13 || $category->id ==14)}
+                            <div class="CategoryBox-bannerContainer">
+	                            <div class="CategoryBox-contentDark">
+									<h3>{_banner.help.header}</h3>
+									{_banner.help.text|noescape}
+									<a class="u-textUppercase Button Button--arrow CategoryBox-bannerBtn" href="{plink Page:detail, url => 'kontakt'}">{_banner.help.button}</a>
+		                        </div>						
+	                            <div class="CategoryBox-img" style="background-image: url(/www/assets/front/images/banner/help.jpg);">
+		                        </div>
+	                        </div>							
+                        {else}
+                            <div class="CategoryBox-bannerContainer">
+	                            <div class="CategoryBox-contentDark CategoryBox-smaller">
+									<h3>{_banner.design.header}</h3>
+									{_banner.design.text|noescape}
+									<a class="u-textUppercase Button Button--arrow CategoryBox-bannerBtn" href="{plink Page:detail, url => 'design-vyroba'}">{_banner.design.button}</a>
+		                        </div>						
+	                            <div class="CategoryBox-img" style="background-image: url(/www/assets/front/images/banner/design.jpg);">
+		                        </div>
+	                        </div>							
+                        {/if}
+                    </div>
+                </div>
+            {/if}
+
+            {if $iterator->getCounter() === 10}
+                <div class="ProductGrid-item ProductGrid-item--featuredRight">
+                    <div class="CategoryBox">
+                        {if ($category->id == 13 || $category->id ==14)}
+                            <div class="CategoryBox-bannerContainer">
+	                            <div class="CategoryBox-img" style="background-image: url(/www/assets/front/images/banner/workshop.jpg);">
+		                        </div>
+	                            <div class="CategoryBox-contentLight">
+									<h3>{_banner.workshop.header|noescape}</h3>
+										{_banner.workshop.text|noescape}<br />
+										<b>{control openingHours:today}</b><br />
+										<a class="u-textUppercase Button Button--arrow CategoryBox-bannerBtn" href="{plink Page:detail, url => 'prodejna'}">{_banner.workshop.button}</a>
+		                        </div>						
+	                        </div>							
+                        {else}
+                            <div class="CategoryBox-bannerContainer">
+	                            <div class="CategoryBox-img" style="background-image: url(/www/assets/front/images/banner/warranty.jpg);">
+		                        </div>
+	                            <div class="CategoryBox-contentLight CategoryBox-smaller">
+									<h3>{_banner.warranty.header|noescape}</h3>
+									{_banner.warranty.text|noescape}
+		                        </div>						
+	                        </div>
+                        {/if}
+                    </div>
+                </div>
+
+            {/if}
+
+        {/foreach}
+    </div>
+{/if}

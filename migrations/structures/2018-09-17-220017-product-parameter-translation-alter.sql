@@ -1,0 +1,1 @@
+ALTER TABLE `product_parameter_translation` CHANGE `ppt_value` `ppt_value` VARCHAR(50) CHARACTER SET utf8 COLLATE utf8_czech_ci NOT NULL;

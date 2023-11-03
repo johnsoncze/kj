@@ -1,0 +1,18 @@
+{var defaultAction = 'add'}
+{var action = $presenter->getAction()}
+
+<ul class="nav nav-tabs action {if $action === $defaultAction}menu-disabled{/if}">
+    <li id="{if $action === 'add'}add{else}edit{/if}"><a href="{if $action !== $defaultAction}{plink ProductParameterGroup:edit, id => $group->getId()}{else}#{/if}" class="confirm-exit">Základní informace</a></li>
+    <li id="default"><a href="{if $action !== $defaultAction}{plink ProductParameter:default, productParameterGroupId => $group->getId()}{else}#{/if}" class="confirm-exit">Parametry</a></li>
+    <li id="lock"><a href="{if $action !== $defaultAction}{plink ProductParameterGroup:lock, id => $group->getId()}{else}#{/if}" class="confirm-exit">Návaznosti</a></li>
+</ul>
+<div class="p-b-20"></div>
+
+{block scriptBottom}
+    <script>
+        //set active tab
+        var actionId = '#{$action|noescape}';
+        $(actionId).addClass('active');
+        $(actionId + ' > a').attr('href', '#');
+    </script>
+{/block}

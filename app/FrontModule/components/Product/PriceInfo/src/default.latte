@@ -1,0 +1,10 @@
+<div class=" u-mb--10 u-mt--10 Product-option-info-title-phonecenter" >
+
+    <div class="Product-total-price-old u-mb--5{if !$customer || $customer && !$product->getProduct()->isDiscountAllowed()} u-displayNone{/if}">
+        <strike><span id="Product-price-before-discount">{\App\Helpers\Prices::toUserFriendlyFormat($product->getProduct()->getPrice())}</span> {_price.currency.label}</strike>
+    </div>
+
+    {var $price = $customer ? $product->getProduct()->calculatePriceByCustomer($customer) : $product->getProduct()->getPrice()}
+    <div class="Product-total-price"><span id="Product-price">{\App\Helpers\Prices::toUserFriendlyFormat($price)}</span> {_price.currency.label}</div>
+
+</div>

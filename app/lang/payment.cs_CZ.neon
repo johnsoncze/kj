@@ -1,0 +1,30 @@
+title: Platba
+not.found: Platba nebyla nalezena.
+
+gateway:
+    request:
+        error:
+            title: Došlo k chybě
+            description: 'Při vytváření požadavku na platbu došlo k chybě.<br>Pro nový požadavek obnovte stránku, či nás kontaktujte.'
+    pay: Zaplatit
+    paidTitle: Platba proběhla úspěšně
+    paid: Objednávka byla úspěšně zaplacena. Děkujeme Vám.
+    paidAlready:
+        title: Objednávka byla již zaplacena
+        description: 'Vaše objednávka byla již zaplacena, a není třeba ji znovu hradit. Děkujeme Vám.'
+    pending:
+        title: Platba se zpracovává
+        description: Čekáme na potvrzení o Vaší platbě. O výsledku Vás budeme informovat pomocí e-mailu.
+    cancelled:
+        title: Platba se nezdařila
+        description: 'Litujeme, ale Vaše platba se nezdařila. Zkuste to prosím znovu.'
+    state:
+        label: Stav platby
+        new:
+            label: Čeká na zaplacení
+        pending:
+            label: Čeká na potvrzení o zaplacení
+        paid:
+            label: Zaplacená
+        cancelled:
+            label: Zrušená

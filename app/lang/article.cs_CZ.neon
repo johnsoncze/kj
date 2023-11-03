@@ -1,0 +1,19 @@
+articleList:
+    all: Vše
+
+anchor: Přečtěte si více
+backList: Zpět na seznam článků
+
+relatedList:
+    title: Související články
+
+featured:
+    title: Novinky
+    label: Novinka
+    allAnchor: Prohlédnout všechny novinky
+    allBlog: Prohlédnout všechny články
+
+noArticle: Žádné články.
+
+preview:
+    anchor: Přečtěte si více

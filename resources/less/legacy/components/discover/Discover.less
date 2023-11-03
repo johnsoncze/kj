@@ -1,0 +1,157 @@
+.Discover {
+  position: relative;
+  margin-bottom: 22px;
+  padding-top: 60px;
+  background-color: @color-ochre;
+  
+  
+}
+
+.Discover-container {
+  margin: 0 0px;
+  border-radius: @border-radius;
+
+  @media @media-sm-min {
+    margin: 0 0px;
+  }
+}
+
+.Discover .Heading--section {
+	font-weight: 300;
+	
+  @media @media-sm-max {
+    font-size: 28px;
+  }
+}
+
+.Discover .Button {
+	color: @color-green-darker;
+	border-color: @color-green-darker;
+	background: url(/assets/front/images/newsletter-arrow-right.svg) no-repeat right 14px top 14px;
+}
+
+.Discover-title {
+  margin-bottom: 30px;
+
+  @media @media-sm-min {
+    margin-bottom: 40px;
+  }
+}
+
+.Discover-content {
+  text-align: center;
+
+  @media @media-sm-min {
+    width: 50%;
+	padding-right: 100px;
+    text-align: left;
+  }
+
+  @media @media-md-min {
+  }
+
+  @media @media-lg-min {
+  }
+}
+
+.Discover-contentTitle {
+  margin-bottom: 16px;
+  font-size: 28px;
+  line-height: 32px;
+
+  @media @media-sm-min {
+    font-size: 36px;
+    margin-bottom: 20px;
+	line-height: 40px;
+  }
+}
+
+.Discover-content p {
+  font-size: 20px;
+}
+
+.Discover-bottom {
+  padding: 25px 0 30px;
+  // background-image: url(../images/layout/ornament-bg.png);
+  // background-repeat: no-repeat;
+  // background-position: top -27px center;
+  // background-size: auto 290px;
+
+  @media @media-sm-min {
+    padding: 50px 0 70px;
+    // background-position: top center;
+    // background-size: auto;
+  }
+}
+
+// CUSTOM
+.Discover-container--news {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  align-items: center;
+
+  .Discover-bg,
+  .Discover-content {
+    width: 100%;
+	text-align: center;
+	
+	@media @media-sm-min {
+		text-align: left;
+	}
+
+  }
+
+  .Discover-content {
+	  padding-left: 0px;
+		@media @media-sm-min {
+		  padding-left: 40px;
+		}
+		@media @media-md-min {
+		  padding-left: 0px;
+		}
+  }  
+  
+  .Discover-bg img {
+	  width: 400px;
+	  margin: auto;
+  }
+
+  @media @media-sm-max {
+    grid-template-columns: 1fr;
+
+    .Discover-content {
+      padding-bottom: 20px;
+	  order: 1;
+    }
+	
+	.Discover-bg {
+		order: 2;
+	}
+	
+  }
+}
+
+.Discover-dots {
+	text-align: center;
+	padding-left: 5px;
+	margin-top: 25px;
+}
+
+.Discover-dots li {
+	display: inline-block;
+}
+
+.Discover-dots button {
+	background: transparent;
+	border: 1px solid #3d3417;
+	margin: 0 10px;
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	font-size: 0px;
+	padding: 0px;
+}
+
+.Discover-dots .slick-active button {
+	background: #3d3417;
+}

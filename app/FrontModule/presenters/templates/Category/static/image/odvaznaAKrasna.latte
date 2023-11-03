@@ -1,0 +1,51 @@
+{layout 'partials/@layout.latte'}
+
+{block templateContent}
+
+{capture $motto}{_collection.odvaznaAKrasna.motto}{/capture}
+{include header,
+image => '/www/upload/category/25/1920_470_odvazna-a-krasna.jpg',
+hidebread => 1,
+title => $title,
+motto => $motto,
+textColorWhite => TRUE}
+
+{capture $text}{_collection.odvaznaAKrasna.description1}{/capture}
+
+{include newHeaderForCollection}
+
+{include mainTextBlock,
+category => $category,
+image => '/www/assets/front/user_content/images/collection/odvaznaakrasna/odvazna-krasna-300x470.png',
+text => $text}
+
+<section class="Background">
+    <div class="Collection-detail-items Container">
+        <div class="Grid u-pb--90 u-sm-pb--120">
+
+            {capture $text}{_collection.odvaznaAKrasna.description2}{/capture}
+            {include textBlockCell, text => $text}
+
+            {include productBlockCell, products => $control->getRepresentativeProducts(2)}
+
+            {include productBlockCell, products => $control->getRepresentativeProducts(2, 2)}
+
+            {capture $text}{_collection.odvaznaAKrasna.description3}{/capture}
+            {include textBlockCell, text => $text}
+
+            {capture $text}{_collection.odvaznaAKrasna.description4}{/capture}
+            {include textBlockCell, text => $text}
+
+            {include productBlockCell, products => $control->getRepresentativeProducts(2, 4)}
+
+            {include productBlockCell, products => $control->getRepresentativeProducts(2, 6)}
+
+            {capture $text}{_collection.odvaznaAKrasna.description5}{/capture}
+            {include textBlockCell, text => $text}
+
+            {include ctaBlock, category => $category}
+
+        </div>
+
+    </div>
+</section>

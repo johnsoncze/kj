@@ -1,0 +1,129 @@
+{block content}
+
+<main class="Background Background--silver Background--gradient-top-100-silver">
+    <div class="Container Container--slimer">
+
+        <div class="Container Container--slim Flash-container u-pt--60 u-xs-pt--95 u-md-pt--90">
+
+            <div class="Flash-message Flash-message--success Flash-message--cart">
+                <div class="Flash-message-flex">
+                    <!--<div class="Flash-message-ring">
+                        <svg role="img" class="Flash-message-icon-success Icon">
+                            <use xlink:href="#symbol-check-mark"></use>
+                        </svg>
+                    </div>-->
+                    <div class="Flash-message-title">{_shopping-cart.added.title}</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="Basket-step Basket-step--0">
+            <section class="Basket-products">
+
+                <table class="Basket-productsTable">
+                    <tbody>
+                            <tr>
+                                <td>
+                                    <a href="{plink Product:detail, url => $product->getProduct()->getTranslation()->getUrl()}">
+                                        <img src="{if $product->getProduct()->getPhoto()}{thumbnailPath 100, 100, $product->getProduct()->getPhoto(), $product->getProduct()->getUploadFolder()}{else}{imagePlaceholder 100, 100}{/if}"
+                                            class="Basket-productsImage" alt="{$product->getProduct()->getTranslation()->getName()}" style="max-width: 100px; max-height: 100px">
+                                    </a>
+                                </td>
+                                <td class="Basket-productTitle">
+                                    <div class="Basket-productsTitle"><a
+                                            href="{plink Product:detail, url => $product->getProduct()->getTranslation()->getUrl()}"
+                                            class="Link--noUnderline">{$product->getProduct()->getTranslation()->getName()}</a>
+                                    </div>
+                                    <div class="Basket-productsCode u-colorBrown">{$product->getState()->getTranslation()->getValue()}</div>
+                                    <div class="Basket-productsCode">{$product->getProduct()->getCode()}</div>
+{*                                    {if $shoppingCartProduct->getProductionTime()}*}
+{*                                        <div class="Basket-productsCode"><b>{_product.production.title}:</b> {$shoppingCartProduct->getProductionTime()->getTranslation()->getName()}*}
+{*                                            {if $shoppingCartProduct->getProductionTime()->getSurcharge()}(+ {$shoppingCartProduct->getProductionTime()->getSurcharge()|number:"0":"":""} %){/if}</div>*}
+{*                                    {/if}*}
+                                    {var visibleParameters = $product->getVisibleParameters()}
+                                    {if $visibleParameters}
+                                        <div class="Basket-productsParam">
+                                            {foreach $visibleParameters as $parameter}
+                                                {$parameter->getGroup()->getTranslation()->getName()}: {$parameter->getTranslation()->getValue()}{if $iterator->isLast() !== TRUE}
+                                                <br>{/if}
+                                            {/foreach}
+                                        </div>
+                                    {/if}
+                                </td>
+                                <td>
+                                    <div class="Basket-productsAmount u-textRight">1 {_product.quantityUnit}</div>
+                                </td>
+                                <td>
+                                    <div class="Basket-productsPrice u-md-textRightu-pt--10">
+                                            {if $shoppingCartProduct->getDiscount()}
+                                                <strike class="u-fontSize--14">{\App\Helpers\Prices::toUserFriendlyFormat($shoppingCartProduct->getUnitPriceBeforeDiscountWithSurcharge())} {_price.currency.label}</strike>
+                                                <br> -{$shoppingCartProduct->getDiscount()} % <br>
+                                            {/if}
+                                            {\App\Helpers\Prices::toUserFriendlyFormat($shoppingCartProduct->getUnitPriceWithSurcharge())} {_price.currency.label}
+                                    </div>
+                                </td>
+                            </tr>
+                    </tbody>
+                </table>
+
+            </section>
+
+            <section class="Basket-buttons u-mt--40">
+
+                <div class="Grid">
+                    <div class="Grid-cell u-size12of12 u-sm-size6of12 u-textCenter u-sm-textLeft u-lg-pl--20 u-pt--0 u-sm-pt--10">
+                        <a href="{plink Product:detail, url => $product->getProduct()->getTranslation()->getUrl()}" class="Product-link-big">
+                            <span class="Link-animation u-md-displayInit Link Link--lineBefore">{_shopping-cart.added.back.anchor}<span class="Link--hover"></span></span>
+                        </a>
+                    </div>
+                    <div class="Grid-cell u-size12of12 u-sm-size6of12 u-textCenter u-sm-textRight u-mt--20 u-sm-mt--0 u-lg-pr--20">
+                        <a href="{plink goToShoppingCart!}" class="Button">{_shopping-cart.added.cart.anchor}</a>
+                    </div>
+                </div>
+
+            </section>
+        </div>
+
+        {control shoppingCartBenefit}
+
+    </div>
+</main>
+<script n:if="$cookies_marketing">
+    window.ecotrack('trackUnstructEvent', {
+        schema: '',
+        data: {
+            action: 'Basket',
+            products: {$ecomailCart|noescape}
+        }
+    });
+</script>
+
+{*dumpe($product->getProduct()->getTranslation()->getName())*}
+
+<script n:if="$cookies_analytics">
+    {var $category = isset($categories[$product->getProduct()->getId()]) ? '"' . $categories[$product->getProduct()->getId()]->getTextNavigation() . '"' : NULL}
+    {var $brand = isset($brands[$product->getProduct()->getId()]) ? $brands[$product->getProduct()->getId()]->getValue() : NULL}
+
+    dataLayer.push({ ecommerce: null });  // Clear the previous ecommerce object.
+    dataLayer.push({
+        event: "add_to_cart",
+        ecommerce: {
+            currency: "CZK",
+            value: {$product->getProduct()->getPriceWithoutVat()|number:"2":".":""},
+            items: [
+                {
+                    item_id: {$product->getProduct()->getCode()},
+                    item_name: {$product->getProduct()->getTranslation()->getName()},
+                    item_brand: {if $brand}{$brand}{else}null{/if},
+                    item_category: {if $category !== NULL}{$category}{else}null{/if},
+                    item_variant: "",
+                    price: {$product->getProduct()->getPriceWithoutVat()|number:"2":".":""},
+                    quantity: 1
+                }
+            ]
+        }
+    });
+</script>
+
+{control crossSelling}
+

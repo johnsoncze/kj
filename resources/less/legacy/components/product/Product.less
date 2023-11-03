@@ -1,0 +1,84 @@
+@import 'Product-gallery';
+@import 'Product-gallery-mobile';
+@import 'Product-info';
+@import 'Product-variant';
+@import 'Product-option';
+@import 'Product-experience';
+@import 'Product-taste';
+@import 'Product-related';
+@import 'Product-collection';
+
+.Product {
+    width: 100%;
+    display: flex;
+}
+
+.Product-gallery {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+	position: relative;
+}
+
+.Product-info {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    //align-items: center;
+}
+
+.Product-info > * {
+    max-width: 90%;
+}
+
+.Product-gallery-mobile {
+    display: none;
+}
+
+.Product-favourite {
+	float: right;
+	cursor: pointer;
+	font-size: 24px;
+}
+
+@media @media-md-min {
+
+    .Product-gallery-main-photo img {
+        max-width: 500px;
+    } 
+}
+
+@media @media-md-max {
+
+    .Product {
+        width: 100%;
+    }
+
+    .Product-gallery {
+        width: 40%;
+    }
+
+    .Product-info {
+        width: 60%;
+        align-items: center;
+    }
+}
+
+@media @media-sm-max {
+
+    .Product,
+    .Product-gallery,
+    .Product-info {
+        width: 100%;
+        //text-align: center;
+    }
+
+    .Product-gallery {
+        display: none;
+    }
+
+    .Product-gallery-mobile {
+        display: block;
+    }
+}

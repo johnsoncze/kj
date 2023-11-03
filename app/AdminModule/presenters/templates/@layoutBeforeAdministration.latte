@@ -1,0 +1,14 @@
+{layout '@layout.latte'}
+{block content}
+    {include flashMessages}
+    {include 'BeforeAdminHeader.latte'}
+    <div class="row p-t-20">
+        <div class="col-sm-4 col-sm-offset-4">
+            <div class="well bs-component w-400 m-a">
+                <h1>{$title}</h1>
+                {block contentBeforeAdmin}{/block}
+            </div>
+        </div>
+    </div>
+    {include 'SimpleSignature.latte'}
+{/block}

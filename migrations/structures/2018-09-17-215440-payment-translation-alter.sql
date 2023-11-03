@@ -1,0 +1,1 @@
+ALTER TABLE `payment_translation` CHANGE `pyt_name` `pyt_name` VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_czech_ci NOT NULL;

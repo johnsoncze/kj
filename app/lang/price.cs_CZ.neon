@@ -1,0 +1,7 @@
+currency:
+    label: Kč
+
+label:
+    default: Cena
+    summaryPrice: Celková cena
+    summaryPriceWithVat: Celková cena s DPH

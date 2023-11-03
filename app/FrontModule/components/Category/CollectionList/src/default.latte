@@ -1,0 +1,108 @@
+<section class="ProductCarousel u-mb--60 u-sm-mb--30">
+    <div class="Container">
+        <h2 class="ProductCarousel-heading Heading Heading--section u-textCenter">
+            {_category.collection.list.title}<span>{_category.collection.list.subtitle|noescape}</span>
+        </h2>
+        <div class="ProductCarousel-outer">
+
+            <div class="js-collection-carousel">
+                {foreach $categories as $category}
+                {var $lazy = !$iterator->first}
+                <div class="ProductCarousel-item">
+                    <div class="Grid">
+
+                        <div class="Grid-cell u-size12of12 u-sm-size4of12">
+                            <div class="ProductCarousel-inner">
+                                <div class="CollectionCard">
+                                    <a href="{$category->getRelativeLink($control->getPresenter(), TRUE)}">
+                                        {*
+                                        <div class="CollectionCard-content">
+                                            <h3 class="CollectionCard-heading"><span class="CollectionCard-subHeading">{_category.collection.title}</span> {$category->getName()}</h3>
+                                            <span class="Button u-displayNone u-displayInline--sm" href="{plink Category:default, url => $category->getUrl()}">{_category.collection.list.more}</span>
+                                        </div>
+                                        *}
+                                        {var $banner = $control->getBanner($category) ?: '/www/assets/front/user_content/images/product-carousel-1a.jpg'}
+                                        <img class="CollectionCard-image u-borderRounded" src="{$banner}" alt="{$category->getName()}" width="365" height="560" {if $lazy}loading="lazy"{/if}/>
+                                        {*<img class="CollectionCard-imageSecondary u-borderRounded" src="/assets/front/user_content/images/product-carousel-1b.jpg" alt="{$category->getName()}" width="365" height="560" {if $lazy}loading="lazy"{/if}/>*}
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="Grid u-size12of12 u-sm-size8of12">
+                        {ifset $products[$category->getId()]}
+                            {foreach $products[$category->getId()] as $product}
+                                <div class="Grid-cell u-size6of12 u-sm-size4of12">
+                                    {cache 'list-product-' . ($user->isLoggedIn()?'logged':'anonymous') . ($lazy?'-lazy':'-notlazy') . $product->getProduct()->getId(), expire => '30 minutes'}
+                                        {var $product_ID = 'product_' . $product->getProduct()->getId()}
+                                        {control $product_ID $lazy}
+                                    {/cache}
+                                </div>
+                                {breakIf $iterator->getCounter() === 3}
+                            {/foreach}
+                        {/ifset}
+                        </div>
+                    </div>
+					
+					<div class="ProductCarousel-pagerBox">
+						<a class="ProductCarousel-pagerItem js-collection-carousel-pager-item"><span class="ProductCarousel-title">{$category->getName()}</span></a>
+					</div>
+                </div>
+                {/foreach}
+            </div>
+			<div class="ProductCarousel-arrowBox">
+			</div>
+          </div>
+			
+
+			
+          <div class="ProductCarousel-outer-mobile">
+			<div class="ProductCarousel-mobile-arrowBox">
+			</div>
+    
+            <div class="js-collection-carousel-mobile">
+              {foreach $categories as $category}
+                <div class="ProductCarousel-item-mobile">
+					{var $banner = $control->getBanner($category) ?: '/www/assets/front/user_content/images/product-carousel-1a.jpg'}
+
+					  <a class="ProductCarousel-pagerItem-mobile  js-collection-carousel-pager-item">
+						<div class="u-colorGold u-mb--10">{$category->getName()}</div>
+						<div>
+						  <img class="CollectionCard-image-mobile u-borderRounded u-mb--15" src="{$banner}" alt="Kolekce {$category->getName()}"  />
+						</div>
+					  </a>
+					
+                    <div class="Grid">
+                        {ifset $products[$category->getId()]}
+                            {foreach $products[$category->getId()] as $product}
+                              <div class="Grid u-size12of12" style="justify-content: center;">
+                                <div class="Grid-cell u-size12of12" style="justify-content: center;">
+                                    {control 'product_' . $product->getProduct()->getId()}
+                                </div>
+                              </div>
+                              {breakIf $iterator->getCounter() === 2}
+                            {/foreach}
+                        {/ifset}
+                    </div>
+                </div>
+                {/foreach}
+            </div>
+        </div>
+        <div class="ProductCarousel-link-container">
+          <a class="ProductCarousel-link Link link-underline u-displayInline" href="{plink Category:default, url => 'kolekce-jk'}">prohlédnout {_category.collection.list.all}</a>
+        </div>
+    </div>
+    <style>
+        .ProductCarousel-link-container{
+            top:10px;
+            left: 15%;
+            padding-bottom: 40px;
+        }
+        @media (max-width: 768px) {
+            .ProductCarousel-link-container{
+                left: 0;
+                padding-bottom: 20px;
+            }
+        }
+
+    </style>
+</section>

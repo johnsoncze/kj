@@ -1,0 +1,57 @@
+.Pagination {
+    font-weight: 700;
+    font-family: @font-secondary;
+
+    @media @media-sm-min {
+        font-size: @font-size-larger;
+    }
+}
+
+.Pagination-list {
+    display: inline-flex;
+    align-items: center;
+    padding-left: 0;
+    margin-bottom: 0;
+    text-align: center;
+    list-style: none;
+}
+
+.Pagination-item {
+    line-height: 3.2rem;
+}
+
+.Pagination-link {
+    height: 100%;
+    padding: 0 0.4em;
+    text-decoration: none;
+    color: @color-gold-dark;
+}
+
+.Pagination-link--active {
+    color: @color-brown-dark;
+}
+
+.Pagination-arrow {
+    display: block;
+    width: 3.5rem;
+    height: 100%;
+    overflow: hidden;
+    text-indent: -10000px;
+    text-decoration: none;
+    background: url(../images/chevron-left.svg) no-repeat left center;
+    background-size: auto 24px;
+}
+
+.Pagination-arrow--next {
+    transform: rotate(180deg);
+}
+
+.Pagination-arrow--disabled {
+    background-image: url(../images/chevron-left.svg);
+    cursor: not-allowed;
+	opacity: 0.5;
+}
+
+.Pagination-ellipsis {
+    color: @color-brown-dark-alpha-40;
+}

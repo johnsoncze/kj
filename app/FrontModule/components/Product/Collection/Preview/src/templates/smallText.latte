@@ -1,0 +1,3 @@
+{if $collection}
+    <p class="Text-block-desc-small u-textCenter u-mb--1em">{_collection.preview.title} <a class="Product-link" href="{plink Category:default, url => $collection->getUrl(), _image => 'true'}">{$collection->getName()}</a></p>
+{/if}

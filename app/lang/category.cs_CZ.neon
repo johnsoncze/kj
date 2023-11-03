@@ -1,0 +1,157 @@
+about:
+    anchor: O kategorii
+
+collection:
+    title: Kolekce
+    signpost:
+        title: "<span>Naše</span>kolekce"
+        benefit:
+            service:
+                title: Jedinečné šperky
+                description: 'Každá kolekce je unikátní a&nbsp;šperky vznikají pouze v&nbsp;několika málo provedeních. Rádi je pro vás ale vyrobíme na míru.'
+            collection:
+                title: Kolekce s příběhem
+                description: 'Inspiraci přináší drobnosti každodenního života, ale také silné osobnosti žen či krása a&nbsp;zákonitosti přírody.'
+            materials:
+                title: Výjimečné materiály
+                description: 'Tmavé tahitské perly, barevné přírodní kameny a diamanty se snoubí se zlatem či platinou.'
+            set:
+                title: Sladěné soupravy
+                description: 'V rámci kolekcí tvoříme sety šperků, které se harmonicky doplňují a vyzdvihnou osobnost ženy.'
+        quote: 'Objevte sofistikovaný design šperku v našich originálních autorských kolekcích. Ušlechtilé materiály, zlato, kvalitní přírodní kameny, diamanty a perly. To vše nabízíme ruku v ruce se špičkovou kvalitou zpracování a výběrem pro všechny generace.'
+    list:
+        title: Novinky
+        subtitle: v našich kolekcích
+        all: Všechny kolekce
+        more: Více
+
+brand:
+    anchor: O značce
+
+filtration:
+    title: Filtry
+    cancel:
+        label: Zrušit všechny filtry
+    less:
+        title: Méně filtrů
+    more:
+        title: Další filtry
+    remove:
+        title: Odebrat
+
+filter:
+    price:
+        label: Cena
+    stock:
+        label: jen produkty skladem
+    product:
+        count:
+            label: '%count% produkt|%count% produkty|%count% produktů'
+    sort:
+        label: Řazení
+        item:
+            default:
+                label: Výchozí
+            cheapest:
+                label: Od nejlevnějších
+            mostExpensive:
+                label: Od nejdražších
+            inStock:
+                label: Nejprve skladem
+
+homepage:
+    list:
+        title: '<span class="Heading-incentive">Vybírejte</span> ze šperků, <br>hodinek <br>i&nbsp;doplňků'
+
+signpost:
+    block:
+        cta: Prohlédněte si šperky
+        ctaWatch: Prohlédněte si hodinky
+        ctaAccessories: Přejít
+    engagementAndWedding:
+        header: 'Vyjádřete své zaslíbení a nejdůležitější „ano“ s prsteny JK'
+        topText: 'Jedním ze speciálních odvětví zlatnické práce jsou zásnubní a snubní prsteny, symboly spojení a věrnosti. Zásnubní prsten většinou bývá prvním šperkem, který muž v životě vybírá. Uvědomujeme si, že bez předchozích zkušeností a znalosti v oboru je to náročný úkol, a proto se našim klientům snažíme při výběru poskytnout maximální podporu a edukaci.<br />Tyto šperky patří k doménám JK a tvoří třetinu zakázkové výroby. Snubní prsteny jsou vlastně zachycením jedinečného životního okamžiku v malém kousku kovu a rozhodně se vyplatí investovat čas do jejich výběru.'
+        bottomText: '<b>Ačkoli osobnímu výběru a zážitku se nic nevyrovná, šperky JK můžete pohodlně nakupovat přes e-shop.</b><br />Ke konzultacím jsme vám k dispozici na zákaznické lince +420 241 091 761.<br />Pokud nás nezastihnete, napište nám na info@jk.cz nebo přímo na prodejnu filadelfie@jk.cz a ozveme se, jakmile to bude možné.'
+
+        engagement:
+            title: '<b>Zásnubní</b> prsteny'
+            description: 'Za zásnubním prstenem s diamantem, nebo jiným drahým kamenem, se zračí city a emoce. Před vámi je rozhodnutí vycházející z lásky, důvěry, přesvědčení a očekávání. Rozhodnutí o tom, s kým vykročíte na novou, vzrušující cestu. Rádi budeme s vámi na začátku této cesty prostřednictvím prstýnku, který vám pomůžeme vybrat. My nabídneme znalosti o šperkařství a zkušenosti, vy přidáte unikátní představy a sny vaší nastávající, a společně vybereme nebo na zakázku vyrobíme prsten, který to řekne za vás.'
+            link: Vyberte zásnubní prsten
+            link2: Prsten na zakázku
+        wedding:
+            title: '<b>Snubní</b> prsteny'
+            description: 'Snubní prsteny jsou významným symbolem manželské lásky a promítá se v nich esence naší značky „šperk je vztah“. Snubní prsten bude možná tím nejdůležitějším šperkem ve vašem životě. Objevte originální autorský design zásnubních a snubních prstenů z rukou našich zlatnických mistrů, s důrazem na kvalitu materiálu a řemeslné zpracování. Výběr prstenů není snadný úkol, proto vás srdečně zveme do naší prodejny a zlatnické dílny v Praze na Brumlovce, kde tato malá umělecká díla vznikají. Jsme vám k dispozici. Máte-li vlastní představu o budoucí podobě vašich prstenů, nabízíme nabízíme vám individuální zakázkovou výrobu.'
+            link: Vyberte snubní prsteny
+            link2: Prsteny na zakázku
+        banner1:
+            title: Prsten jako symbol věčnosti
+            description: 'Kruh je po tisíce let znamením trvalého spojení. Darováním originálního zlatého prstenu s pravým kamenem tak muž vyjadřuje ženě nejen lásku, ale především skutečnou a trvalou hodnotu svých citů.'
+            link: Jak vybrat zásnubní prsten
+        banner2:
+            title: 'Hodnota, která poroste'
+            description: 'Jako bude sílit váš vztah zkušenostmi společně prožitého štěstí i překonaných nesnází, tak poroste v čase i hodnota prstenů vyrobených z nejvzácnějších materiálů.'
+            link: Šperk jako investice
+        banner3:
+            title: Věčná krása diamantů
+            description: 'Diamant je extrémně tvrdý nerost. Proto se jeho vybroušený povrch nenaruší ani při dlouholetém každodenním nošení. Navíc má vysoký index lomu světla, který se v čase nemění a šperk se stále krásně třpytí. Oproti tomu zirkon ztrácí svůj lesk již po roce nošení.'
+            link: 'Diamant nebo zirkon'
+        unique:
+            title: 'Jedinečný osobní šperk'
+            description: 'Máte konkrétní představu o designu zásnubního či snubního prstenu? Nebo zkrátka víte, že chcete prsten, který nikdo jiný nenosí? Rádi vám navrhneme a vyrobíme prsten přesně dle vašich představ.'
+            link: Více o zakázkové výrobě
+
+template:
+    default:
+        benefit:
+            service:
+                description: '<a href="/stranka/sluzby#warranty"><b>Doživotní záruka</b></a><br>a každé dva roky <b><a href="/stranka/sluzby#warranty">servis</a><br> šperků jk zdarma</b>'
+            certificate:
+                description: 'Certifikát pravosti a&nbsp;kvality'
+            discount:
+                description: '10% zvýhodnění po registraci'
+            choose:
+                description: 'Vybírejte z&nbsp;domu či na prodejně'
+            delivery:
+                description: '<b><a href="/stranka/zpusob-dopravy">bezpečně doručíme</a><br></b> kamkoli v ČR i zahraničí'
+            weedingRingDiscount:
+                title: '15% zvýhodnění na snubní prsteny'
+                description: 'Při nákupu tohoto prstenu získáte zvýhodnění na nákup snubních prstenů.'
+            loggedCustomerDiscount:
+                title: 'VÝROČNÍ ZVÝHODNĚNÍ (AKCE -%percent% %) akce stále trvá a bude ukončena měsíc po znovuotevření obchodu. Neplatí na dárkové poukazy.'
+                description:
+
+static:
+    collection:
+        descriptionAnchor: O kolekcích
+        description: 'Objevte sofistikovaný design šperku v našich originálních autorských kolekcích. Ušlechtilé materiály, zlato, kvalitní přírodní kameny, diamanty a perly. To vše nabízíme ruku v ruce se špičkovou kvalitou zpracování a výběrem pro všechny generace.'
+
+featuredBlock:
+    jewellery:
+        handmade:
+            title: Originální design a zlatnické řemeslo
+            description: 'Díky vlastnímu originálnímu autorskému designu jsou šperky JK jedinečné. Zároveň s tím v naší zlatnické dílně ctíme poctivé tradiční řemeslo, které doplňujeme o nejmodernější technologie. Vzniká tak radost z krásy a stav výjimečnosti.'
+            cta: Nahlédněte do zlatnické dílny
+        care:
+            title: Trvalá hodnota a doživotní záruka
+            description: 'Díky ušlechtilým materiálům – zlatu, diamantům a pravým přírodním kamenům nejvyšších kvalit, získávají šperky JK vysokou a trvalou hodnotu, která v čase stoupá. Ke všem šperkům navíc poskytujeme každé dva roky garanční servis zdarma, čímž získáte naši doživotní záruku.'
+            cta: Přečtěte si náš otevřený článek Trvalá hodnota a celoživotní záruka
+
+noProduct: Žádné produkty.
+
+categoryArticles:
+    decision:
+        title: 'Nemůžete se rozhodnout?'
+        text: 'Přečtěte si na našem blogu jaké jsou trendy pro snubní prsteny posledních let. Napovíme, vede jednoduchost, luxusní materiály a precizní provedení.'
+        button: 'Trendy zásnubních prstenů'
+    own:
+        title: 'Máte vlastní představu?'
+        text: 'Chcete prsten, jaký ještě nikdo nenosí? Možná již znáte každý jeho detail, možná vaše představa teprve vzniká nebo chcete upravit některý z našich designů? Šperk pro vás rádi vytvoříme – tak, aby nadchl krásou a precizním ručním zpracováním a byl v dokonalém souladu s vaší osobností.'
+        button: 'Zakázková výroba'
+    quality:
+        title: 'Kvalita české ruční výroby'
+        text: 'Šperky navrhujeme a tvoříme v naší JK zlatnické dílně s velkým důrazem na originalitu a trvalou hodnotu. Ty jim dodává mistrovská ruční práce s kvalitním zlatem a vzácnými kameny, které pečlivě vybíráme. Nahlédněte přímo pod ruce našich zlatnických mistrů. Práce s kovem a drahými kameny vyžaduje talent od Boha a roky praxe.'
+        button: 'Přečtěte si náš příběh'
+    howChoose:
+        title: 'Jak vybrat náušnice podle tvaru obličeje'
+        text: 'Náušnice dokáží nenuceně podtrhnout váš celkový vzhled, často mohou být dokonce i jeho dominantou. Jejich správnému výběru je tedy zapotřebí věnovat dostatečnou pozornost. Jaké náušnice sluší právě vám? Kromě vašich preferencí ohledně designu, materiálu a provedení může být směrodatným také tvar vašeho obličeje.'
+        button: 'Přečtěte si na našem blogu'

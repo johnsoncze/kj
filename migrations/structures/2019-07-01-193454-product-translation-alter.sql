@@ -1,0 +1,1 @@
+ALTER TABLE `product_translation` CHANGE `pt_update_date` `pt_update_date` TIMESTAMP on update CURRENT_TIMESTAMP() NOT NULL DEFAULT CURRENT_TIMESTAMP();

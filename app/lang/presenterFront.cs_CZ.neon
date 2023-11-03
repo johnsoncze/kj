@@ -1,0 +1,22 @@
+account:
+    default: Přehled
+    order: Objednávka
+    setNewPassword: Nastavení nového hesla
+    storeRegistration: Nastavte si heslo
+    storeRegistrationRequest: Dokončení registrace z prodejny
+    passwordResetTokenInvalid: Odkaz pro obnovení hesla není platný. Nechte si prosím zaslat nový.
+
+error:
+    404:
+        title: Stránka nenalezena
+        description: 'Moc nás to mrzí, ale požadovanou stránku nemůžeme najít.<br>Zkuste ji vyhledat pomocí vyhledávání v hlavičce webu.'
+        homepage:
+            anchor: Přejít na hlavní stránku
+
+product:
+    addedIntoShoppingCart: Produkt přidán do košíku
+
+search:
+    article: Výsledky vyhledávání - Články
+    category: Výsledky vyhledávání - Kategorie
+    default: Výsledky vyhledávání - Produkty

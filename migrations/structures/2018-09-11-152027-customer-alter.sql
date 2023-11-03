@@ -1,0 +1,1 @@
+ALTER TABLE `customer` ADD `cus_updated_date` DATETIME on update CURRENT_TIMESTAMP() NOT NULL DEFAULT CURRENT_TIMESTAMP() AFTER `cus_add_date`, ADD INDEX (`cus_updated_date`);

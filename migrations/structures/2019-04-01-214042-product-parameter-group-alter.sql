@@ -1,0 +1,1 @@
+ALTER TABLE `product_parameter_group` ADD `ppg_visible_on_product_detail` TINYINT(1) NOT NULL  DEFAULT '1' AFTER `ppg_visible_in_order`;

@@ -1,0 +1,89 @@
+.Flash-message {
+  padding: 27px 25px;
+  width: 100%;
+  border-radius: @border-radius-larger;
+
+  &.Flash-message--success {
+    background: url(/assets/front/images/layout/flash-message-success-bg.png) 0 0 no-repeat;
+    background: linear-gradient(to right, #4f723a, #63874a);
+    background-size: cover;
+  }
+
+  &.Flash-message--cart {
+    //SHOPPING PROCESS
+    background: linear-gradient(to right, #4f723a, #63874a);
+    border-radius: 30px;
+    max-width: 430px;
+    margin: 0 auto 64px;
+    text-align: center;
+
+    @media (min-width: 540px) {
+      margin: 0 auto 77px;
+    }
+
+    @media @media-md-min {
+      max-width: 390px;
+      margin: 0 auto 57px;
+    }
+  }
+
+  &.Flash-message--default {
+    background: url(/assets/front/images/layout/flash-message-default-bg.png) 0 0 no-repeat;
+    background-size: cover;
+  }
+
+  &.Flash-message--error {
+    background: url(/assets/front/images/layout/flash-message-error-bg.png) 0 0 no-repeat;
+    background-size: cover;
+  }
+}
+
+.Flash-message-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Flash-message-ring {
+  width: 44px;
+  height: 44px;
+  background-image: url(/assets/front/images/layout/flash-message-ring-bg.png);
+  text-align: center;
+  line-height: 46px;
+}
+
+.Flash-message-icon-success {
+  fill: @color-white;
+  width: 1.2em;
+  height: 1.2em;
+}
+
+.Flash-message-icon-default,
+.Flash-message-icon-error {
+  fill: @color-white;
+  width: 0.8em;
+  height: 0.8em;
+}
+
+.Flash-message-title {
+  .Text-block-title-small;
+  //   padding-left: 25px;
+  //  width: ~"calc(100% - 44px)";
+  color: @color-white;
+
+  //SHOPPING PROCESS
+  font-family: "Source Sans Pro", sans-serif;
+
+  @media (min-width: 540px) {
+    font-size: 19px;
+  }
+
+  @media @media-md-min {
+    font-size: 14px;
+  }
+}
+
+.Flash-container {
+  padding-left: 7px;
+  padding-right: 7px;
+}

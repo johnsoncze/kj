@@ -1,0 +1,57 @@
+{block content}
+<div class="Background--gradient-top-100-ebebeb CartOverview">
+
+    {include 'partials/progress.latte'}
+
+    <div class="Container Container--slimer">
+        <div class="Basket-step u-pb--90">
+
+            <h1 class="User-page-title u-pt--40">{$title}</h1>
+
+            {control shoppingCartOverview:form}
+
+            {if $shoppingCart !== NULL && $shoppingCart->hasProducts()}
+                {control buttonNavigation}
+            {/if}
+
+        </div>
+    </div>
+
+    {control benefit}
+</div>
+
+{if $shoppingCart && $shoppingCart->hasAvailableProduct() === TRUE}
+    {control opportunityForm:productStoreMeeting}
+{/if}
+
+<script n:if="$cookies_marketing">
+    window.ecotrack('trackUnstructEvent', {
+        schema: '',
+        data: {
+            action: 'Basket',
+            products: {$ecomailCart|noescape}
+        }
+    });
+
+    {if $shoppingCart !== NULL && $shoppingCart->hasProducts()}
+        dataLayer.push({ ecommerce: null });  // Clear the previous ecommerce object.
+        dataLayer.push({
+            event: "view_cart",
+            ecommerce: {
+                currency: "CZK",
+                value: {$shoppingCart->getPrice()->summaryPrice},
+                items: [
+                    {foreach $ga4Cart as $product}
+                    {
+                        item_id: {$product['item_id']},
+                        item_name: {$product['item_name']},
+                        price: {$product['price']},
+                        quantity: {$product['quantity']}
+                    }{if $iterator->isLast() !== TRUE},{/if}
+                    {/foreach}
+                ]
+            }
+        });
+    {/if}
+
+</script>

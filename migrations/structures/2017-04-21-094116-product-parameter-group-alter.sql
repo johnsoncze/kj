@@ -1,0 +1,1 @@
+ALTER TABLE product_parameter_group DROP COLUMN ppg_internal_description;

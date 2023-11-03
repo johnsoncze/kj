@@ -1,0 +1,29 @@
+{block content}
+
+<main class="Background Background--gradient-top-100-ebebeb">
+    <div class="Container Container--slim">
+
+        {include 'partials/navigation.latte'}
+
+        <div class="Grid u-pb--90">
+
+            <div class="Grid-cell u-size12of12">
+                <section class="Registration-form u-pb--70">
+
+                    <h1 class="User-page-title">{_presenterFront.account.storeRegistrationRequest}</h1>
+
+                    {control storeRegistrationRequestForm:frontendStoreRegistrationRequest}
+
+                    <div class="u-mt--50">
+                        <a href="{plink Sign:up}" class="Product-link-big">
+                            <span class="Link-animation u-md-displayInit Link Link--lineBefore">{_account.sign.up.store.request.webRegistration}<span class="Link--hover"></span></span>
+                        </a>
+                    </div>
+
+                </section>
+            </div>
+
+        </div>
+
+    </div>
+</main>

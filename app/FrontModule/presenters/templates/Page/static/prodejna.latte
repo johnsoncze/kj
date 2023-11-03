@@ -1,0 +1,74 @@
+{block content}
+<section class="PageHeader">
+    <div class="PageHeader-bg" style="background-image: url(/www/assets/front/images/layout/prodejna-jk.jpg);"></div>
+    <div class="Container Grid">
+        <div class="Grid-cell u-size12of12">
+            {control breadcrumb}
+
+            <h1 class="Text-title u-mt--25 u-md-mb--0">{_pageStatic.showroom.title|noescape}</h1>
+        </div>
+    </div>
+</section>
+
+<section class="Background">
+    <div class="Container u-textCenter u-mt--20 u-sm-mt--0">
+
+        <img class="u-mb--15" src="/assets/front/images/layout/jk-min.png" alt="JK">
+
+        <h2 class="Text-block-title-larger u-textCenter u-mb--20">{_pageStatic.showroom.introduction.title|noescape}</h2>
+
+        <p class="Text-block-paragraph-ornament-bot-center u-textCenter u-mt--30 u-mb--80">{_pageStatic.showroom.introduction.description|noescape}</p>
+
+        <a href="/stranka/kontakt" class="Button u-mt--25 u-xs-mt--20 u-sm-mt--25">PŘEJÍT NA KONTAKT</a>
+
+    </div>
+</section>
+
+<div class="u-textCenter">
+    <img src="/assets/front/user_content/images/zlatnicka-dilna-banner-ring.jpg" alt="JK prodejna"
+         class="u-mt--60 u-xs-mt--40 u-sm-mt--85">
+</div>
+
+<section class="Background">
+    <div class="Container">
+        <div class="u-pt--30 u-sm-pt--90 u-md-pt--130 u-mb--40 u-sm-mb--0 u-pb--80 u-md-pb--110">
+            {control showroomPage-historyTimeline}
+        </div>
+    </div>
+</section>
+
+<div class="Background Background--silver">
+    <div class="Container">
+        <div class="u-textLeft u-mt--30 u-sm-mt--140 u-maxWidth--1060">
+            <img src="/assets/front/images/layout/salonek.jpg" alt="Zlatnická dílna" class="Image--radius-10 u-mt--ofset-2x40 u-sm-mt--ofset-2x70">
+        </div>
+
+        <div class="u-pb--10 u-xs-pb--30 u-sm-pb--80 u-md-pb--140">
+            {control showroomPage-loungeTimeline}
+        </div>
+    </div>
+</div>
+
+<section>
+    <div class="Container">
+        <div class="u-textCenter u-pt--140 u-pb--140">
+            <h2 class="Text-title u-mt--30">{_pageStatic.showroom.contact.title}</h2>
+            <a href="{plink Page:detail, url => 'kontakt'}" class="Button">{_pageStatic.showroom.contact.cta}</a>
+        </div>
+    </div>
+</section>
+
+<section class="BannerCenter" style="background-image: url('/www/assets/front/images/layout/bg-team.jpg');">
+    <div class="Container Grid">
+        <div class="Grid-cell u-size12of12 u-textCenter u-pt--90 u-pb--50 u-sm-pt--145 u-sm-pb--80">
+
+            <p class="Text-subtitle u-mt--30 u-md-mb--0">{_pageStatic.showroom.team.subtitle}</p>
+
+            <h2 class="Text-title u-mt--30">{_pageStatic.showroom.team.title}</h2>
+
+            <a href="{plink Page:detail, url => 'tym'}" class="Button u-mt--30">{_pageStatic.showroom.team.anchor}</a>
+
+        </div>
+    </div>
+</section>
+

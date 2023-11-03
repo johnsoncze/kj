@@ -1,0 +1,23 @@
+<div id="popup">
+        <div class="Grid">
+          <div class="Grid-cell popup-value">
+              <h1>15%</h1>
+          </div>
+            <div class="Grid-cell popup-message">
+                VÁNOČNÍ ZVÝHODNĚNÍ NÁKUPU<br> <a class="hide-me"href="/ucet/prihlaseni">PRO REGISTROVANÉ ZÁKAZNÍKY</a>
+            </div>
+            <div class="Grid-cell popup-button-div">
+                <button class="popup-button hide-me">x</button>
+            </div>
+        </div>
+</div>
+
+<script>
+    $('.hide-me').click(function() {
+        var date = new Date();
+        date.setDate(date.getDate() + 1);
+        date.setHours(0,0,0,0);
+        document.cookie = '{\App\FrontModule\Presenters\AbstractPresenter::POPUP_SHOWN|noescape}=1; path=/; expires=' + date.toUTCString();
+        jQuery('#popup').hide();
+    });
+</script>

@@ -1,0 +1,1 @@
+ALTER TABLE `order_product` DROP `op_production_time`;

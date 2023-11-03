@@ -1,0 +1,284 @@
+services:
+    nette.userStorage: App\Extensions\Nette\UserStorage
+    router: App\RouterFactory::createRouter
+    fileUploader: App\Libs\FileManager\FileManager(%upload%, @Kdyby\Monolog\Logger)
+    latte.templateFactory: App\Extensions\Latte\MyTemplateFactory
+    tracy.logger: App\Logging\SentryDecoratedTracyLogger(%sentry%)
+
+    categoryFiltrationGroupRemoveListener:
+        class: App\CategoryFiltrationGroup\RemoveListener
+        tags: [kdyby.subscriber]
+
+    - App\Article\ArticleAggregateFacadeFactory
+    - App\Article\ArticleFacadeFactory
+    - App\Article\ArticleRepository
+    - App\Article\ArticleRepositoryFactory
+    - App\Article\ArticleCoverPhotoServiceFactory
+    - App\Article\Module\ModuleRepository
+
+    - App\ArticleCategory\ArticleCategoryCreateServiceFactory
+    - App\ArticleCategory\ArticleCategoryDuplicateServiceFactory
+    - App\ArticleCategory\ArticleCategoryFacadeFactory
+    - App\ArticleCategory\ArticleCategoryRepository
+    - App\ArticleCategory\ArticleCategoryRepositoryFactory
+
+    - App\ArticleCategoryRelationship\ArticleCategoryRelationshipRepository
+    - App\ArticleCategoryRelationship\ArticleCategoryRelationshipRepositoryFactory
+    - App\ArticleCategoryRelationship\ArticleCategoryRelationshipSetServiceFactory
+    - App\ArticleCategoryRelationship\ArticleCategoryRelationshipFacadeFactory
+
+    - App\PromoArticle\PromoArticleFacadeFactory
+    - App\PromoArticle\PromoArticleRepository
+    - App\PromoArticle\PromoArticleRepositoryFactory
+    - App\PromoArticle\PromoArticleCoverPhotoServiceFactory
+
+    - App\Catalog\CatalogFacadeFactory
+    - App\Catalog\CatalogRepository
+    - App\Catalog\Translation\CatalogTranslationFacadeFactory
+    - App\Catalog\Translation\CatalogTranslationRepository
+
+    - App\Category\AssociatedCategory\CategoryFacadeFactory
+    - App\Category\AssociatedCategory\CategoryRepository
+    - App\Category\CategoryFiltrationRepository
+    - App\Category\CategoryFindFacadeFactory
+    - App\Category\CategoryRemoveFacadeFactory
+    - App\Category\CategoryRepository
+    - App\Category\CategoryRepositoryFactory
+    - App\Category\CategorySaveFacadeFactory
+    - App\Category\Product\Related\ProductFacadeFactory
+    - App\Category\Product\Related\ProductRepository
+
+    - App\CategoryFiltration\CategoryFiltrationRemoveFacadeFactory
+    - App\CategoryFiltration\CategoryFiltrationRepositoryFactory
+    - App\CategoryFiltration\CategoryFiltrationSaveFacadeFactory
+    - App\CategoryFiltration\CategoryFiltrationSortFacadeFactory
+
+    - App\CategoryFiltrationGroup\CategoryFiltrationGroupRemoveFacadeFactory
+    - App\CategoryFiltrationGroup\CategoryFiltrationGroupRepository
+    - App\CategoryFiltrationGroup\CategoryFiltrationGroupRepositoryFactory
+    - App\CategoryFiltrationGroup\CategoryFiltrationGroupSaveFacadeFactory
+    - App\CategoryFiltrationGroup\Similar\SimilarFacadeFactory
+
+    - App\CategoryFiltrationGroupParameter\CategoryFiltrationGroupParameterRepository
+    - App\CategoryFiltrationGroupParameter\CategoryFiltrationGroupParameterRepositoryFactory
+    - App\CategoryFiltrationGroupParameter\CategoryFiltrationGroupParameterSaveFacadeFactory
+
+    - App\CategoryProductParameter\CategoryProductParameterRepository
+    - App\CategoryProductParameter\CategoryProductParameterRepositoryFactory
+    - App\CategoryProductParameter\CategoryProductParameterSaveFacadeFactory
+
+    - App\Category\Product\Sorting\Sorter\BasicSorter
+    - App\Category\Product\Sorting\Sorter\FromTheCheapest
+    - App\Category\Product\Sorting\Sorter\PrioritySorter
+    - App\Category\Product\Sorting\Sorter\MauriceLacroixCollectionSorter
+    - App\Category\Product\Sorting\SortingRepository
+
+    - App\ComGate\Config(%comgate.url%, %comgate.storeId%, %comgate.secret%, %comgate.test%)
+    - App\ComGate\Response\ResponseParser
+    - App\ComGate\Request\ParameterFactory
+    - App\ComGate\Request\RequestSender
+
+    - App\Customer\Activation\ActivationFacadeFactory
+    - App\Customer\Activation\ActivationRequest
+    - App\Customer\Activation\ActivationSendEmail
+    - App\Customer\CustomerDuplication
+    - App\Customer\CustomerRepository
+    - App\Customer\CustomerRepositoryFactory
+    - App\Customer\CustomerSignFacadeFactory
+    - App\Customer\CustomerStorageFacadeFactory
+    - App\Customer\EmailSender
+
+    - App\Diamond\Price\PriceRepository
+    - App\Diamond\DiamondRepository
+
+    - App\Delivery\DeliveryAllowedRepository
+    - App\Delivery\DeliveryAllowedRepositoryFactory
+    - App\Delivery\DeliveryRepository
+    - App\Delivery\DeliveryRepositoryFactory
+    - App\Delivery\Translation\DeliveryTranslationRepository
+    - App\Delivery\Translation\DeliveryTranslationRepositoryFactory
+
+    - App\Extensions\Grido\GridoFactory
+
+    - App\Facades\MailerFacade
+
+    - App\ForgottenPassword\ForgottenPasswordFacadeFactory
+    - App\ForgottenPassword\ForgottenPasswordHashServiceFactory
+    - App\ForgottenPassword\ForgottenPasswordCheckServiceFactory
+    - App\ForgottenPassword\ForgottenPasswordEmailServiceFactory
+    - App\ForgottenPassword\ForgottenPasswordRepositoryFactory
+
+    - App\Google\TagManager\DataLayer
+
+    - App\GuzzleHttp\Guzzle\Client
+
+    - App\Language\LanguageActiveServiceFactory
+    - App\Language\LanguageFacadeFactory
+    - App\Language\LanguageListFacadeFactory
+    - App\Language\LanguageListServiceFactory
+    - App\Language\LanguageRepository
+    - App\Language\LanguageRepositoryFactory
+
+    - App\Newsletter\Subscriber\EmailSender
+    - App\Newsletter\Subscriber\SubscriberFacadeFactory
+    - App\Newsletter\Subscriber\SubscriberRepository
+
+    - App\Opportunity\Email\EmailSender
+    - App\Opportunity\OpportunityCode
+    - App\Opportunity\OpportunityRepository
+    - App\Opportunity\OpportunityStorageFacadeFactory
+    - App\Opportunity\Product\Parameter\ParameterFactory
+    - App\Opportunity\Product\Parameter\ParameterRepository
+    - App\Opportunity\Product\ProductFactory
+    - App\Opportunity\Product\ProductRepository
+    - App\Opportunity\Product\ProductStorageFacadeFactory
+    - App\Opportunity\SendEmailFacadeFactory
+
+    - App\PersonalMeeting\PersonalMeetingRepository
+
+    - App\Order\Email\SendEmail
+    - App\Order\OrderCode
+    - App\Order\OrderCreateFacadeFactory
+    - App\Order\OrderFacadeFactory
+    - App\Order\OrderFactory
+    - App\Order\OrderRepository
+    - App\Order\OrderStateFacadeFactory
+    - App\Order\OrderPaymentFacadeFactory
+    - App\Order\Product\Parameter\ParameterFactory
+    - App\Order\Product\Parameter\ParameterRepository
+    - App\Order\Product\ProductFactory
+    - App\Order\Product\ProductRepository
+    - App\Order\Heureka(..., '%heurekaApiKey%')
+    - App\Order\Zbozicz
+
+    - App\Page\PageAddFacadeFactory
+    - App\Page\PageFacadeFactory
+    - App\Page\PageRemoveFacadeFactory
+    - App\Page\PageRepository
+    - App\Page\PageRepositoryFactory
+    - App\Page\PageUpdateFacadeFactory
+
+    - App\Payment\PaymentAllowedRepository
+    - App\Payment\PaymentAllowedRepositoryFactory
+    - App\Payment\PaymentRepository
+    - App\Payment\PaymentRepositoryFactory
+    - App\Payment\Translation\PaymentTranslationRepository
+    - App\Payment\Translation\PaymentTranslationRepositoryFactory
+
+    - App\Password\PasswordService
+    - App\Password\PasswordServiceFactory
+
+    - App\Periskop\Export\ExportFacadeFactory
+    - App\Periskop\Export\ExportRepository
+    - App\Periskop\WeedingRing\Mapping\MappingRepository
+
+    - App\Product\AdditionalPhoto\PhotoFactory
+    - App\Product\AdditionalPhoto\ProductAdditionalPhotoRepository
+    - App\Product\AdditionalPhoto\ProductAdditionalPhotoRepositoryFactory
+    - App\Product\AdditionalPhoto\ProductAdditionalPhotoSaveFacadeFactory
+    - App\Product\Diamond\DiamondFacadeFactory
+    - App\Product\Diamond\DiamondRepository
+    - App\Product\Photo\PhotoManager
+    - App\Product\ProductDuplication
+    - App\Product\ProductFindFacadeFactory
+    - App\Product\ProductMasterFinder
+    - App\Product\ProductPublishedRepository
+    - App\Product\ProductPublishedRepositoryFactory
+    - App\Product\ProductRepository
+    - App\Product\ProductRepositoryFactory
+    - App\Product\ProductSaveFacadeFactory
+    - App\Product\Ring\Size\SizeRepository
+    - App\Product\Variant\VariantDuplication
+    - App\Product\Variant\VariantRepository
+    - App\Product\Variant\VariantStorageFacadeFactory
+    - App\Product\Parameter\ParameterDuplication
+    - App\Product\Parameter\ProductParameterRepository
+    - App\Product\Parameter\ProductParameterRepositoryFactory
+    - App\Product\Parameter\ParameterStorageFacadeFactory
+    - App\Product\Price\Base\Calculator
+    - App\Product\Production\Calculator\Calculator
+    - App\Product\Production\Calculator\CalculatorFacadeFactory
+    - App\Product\Production\Time\Translation\TimeTranslationRepository
+    - App\Product\ProductDTOFactory
+    - App\Product\Related\RelatedFacadeFactory
+    - App\Product\Related\RelatedDuplication
+    - App\Product\Related\RelatedRepository
+    - App\Product\Production\Time\TimeRepository
+    - App\Product\Translation\ProductTranslationRepository
+    - App\Product\Translation\ProductTranslationRepositoryFactory
+    - App\Product\Translation\ProductTranslationSaveFacadeFactory
+    - App\Product\Variant\Copy\CopyFacadeFactory
+    - App\Product\Variant\Tree\TreeFactory
+    - App\Product\WeedingRing\Calculator\Calculator
+    - App\Product\WeedingRing\Calculator\CalculatorFacadeFactory
+    - App\Product\WeedingRing\Size\SizeFacadeFactory
+    - App\Product\WeedingRing\Size\SizeRepository
+
+    - App\ProductParameterGroup\Lock\LockFacadeFactory
+    - App\ProductParameterGroup\Lock\LockRepository
+    - App\ProductParameterGroup\Lock\Parameter\ParameterRepository
+    - App\ProductParameterGroup\ProductParameterGroupRepositoryFactory
+    - App\ProductParameterGroup\ProductParameterGroupSaveFacadeFactory
+    - App\ProductParameterGroup\ProductParameterGroupRemoveFacadeFactory
+    - App\ProductParameterGroup\ProductParameterGroupRepository
+    - App\ProductParameterGroup\ProductParameterGroupTranslationRepository
+    - App\ProductParameterGroup\ProductParameterGroupTranslationRepositoryFactory
+    - App\ProductParameterGroup\ProductParameterGroupTranslationSaveFacadeFactory
+
+    - App\ProductParameter\Helper\HelperRepository
+    - App\ProductParameter\ProductParameterFindFacadeFactory
+    - App\ProductParameter\ProductParameterRemoveFacadeFactory
+    - App\ProductParameter\ProductParameterRepository
+    - App\ProductParameter\ProductParameterRepositoryFactory
+    - App\ProductParameter\ProductParameterSaveFacadeFactory
+    - App\ProductParameter\ProductParameterSortFacadeFactory
+    - App\ProductParameter\ProductParameterTranslationRepository
+    - App\ProductParameter\ProductParameterTranslationRepositoryFactory
+    - App\ProductParameter\ProductParameterTranslationSaveFacadeFactory
+
+    - App\ProductState\ProductStateRepository
+    - App\ProductState\ProductStateRepositoryFactory
+    - App\ProductState\Translation\ProductStateTranslationRepositoryFactory
+
+    - App\ShoppingCart\BirthdayDiscount
+    - App\ShoppingCart\Delivery\ShoppingCartDeliveryFactory
+    - App\ShoppingCart\Delivery\ShoppingCartDeliveryRepository
+    - App\ShoppingCart\Delivery\ShoppingCartDeliveryRepositoryFactory
+    - App\ShoppingCart\Delivery\ShoppingCartDeliverySaveFacadeFactory
+    - App\ShoppingCart\Payment\ShoppingCartPaymentFactory
+    - App\ShoppingCart\Payment\ShoppingCartPaymentRepository
+    - App\ShoppingCart\Payment\ShoppingCartPaymentRepositoryFactory
+    - App\ShoppingCart\Payment\ShoppingCartPaymentSaveFacadeFactory
+    - App\ShoppingCart\Price\Calculator
+    - App\ShoppingCart\Product\Discount
+    - App\ShoppingCart\Product\Merger
+    - App\ShoppingCart\Product\Price\PriceCalculator
+    - App\ShoppingCart\Product\ShoppingCartProduct
+    - App\ShoppingCart\Product\ShoppingCartProductDeleteFacadeFactory
+    - App\ShoppingCart\Product\ShoppingCartProductSaveFacadeFactory
+    - App\ShoppingCart\Product\ShoppingCartProductRepository
+    - App\ShoppingCart\Product\ShoppingCartProductRepositoryFactory
+    - App\ShoppingCart\ShoppingCartDeleteFacadeFactory
+    - App\ShoppingCart\ShoppingCartDTOFactory
+    - App\ShoppingCart\ShoppingCartFacadeFactory
+    - App\ShoppingCart\ShoppingCartRepository
+    - App\ShoppingCart\ShoppingCartRepositoryFactory
+    - App\ShoppingCart\ShoppingCartSaveFacade
+    - App\ShoppingCart\ShoppingCartSaveFacadeFactory
+    - App\ShoppingCart\Validity\ValidityFacadeFactory
+
+    - App\Store\OpeningHours\Change\ChangeFacadeFactory
+    - App\Store\OpeningHours\Change\ChangeRepository
+    - App\Store\OpeningHours\OpeningHoursFacadeFactory
+    - App\Store\OpeningHours\OpeningHoursRepository
+
+    - App\Url\UrlResolver
+
+    - App\User\UserCheckServiceFactory
+    - App\User\UserIdentityServiceFactory
+    - App\User\UserFacadeFactory
+    - App\User\UserPasswordServiceFactory
+    - App\User\UserRepositoryFactory
+
+    #vendor
+    - GuzzleHttp\Client

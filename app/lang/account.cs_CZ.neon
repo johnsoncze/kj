@@ -1,0 +1,60 @@
+menu:
+    overview:
+        label: Přehled
+    orders:
+        label: Objednávky
+    personalData:
+        label: Osobní údaje
+    passwordChange:
+        label: Změna hesla
+
+overview:
+    benefit:
+        discount:
+            description: 'Máte od nás stále zvýhodnění %pct% %<br>(Pozn.: Neplatí na servis hodinek)'
+    birthday:
+        title: 'Přejeme krásné narozeniny!'
+        description: 'Jako malý dárek přijměte 15% zvýhodnění na naše šperky a hodinky.'
+    lastOrder:
+        title: Poslední objednávka
+    title: Můj JK účet
+    description: 'Uvidíte zde své slevové poukazy. A především tu najdete všechny své objednávky. Děkujeme Vám za každou z nich.'
+    goToShop:
+            label: Přejít do obchodu
+            notice: * Zvýhodnění neplatí na servis hodinek.
+
+sign:
+    in:
+        title: Přihlášení
+        action: Přihlásit se
+    up:
+        title: Registrace
+        action: Registrovat
+        cta: Registrujte se
+        benefit:
+            title: Co registrací <br>získáte?
+            discount:
+                title: Cenová zvýhodnění
+                description: 'Těšte se na trvalé 10%&nbsp;zvýhodnění na šperky i&nbsp;hodinky, získat můžete i mimořádné 15% narozeninové zvýhodnění'
+            letter:
+                title: Pozvánky a novinky
+                description: 'O&nbsp;všem budete vědět jako první – o&nbsp;mimořádných akcích, nových kolekcích a&nbsp;produktech i&nbsp;společenských událostech pro JK&nbsp;klienty'
+            book:
+                title: Tištěný katalog
+                description: 'Jednou ročně vydáváme tištěný katalog plný inspirace. Rádi vám jej budeme zdarma zasílat'
+        store:
+            completion:
+                description: 'Pro dokončení Vaší registrace z prodejny si nastavte heslo, kterým se budete na webu přihlašovat.'
+            request:
+                title: Dokončit registraci z prodejny
+                description: 'Zadejte váš e-mail, a my vám zašleme odkaz na nastavení hesla.'
+                webRegistration: Registrovat se skrze web
+    out: Odhlásit se
+    password:
+        set:
+            description: 'Nastavte si nové heslo, kterým se budete nadále přihlašovat.'
+        forgotten:
+            title: Zapomenuté heslo
+            description: 'Nic se neděje. Zadejte svůj e-mail a hned vám pošleme odkaz pro obnovení hesla.'
+            question: Zapomněli jste heslo?
+            remembered: Vzpomněli jste si? Přihlaste se

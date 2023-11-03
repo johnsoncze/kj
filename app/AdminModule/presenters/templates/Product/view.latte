@@ -1,0 +1,11 @@
+{block contentAdmin}
+<h3>Kategorie, ve kterých se produkt zobrazuje</h3>
+{if $categories}
+    <ul>
+    {foreach $categories as $textNavigation => $category}
+        <li>{$textNavigation}</li>
+    {/foreach}
+    </ul>
+{else}
+<em>žádná kategorie</em>
+{/if}

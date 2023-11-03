@@ -1,0 +1,21 @@
+{if $categories}
+    <section class="u-sm-pb--40 u-textCenter">
+        <div class="Container Container--slim Grid u-justifyContentCenter">
+            {foreach $categories as $category}
+                <div class="Grid-cell u-size1of3 u-sm-size1of5">
+
+                    <a href="{plink Category:default, url => $category->getUrl()}" class="ImageLink u-mb--30 u-sm-mb--0">
+                        <div class="ImageLink-imageBox">
+                            <img src="{if $category->getMenuImage()}{thumbnailPath 140, 140, $category->getMenuImage(), $category->getUploadFolder()}{else}{imagePlaceholder 140, 140}{/if}"
+                                 style="max-width: 90px; max-height: 90px"
+                                 class="ImageLink-image"
+                                 alt="{$category->getName()}">
+                        </div>
+                        <h4 class="ImageLink-text">{$category->getName()}</h4>
+                    </a>
+
+                </div>
+            {/foreach}
+        </div>
+    </section>
+{/if}

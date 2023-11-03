@@ -1,0 +1,30 @@
+<div class="jumbotron">
+    <h4>Vstupní stránka kolekce</h4>
+    <div class="form-group">
+        {$parentForm->getComponent($name . "-collectionSubname")->getLabel()}
+        {$parentForm->getComponent($name . "-collectionSubname")->getControl()}
+    </div>
+    <div class="form-group">
+        {$parentForm->getComponent($name . "-collectionPerex")->getLabel()}
+        {$parentForm->getComponent($name . "-collectionPerex")->getControl()}
+    </div>
+    <div class="form-group">
+        {$parentForm->getComponent($name . "-collectionText")->getLabel()}
+        {$parentForm->getComponent($name . "-collectionText")->getControl()}
+    </div>
+    <div class="form-group">
+        {$parentForm->getComponent($name . "-collectionImage")->getLabel()}
+        {$parentForm->getComponent($name . "-collectionImage")->getControl()}
+		
+		{if $categoryEntity instanceof \App\Category\CategoryEntity && $categoryEntity->getCollectionImage()}
+			<hr>
+			{capture $link}{link categoryForm:deleteCollectionImage!, id => $categoryEntity->getId()}{/capture}
+			<div class="thumbnail-body file-wrapper">
+				{thumbnailLink 100, 100, $categoryEntity->getCollectionImage(), $categoryEntity->getUploadFolder()}
+				<a href="{$link|noescape}" class="btn btn-danger btn-xs delete-file"><i class="fa fa-trash-o" aria-hidden="true"></i> odstranit</a>
+			</div>			
+		{/if}
+		
+    </div>
+</div>
+		

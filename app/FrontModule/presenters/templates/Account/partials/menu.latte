@@ -1,0 +1,18 @@
+<div class="User-navi">
+    <div class="Grid u-pt--30 u-pb--90">
+
+        <div class="Grid-cell u-size3of12 u-sm-max-size12of12">
+            <a href="{plink Account:default}" class="User-navi-link {$presenter->isLinkCurrent() ? active}">{_account.menu.overview.label}</a>
+        </div>
+        <div class="Grid-cell u-size3of12 u-sm-max-size12of12">
+            <a href="{plink Account:orderList}" class="User-navi-link {$presenter->isLinkCurrent() || $presenter->isLinkCurrent('Account:orderDetail')? active}">{_account.menu.orders.label}</a>
+        </div>
+        <div class="Grid-cell u-size3of12 u-sm-max-size12of12">
+            <a href="{plink Account:personalData}" class="User-navi-link {$presenter->isLinkCurrent() ? active}">{_account.menu.personalData.label}</a>
+        </div>
+        <div class="Grid-cell u-size3of12 u-sm-max-size12of12">
+            <a href="{plink Account:passwordChange}" class="User-navi-link {$presenter->isLinkCurrent() ? active}">{_account.menu.passwordChange.label}</a>
+        </div>
+
+    </div>
+</div>

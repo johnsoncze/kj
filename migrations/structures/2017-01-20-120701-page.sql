@@ -1,0 +1,21 @@
+CREATE TABLE `page` (
+  `p_id` int(11) NOT NULL AUTO_INCREMENT,
+  `p_language_id` int(11) NOT NULL,
+  `p_parent_page_id` int(11) DEFAULT NULL,
+  `p_type` varchar(11) NOT NULL DEFAULT '',
+  `p_name` varchar(255) NOT NULL DEFAULT '',
+  `p_content` text,
+  `p_url` varchar(255) NOT NULL DEFAULT '',
+  `p_title_seo` varchar(255) DEFAULT NULL,
+  `p_description_seo` text,
+  `p_sort` int(11) DEFAULT NULL,
+  `p_setting` text,
+  `p_status` varchar(11) NOT NULL DEFAULT '',
+  `p_add_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `p_update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`p_id`),
+  KEY `p_language_id` (`p_language_id`),
+  KEY `p_parent_page_id` (`p_parent_page_id`),
+  CONSTRAINT `page_ibfk_1` FOREIGN KEY (`p_language_id`) REFERENCES `language` (`lan_id`) ON UPDATE CASCADE,
+  CONSTRAINT `page_ibfk_2` FOREIGN KEY (`p_parent_page_id`) REFERENCES `page` (`p_id`) ON DELETE SET NULL ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

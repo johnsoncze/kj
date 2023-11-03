@@ -1,0 +1,12 @@
+<div id="hbreadcrumb">
+    <ol class="hbreadcrumb breadcrumb">
+        <li><a href="{$homeLink}"><i class="fa fa-home" aria-hidden="true"></i></a></li>
+        {foreach $links as $link}
+            {if $iterator->isLast()}
+                <li>{$link->getAnchor()}</li>
+            {else}
+                <li><a href="{if strpos($link->getLink(), ':') !== FALSE}{plink $link->getLink()}{else}{$link->getLink()}{/if}">{$link->getAnchor()}</a></li>
+            {/if}
+        {/foreach}
+    </ol>
+</div>

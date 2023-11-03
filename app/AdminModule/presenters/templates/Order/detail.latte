@@ -1,0 +1,147 @@
+{block contentAdmin}
+<div class="row">
+    <div class="col-xs-6">
+        <b>Kód:</b> {$order->getCode()}<br>
+        <b>Datum vytvoření:</b> {$order->getAddDate()|date:"d.m.Y H:i:s"}
+    </div>
+    <div class="col-xs-6 text-right">
+        {control stateForm}
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-xs-4">
+        <h4>Kontaktní údaje</h4>
+        <table class="table table-striped">
+            <tr>
+                <th scope="row" style="width: 40%">Id zákazníka</th>
+                <td>{if $order->getCustomerId() !== NULL}<a href="{plink Customer:detail, id => $order->getCustomerId()}">{$order->getCustomerId()}</a>{else}-{/if}</td>
+            </tr>
+            <tr>
+                <th scope="row">Příjmení</th>
+                <td>{$order->getCustomerLastName()}</td>
+            </tr>
+            <tr>
+                <th scope="row">Křestní jméno</th>
+                <td>{$order->getCustomerFirstName()}</td>
+            </tr>
+            <tr>
+                <th scope="row">Telefon</th>
+                <td>{$order->getCustomerTelephone()}</td>
+            </tr>
+            <tr>
+                <th scope="row">E-mail</th>
+                <td><a href="mailto:{$order->getCustomerEmail()}">{$order->getCustomerEmail()}</a></td>
+            </tr>
+        </table>
+    </div>
+    <div class="col-xs-4">
+        <h4>Fakturační adresa</h4>
+        <table class="table table-striped">
+            <tr>
+                <th scope="row" style="width: 40%">Ulice</th>
+                <td>{$order->getBillingAddressStreet()}</td>
+            </tr>
+            <tr>
+                <th scope="row">Město</th>
+                <td>{$order->getBillingAddressCity()}</td>
+            </tr>
+            <tr>
+                <th scope="row" style="width: 40%">PSČ</th>
+                <td>{$order->getBillingAddressPostcode()}</td>
+            </tr>
+            <tr>
+                <th scope="row">Země</th>
+                <td>{$order->getBillingAddressCountry()}</td>
+            </tr>
+        </table>
+    </div>
+    <div class="col-xs-4">
+        <h4>Doručovací adresa</h4>
+        <table class="table table-striped">
+            <tr>
+                <th scope="row">Firma</th>
+                <td>{fill $order->getDeliveryAddressCompany()}</td>
+            </tr>
+            <tr>
+                <th scope="row">Příjmení</th>
+                <td>{fill $order->getDeliveryAddressLastName()}</td>
+            </tr>
+            <tr>
+                <th scope="row">Křestní jméno</th>
+                <td>{fill $order->getDeliveryAddressFirstName()}</td>
+            </tr>
+            <tr>
+                <th scope="row" style="width: 40%">Ulice</th>
+                <td>{fill $order->getDeliveryAddressStreet()}</td>
+            </tr>
+            <tr>
+                <th scope="row">Město</th>
+                <td>{fill $order->getDeliveryAddressCity()}</td>
+            </tr>
+            <tr>
+                <th scope="row" style="width: 40%">PSČ</th>
+                <td>{fill $order->getDeliveryAddressPostcode()}</td>
+            </tr>
+            <tr>
+                <th scope="row">Země</th>
+                <td>{fill $order->getDeliveryAddressCountry()}</td>
+            </tr>
+            <tr>
+                <th scope="row">Telefon</th>
+                <td>{fill $order->getDeliveryTelephone()}</td>
+            </tr>
+        </table>
+    </div>
+    <div class="col-xs-6">
+        <h4>Platba</h4>
+          <div>
+            {if $order->getState()=="new"}
+              {control paymentChangeForm}
+            {/if}
+
+          </div>
+        <table class="table table-striped">
+            <tr>
+                <th scope="row" style="width: 40%">Název</th>
+                <td>{$order->getPaymentName()}</td>
+            </tr>
+            <tr>
+                <th scope="row" style="width: 40%">ID platby platební brány</th>
+                <td>{fill $order->getPaymentGatewayTransactionId()}</td>
+            </tr>
+            <tr>
+                <th scope="row" style="width: 40%">Stav platby platební brány</th>
+                <td>{if $order->getPaymentGatewayTransactionState() !== NULL}{_$order->getPaymentGatewayTransactionStateValues()['translationKey']}{else}-{/if}</td>
+            </tr>
+        </table>
+    </div>
+    <div class="col-xs-6">
+        <h4>Doprava</h4>
+        <table class="table table-striped">
+            <tr>
+                <th scope="row" style="width: 40%">Název</th>
+                <td>{$order->getDeliveryName()}</td>
+            </tr>
+            <tr>
+                <th scope="row">Doplňující informace</th>
+                <td>{fill $order->getDeliveryInformation()}</td>
+            </tr>
+            <tr>
+                <th scope="row">Sledovací kód</th>
+                <td>{fill $order->getDeliveryTrackingCode()}</td>
+            </tr>
+        </table>
+    </div>
+    <div class="col-xs-12">
+        <h4>Doplňující informace</h4>
+        <table class="table table-striped">
+            <tr>
+                <th scope="row" style="width: 40%">Poznámka</th>
+                <td>{fill $order->getComment()}</td>
+            </tr>
+        </table>
+    </div>
+</div>
+<h3>Produkty</h3>
+{control orderProductList}

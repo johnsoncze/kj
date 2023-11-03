@@ -1,0 +1,142 @@
+{block content}
+
+<main class="Background Background--gradient-top-100-ebebeb">
+    <div class="Container Container--slimer">
+
+        {include 'partials/breadcrumb.latte'}
+
+        <div class="u-pb--90 u-pt--50">
+
+            <h1 class="User-page-title">{$title}</h1>
+
+            <div class="Grid">
+
+                <div class="Grid-cell u-size6of12">
+                    <p class="Timeline-desc"><b>{_order.property.addDate}:</b> {$order->getAddDate()|date:"d.m.Y H:i:s"}</p>
+                </div>
+
+                <div class="Grid-cell u-size6of12 u-textRight">
+                    <p class="Timeline-desc"><b>{_order.property.state}:</b> {_$order->getStateTranslationKey()}</p>
+                </div>
+
+            </div>
+
+            <hr>
+
+            <div class="Grid u-mt--50">
+
+                <div class="Grid-cell u-sm-size4of12 u-pb--20">
+                    <h3 class="Heading Heading--subTitle">{_order.billingInformation}</h3>
+
+                    <p class="Timeline-desc">{var $countryTranslationCode = App\Location\State::getTranslationKey($order->getBillingAddressCountry())}
+                        {$order->getCustomerFirstName()} {$order->getCustomerLastName()}<br>
+                        {$order->getBillingAddressStreet()}<br>
+                        {$order->getBillingAddressPostcode()} {$order->getBillingAddressCity()}<br>
+                        {$order->getCustomerEmail()}<br>
+                        {$order->getCustomerTelephone()}<br>
+                        {_$countryTranslationCode}</p>
+
+                </div>
+
+                <div class="Grid-cell u-sm-size4of12 u-pb--20">
+                    <h3 class="Heading Heading--subTitle">{_order.deliveryDetails}</h3>
+
+                    <p class="Timeline-desc">{var $countryTranslationCode = $order->getDeliveryAddressCountry() ? App\Location\State::getTranslationKey($order->getDeliveryAddressCountry()) : App\Location\State::getTranslationKey($order->getBillingAddressCountry())}
+                    {if $order->getDeliveryAddressCompany()}{$order->getDeliveryAddressCompany()}<br>{/if}
+                    {if $order->getDeliveryAddressFirstName()}{$order->getDeliveryAddressFirstName()} {$order->getDeliveryAddressLastName()}{else}{$order->getCustomerFirstName()} {$order->getCustomerLastName()}{/if}<br>
+                    {if $order->getDeliveryAddressStreet()}{$order->getDeliveryAddressStreet()}{else}{$order->getBillingAddressStreet()}{/if}<br>
+                    {if $order->getDeliveryAddressPostcode()}{$order->getDeliveryAddressPostcode()}{else}{$order->getBillingAddressPostcode()}{/if}
+                    {if $order->getDeliveryAddressCity()}{$order->getDeliveryAddressCity()}{else}{$order->getBillingAddressCity()}{/if}<br>
+                        {_$countryTranslationCode}</p>
+
+                </div>
+
+                <div class="Grid-cell u-sm-size4of12 u-pb--20">
+                    <h3 class="Heading Heading--subTitle">{_delivery.title}</h3>
+
+                    <p class="Timeline-desc">{$order->getDeliveryName()}</p>
+
+                    <div class="u-pt--30">
+                        <h3 class="Heading Heading--subTitle">{_payment.title}</h3>
+
+                        <p class="Timeline-desc">{$order->getPaymentName()}
+                            {if $order->isRequiredPaymentGateway() === TRUE && $order->getPaymentGatewayTransactionState()}}
+                                <br><b>{_payment.gateway.state.label}:</b> {_$order->getPaymentGatewayTransactionStateValues()['translationKey']}
+                            {/if}
+                            <a n:if="$order->isGatewayPaymentAvailable()" href="{plink PaymentGateway:createRequest, token => $order->getToken()}" class="Button">Opakovat platbu</a>
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="u-mt--45">
+                <h3 class="Heading Heading--subTitle">{_order.product.title}</h3>
+
+                <div class="Grid">
+                    <div class="Grid-cell u-size12of12 u-sm-max-size12of12">
+                        <section class="Basket-products">
+
+                            <table class="Basket-productsTable">
+                                <tbody>
+                                {var $products = $order->getProducts()}
+                                {foreach $products as $product}
+                                    {var $catalogProduct = $product->getCatalogProduct()}
+                                    <tr>
+                                        <td>
+                                            {if $product->getCatalogProduct()}<a href="{plink Product:detail, url => $product->getCatalogProduct()->getTranslation()->getUrl()}">{/if}
+                                                {if $catalogProduct && $catalogProduct->getPhoto()}
+                                                    <img src="{thumbnailPath 100, 100, $catalogProduct->getPhoto(), $catalogProduct->getUploadFolder()}">
+                                                    {else}
+                                                    <img src="{imagePlaceholder 100, 100}">
+                                                {/if}
+                                            {if $product->getCatalogProduct()}</a>{/if}
+                                        </td>
+                                        <td class="Basket-productTitle">
+                                            <div class="Basket-productsTitle">{if $product->getCatalogProduct()}<a href="{plink Product:detail, url => $product->getCatalogProduct()->getTranslation()->getUrl()}" class="Link--simple Link--noUnderline">{$product->getName()}</a>{else}{$product->getName()}{/if}</div>
+                                            <div class="Basket-productsCode">{$product->getCode()}</div>
+                                            <div n:if="$product->getTranslatedProductionTimeName()" class="Basket-productsCode"><b>{_product.production.title}:</b> {$product->getTranslatedProductionTimeName()}
+                                                {if $product->getSurchargePercent()}(+ {$product->getSurchargePercent()|number:"0":"":""} %){/if}</div>
+                                            {if $product->getParameters()}
+                                                <div class="Basket-productsParam">
+                                                    {var $parameters = $product->getParameters()}
+                                                    {foreach $parameters as $parameter}
+                                                        {$parameter->getTranslatedName()}: {$parameter->getTranslatedValue()}{if $iterator->isLast() !== TRUE}<br>{/if}
+                                                    {/foreach}
+                                                </div>
+                                            {/if}
+                                        </td>
+                                        <td>
+                                            <div class="Basket-productsAmount u-textRight">{$product->getQuantity()} {_product.quantityUnit}</div>
+                                        </td>
+                                        <td>
+                                            <div class="Basket-productsPrice u-textRight">{App\Helpers\Prices::toUserFriendlyFormat($product->getSummaryPrice())} {_price.currency.label}</div>
+                                        </td>
+                                    </tr>
+                                {/foreach}
+                                </tbody>
+                            </table>
+
+                        </section>
+                    </div>
+                </div>
+            </div>
+
+            <div class="u-textRight u-mt--45">
+                <hr>
+                <div class="u-pt--10 u-pb--10">
+                {_price.label.summaryPriceWithVat} <span class="Basket-productsPrice u-textRight u-fontSize--22">{App\Helpers\Prices::toUserFriendlyFormat($order->getSummaryPrice())} {_price.currency.label}</span>
+                </div>
+                <hr>
+            </div>
+
+            <div class="u-pt--30">
+                <p class="Timeline-desc"><span class="u-textBold">{_order.comment}</span> {fill $order->getComment()}</p>
+            </div>
+
+            {control relatedProduct}
+
+        </div>
+
+    </div>
+</main>

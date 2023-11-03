@@ -1,0 +1,27 @@
+{if $collection !== NULL}
+    <section class="Background">
+        <div class="Collection">
+
+            <div class="Container u-pt--50 u-sm-pt--140 u-pb--20 u-sm-pb--20">
+                <blockquote class="Collection-blockquote">{_category.collection.signpost.quote|noescape}</blockquote>
+
+                <div class="Collection-main-content-overlay Collection-main-content-overlay--slim u-textCenter u-mt--80 u-sm-mt--180">
+                    <img src="/assets/front/images/layout/collection-main.jpg" alt="Tolerance" class="Image--radius-10">
+                    <img src="/assets/front/images/layout/produkt/prsten-1.png" alt="Prsten" class="Collection-main-content-image">
+                </div>
+
+                <div class="Collection-main-content u-mt--40 u-sm-mt--80">
+                    <div class="Collection-main-heading">{$collection->getName()}</div>
+                    <p class="Collection-main-desc u-mt--20 u-sm-mt--40">{$collection->getContent()}</p>
+
+                    <div class="u-mt--15 u-sm-mt--35">
+                        <a href="{plink Category:default, url => $collection->getUrl(), _image => 'true'}"
+                           class="Button">{_collection.topCollection.cta}</a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+{/if}

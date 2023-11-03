@@ -1,0 +1,83 @@
+{block content}
+<section class="PageHeader">
+    <div class="PageHeader-bg" style="background-image: url(/www/assets/front/images/layout/banner-jk-sklo.jpg);"></div>
+    <div class="Container Grid">
+        <div class="Grid-cell u-size12of12">
+            {control breadcrumb:white}
+
+            <h1 class="Text-title u-mt--25 u-md-mb--0 u-textColor--white">{_pageStatic.services.title|noescape}</h1>
+        </div>
+    </div>
+</section>
+
+<section class="Background">
+    <div class="Container u-textCenter u-mt--20 u-sm-mt--0">
+
+        <img class="u-mb--15" src="/assets/front/images/layout/jk-min.png" alt="JK">
+
+        <h2 class="Text-block-title-larger u-textCenter u-mb--20">{_pageStatic.services.introduction.title|noescape}</h2>
+
+        <p class="Text-block-paragraph-ornament-bot-center u-textCenter u-mt--30 u-mb--80">{_pageStatic.services.introduction.description|noescape}</p>
+
+        <div class="u-textCenter">
+            <img src="/assets/front/user_content/images/zlatnicka-dilna-ring.jpg" alt="Zlaté snubní prsteny"
+                 class="u-mt--30">
+        </div>
+
+    </div>
+</section>
+
+<div class="Background Background--silver">
+    <div class="Container">
+        <div class="u-textLeft u-mt--30 u-sm-mt--140 u-maxWidth--1060">
+            <img src="/assets/front/images/layout/sperky-motyli-banner.jpg" alt="Zlatnická dílna" class="Image--radius-10 u-mt--ofset-2x40 u-sm-mt--ofset-2x70">
+        </div>
+
+        <div class="u-pb--10 u-xs-pb--30 u-sm-pb--80 u-md-pb--140">
+            {control servicesPage-servicesTimeline}
+        </div>
+    </div>
+</div>
+
+<div class="Background" id="warranty">
+    <div class="Container">
+        <div class="u-pb--10 u-xs-pb--30 u-sm-pb--80 u-md-pb--140 u-pt--80">
+            {control servicesPage-careTimeline}
+        </div>
+    </div>
+</div>
+
+<div class="Background Background--silver">
+    <div class="Container">
+        <div class="u-pb--10 u-xs-pb--30 u-sm-pb--80 u-md-pb--140">
+            {control servicesPage-repairTimeline}
+        </div>
+    </div>
+</div>
+
+<div class="Background">
+    <div class="Container Container--slim">
+        <div class="u-pb--10 u-xs-pb--30 u-sm-pb--80 u-md-pb--140 u-pt--80">
+            <h3 class="Timeline-title">{_pageStatic.services.buyingGold.title}</h3>
+           <div class="Grid">
+               <div class="Grid-cell u-sm-size1of2">
+                   <p class="Timeline-desc">{_pageStatic.services.buyingGold.description}</p>
+                   <p class="Timeline-desc">{_pageStatic.services.buyingGold.description2}</p>
+                   <p class="Timeline-desc">{_pageStatic.services.buyingGold.description3}</p>
+               </div>
+               <div class="Grid-cell u-sm-size1of2">
+                   <div class="u-sm-pl--40">
+                       <h3 class="Timeline-subtitle u-mt--0">{_pageStatic.services.buyingGold.price.title}</h3>
+                       <p class="Timeline-desc">
+                           14 {_pageStatic.services.buyingGold.price.carats} = 585/1000 - <b>650 {_price.currency.label}/g</b><br>
+                           18 {_pageStatic.services.buyingGold.price.carats} = 750/1000 - <b>830 {_price.currency.label}/g</b><br>
+                           24 {_pageStatic.services.buyingGold.price.carats} = 999/1000 - <b>1 110 {_price.currency.label}/g</b>
+                       </p>
+                   </div>
+               </div>
+           </div>
+        </div>
+    </div>
+</div>
+
+{control storeMeetingForm:productStoreMeeting}

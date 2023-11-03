@@ -1,0 +1,1 @@
+ALTER TABLE `category` ADD `cat_show_on_homepage` TINYINT(1) AFTER `cat_template`, ADD INDEX (`cat_show_on_homepage`);

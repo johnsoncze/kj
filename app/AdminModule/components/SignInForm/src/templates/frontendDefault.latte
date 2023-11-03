@@ -1,0 +1,37 @@
+<form n:name="loginForm">
+
+    <fieldset class="Form-fieldset {if $presenter->isLinkCurrent('ShoppingCart:step1links')}signin-form{/if}">
+        <div class="Form-row">
+            <div class="TextField">
+                <label for="email" class="Form-label">E-mail<span class="Form-mandatory">*</span></label>
+                <input n:name="email" id="email" class="TextField-input">
+            </div>
+        </div>
+
+        <div class="Form-row">
+            <div class="TextField">
+                <label for="password" class="Form-label">{_form.sign.in.input.password.label}<span class="Form-mandatory">*</span></label>
+                <input n:name="password" id="password" class="TextField-input">
+            </div>
+        </div>
+    </fieldset>
+
+    {if $presenter->isLinkCurrent('ShoppingCart:step1links')}
+    <div class="signin-buttons u-mt--20 u-sm-mt--30">
+    {/if}
+    <div class="Form-buttons u-mt--20 u-sm-mt--30">
+        <input class="Button" value="{_form.sign.in.input.submit.label}" n:name="submit">
+    </div>
+
+    {if $presenter->isLinkCurrent('ShoppingCart:step1links')}
+    <div>
+        <a href="{plink Sign:forgottenPassword}" class="Product-link-big">
+            <span class="Link-animation u-md-displayInit Link Link--lineBefore">{_account.sign.password.forgotten.question}<span class="Link--hover"></span></span>
+        </a>
+    </div>
+    {/if}
+
+    {if $presenter->isLinkCurrent('ShoppingCart:step1links')}
+    </div>
+    {/if}
+</form>

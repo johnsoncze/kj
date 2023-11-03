@@ -1,0 +1,32 @@
+.GenerateDisplayClassName(@value, @Value: ~'', @infix: ~'') {
+    .u-@{infix}display@{Value} {
+        display: @value;
+    }
+}
+
+.GenerateDisplayClassNames(@value, @Value) {
+    .GenerateDisplayClassName(@value, @Value);
+
+    @media @media-xs-min {
+        .GenerateDisplayClassName(@value, @Value, ~'xs-');
+    }
+    
+    @media @media-sm-min {
+        .GenerateDisplayClassName(@value, @Value, ~'sm-');
+    }
+
+    @media @media-md-min {
+        .GenerateDisplayClassName(@value, @Value, ~'md-');
+    }
+
+    @media @media-lg-min {
+        .GenerateDisplayClassName(@value, @Value, ~'lg-');
+    }
+}
+
+.GenerateDisplayClassNames(~'none', ~'None');
+.GenerateDisplayClassNames(~'inline', ~'Inline');
+.GenerateDisplayClassNames(~'block', ~'Block');
+.GenerateDisplayClassNames(~'inline-block', ~'InlineBlock');
+.GenerateDisplayClassNames(~'flex', ~'Flex');
+.GenerateDisplayClassNames(~'inline-flex', ~'InlineFlex');

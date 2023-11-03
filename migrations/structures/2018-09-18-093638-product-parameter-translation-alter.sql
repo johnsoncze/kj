@@ -1,0 +1,1 @@
+ALTER TABLE `product_parameter_translation` ADD INDEX (`ppt_value`);

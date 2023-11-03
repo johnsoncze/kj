@@ -1,0 +1,7 @@
+<ul class="Footer-linksBlock">
+    {foreach $pages as $page}
+        <li>
+            <a class="Footer-link Footer-item" href="{$page->getFrontendLink($linkGenerator)}">{$page->getName()}</a>
+        </li>
+    {/foreach}
+</ul>

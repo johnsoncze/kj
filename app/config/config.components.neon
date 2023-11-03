@@ -1,0 +1,298 @@
+    services:
+    - App\AdminModule\Components\Catalog\CatalogList\CatalogListFactory
+
+    - App\AdminModule\Components\Catalog\Form\CatalogFormFactory
+
+    - App\AdminModule\Components\Catalog\SortForm\SortFormFactory
+
+    - App\AdminModule\Components\Category\Filtration\Combination\SortForm\SortFormFactory
+    - App\AdminModule\Components\Category\RepresentativeProduct\PreSortForm\PreSortFormFactory
+    - App\AdminModule\Components\Category\RepresentativeProduct\SortForm\SortFormFactory
+    - App\AdminModule\Components\Category\SortForm\Resolver\FirstLevelResolver
+    - App\AdminModule\Components\Category\SortForm\Resolver\HomepageListResolver
+    - App\AdminModule\Components\Category\SortForm\Resolver\ChildResolver
+    - App\AdminModule\Components\Category\SortForm\Resolver\CollectionSliderResolver
+    - App\AdminModule\Components\Category\SortForm\Resolver\ResolverList
+    - App\AdminModule\Components\Category\SortForm\SortFormFactory
+
+    - App\Components\AdminModule\CategoryFiltrationForm\CategoryFiltrationFormFactory
+    - App\Components\AdminModule\CategoryFiltrationForm\CategoryFiltrationFormSuccessFactory
+
+    - App\Components\AdminModule\CategoryFiltrationList\CategoryFiltrationListFactory
+
+    - App\AdminModule\Components\CategoryParameterForm\CategoryParameterFormFactory
+
+    - App\AdminModule\Components\CategoryParameterList\CategoryParameterListFactory
+
+    - App\AdminModule\Components\Diamond\PriceList\PriceListFactory
+
+    - App\AdminModule\Components\CustomerList\CustomerListFactory
+
+    - App\AdminModule\Components\DeliveryList\DeliveryListFactory
+
+    - App\AdminModule\Components\Newsletter\SubscriberList\SubscriberListFactory
+
+    - App\AdminModule\Components\OrderList\OrderListFactory
+
+    - App\AdminModule\Components\PaymentChangeForm\PaymentChangeFormFactory
+
+    - App\AdminModule\Components\OpportunityList\OpportunityListFactory
+
+    - App\AdminModule\Components\OpportunityProductList\OpportunityProductListFactory
+
+    - App\AdminModule\Components\PersonalMeetingList\PersonalMeetingListFactory
+
+    - App\AdminModule\Components\OrderProductList\OrderProductListFactory
+
+    - App\AdminModule\Components\Page\Form\Sort\SortFormFactory
+
+    - App\AdminModule\Components\Product\DiamondList\DiamondListFactory
+
+    - App\AdminModule\Components\Product\WeedingRingForm\WeedingRingFormFactory
+
+    - App\AdminModule\Components\ProductFiltrationForm\ProductFiltrationFormFactory
+
+    - App\AdminModule\Components\ProductForm\ProductFormFactory
+    - App\AdminModule\Components\ProductForm\ProductFormRemovePhotoFactory
+    - App\AdminModule\Components\ProductForm\ProductFormSuccessFactory
+
+    - App\AdminModule\Components\ProductNotCompletedList\ProductNotCompletedListFactory
+
+    - App\AdminModule\Components\ProductParameterSetForm\ProductParameterSetFormFactory
+    - App\AdminModule\Components\ProductBatchEditForm\ProductBatchEditFormFactory
+
+    - App\AdminModule\Components\ProductParameterSetList\ProductParameterSetListFactory
+
+    - App\AdminModule\Components\ProductParentVariantList\ProductParentVariantListFactory
+
+    - App\AdminModule\Components\ProductRelatedForm\ProductRelatedFormFactory
+
+    - App\AdminModule\Components\ProductRelatedList\ProductRelatedListFactory
+
+    - App\AdminModule\Components\ProductVariantForm\ProductVariantFormFactory
+
+    - App\AdminModule\Components\Product\Variant\GenerateForm\GenerateFormFactory
+
+    - App\AdminModule\Components\ProductVariantList\ProductVariantListFactory
+
+    - App\FrontModule\Components\Product\WeedingRing\Demand\DemandFactory
+
+    - App\AdminModule\Components\ProductSearchEngineForm\ProductSearchEngineFormFactory
+
+    - App\AdminModule\Components\ProductStateList\ProductStateListFactory
+
+    - App\AdminModule\Components\ProductList\ProductListFactory
+
+    - App\AdminModule\Components\Store\OpeningHours\ChangeForm\ChangeFormFactory
+    - App\AdminModule\Components\Store\OpeningHours\ChangeList\ChangeListFactory
+
+    - App\Components\AdminPageNavigationTree\AdminPageNavigationTreeFactory
+
+    - App\Components\ArticleList\ArticleListFactory
+
+    - App\Components\ArticleForm\ArticleFormFactory
+
+    - App\Components\ArticleCategoryForm\ArticleCategoryFormFactory
+
+    - App\Components\ArticleCategoryList\ArticleCategoryListFactory
+
+    - App\Components\ArticleCategoryRemoveForm\ArticleCategoryRemoveFormFactory
+
+    - App\Components\PromoArticleList\PromoArticleListFactory
+
+    - App\Components\PromoArticleForm\PromoArticleFormFactory
+
+    - App\Components\BreadcrumbNavigation\NameResolverFactory
+
+    - App\Components\BreadcrumbNavigation\NavigationFactory
+
+    - App\AdminModule\Components\CategoryFiltrationCombinationParameterForm\CategoryFiltrationCombinationParameterFormFactory
+    - App\AdminModule\Components\CategoryFiltrationCombinationParameterForm\CategoryFiltrationCombinationParameterFormSuccessFactory
+
+    - App\AdminModule\Components\CategoryFiltrationCombinationParameterList\CategoryFiltrationCombinationParameterListFactory
+
+    - App\Components\CategoryFiltrationSortForm\CategoryFiltrationSortFormFactory
+    - App\Components\CategoryFiltrationSortForm\CategoryFiltrationSortFormSuccessFactory
+
+    - App\Components\CategoryForm\CategoryFormFactory
+    - App\Components\CategoryForm\CategoryFormProcessSuccessFactory
+
+    - App\Components\CategoryList\CategoryListFactory
+
+    - App\Components\AdminModule\CategoryNavigationTree\CategoryNavigationTreeFactory
+
+    - App\Components\ForgottenPasswordForm\ForgottenPasswordFormFactory
+
+    - App\Components\ChooseLanguageForm\ChooseLanguageFormFactory
+
+    - App\Components\LanguageList\LanguageListFactory
+
+    - App\Components\LanguageMiniSwitcher\LanguageMiniSwitcherFactory
+
+    - App\Components\PageArticlesForm\PageArticlesFormFactory
+
+    - App\Components\PageList\PageListFactory
+
+    - App\Components\PageTextForm\PageTextFormFactory
+
+    - App\Components\PasswordForm\PasswordFormFactory
+
+    - App\Components\ProductParameterForm\ProductParameterFormFactory
+    - App\Components\ProductParameterForm\ProductParameterFormSuccessFactory
+
+    - App\Components\ProductParameterGroupForm\ProductParameterGroupFormFactory
+
+    - App\Components\ProductParameterGroupList\ProductParameterGroupListFactory
+
+    - App\Components\ProductParameterList\ProductParameterListFactory
+
+    - App\AdminModule\Components\Category\AssociatedCategory\CategoryForm\CategoryFormFactory
+    - App\AdminModule\Components\Category\AssociatedCategory\CategoryList\CategoryListFactory
+    - App\AdminModule\Components\Category\CollectionListForm\CollectionListFormFactory
+    - App\AdminModule\Components\Category\CollectionList\ProductForm\ProductFormFactory
+    - App\AdminModule\Components\Category\CollectionList\ProductList\ProductListFactory
+
+    - App\AdminModule\Components\PaymentList\PaymentListFactory
+
+    - App\AdminModule\Components\ProductParameterGroupLockList\ProductParameterGroupLockListFactory
+
+    - App\AdminModule\Components\ProductParameterSortForm\ProductParameterSortFormFactory
+    - App\AdminModule\Components\ProductParameterSortForm\ProductParameterSortFormSuccessFactory
+
+    - App\Components\SeoFormContainer\SeoFormContainerFactory
+    - App\Components\SeoFormContainer\IndexFollowForm\IndexFollowFormFactory
+    - App\Components\OgFormContainer\OgFormContainerFactory
+    - App\Components\RelatedPageContainer\RelatedPageContainerFactory
+    - App\Components\CollectionFormContainer\CollectionFormContainerFactory
+    - App\AdminModule\Components\StateChangeForm\StateChangeFormFactory
+
+    - App\Components\SortForm\SortFormFactory
+
+    - App\Components\SignInForm\SignInFormFactory
+
+    - App\Components\UrlFormContainer\UrlFormContainerFactory
+
+    - App\Components\UserForm\UserFormFactory
+
+    - App\Components\UserList\UserListFactory
+
+    - App\PeriskopModule\Component\Export\ExportFactory
+
+    - App\FrontModule\Components\Article\ArticleList\ArticleListFactory
+
+    - App\FrontModule\Components\Article\ArticleRelatedList\ArticleRelatedListFactory
+
+    - App\FrontModule\Components\Article\CategoryList\CategoryListFactory
+
+    - App\FrontModule\Components\BirthdayFormContainer\BirthdayFormContainer
+
+    - App\FrontModule\Components\Breadcrumb\BreadcrumbFactory
+
+    - App\FrontModule\Components\Catalog\CatalogList\CatalogListFactory
+
+    - App\FrontModule\Components\Category\Filtration\FiltrationFactory
+    - App\FrontModule\Components\Category\HomepageList\HomepageListFactory
+    - App\FrontModule\Components\Category\SiteMap\SiteMapFactory
+
+    - App\FrontModule\Components\Category\SubCategoryList\SubCategoryListFactory
+
+    - App\FrontModule\Components\Category\TopCategory\TopCategoryFactory
+
+    - App\FrontModule\Components\Category\Articles\ArticlesFactory
+
+    - App\FrontModule\Components\Category\AssociatedCategory\CategoryListFactory
+
+    - App\FrontModule\Components\Company\Preview\PreviewFactory
+
+    - App\FrontModule\Components\Contact\ContactFactory
+
+
+    - App\FrontModule\Components\Category\CollectionList\CollectionListFactory
+    - App\FrontModule\Components\Category\CategoryList\CategoryListFactory
+
+    - App\FrontModule\Components\Customer\NewsletterForm\NewsletterFormFactory
+    - App\FrontModule\Components\Customer\OrderList\OrderListFactory
+    - App\FrontModule\Components\CustomerForm\CustomerFormFactory
+
+    - App\FrontModule\Components\Menu\Header\HeaderFactory
+
+    - App\FrontModule\Components\NewsletterSubscriptionForm\FormFactory
+
+    - App\FrontModule\Components\OpportunityForm\OpportunityFormContainerFactory
+    - App\FrontModule\Components\OpportunityForm\OpportunityFormFactory
+
+    - App\FrontModule\Components\Page\Block\BannerSlim\BannerSlimFactory
+
+    - App\FrontModule\Components\Page\Block\Timeline\Year\TimelineYearFactory
+    - App\FrontModule\Components\Page\Block\Timeline\TimelineFactory
+
+    - App\FrontModule\Components\Page\Menu\MenuFactory
+
+    - App\FrontModule\Components\Page\SiteMap\SiteMapFactory
+
+    - App\FrontModule\Components\Page\StaticPage\AboutUs\AboutUsFactory
+    - App\FrontModule\Components\Page\StaticPage\Contact\ContactFactory
+    - App\FrontModule\Components\Page\StaticPage\Meeting\MeetingFactory
+    - App\FrontModule\Components\Page\StaticPage\CustomProduction\CustomProductionFactory
+    - App\FrontModule\Components\Page\StaticPage\GoldsmithWorkshop\GoldsmithWorkshopFactory
+    - App\FrontModule\Components\Page\StaticPage\Services\ServicesFactory
+    - App\FrontModule\Components\Page\StaticPage\Showroom\ShowroomFactory
+    - App\FrontModule\Components\Page\StaticPage\Team\TeamFactory
+
+    - App\FrontModule\Components\Pagination\PaginationFactory
+
+    - App\FrontModule\Components\Product\BenefitList\BenefitListFactory
+    - App\FrontModule\Components\Product\Information\InformationFactory
+    - App\FrontModule\Components\Product\Filtration\FiltrationFactory
+    - App\FrontModule\Components\Product\GoogleMerchantFeed\GoogleMerchantFeedFactory
+    - App\FrontModule\Components\Product\HeurekaFeed\HeurekaFeedFactory
+    - App\FrontModule\Components\Product\HeurekaOptimizedFeed\HeurekaOptimizedFeedFactory
+    - App\FrontModule\Components\Product\GoogleMerchantOptimizedFeed\GoogleMerchantOptimizedFeedFactory
+    - App\FrontModule\Components\Product\FacebookOptimizedFeed\FacebookOptimizedFeedFactory
+    - App\FrontModule\Components\Product\MetaSmallBlock\MetaSmallBlockFactory
+    - App\FrontModule\Components\Product\OrderBlock\OrderBlockFactory
+    - App\FrontModule\Components\Product\PhotoGallery\PhotoGalleryFactory
+    - App\FrontModule\Components\Product\Preview\PreviewFactory
+    - App\FrontModule\Components\Product\PriceInfo\PriceInfoFactory
+    - App\FrontModule\Components\Product\ProductionForm\ProductionFormFactory
+    - App\FrontModule\Components\Product\ProductList\ProductListFactory
+    - App\FrontModule\Components\Product\ProductionTimeForm\FormContainerFactory
+    - App\FrontModule\Components\Product\RelatedList\RelatedListFactory
+    - App\FrontModule\Components\Product\SimilarCategoryList\SimilarCategoryListFactory
+    - App\FrontModule\Components\Product\SiteMap\SiteMapFactory
+    - App\FrontModule\Components\Product\StockInfo\StockInfoFactory
+    - App\FrontModule\Components\Product\VariantList\VariantListFactory
+    - App\FrontModule\Components\Product\ZboziCzFeed\ZboziCzFeedFactory
+
+    - App\FrontModule\Components\Order\RelatedProduct\RelatedProductFactory
+
+    - App\FrontModule\Components\Product\Collection\Preview\PreviewFactory
+
+    - App\FrontModule\Components\Registration\Form\RegistrationFormFactory
+
+    - App\FrontModule\Components\Search\Form\SearchFormFactory
+    - App\FrontModule\Components\Search\Product\Filtration\FiltrationFactory
+
+    - App\FrontModule\Components\SiteMap\SiteMapFactory
+
+    - App\FrontModule\Components\ShoppingCart\Benefit\BenefitFactory
+    - App\FrontModule\Components\ShoppingCart\ButtonNavigation\ButtonNavigationFactory
+    - App\FrontModule\Components\ShoppingCart\ContactInformationForm\ContactInformationFormFactory
+    - App\FrontModule\Components\ShoppingCart\ContactInformationForm\Container\ContactInformationContainerFactory
+    - App\FrontModule\Components\ShoppingCart\CrossSelling\ProductListFactory
+
+    - App\FrontModule\Components\ShoppingCart\DeliveryForm\DeliveryFormFactory
+
+    - App\FrontModule\Components\ShoppingCart\Overview\OverviewFactory
+
+    - App\FrontModule\Components\Favourite\TopOverview\TopOverviewFactory
+
+    - App\FrontModule\Components\Favourite\ProductHeart\ProductHeartFactory
+
+    - App\FrontModule\Components\Store\ContactModal\ContactModalFactory
+
+    - App\FrontModule\Components\Store\Map\MapFactory
+
+    - App\FrontModule\Components\Store\OpeningHours\OpeningHoursFactory
+
+    - App\FrontModule\Components\Ecomail\EcomailHelper(%ecomail.databaseId%, %ecomail.apiKey%)

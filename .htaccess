@@ -1,0 +1,71 @@
+RewriteEngine On
+
+# cele domeny (aliasy)
+RewriteCond %{REQUEST_URI} !^domains/
+RewriteCond %{REQUEST_URI} !^/domains/
+RewriteCond %{HTTP_HOST} ^(www.)?(.*)$
+RewriteCond %{DOCUMENT_ROOT}/domains/%2 -d
+RewriteRule (.*) domains/%2/$1 [DPI]
+
+# subdomeny (s nebo bez www na zacatku)
+RewriteCond %{REQUEST_URI} !^subdom/
+RewriteCond %{REQUEST_URI} !^/subdom/
+RewriteCond %{HTTP_HOST} ^(www.)?(.*)\.([^.]*)\.([^.]*)$
+RewriteCond %{DOCUMENT_ROOT}/subdom/%2 -d
+RewriteRule (.*) subdom/%2/$1 [DPI]
+
+# aliasy - spravne presmerovani pri chybejicim /
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^domains/[^/]+/(.+[^/])$ /$1/ [R]
+
+# subdomeny - spravne presmerovani pri chybejicim /
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^subdom/[^/]+/(.+[^/])$ /$1/ [R]
+
+#RewriteCond %{SERVER_PORT} 80 [or]
+RewriteCond %{HTTP_HOST} ^jk.cz
+RewriteCond %{HTTP_HOST} !jk/
+RewriteRule ^(.*)$ https://www.jk.cz/$1 [R=302,L]
+
+# Nette Framework
+RewriteRule (.*) www/$1 [DPI]
+
+#redirect for newsletter
+RedirectMatch 301 ^/produkt/zlate-nausnice-se-smaragdy-jk-znst019h-01-0500/?$ /produkt/zlate-nausnice-se-smaragdy-jk-znst019z-01-0500
+RedirectMatch 301 ^/produkt/zlate-nausnice-s-diamanty-64/?$ /produkt/zlate-nausnice-s-diamanty-80
+RedirectMatch 301 ^/tahitske/?$ /kategorie/tahitske-kralovny?_image=true
+RedirectMatch 301 ^/andele/?$ /kategorie/andele-a-andelicci?_image=true
+RedirectMatch 301 ^/viva-vision/?$ /kategorie/viva-vision-ii?_image=true
+RedirectMatch 301 ^/kubistik/?$ /kategorie/kubistik?_image=true
+
+Redirect /viva-vision /kategorie/viva-vision-ii?_image=true
+Redirect /tahitske /kategorie/tahitske-kralovny?_image=true
+Redirect /andele /kategorie/andele-a-andelicci?_image=true
+
+Redirect /panska-kolekce /kategorie/panska-kolekce?_image=true
+Redirect /znacky-hodinek /kategorie/znacka-hodinek
+Redirect /naramky /kategorie/naramky
+Redirect /nausnice /kategorie/nausnice
+Redirect /perly /kategorie/perly?_image=true
+Redirect /tricolor /kategorie/sportovni-kolekce-tricolor?_image=true
+Redirect /denni-kolekce /kategorie/denni-kolekce?_image=true
+
+Redirect /voda /kategorie/voda?_image=true
+Redirect /kubistik /kategorie/kubistik?_image=true
+Redirect /classic /kategorie/classic?_image=true
+Redirect /prsteny /kategorie/prsteny
+Redirect /certina /kategorie/certina
+Redirect /maurice-lacroix /kategorie/maurice-lacroix
+Redirect /edox /kategorie/edox
+Redirect /diva /kategorie/diva?_image=true
+Redirect /severske-motivy /kategorie/severske-motivy?_image=true
+Redirect /sol /kategorie/sol?_image=true
+Redirect /venezia /kategorie/venezia?_image=true
+
+Redirect 302 /odvazna-a-krasna /kategorie/odvazna-a-krasna?_image=true
+Redirect 302 /kvetiny /kategorie/kvetiny?_image=true
+Redirect 302 /primavera /kategorie/primavera?_image=true
+Redirect 302 /organicke-motivy /kategorie/organicke-motivy?_image=true
+Redirect 302 /zasnubni-prsteny /kategorie/zasnubni-prsteny?_image=true
+Redirect 302 /snubni-prsteny /kategorie/snubni-prsteny?_image=true
+Redirect 302 /rado /kategorie/rado?_image=true

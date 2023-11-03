@@ -1,0 +1,1 @@
+ALTER TABLE `category` ADD `cat_homepage_sort` INT NOT NULL AFTER `cat_show_on_homepage`;

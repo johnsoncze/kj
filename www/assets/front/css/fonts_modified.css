@@ -1,0 +1,304 @@
+.Text-block-paragraph-ornament-bot-center:before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -60px;
+  margin-left: -60px;
+  width: 120px;
+  height: 120px;
+  background: url(../images/layout/ornament-discover.png) 0 0 no-repeat;
+  -webkit-transform: rotate(-180deg);
+  transform: rotate(-180deg);
+  z-index: -1;
+}
+.grecaptcha-badge {
+  visibility: hidden;
+}
+
+/* změna tlačitka v košiku */
+.Button.brown {
+  letter-spacing: 0.32em;
+  display: inline-block;
+  height: 3rem;
+  padding: 1rem 2rem 0.8rem;
+  font-weight: 700;
+  font-size: 0.866666rem;
+  line-height: 1.466666;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: #fff;
+  border: 0;
+  border-radius: 2rem;
+  background: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(#65594d),
+    color-stop(50%, #d8d2d2),
+    to(#65594d)
+  );
+  background: linear-gradient(to right, #65594d 0, #d8d2d2 50%, #65594d 100%);
+  background-size: 200% auto;
+  cursor: pointer;
+  -webkit-transition: background-position 0.5s ease-in-out;
+  transition: background-position 0.5s ease-in-out;
+}
+.Button.brown:focus,
+.Button.brown:hover {
+  background-position: right center;
+}
+
+/*vymena fontu*/
+.Text-block-paragraph-ornament-bot-center:before {
+  z-index: -1;
+}
+
+@font-face {
+  font-family: "Source Sans Pro";
+}
+
+@font-face {
+  font-family: "Source Sans Pro";
+}
+
+body {
+  letter-spacing: normal;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+.IconLink,
+.Text-subtitle,
+.Text-caption {
+  font-family: "source serif pro", serif;
+  letter-spacing: normal;
+}
+
+.Badge {
+  font: 700 0.733333rem/64px "source serif pro", serif;
+}
+
+.BannerCenter .Text-subtitle,
+.BannerExtBox-title,
+.BannerSlim-title,
+.BannerSlim-foot {
+  font-family: "source serif pro", serif;
+  letter-spacing: normal;
+}
+
+.Breadcrumb {
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+.CategoryBox-title,
+.Pagination,
+.ProductCard-price,
+.Heading-incentive,
+.Heading--sectionSubtitle {
+  font-family: "source serif pro", serif;
+  letter-spacing: normal;
+}
+
+.BannerCarousel .bx-pager.bx-default-pager .bx-pager-link {
+  font-family: "source serif pro", serif;
+  letter-spacing: normal;
+}
+
+@media screen and (min-width: 768px) {
+  .CollectionCard-subHeading {
+    font-family: "source serif pro", serif;
+  }
+}
+
+.Footer-blockTitle {
+  font-family: "source serif pro", serif;
+  letter-spacing: normal;
+}
+
+@media screen and (min-width: 768px) {
+  .ProductCarousel-pagerItem {
+    font-family: "source serif pro", serif;
+    letter-spacing: normal;
+  }
+}
+.Text-block-title-small,
+.Text-block-title-middle,
+.Text-block-paragraph-ornament-top-left {
+  font-family: "source serif pro", serif;
+  letter-spacing: normal;
+}
+.Link--lineBefore,
+.Link-custom,
+.Text-block-paragraph-ornament-bot-center,
+.Product-link-big,
+.Choice-title,
+.Expand-content th,
+.Tooltip-i,
+.Blog-card-link-big,
+.u-textSecondary,
+.Collection-link-big {
+  font-family: "Source Sans Pro", sans-serif;
+  letter-spacing: normal;
+}
+
+.Variant-title,
+.Product-option-title,
+.Experience-title-small,
+.Taste-title-small,
+.Related-title-small,
+.Text-blockquote-ornament,
+.Product-total-price-old,
+.Product-total-price,
+.Collection-title-small,
+.Benefits .Benefits-title-ornament,
+.Benefits .Benefit-title,
+.Choice-info,
+.Timeline--progressline .Timeline-year,
+.Timeline-title,
+.Collection-blockquote,
+.Collection-main-heading,
+.Collection-detail-item-desc,
+.Blog-title-small,
+.Blog-card-item-title-small,
+.Collection-detail-page-desc,
+.User-navi-link,
+.Form-section-title,
+.Form-section-title--noborder,
+.Flash-message-title,
+.Basket-productsPrice,
+.CategoryBoxTriple-title,
+.Worker-name {
+  font-family: "source serif pro", serif;
+  letter-spacing: normal;
+}
+
+/*poznamky Cerna*/
+
+.ProductCarousel-heading .Heading-incentive {
+  color: rgb(81, 62, 53);
+  font-size: 1.46667rem;
+  letter-spacing: normal;
+}
+.Collection-detail-page-desc {
+  font-family: "Source Sans Pro", sans-serif;
+  letter-spacing: normal;
+}
+
+.Heading--section,
+.Collection-detail-page-title,
+.Text-block-title-larger,
+.Text-title {
+  font-family: "source serif pro", serif;
+  letter-spacing: normal;
+}
+.Collection-item-title,
+.Button,
+.Heading--subSection,
+.u-textLetterSpacing--large,
+.Header-link,
+.NavigationList-link,
+.Footer-link,
+.Heading--subTitle,
+.NavigationSubmenu-link,
+.NavigationSubmenu-title {
+  letter-spacing: normal;
+}
+/*popup corona*/
+#popup {
+  position: fixed;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 50%;
+  background-color: white;
+  /* width: 30%; */
+  z-index: 9999999;
+  max-width: 450px;
+  /* color:#c0a772; */
+  color: #3d3417;
+  -webkit-box-shadow: 0px 0px 7px 2px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 7px 2px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.75);
+}
+#popup .Grid {
+  margin: 5px;
+  padding: 1em;
+}
+.popup-value {
+  width: 20%;
+  padding-left: 0;
+}
+.popup-value h1 {
+  font-weight: bold;
+  font-size: 3em;
+  margin-bottom: -15px;
+}
+
+.popup-message {
+  padding-top: 0.5em;
+  padding-left: 1em;
+  text-align: justify;
+  width: 90%;
+}
+.popup-button-div {
+  width: 10%;
+  padding-right: 1em;
+  padding-top: 1em;
+}
+.popup-button {
+  cursor: pointer;
+  color: white;
+  background-color: #c0a772;
+  border: 0;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
+  float: right;
+  height: 2em;
+  width: 2em;
+  line-height: 2.2;
+  transition: all 0.2s;
+}
+
+.popup-button:hover {
+  -webkit-box-shadow: 0px 0px 7px 2px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 7px 2px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.75);
+}
+
+/* změna tlačitka v košiku */
+.Button.brown {
+  letter-spacing: 0.32em;
+  display: inline-block;
+  height: 3rem;
+  padding: 1rem 2rem 0.8rem;
+  font-weight: 700;
+  font-size: 0.866666rem;
+  line-height: 1.466666;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: #fff;
+  border: 0;
+  border-radius: 2rem;
+  background: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(#65594d),
+    color-stop(50%, #d8d2d2),
+    to(#65594d)
+  );
+  background: linear-gradient(to right, #65594d 0, #d8d2d2 50%, #65594d 100%);
+  background-size: 200% auto;
+  cursor: pointer;
+  -webkit-transition: background-position 0.5s ease-in-out;
+  transition: background-position 0.5s ease-in-out;
+}
+.Button.brown:focus,
+.Button.brown:hover {
+  background-position: right center;
+}

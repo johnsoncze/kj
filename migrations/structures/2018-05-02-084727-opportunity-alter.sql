@@ -1,0 +1,1 @@
+ALTER TABLE `opportunity` ADD `opp_page_base_path_url` VARCHAR(255) NULL;

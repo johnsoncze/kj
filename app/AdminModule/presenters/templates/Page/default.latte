@@ -1,0 +1,13 @@
+{block nextToTitle}
+    <a href="{plink Page:sort}" class="btn btn-default btn-sm"><i class="fa fa-sort"></i> Řadit</a>
+    <a href="{plink Page:add}" class="btn btn-default btn-sm"><i class="fa fa-plus" aria-hidden="true"></i> Přidat</a>
+{/block}
+{block contentAdmin}
+<div class="row">
+    <div class="col-sm-3">
+        {control adminPageNavigationTree}
+    </div>
+    <div class="col-sm-9">
+        {control pageList}
+    </div>
+</div>

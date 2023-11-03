@@ -1,0 +1,86 @@
+.CollectionCard {
+    position: relative;
+    padding: 0 20px;
+
+    @media @media-sm-min {
+        margin: 0 0 40px 40px;
+        padding: 0;
+    }
+}
+
+.CollectionCard-content {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    padding-bottom: 45px;
+    width: 100%;
+    text-align: center;
+
+    @media @media-sm-min {
+        padding-top: 45px;
+        background-image: url(../images/layout/heading-ring-full-bg.png);
+        background-repeat: no-repeat;
+        background-position: bottom 45px center;
+    }
+}
+
+.CollectionCard-heading {
+    padding-top: 30px;
+    padding-left: .5em;
+    font-weight: 400;
+    font-size: @font-size-smallest;
+    line-height: 19px;
+    // .//letter-spacing(600);
+    color: @text-inversed-color;
+    text-transform: uppercase;
+    background-image: url(../images/layout/heading-ring-bg.png);
+    background-repeat: no-repeat;
+    background-position: top center;
+
+    @media @media-sm-min {
+        padding-top: 0;
+        padding-bottom: 30px;
+        font-size: @font-size-large;
+        line-height: 27px;
+        background-image: none;
+    }
+}
+
+.CollectionCard-subHeading {
+    display: none;
+
+    @media @media-sm-min {
+        display: block;
+        font-size: @font-size-smallest;
+        line-height: 54px;
+        // .//letter-spacing(300);
+        font-family: @font-secondary;
+    }
+}
+
+.CollectionCard-image,
+.CollectionCard-imageSecondary {
+    width: 100%;
+    height: auto;
+}
+
+.CollectionCard-image {
+    @media @media-xs-max {
+        height: 240px;
+    }
+}
+
+.CollectionCard-imageSecondary {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 20px;
+    height: 200px;
+    z-index: @depth-collection-card-img-secondary;
+
+    @media @media-sm-min {
+        left: -40px;
+        top: 40px;
+        height: auto;
+    }
+}

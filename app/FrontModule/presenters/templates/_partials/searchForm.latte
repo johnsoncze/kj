@@ -1,0 +1,33 @@
+<div class="SearchBox js-searchBox">
+    <div class="SearchBoxHeader u-sm-displayNone">
+        <div class="SearchBoxHeader-item SearchBoxHeader-item--logo">
+            <a href="{plink Homepage:default}" class="SearchBoxHeader-logo">
+                <img src="/assets/front/images/JK-logo-claim-web.svg" width="110" height="44" alt="{$parameters['project']['name']}"/>
+            </a>
+        </div>
+
+        <div class="SearchBoxHeader-item SearchBoxHeader-item--controls">
+            <div class="SearchBoxHeader-control">
+                <button type="button" class="IconLink js-searchBox-toggle">
+                    <svg role="img" class="Icon Icon--medium IconLink-icon">
+                        <use xlink:href="#symbol-search"></use>
+                    </svg>
+                    <span class="IconLink-text">{_header.menu.search.title}</span>
+                </button>
+            </div>
+            <div class="SearchBoxHeader-control">
+                <button type="button" class="IconLink js-searchBox-toggle">
+                    <svg role="img" class="Icon Icon--medium IconLink-icon">
+                        <use xlink:href="#symbol-cancel"></use>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="SearchBoxForm">
+        <div class="Container Container--slim">
+            {control searchForm:small}
+        </div>
+    </div>
+</div>

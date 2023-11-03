@@ -1,0 +1,1 @@
+ALTER TABLE `category` ADD `cat_product_sorter` TINYINT(1) NULL AFTER `cat_sort`;

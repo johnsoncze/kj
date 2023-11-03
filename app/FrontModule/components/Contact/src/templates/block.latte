@@ -1,0 +1,22 @@
+<div class="Grid u-pt--30">
+
+    <div class="Grid-cell u-size12of12 u-sm-size6of12 u-md-size6of12 u-textCenter">
+        <svg role="img" class="Icon Icon--offset u-colorGold"><use xlink:href="#symbol-phone"></use></svg><br>
+        <a href="tel:{$telephone}" style="text-decoration: none">
+          <b class="u-p--20 u-textLetterSpacing--large u-colorGold">{$telephone}</b>
+        </a>
+        <br>
+        {if $openingHours}
+            <span class="u-fontSize--14">{_store.openingHours.today} {$openingHours->getOpeningTime()|date:"H:i"}-{$openingHours->getClosingTime()|date:"H:i"}</span>
+        {/if}
+    </div>
+
+    <div class="Grid-cell u-size12of12 u-sm-size6of12 u-textCenter u-xs-mt--20 u-sm-mt--0 u-md-mt--0">
+        <svg role="img" class="Icon u-colorGold"><use xlink:href="#symbol-envelope"></use></svg><br>
+          <a href="mailto:{$email}" style="text-decoration: none">
+            <b class="u-p--20 u-textLetterSpacing--large u-textUppercase u-colorGold">{$email}</b>
+          </a>
+        <br>
+        <span class="u-fontSize--14">{_contact.response.time}</span>
+    </div>
+</div>

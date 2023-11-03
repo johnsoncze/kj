@@ -1,0 +1,1 @@
+ALTER TABLE `customer` CHANGE `cus_postcode` `cus_postcode` VARCHAR(6) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL;

@@ -1,0 +1,23 @@
+{block content}
+
+<main class="Background Background--gradient-top-100-ebebeb">
+    <div class="Container Container--slimer">
+
+        {include 'partials/breadcrumb.latte'}
+        {include 'partials/menu.latte'}
+
+        <div class="u-pb--90">
+
+            <h1 class="User-page-title">{_account.menu.personalData.label}</h1>
+
+            <div class="Grid">
+
+                <div class="Grid-cell u-size1of2 u-sm-max-size2of2">
+                    {control customerForm}
+                </div>
+
+            </div>
+
+            </div>
+        </div>
+</main>

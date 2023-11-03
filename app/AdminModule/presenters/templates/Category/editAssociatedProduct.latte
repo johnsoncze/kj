@@ -1,0 +1,19 @@
+{block contentAdmin}
+
+{include 'templates/menu.latte'}
+
+{control collectionListProductForm}
+
+<hr>
+
+<div class="row">
+    <div class="col-xs-6">
+        <h3>Přehled</h3>
+    </div>
+    <div class="col-xs-6 text-right m-t-21">
+        <a href="{plink Category:representativeProductSort, id => $category->getId()}"
+           class="btn btn-default btn-sm"><i class="fa fa-sort"></i> Řadit</a>
+    </div>
+</div>
+
+{control collectionListProductList}

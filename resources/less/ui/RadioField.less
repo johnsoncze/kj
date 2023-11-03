@@ -1,0 +1,80 @@
+.RadioField {
+    position: relative;
+    display: inline-block;
+}
+
+.RadioField-input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+
+.RadioField-label {
+    position: relative;
+    display: inline-block;
+    padding-left: @form-field-spacing-x;
+    font-size: @font-size-small;
+    color: @color-brown-dark-alpha-70;
+    cursor: pointer;
+
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+    }
+
+    &::before {
+        width: 16px;
+        height: 16px;
+        border: 1px solid @color-gray;
+        border-radius: 50%;
+    }
+
+    &::after {
+        top: 5px;
+        left: 5px;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background-color: transparent;
+    }
+}
+
+.RadioField-labelText--required::after {
+    .form-field-label-required();
+}
+
+.RadioField-description {
+    .form-field-description();
+}
+
+.RadioField--hasError .RadioField-description {
+    .form-field-description-error();
+}
+
+// stylelint-disable selector-max-specificity
+.RadioField-input:focus + .RadioField-label::before {
+    box-shadow: 0 0 10px @color-gold;
+}
+
+.RadioField-input:checked + .RadioField-label::after {
+    background-color: @color-green;
+}
+
+.RadioField-input:disabled + .RadioField-label {
+    color: @color-brown-dark-alpha-40;
+    cursor: not-allowed;
+
+    &::before {
+        border-color: @color-gray-light-alt;
+        background-color: @color-gray-lightest;
+    }
+}
+
+.RadioField-input:disabled:checked + .RadioField-label::after {
+    background-color: @color-gray-light-alt;
+}

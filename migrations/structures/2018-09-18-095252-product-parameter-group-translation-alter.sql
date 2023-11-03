@@ -1,0 +1,1 @@
+ALTER TABLE `product_parameter_group_translation` ADD `ppgt_help` TEXT CHARACTER SET utf8 COLLATE utf8_czech_ci NULL AFTER `ppgt_filtration_title`;

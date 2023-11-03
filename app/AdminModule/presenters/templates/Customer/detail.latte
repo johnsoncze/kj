@@ -1,0 +1,90 @@
+{block contentAdmin}
+<div class="row">
+    <div class="col-xs-6">
+        <b>Id v externím systému:</b> {fill $customer->getExternalSystemId()}<br>
+        <b>Datum aktivace:</b> {if $customer->getActivationDate() !== NULL}{$customer->getActivationDate()|date:'d.m.Y H:i:s'}{else}<em>zákazník nebyl doposud aktivován</em>{/if}
+    </div>
+    <div class="col-xs-3 text-right">
+        <span class="icon-label">Newsletter</span> {boolicon $customer->wantNewsletter()|size:2}
+    </div>
+    <div class="col-xs-3 text-right">
+        <span class="icon-label">Narozeninový poukaz</span> {boolicon $customer->hasBirthdayCoupon()|size:2}
+		{if $customer->hasBirthdayCoupon()}
+			<div class="delete-wrapper"><a href="{link setBirthdayDiscountUse!}" class="btn btn-danger btn-xs delete-birthday-discount">Nastavit vyčerpání slevy</a></div>
+		{/if}
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-xs-4">
+        <h4>Základní informace</h4>
+        <table class="table table-striped">
+            <tr>
+                <th scope="row">Příjmení</th>
+                <td>{$customer->getLastName()}</td>
+            </tr>
+            <tr>
+                <th scope="row">Křestní jméno</th>
+                <td>{$customer->getFirstName()}</td>
+            </tr>
+            <tr>
+                <th scope="row">Pohlaví</th>
+                <td>{if $customer->getSex() !== NULL}{App\Customer\Customer::getSexList()[$customer->getSex()]}{else}-{/if}</td>
+            </tr>
+            <tr>
+                <th scope="row">Den narození</th>
+                <td>{fill $customer->getBirthdayDay()}</td>
+            </tr>
+            <tr>
+                <th scope="row">Měsíc narození</th>
+                <td>{fill $customer->getBirthdayMonth()}</td>
+            </tr>
+            <tr>
+                <th scope="row">Rok narození</th>
+                <td>{fill $customer->getBirthdayYear()}</td>
+            </tr>
+            <tr>
+                <th scope="row">Věk</th>
+                <td>{fill $customer->getAge()}</td>
+            </tr>
+        </table>
+    </div>
+    <div class="col-xs-4">
+        <h4>Adresa</h4>
+        <table class="table table-striped">
+            <tr>
+                <th scope="row">Oslovení</th>
+                <td>{fill $customer->getAddressing()}</td>
+            </tr>
+            <tr>
+                <th scope="row">Ulice</th>
+                <td>{fill $customer->getStreet()}</td>
+            </tr>
+            <tr>
+                <th scope="row">Město</th>
+                <td>{fill $customer->getCity()}</td>
+            </tr>
+            <tr>
+                <th scope="row">PSČ</th>
+                <td>{fill $customer->getPostcode()}</td>
+            </tr>
+            <tr>
+                <th scope="row">Země</th>
+                <td>{fill $customer->getCountryCode()}</td>
+            </tr>
+        </table>
+    </div>
+    <div class="col-xs-4">
+        <h4>Kontaktní údaje</h4>
+        <table class="table table-striped">
+            <tr>
+                <th scope="row">E-mail</th>
+                <td>{$customer->getEmail()}</td>
+            </tr>
+            <tr>
+                <th scope="row">Telefon</th>
+                <td>{fill $customer->getTelephone()}</td>
+            </tr>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,8 @@
+subscriber:
+    confirm:
+        email:
+            subject: Potvrďte svůj e-mail pro odběr novinek
+            title: Odběr novinek
+            text: Potvrďte prosím Váš e-mail k odběru novinek.
+            cta: Potvrdit odběr novinek
+            farewall: Děkujeme a přejeme hezký den.

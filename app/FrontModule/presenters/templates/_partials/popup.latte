@@ -1,0 +1,45 @@
+<div id="popup">
+    <div class="popup-button-div">
+        <button class="popup-button hide-me" style="background-color:#b5a263;">x</button>
+    </div>
+    {* <div class="container" style="padding-bottom:1em;">
+      <div class="row">
+        <p>Vážení zákazníci,</p>
+        <p>s ohledem na vládní nařízení jsme pro veřejnost prodejnu uzavřeli,<br> <b>výroba ale nadále pokračuje a naše kolegyně z prodejny vyřizují <BR>prodeje, objednávky a zakázky telefonicky, emailem i přes e-shop.</b></p>
+        <br><p>Šperky i hodinky jsme tak schopni s vámi vybrat na dálku, bezpečně<br> vám je doručit až domů, případně je předat u nás formou výdejního místa.<br> Neváhejte nás kontaktovat na <a href="mailto:info@jk.cz"><b>info@jk.cz</b></a> nebo telefonicky <a href="tel:+420 241 091 761."><b>+420 241 091 761.</b></a></p>
+      </div>
+    </div> *}
+    <div class="container inverted" style="padding-top:1.4em;">
+        {if $holidayCustomerDiscountRateActive}
+            <div class="Grid">
+                <div class="Grid-cell popup-value">
+                    <h1>{$loggedCustomerDiscountRate}%</h1>
+                </div>
+                <div class="Grid-cell popup-message">
+                    VÁNOČNÍ ZVÝHODNĚNÍ NÁKUPU {$loggedCustomerDiscountRate}% PRO<br> <a class="hide-me" href="/ucet/prihlaseni"> REGISTROVANÉ ZÁKAZNÍKY</a>
+                </div>
+            </div>
+        {/if}
+{*  <div class="Grid">*}
+{*    <div class="Grid-cell popup-value">*}
+{*        <h1>15%</h1>*}
+{*    </div>*}
+{*      <div class="Grid-cell popup-message">*}
+{*          MIMOŘÁDNÉ ZVÝHODNĚNÍ NÁKUPU PRO<br> <a class="hide-me" href="/ucet/prihlaseni"> REGISTROVANÉ ZÁKAZNÍKY</a>*}
+{*      </div>*}
+{*      <p>Od 10.5. jsme již v plném provozu, otevřen je náš kamenný showroom i eshop a to v běžných <a class="hide-me" href="/stranka/kontakt">otevíracích hodinách.</a> Do 15.6.2021 lze využít také mimořádné zvýhodnění k 30. výročí založení JK a to ve výši 15% na veškerý sortiment šperků, hodinek i zakázkovou výrobu.</p>*}
+{*      <p style="padding: 5px 0px;"><a class="hide-me" href="/kategorie/tissot">Tissot skladové modely</a> nyní pořídíte o 25% výhodněji.</p>*}
+{*      <p>Velmi se na vás těšíme.</p>*}
+{*</div>*}
+    </div>
+</div>
+
+<script>
+    $('.hide-me').click(function() {
+        var date = new Date();
+        date.setDate(date.getDate() + 1);
+        date.setHours(0,0,0,0);
+        document.cookie = {\App\FrontModule\Presenters\AbstractPresenter::POPUP_SHOWN} + '=1; path=/; expires=' + date.toUTCString();
+        jQuery('#popup').hide();
+    });
+</script>

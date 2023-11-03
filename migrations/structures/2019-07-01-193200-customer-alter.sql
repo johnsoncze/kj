@@ -1,0 +1,1 @@
+ALTER TABLE `customer` CHANGE `cus_updated_date` `cus_updated_date` TIMESTAMP on update CURRENT_TIMESTAMP() NOT NULL DEFAULT CURRENT_TIMESTAMP();

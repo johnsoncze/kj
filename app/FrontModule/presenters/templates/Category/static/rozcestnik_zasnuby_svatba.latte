@@ -1,0 +1,143 @@
+{block canonical}
+	<link rel="canonical" href="{plink //Category:default, url => $category->getUrl()}" />
+{/block}
+
+{block content}
+
+<section class="PageHeaderNew">
+	<div class="Container Container--wide">
+		<div class="PageHeaderNew-desktop-bg" style="background-image: url({if $category->getGeneralImageDesktop()}{thumbnailPath 1920, 470, $category->getGeneralImageDesktop(), $category->getUploadFolder()}{else}'/www/assets/front/images/layout/bg-category-rings.jpg'{/if});"></div>
+		{if $page == 1}
+		<div class="PageHeaderNew-mobile-bg" style="background-image: url({if $category->getGeneralImageMobile()}{thumbnailPath 1920, 470, $category->getGeneralImageMobile(), $category->getUploadFolder()}{else}'/www/assets/front/images/layout/bg-category-rings.jpg'{/if});"></div>
+		{/if}
+		
+		{if $category->getRelatedPageText()}
+		<div class="Container Grid Category-relatedPageWrapper">
+			<div class="Category-relatedPageDefault{if $page != 1} Category-relatedPageDefaultPaging{/if}">
+				<a href="{$category->getRelatedPageLink()}">
+					{$category->getRelatedPageText()|noescape}
+				</a>
+			</div>
+			<div class="Category-relatedPageScrolled{if $page != 1} Category-relatedPageScrolledPaging{/if}">
+				<a href="{$category->getRelatedPageLink()}">
+					{$category->getRelatedPageScrolledText()|noescape}
+				</a>
+			</div>			
+		</div>
+		{/if}				
+		
+		
+		<div class="Container Grid">
+			<div class="Grid-cell u-size12of12">
+				{if isset($breadcrumbRender)}
+					{control breadcrumb:$breadcrumbRender}
+				{else}
+					{control breadcrumb}
+				{/if}
+			</div>
+		</div>
+
+	</div>
+</section>
+
+<section class="Container u-textCenter u-mb--40 u-md-mb--100">
+	<div class="u-mx-0 u-md-mx--150">
+		<h1 class="u-mt--25 u-md-mb--40 h-primary">{_category.signpost.engagementAndWedding.header}</h1>
+		<div class="text-20">{_category.signpost.engagementAndWedding.topText|noescape}</div>
+	</div>
+</section>
+
+	
+<div class="Container Container--wide u-mb--60 u-md-mb--100 u-px--0">
+	<div class="Wedding-rings-wrapper-right">
+		<div>
+			<img src="/assets/front/images/espousal/ring1.jpg" />
+		</div>
+		
+		<div>
+			<h2 class="u-mb--15">{_category.signpost.engagementAndWedding.engagement.title|noescape}</h2>
+			
+			<div class="u-textLeft u-px--20 u-md-px--0">{_category.signpost.engagementAndWedding.engagement.description|noescape}</div>
+			
+			<br /><br />
+			<a class="Button Button--arrow u-mr--0 u-md-mr--20 u-mb--20 u-md-mb--0" href="{plink Category:default, url => 'zasnubni-prsteny'}">{_category.signpost.engagementAndWedding.engagement.link|noescape}</a>
+			<a class="Button Button--arrow" href="{plink Page:detail, url => 'zakazkova-vyroba'}">{_category.signpost.engagementAndWedding.engagement.link2|noescape}</a>
+		</div>
+	</div>		
+	
+	<div class="Wedding-rings-wrapper-left">
+		<div>
+			<h2 class="u-mb--15">{_category.signpost.engagementAndWedding.wedding.title|noescape}</h2>
+			<div class="u-textLeft u-px--20 u-md-px--0">{_category.signpost.engagementAndWedding.wedding.description|noescape}</div>
+			<br /><br />
+			<a class="Button Button--arrow u-mr--0 u-md-mr--20 u-mb--20 u-md-mb--0" href="{plink Category:default, url => 'snubni-prsteny' }">{_category.signpost.engagementAndWedding.wedding.link|noescape}</a>
+			<a class="Button Button--arrow" href="{plink Page:detail, url => 'zakazkova-vyroba'}">{_category.signpost.engagementAndWedding.wedding.link2|noescape}</a>
+		</div>
+
+		<div>
+			<img src="/assets/front/images/espousal/ring2.jpg" />
+		</div>
+	</div>
+		
+	<div class="u-mx--0 u-md-mx--150 u-px--20 u-md-px--00 u-textCenter">
+		<div class="text-20">{_category.signpost.engagementAndWedding.bottomText|noescape}</div>
+	</div>
+		
+</div>
+	
+
+<section class="Background Background--rose-lighter u-pt--60 u-pb--60">
+	<div class="Container Container--wide Grid">
+
+		<div class="Grid-cell u-size12of12 u-md-size4of12 u-textCenter u-px--0 u-md-px--70 u-mb--50 u-md-mb-0">
+			<img src="/assets/front/images/espousal/banner1.jpg" class="Wedding-banner-img u-mb--40" />
+			<h3 class="h-secondary">{_category.signpost.engagementAndWedding.banner1.title}</h3>
+			<p class="text-16">{_category.signpost.engagementAndWedding.banner1.description|noescape}</p>
+			<a href="{plink Article:detail, url => 'jak-vybrat-zasnubni-prsten'}" class="Link Link--lineBefore">
+								   {_category.signpost.engagementAndWedding.banner1.link}
+								   <span class="Link--hover"></span>
+							   </a>			
+		</div>
+
+		<div class="Grid-cell u-size12of12 u-md-size4of12 u-textCenter u-px--0 u-md-px--70 u-mb--50 u-md-mb-0">
+			<img src="/assets/front/images/espousal/banner2.jpg" class="Wedding-banner-img u-mb--40" />
+			<h3 class="h-secondary">{_category.signpost.engagementAndWedding.banner2.title}</h3>
+			<p class="text-16">{_category.signpost.engagementAndWedding.banner2.description|noescape}</p>
+			<a href="{plink Article:detail, url => 'sperk-jako-investice'}" class="Link Link--lineBefore">
+								   {_category.signpost.engagementAndWedding.banner2.link}
+								   <span class="Link--hover"></span>
+							   </a>			
+		</div>
+
+		
+		<div class="Grid-cell u-size12of12 u-md-size4of12 u-textCenter u-px--0 u-md-px--70">
+			<img src="/assets/front/images/espousal/banner3.jpg" class="Wedding-banner-img u-mb--40" />
+			<h3 class="h-secondary">{_category.signpost.engagementAndWedding.banner3.title}</h3>
+			<p class="text-16">{_category.signpost.engagementAndWedding.banner3.description|noescape}</p>
+			<a href="{plink Article:detail, url => 'diamant-nebo-zirkon'}" class="Link Link--lineBefore">
+								   {_category.signpost.engagementAndWedding.banner3.link}
+								   <span class="Link--hover"></span>
+							   </a>			
+		</div>								   
+								   
+	</div>
+	
+</section>
+	
+								   
+
+<section class="container u-my--80">
+    <div class="u-textCenter">
+		<h3 class=" h-primary u-mx--15 u-md-mx--0">{_category.signpost.engagementAndWedding.unique.title}</h3>
+
+		<div class="Wedding-unique-content">
+			<img src="/assets/front/images/espousal/unique.jpg" class="u-mb--40" />
+
+			<p class="text-16 u-mx--15 u-md-mx--0">{_category.signpost.engagementAndWedding.unique.description|noescape}</p>
+			<a href="{plink Page:detail, url => 'zakazkova-vyroba'}" class="Link Link--lineBefore">
+				{_category.signpost.engagementAndWedding.unique.link}
+				<span class="Link--hover"></span>
+			</a>
+		</div>
+    </div>
+</section>

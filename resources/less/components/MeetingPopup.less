@@ -1,0 +1,33 @@
+
+.MeetingPopup-wrapper {
+	display: none;
+	position: fixed;
+	bottom: 0px;
+	width: 100%;
+	background-color: @color-brown-dark;
+	color: #ffffff;
+	padding: 23px 30px;
+	font-size: 16px;
+	z-index: 100000;
+	
+	@media @media-md-min {
+		position: fixed;
+		right: 30px;
+		bottom: 30px;
+		width: 470px;
+	}	
+}
+
+.MeetingPopup-close {
+	position: absolute;
+	top: 7px;
+	right: 14px;
+	cursor: pointer;
+}
+
+.MeetingPopup-header {
+	font-size: 26px;
+	text-transform: uppercase;
+	font-family: "Source Serif Pro";
+	font-weight: 600;
+}

@@ -1,0 +1,24 @@
+{block content}
+<div>
+    <main class="Background Background--silver Background--gradient-top-100-silver u-pb--40">
+        <div class="Container u-textCenter">
+            <h1 class="User-page-title u-pt--40">{_search.result.title}</h1>
+        </div>
+        <div class="u-mt--50 u-textCenter">
+            <div class="Container Container--slim">
+                {control searchFormResult}
+
+                {if $summaryResultCount}
+                    {include 'blocks/navigation.latte'}
+                {/if}
+            </div>
+        </div>
+    </main>
+
+    {if $summaryResultCount}
+        {include 'resultTypes/' . $control->getAction() . '.latte'}
+    {else}
+        {include 'blocks/noResult.latte'}
+    {/if}
+
+</div>

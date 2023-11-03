@@ -1,0 +1,15 @@
+<form n:name="forgottenPasswordForm">
+    <div class="form-errors" n:if="$form->hasErrors()">
+        <div n:foreach="$form->errors as $error" class="alert alert-danger alert-dismissible">{$error}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+        </div>
+    </div>
+    <div class="form-group">
+        {label email/}
+        {input email}
+    </div>
+    <div class="form-group">
+        {input submit}
+    </div>
+</form>

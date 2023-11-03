@@ -1,0 +1,1 @@
+ALTER TABLE `customer` ADD `cus_password_suffix_id` INT NULL AFTER `cus_external_system_last_change_date`;

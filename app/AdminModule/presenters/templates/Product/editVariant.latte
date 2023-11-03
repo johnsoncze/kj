@@ -1,0 +1,15 @@
+{block nextToTitle}
+    <a href="{plink Product:generateVariant, id => $product->getId()}" class="btn btn-default btn-sm"><i class="fa fa-magic" aria-hidden="true"></i> Generovat varianty</a>
+{/block}
+
+{block contentAdmin}
+{include 'editMenu.latte'}
+{if $isVariant}
+    <h3>Produkt je veden jako varianta u:</h3>
+    {control productParentVariantList}
+{else}
+    {control productVariantForm}
+    <hr>
+    <h3>Přehled</h3>
+    {control productVariantList:tree}
+{/if}

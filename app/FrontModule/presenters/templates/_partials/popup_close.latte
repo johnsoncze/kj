@@ -1,0 +1,23 @@
+<div id="popup">
+        <div class="Grid">
+          <div class="Grid-cell popup-message">
+            Vážení zákazníci,<br>
+            od 27.4. je náš obchod znovu otevřen. Je pro Vás zajištěno bezpečné a komfortní prostředí,
+            parking přímo v budově Filadelfie, návštěvu u nás můžete také předem domluvit na určitý čas. <br><br>
+            Přesnou pracovní dobu naleznete <a href="https://www.jk.cz/stranka/kontakt">zde</a>. 
+            </div>
+            <div class="Grid-cell popup-button-div">
+                <button class="popup-button hide-me">X</button>
+            </div>
+        </div>
+</div>
+
+<script>
+    $('.hide-me').click(function() {
+        var date = new Date();
+        date.setDate(date.getDate() + 1);
+        date.setHours(0,0,0,0);
+        document.cookie = '{\App\FrontModule\Presenters\AbstractPresenter::POPUP_SHOWN|noescape}=1; path=/; expires=' + date.toUTCString();
+        jQuery('#popup').hide();
+    });
+</script>

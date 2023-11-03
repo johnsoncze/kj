@@ -1,0 +1,76 @@
+<footer class="Footer">
+    <div class="Container">
+        <div>
+            <img class="Footer-logo" src="/assets/front/images/layout/jk-simple-logo.png" alt="{$parameters['project']['name']}" width="35" height="33">
+        </div>
+        <div class="Footer-blockContainer">
+
+            <div class="Footer-block">
+                <h4 class="Footer-title Footer-item Heading Heading--subSection">{_footer.contact.title|noescape}</h4>
+                <h4 class="Footer-blockTitle Footer-item u-sm-displayNone" data-component="expand" data-target="Footer-linksBlock">{_footer.contact.subTitle}</h4>
+                <div class="Footer-linksBlock u-pb--0 u-textSmall">
+                    <a class="Footer-link Footer-item u-mb--20 u-sm-mb--40 u-textSmall" href="tel:{php echo str_replace(['+', ' '], ['00', ''], $parameters['project']['telephone'])}">
+                        <svg role="img" class="Icon">
+                            <use xlink:href="#symbol-phone"/>
+                        </svg>{$parameters['project']['telephone']}
+                    </a>
+
+                    <div class="Footer-address Footer-item Footer-iconBlock">
+                        <svg role="img" class="Icon">
+                            <use xlink:href="#symbol-pin"/>
+                        </svg>
+                        <span>
+                                <span class="Footer-addressText">
+                                    {$parameters['project']['name']}<br>
+                                    {$parameters['project']['address']}<br>
+                                </span>
+                                <a class="Footer-link" href="https://goo.gl/maps/Lqcskak4MA92" target="_blank">{_footer.contact.map}</a>
+                            </span>
+                    </div>
+
+                    <a class="Footer-link Footer-item u-mb--20 u-sm-mb--50" href="mailto:{$parameters['project']['email']}">
+                        <svg role="img" class="Icon">
+                            <use xlink:href="#symbol-envelope"/>
+                        </svg>{$parameters['project']['email']}
+                    </a>
+                </div>
+            </div>
+
+            <div class="Footer-block">
+                <div>
+                    <h4 class="Footer-blockTitle Footer-item" data-component="expand" data-target="Footer-linksBlock">{_footer.menu.allAboutBuying.title}</h4>
+                    {control pageMenu:purchase}
+                </div>
+
+                <div>
+                    <h4 class="Footer-blockTitle Footer-item" data-component="expand" data-target="Footer-linksBlock">{_footer.menu.ourWeb.title}</h4>
+                    {control pageMenu:ourWeb}
+                </div>
+            </div>
+
+            <div class="Footer-block">
+                <h4 class="Footer-blockTitle Footer-item" data-component="expand" data-target="Footer-linksBlock">{_store.openingHours.title}</h4>
+                <div class="Footer-linksBlock u-pb--0">
+                    {control openingHours:list}
+                </div>
+
+                <div class="Footer-social">
+                    <span class="u-textSecondary u-textSmall u-textLetterSpacing--large">{_footer.socialMedia.title}</span>
+                    <span class="Footer-socialButtons">
+                            <a class="Footer-socialLink SocialButton" href="{$parameters['project']['socialMedia']['facebook']}">
+                                <svg role="img" class="Footer-socialIcon Icon">
+                                    <use xlink:href="#symbol-facebook"/>
+                                </svg>
+                            </a>
+                            <a class="Footer-socialLink SocialButton" href="{$parameters['project']['socialMedia']['twitter']}">
+                                <svg role="img" class="Footer-socialIcon Icon">
+                                    <use xlink:href="#symbol-instagram"/>
+                                </svg>
+                            </a>
+                        </span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</footer>

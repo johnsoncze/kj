@@ -1,0 +1,9 @@
+<div class="language-mini-switcher">
+    <ul>
+        {foreach $languages as $language}
+            <li id="{$control->getName()}-{$language->getId()}"
+                {if $language->getId() == $actualLanguage}class="active"{/if}><a
+                        href="{link this, langId => $language->getId()}">{$language->getPrefix()}</a></li>
+        {/foreach}
+    </ul>
+</div>

@@ -1,0 +1,53 @@
+.BannerBig {
+    position: relative;
+    height: auto;
+    padding: 10px 0 60px;
+    border-radius: @border-radius-large;
+    background-position: right top;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    @media @media-xs-min {
+        padding: 60px 30px;
+    }
+
+    @media @media-sm-min {
+        background-position: center top;
+    }
+
+    @media @media-md-min {
+        height: 610px;
+    }
+}
+
+.BannerBig.BannerBig--right {
+    @media @media-sm-min {
+        padding-left: 35%;
+    }
+
+    @media @media-md-min {
+        padding-left: 55%;
+    }
+}
+
+.BannerBig-link.BannerBig-link--bottom {
+    position: absolute;
+    bottom: 0;
+
+    @media @media-md-min {
+        bottom: 60px;
+    }
+}
+
+.BannerBig-link a {
+    text-decoration: none;
+}
+
+.BannerBig br {
+    display: none;
+
+    @media @media-lg-min {
+        display: block;
+    }
+}
+

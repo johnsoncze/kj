@@ -1,0 +1,16 @@
+{if $products}
+    <div class="Product-variant">
+        <div class="Product-variant-items {*js-variants-carousel*}" style="justify-content: right">
+            {foreach $products as $product}
+                <a href="{plink Product:detail url => $product->getProduct()->getTranslation()->getUrl()}"
+                   class="Variant-item js-item">
+                    <div class="Variant-thumbnail">
+                        <img src="{if $product->getProduct()->getPhoto()}{thumbnailPath 300, 300, $product->getProduct()->getPhoto(), $product->getProduct()->getUploadFolder()}{else}{imagePlaceholder 300, 300}{/if}"
+                             alt="{$product->getProduct()->getTranslation()->getName()}" class="Variant-image">
+                    </div>
+                    <span class="Variant-title">{$product->getState()->getTranslation()->getValue()}</span>
+                </a>
+            {/foreach}
+        </div>
+    </div>
+{/if}

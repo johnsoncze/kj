@@ -1,0 +1,1 @@
+drop view vw_product_parameter_list;

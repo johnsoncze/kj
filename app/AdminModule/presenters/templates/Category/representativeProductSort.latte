@@ -1,0 +1,11 @@
+{block contentAdmin}
+<div class="text-right">
+    <span class="p-r-5"><b>Typ:</b> {$type['translation']}</span>
+    <a href="{plink Category:representativeProductSort, id => $category->getId()}">Změnit</a>
+</div>
+<hr>
+<div class="row">
+    <div class="col-xs-offset-3 col-xs-6">
+        {control representativeProductSortForm}
+    </div>
+</div>

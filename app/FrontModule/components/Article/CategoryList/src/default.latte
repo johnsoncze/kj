@@ -1,0 +1,15 @@
+<div class="User-navi">
+    <div class="Grid u-pb--20 u-justifyContentCenter">
+
+        <div class="Grid-cell u-size3of12 u-sm-max-size12of12">
+            <a href="{plink Article:list url => $page->getUrl(), category => NULL}" class="User-navi-link {$presenter->isLinkCurrent() ? active}">{_article.articleList.all}</a>
+        </div>
+
+        {foreach $categories as $category}
+            <div class="Grid-cell u-size3of12 u-sm-max-size12of12">
+                <a href="{plink Article:list url => $page->getUrl(), category => $category->getUrl()}" class="User-navi-link {$presenter->isLinkCurrent() ? active}">{$category->getName()}</a>
+            </div>
+        {/foreach}
+
+    </div>
+</div>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="Windows-1250"?>
+<customers>
+    {foreach $customers as $customer}
+        <customer id="{$customer->getId()}" fid="{$customer->getExternalSystemId()}" last_change="{$customer->getUpdateDate()}">
+            <name>{php echo $control->encoding($customer->getFullName())}</name>
+            <firstname>{php echo $control->encoding($customer->getFirstName())}</firstname>
+            <lastname>{php echo $control->encoding($customer->getLastName())}</lastname>
+            <username></username>
+            <currency>CZK</currency>
+            <language>CS</language>
+            <ico></ico>
+            <dic></dic>
+            <email>{$customer->getEmail()}</email>
+            <phone>{$customer->getTelephone()}</phone>
+            <fax></fax>
+            <www></www>
+            <address_part1>{php echo $control->encoding($customer->getLastName())} {php echo $control->encoding($customer->getFirstName())}</address_part1>
+            <address_part2></address_part2>
+            <street>{php echo $control->encoding($customer->getStreet())}</street>
+            <city>{php echo $control->encoding($customer->getCity())}</city>
+            <place></place>
+            <postcode>{$customer->getFormattedPostCode()}</postcode>
+            <country>{$customer->getCountryCode()}</country>
+            <dstreet>{php echo $control->encoding($customer->getStreet())}</dstreet>
+            <dcity>{php echo $control->encoding($customer->getCity())}</dcity>
+            <dplace></dplace>
+            <dpostcode>{$customer->getFormattedPostCode()}</dpostcode>
+            <dcountry>{$customer->getCountryCode()}</dcountry>
+            <dphone>{$customer->getTelephone()}</dphone>
+            <birthdayyear>{$customer->getBirthdayYear() ?: NULL}</birthdayyear>
+            <birthdaymonth>{$customer->getBirthdayMonth() ?: NULL}</birthdaymonth>
+            <birthdayday>{$customer->getBirthdayDay() ?: NULL}</birthdayday>
+            <newsletter>{$customer->wantNewsletter() === TRUE ? 'A' : 'N'}</newsletter>
+            <sex>{$customer->getSex()|upper}</sex>
+            <note></note>
+        </customer>
+    {/foreach}
+</customers>

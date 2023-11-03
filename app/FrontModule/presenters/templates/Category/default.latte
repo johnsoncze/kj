@@ -1,0 +1,173 @@
+{block canonical}
+	{if $category->getParentCategoryId() != 3}
+	<link rel="canonical" href="{plink //Category:default, url => $category->getUrl()}" />
+	{/if}
+{/block}
+
+{block content}
+{if $category->getGeneralImageDesktop()}
+<section class="PageHeaderNew">
+	<div class="Container Container--wide">
+		<div class="PageHeaderNew-desktop-bg" style="background-image: url({if $category->getGeneralImageDesktop()}{thumbnailPath 1920, 470, $category->getGeneralImageDesktop(), $category->getUploadFolder()}{else}'/www/assets/front/images/layout/bg-category-rings.jpg'{/if});"></div>
+		{if $page == 1}
+		<div class="PageHeaderNew-mobile-bg" style="background-image: url({if $category->getGeneralImageMobile()}{thumbnailPath 1920, 470, $category->getGeneralImageMobile(), $category->getUploadFolder()}{else}'/www/assets/front/images/layout/bg-category-rings.jpg'{/if});"></div>
+		{/if}
+		
+		{if $category->getRelatedPageText()}
+		<div class="Container Grid Category-relatedPageWrapper">
+			<div class="Category-relatedPageDefault{if $page != 1} Category-relatedPageDefaultPaging{/if}">
+				<a href="{$category->getRelatedPageLink()}">
+					{$category->getRelatedPageText()|noescape}
+				</a>
+			</div>
+			<div class="Category-relatedPageScrolled{if $page != 1} Category-relatedPageScrolledPaging{/if}">
+				<a href="{$category->getRelatedPageLink()}">
+					{$category->getRelatedPageScrolledText()|noescape}
+				</a>
+			</div>			
+		</div>
+		{/if}				
+		
+		
+		<div class="Container Grid">
+			<div class="Grid-cell u-size12of12">
+				{if isset($breadcrumbRender)}
+					{control breadcrumb:$breadcrumbRender}
+				{else}
+					{control breadcrumb}
+				{/if}
+
+				{*Whitespace is a workaround for show banner in wave without title*}
+				{var $title = !isset($showTitle) || $showTitle === TRUE ? $title : ' '}
+				<h1 class="u-mt--25 u-md-mb--40{ifset $titleClass} {$titleClass}{/ifset}">{$categoryTitle}</h1>
+			</div>
+		</div>
+
+	</div>
+</section>
+		
+{if $category->getContent() && $page == 1}
+<div class="PageHeaderNew-text">
+	{$category->getContent()|noescape}
+</div>
+{/if}
+
+{control subCategoryList}
+		
+{else}
+	
+<section class="PageHeader">
+    <div class="PageHeader-bg" style="background-image: url({if $category->getGeneralImage()}{thumbnailPath 1920, 470, $category->getGeneralImage(), $category->getUploadFolder()}{else}'/www/assets/front/images/layout/bg-category-rings.jpg'{/if});"></div>
+
+    <div class="Container Grid">
+        <div class="Grid-cell u-size12of12">
+            {if isset($breadcrumbRender)}
+                {control breadcrumb:$breadcrumbRender}
+            {else}
+                {control breadcrumb}
+            {/if}
+
+            {*Whitespace is a workaround for show banner in wave without title*}
+            {var $title = !isset($showTitle) || $showTitle === TRUE ? $title : ' '}
+            <h1 class="Text-title u-mt--25 u-md-mb--0{ifset $titleClass} {$titleClass}{/ifset}">{$categoryTitle}</h1>
+        </div>
+    </div>
+			
+{if $category->getRelatedPageText()}
+    <div class="Container Grid Category-relatedPageWrapper">
+	    <div class="Category-relatedPageDefault">
+			<a href="{$category->getRelatedPageLink()}">
+				{$category->getRelatedPageText()|noescape}
+			</a>
+		</div>
+	    <div class="Category-relatedPageScrolled">
+			<a href="{$category->getRelatedPageLink()}">
+				{$category->getRelatedPageScrolledText()|noescape}
+			</a>
+		</div>			
+	</div>
+{/if}
+</section>
+
+{if $category->getContent()}
+<div class="Container Container--slim Grid u-justifyContentCenter u-textCenter Category-description">
+    <div class="Grid-cell u-size12of12">
+        <ul class="Expand-list js-expand-list">
+            <li class="Expand-item js-toggle Expand-item--open">
+                <h3 class="Expand-title js-toggle-switch">
+                    <svg role="img" class="Icon Expand-icon">
+                        <use xlink:href="#symbol-arr-down"></use>
+                    </svg>
+                    {if !isset($categoryDescriptionAnchor)}{_category.about.anchor}{else}{$categoryDescriptionAnchor}{/if}</h3>
+                <div class="Expand-content js-toggle-content u-textCenter">
+                    {$category->getContent()|noescape}
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+{/if}
+
+{control subCategoryList}
+{/if}
+
+
+
+{control filtration}
+
+<section>
+    <div class="Container Container--wide">
+        {if $productCount}
+            <div class="u-mb--20 u-md-mb--50">
+                {ifset $productListRender}
+                    {control productList:$productListRender $category}
+                {else}
+                    {control productList}
+                {/ifset}
+            </div>
+
+            <div class="Grid u-mb--70 u-md-mb--110 u-alignItemsBaseline">
+                <div class="Grid-cell u-size3of3 u-textCenter">{control pagination}</div>
+            </div>
+            {else}
+            <div class="u-mb--20 u-md-mb--50">
+                <p class="Timeline-desc u-textCenter">{_category.noProduct}</p>
+            </div>
+        {/if}
+    </div>
+</section>
+	
+{if count($promoArticles)}
+	<div class="Container Container--wide u-mb--0 u-md-mb--100">
+		{foreach $promoArticles as $promoArticle}		
+			{if $iterator->odd}
+			<div class="CategoryArticles-wrapper-left">
+				<div>
+					<h2>{$promoArticle->getTitle()}</h2>
+					{$promoArticle->getText()}
+					<br /><br />
+					<a class="Button Button--arrow" href="{$promoArticle->getUrl()}">{$promoArticle->getUrlText()}</a>
+				</div>
+
+				<div>
+					<img src="{thumbnailPath 800, 800, $promoArticle->getPhoto(), $promoArticle->getUploadFolder()}" />
+				</div>
+			</div>
+			{else}
+			<div class="CategoryArticles-wrapper-right">
+				<div>
+					<img src="{thumbnailPath 800, 800, $promoArticle->getPhoto(), $promoArticle->getUploadFolder()}" />
+				</div>
+
+				<div>
+					<h2>{$promoArticle->getTitle()}</h2>
+					{$promoArticle->getText()}
+					<br /><br />
+					<a class="Button Button--arrow" href="{$promoArticle->getUrl()}">{$promoArticle->getUrlText()}</a>
+				</div>
+			</div>
+			{/if}
+		{/foreach}
+
+	</div>
+{/if}

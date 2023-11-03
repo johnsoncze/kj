@@ -1,0 +1,103 @@
+{block content}
+<section class="PageHeader">
+    <div class="PageHeader-bg" style="background-image: url(/www/assets/front/images/layout/banner-kontakt.jpg);"></div>
+    <div class="Container Grid">
+        <div class="Grid-cell u-size12of12">
+            {control breadcrumb:white}
+
+            <h1 class="Text-title u-mt--25 u-md-mb--0 u-textColor--white">{_pageStatic.contact.title|noescape}</h1>
+        </div>
+    </div>
+</section>
+
+<div class="Container Container--slim">
+    <div class="u-mb--90">
+        <h2 class="Text-block-title-larger u-textCenter u-mb--20">{_pageStatic.contact.subtitle|noescape}</h2>
+        {control contact:block}
+    </div>
+</div>
+
+<div class="Background Background--silver Contact-page">
+    <div class="Container Container--slim">
+        <div class="u-pb--45 u-xs-pb--110 u-sm-pb--80 u-md-pb--75 u-pt--50">
+            <h2 class="Text-block-title-larger u-textCenter u-mb--20">{_pageStatic.contact.storeTitle|noescape}</h2>
+            <div class="Grid">
+                <div class="Grid-cell u-size1of2 u-sm-max-size2of2">
+                    <h3 class="Timeline-subtitle">{_pageStatic.contact.address.title}</h3>
+                    <p class="Timeline-desc"><b>{$parameters['project']['name']}</b><br>
+                        {$parameters['project']['address']} (<a href="https://goo.gl/maps/Lqcskak4MA92" target="_blank">{_footer.contact.map}</a>)<br><br>
+                        Areál BB Centrum - www.bbcentrum.cz<br>
+                        Obchodní pasáž budovy Filadelfie
+                        <br><br>
+                        <b>{$parameters['project']['companyName']}</b><br>
+                        <b>{_pageStatic.contact.address.in.title}:</b> {$parameters['project']['in']}<br>
+                        <b>{_pageStatic.contact.address.vatId.title}:</b> {$parameters['project']['vatId']}
+                    </p>
+                </div>
+                <div class="Grid-cell u-size1of2 u-sm-max-size2of2">
+                    <h3 class="Timeline-subtitle">{_pageStatic.contact.openingHours.title}</h3>
+                        {control openingHours:list}
+                </div>
+            </div>
+            <div class="k-link">
+                    <a class="k-link__link" href="/stranka/prodejna">VÍCE O PRODEJNĚ A ZLATNICKÉ DÍLNĚ</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="Background Contact-page">
+    <div class="Container Container--slimer">
+        <div class="u-pb--10 u-xs-pb--30 u-sm-pb--80 u-pt--50">
+            <h2 class="Text-block-title-larger u-textCenter u-mb--20">{_pageStatic.contact.navigation.title}</h2>
+            <div class="Grid">
+                <div class="Grid-cell u-size1of3 u-sm-max-size2of2">
+                    <h3 class="Timeline-subtitle u-mt--50">{_pageStatic.contact.navigation.publicTransport.title}</h3>
+                    <p class="Timeline-desc"><b>Metro C</b> – zastávka Budějovická:</p>
+
+                        <ul class="Timeline-desc">
+                        <li>zde přestoupíte na autobusy č. 118, 170, 124 a BB1, vystoupíte na zastávce <b>Brumlovka</b>,</li>
+                        <li>nebo využijte autobus BB2 a vystupte na zastávce <b>Filadelfie</b>.</li>
+                        </ul>
+                </div>
+
+                <div class="Grid-cell u-size1of3 u-sm-max-size2of2">
+                    <h3 class="Timeline-subtitle u-mt--50">{_pageStatic.contact.navigation.car.title}</h3>
+                    <p class="Timeline-desc"><b>Jedete k nám z centra Prahy?</b><br>Sjeďte z D1 exitem na Michle:</p>
+                    <ul class="Timeline-desc">
+                        <li>na semaforech zabočíte doleva do ulice Vyskočilova</li>
+                        <li>hned na dalších semaforech opět doleva na nájezd směrem zpět do centra</li>
+                        <li>v polovině nájezdu doprava do ulice U Pomníku a hned první odbočku doprava do Želetavské,  dominantní budova Filadlefie je z kraje ulice po levé straně.</li>
+                    </ul>
+
+                    <p class="Timeline-desc"><b>Jedete směrem do centra Prahy?</b><br>Z dálnice D1 sjeďte exitem na Michle:</p>
+                    <ul class="Timeline-desc">
+                        <li>na semaforech pokračujte rovně na nájezd do centra</li>
+                        <li>v polovině nájezdu doprava do ulice U Pomníku a hned první odbočku doprava do Želetavské,  dominantní budova Filadlefie je z kraje ulice po levé straně.</li>
+                    </ul>
+                </div>
+
+                <div class="Grid-cell u-size1of3 u-sm-max-size3of3">
+                    <h3 class="Timeline-subtitle u-mt--50">{_pageStatic.contact.navigation.parking.title}</h3>
+                    <p class="Timeline-desc"><b>Naši klienti parkují zdarma</b><br>Využijte pohodlné podzemní parkování přímo v budově Filadelfie:</p>
+                    <ul class="Timeline-desc">
+                        <li>parkoviště určené pro veřejnost je označené jako -1,</li>
+                        <li>najdete zde vždy dostatek parkovacích míst.</li>
+                    </ul>
+                    <p class="Timeline-desc"><b>Jak to funguje?</b><br>Při vjezdu do budovy Filadelfie si u spodní závory vyzvednete parkovací lístek. Po odchodu z naší prodejny vám naše asistentky aktivují volný výjezd.
+                        <br><br>
+                        V garážích je stále přítomná hlídací služba a kamerový systém z důvodu bezpečnosti.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="contact-form" class="Background">
+    <div class="Container Container--slim">
+        <div class="u-pb--10 u-xs-pb--30 u-sm-pb--80 u-md-pb--140">
+            <h2 class="Text-block-title-larger u-textCenter u-mb--20">{_pageStatic.contact.contactForm.title|noescape}</h2>
+        {control contactForm:contactForm}
+        </div>
+    </div>
+</div>

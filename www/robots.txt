@@ -1,0 +1,5 @@
+User-agent: *
+Sitemap: https://www.jk.cz/sitemap/category-parameter-group.xml
+Sitemap: https://www.jk.cz/sitemap/category.xml
+Sitemap: https://www.jk.cz/sitemap/page.xml
+Sitemap: https://www.jk.cz/sitemap/product.xml

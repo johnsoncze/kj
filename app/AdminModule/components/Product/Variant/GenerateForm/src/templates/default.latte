@@ -1,0 +1,21 @@
+<form n:name="form">
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Parametr</th>
+            <th>Kód produktu</th>
+        </tr>
+        </thead>
+        <tbody>
+            {foreach $parameters as $parameter}
+                <tr>
+                    <td>{input 'check_' . $parameter->getId()}</td>
+                    <td>{ifset $variants[$parameter->getId()]}<a href="{plink Product:edit, id => $variants[$parameter->getId()]->getId()}" target="_blank">{$variants[$parameter->getId()]->getCode()} <i class="fa fa-external-link"></i></a>{else}{input $parameter->getId()}{/ifset}</td>
+                </tr>
+            {/foreach}
+        </tbody>
+    </table>
+    <div class="form-group">
+        {input submit}
+    </div>
+</form>

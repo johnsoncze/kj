@@ -1,0 +1,1 @@
+ALTER TABLE `shopping_cart_product` ADD INDEX(`scp_hash`);

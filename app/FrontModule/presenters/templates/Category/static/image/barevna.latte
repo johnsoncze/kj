@@ -1,0 +1,51 @@
+{layout 'partials/@layout.latte'}
+
+{block templateContent}
+
+{capture $motto}{_collection.barevna.motto}{/capture}
+{include header,
+image => '/www/assets/front/user_content/images/collection/diva/diva-bg-kolekce-detail-1920x470.jpg',
+title => $title,
+motto => $motto}
+
+{capture $text}{_collection.barevna.description1}{/capture}
+{include mainTextBlock,
+category => $category,
+image => '/www/assets/front/user_content/images/collection/diva/diva-300x470.png',
+text => $text}
+
+<section class="Background">
+    <div class="Collection-detail-items Container">
+        <div class="Grid u-pb--90 u-sm-pb--120">
+
+            {capture $text}{_collection.barevna.description2}{/capture}
+            {include textBlockCell, text => $text}
+
+            {include productBlockCell, products => $control->getRepresentativeProducts(2)}
+
+            {include productBlockCell, products => $control->getRepresentativeProducts(2, 2)}
+
+            {capture $text}{_collection.barevna.description3}{/capture}
+            {include textBlockCell, text => $text}
+
+            {capture $text}{_collection.barevna.description4}{/capture}
+            {include textBlockCell, text => $text}
+
+            {include productBlockCell, products => $control->getRepresentativeProducts(2, 4)}
+
+            {include productBlockCell, products => $control->getRepresentativeProducts(2, 6)}
+
+            {capture $text}{_collection.barevna.description5}{/capture}
+            {include textBlockCell, text => $text}
+
+            {capture $text}{_collection.barevna.description6}{/capture}
+            {include textBlockCell, text => $text}
+
+            {include productBlockCell, products => $control->getRepresentativeProducts(2, 8)}
+
+            {include ctaBlock, category => $category}
+
+        </div>
+
+    </div>
+</section>

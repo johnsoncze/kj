@@ -1,0 +1,14 @@
+{if $collection}
+    <div class="Product-options">
+    <div class="Product-option-row">
+        <div class="Product-option-info-title">
+            <div class="Product-option-title">{_collection.preview.title}</div>
+        </div>
+        <div class="Product-option-info-value">
+            <div class="Product-option-label">
+                <a class="Product-link" href="{plink Category:default, url => $collection->getUrl(), _image => 'true'}">{$collection->getName()}</a>
+            </div>
+        </div>
+    </div>
+    </div>
+{/if}

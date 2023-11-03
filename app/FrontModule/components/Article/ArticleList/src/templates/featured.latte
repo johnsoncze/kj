@@ -1,0 +1,29 @@
+{if $articles}
+
+<section class="Discover">
+    <h2 class="Discover-title Heading Heading--section u-textCenter u-colorDarkGreen">
+		{_article.featured.title}
+    </h2>
+    <div class="Container Discover-container-carousel">
+		{foreach $articles as $article}
+		<div>
+			<div class="Discover-container Discover-container--news">
+				<div class="Discover-bg">
+					<img src="{thumbnailPath 500, 500, $article->getCoverPhoto(), 'article-cover-photos'}">
+				</div>
+				<div class="Discover-content">
+					<h3 class="Discover-contentTitle Heading Heading--subTitle">{$article->getName()}</h3>
+					<p class="u-displayBlock--sm u-colorBrownDarkTransparent u-textLineHeight--large">
+						{$article->getIntroduction()}
+					</p>
+					<a class="Link Link--lineBefore" href="{plink Article:detail, url => $article->getUrl()}">{_article.anchor}<span class="Link--hover"></span></a>
+				</div>
+			</div>
+        </div>
+		{/foreach}
+    </div>
+    <div class="Discover-bottom u-textCenter">
+        <a class="u-textUppercase Button Button--arrow" href="{plink Article:list, url => 'novinky'}">{_article.featured.allAnchor}</a>
+    </div>
+</section>
+{/if}

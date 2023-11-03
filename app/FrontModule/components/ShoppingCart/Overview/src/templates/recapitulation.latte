@@ -1,0 +1,48 @@
+    {var $shoppingCartEntity = $shoppingCart->getEntity()}
+        <div class="Recap__billing">
+                <h2 class="Recap__heading2">Fakturační adresa</h2>
+                {if $shoppingCartEntity->getFirstName()}<p>{$shoppingCartEntity->getFirstName()} {$shoppingCartEntity->getLastName()}</p>{/if}
+{*                <p>Firma TODO</p>*}
+                {if $shoppingCartEntity->getBillingAddress()}<p>{$shoppingCartEntity->getBillingAddress()}</p>{/if}
+                {if $shoppingCartEntity->getBillingCity()}<p>{$shoppingCartEntity->getBillingCity()} {$shoppingCartEntity->getBillingPostalCode()}</p>{/if}
+                {if $shoppingCartEntity->getBillingCountry()}<p>{$shoppingCartEntity->getBillingCountry()}</p>{/if}
+                {if $shoppingCartEntity->getEmail()}<p>{$shoppingCartEntity->getEmail()}</p>{/if}
+                {if $shoppingCartEntity->getBillingTelephone()}<p>{$shoppingCartEntity->getBillingTelephone()}</p>{/if}
+        </div>
+
+{*        <p>fakturační jméno: {$shoppingCartEntity->getBillingName()}</p>*}
+{*        <p>fakturační jméno: {$shoppingCartEntity->getBillingIn()}</p>*}
+{*        <p>fakturační jméno: {$shoppingCartEntity->getBillingVatId()}</p>*}
+ {*        <p>fakturační telefon: {$shoppingCartEntity->getBillingTelephone()}</p> *}
+ {*       <p>fakturační email: {$shoppingCartEntity->getBillingEmail()}</p>*}
+{*        <p>fakturační účet: {$shoppingCartEntity->getBillingBankAccount()}</p>*}
+        
+        <div class="Recap__delivery">
+                <h2 class="Recap__heading2">Dodací adresa</h2>
+                {if $shoppingCartEntity->getDeliveryAddress()}
+                        {if $shoppingCartEntity->getDeliveryFirstName()}<p>{$shoppingCartEntity->getDeliveryFirstName()} {$shoppingCartEntity->getDeliveryLastName()}</p>{/if}
+                        {if $shoppingCartEntity->getDeliveryCompany()}<p>{$shoppingCartEntity->getDeliveryCompany()}</p>{/if}
+                        {if $shoppingCartEntity->getDeliveryAddress()}<p>{$shoppingCartEntity->getDeliveryAddress()}</p>{/if}
+                        {if $shoppingCartEntity->getDeliveryCity()}<p>{$shoppingCartEntity->getDeliveryCity()} {$shoppingCartEntity->getDeliveryPostalCode()}</p>{/if}
+                        {if $shoppingCartEntity->getDeliveryCountry()}<p>{$shoppingCartEntity->getDeliveryCountry()}</p>{/if}
+                        {if $shoppingCartEntity->getTelephone()}<p>{$shoppingCartEntity->getTelephone()}</p>{/if}
+                {else}
+                        {if $shoppingCartEntity->getFirstName()}<p>{$shoppingCartEntity->getFirstName()} {$shoppingCartEntity->getLastName()}</p>{/if}
+                        {*                <p>Firma TODO</p>*}
+                        {if $shoppingCartEntity->getBillingAddress()}<p>{$shoppingCartEntity->getBillingAddress()}</p>{/if}
+                        {if $shoppingCartEntity->getBillingCity()}<p>{$shoppingCartEntity->getBillingCity()} {$shoppingCartEntity->getBillingPostalCode()}</p>{/if}
+                        {if $shoppingCartEntity->getBillingCountry()}<p>{$shoppingCartEntity->getBillingCountry()}</p>{/if}
+                        {if $shoppingCartEntity->getEmail()}<p>{$shoppingCartEntity->getEmail()}</p>{/if}
+                        {if $shoppingCartEntity->getBillingTelephone()}<p>{$shoppingCartEntity->getBillingTelephone()}</p>{/if}
+                {/if}
+
+{*                <p>jmeno.prijmeni@email.cz</p>*}
+{*                <p>+420 123 456 789</p>*}
+            {*  <p>doručení info: {$shoppingCartEntity->getDeliveryInformation()}</p>*}
+        </div>
+        {if $shoppingCartEntity->getComment()}
+        <div class="Recap__note">
+                <h2 class="Recap__heading2">Poznámka</h2>
+                <p>{$shoppingCartEntity->getComment()}</p>
+        </div>
+        {/if}

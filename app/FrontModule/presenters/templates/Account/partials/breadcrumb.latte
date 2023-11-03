@@ -1,0 +1,18 @@
+<div class="Account-breadcrumb">
+    <div class="Grid">
+        <div class="Grid-cell u-size12of12">
+            {control breadcrumb}
+        </div>
+    </div>
+</div>
+
+<div class="Account-logged-user u-sm-pt--20 u-pt--30">
+    <div class="Grid">
+        <div class="Grid-cell u-xs-size12of12 u-sm-size6of12">
+            <span class="Timeline-desc"><b>{$loggedUser->getEntity()->getFullName()}</b> ({$loggedUser->getEntity()->getEmail()})</span>
+        </div>
+        <div class="Grid-cell u-xs-size12of12 u-sm-size6of12 u-sm-textRight u-sm-pt--0 u-pt--20">
+            <span class="Timeline-desc"><a href="{plink Sign:out}" class="Button--default--sm">Odhlásit se</a></span>
+        </div>
+    </div>
+</div>

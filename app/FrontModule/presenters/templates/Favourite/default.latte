@@ -1,0 +1,24 @@
+{block content}
+
+
+<section class="Background">
+    <div class="Container Container--wide u-textCenter u-md-mt--60 u-xs-mt--30">
+		<h1 class="h-primary">{_favourites.title}</h1>
+		<br />
+	{if $isFavouriteProducts === 0}
+		<div class="u-fontSize--20 u-mb--80 u-colorBrownDark">
+		{_favourites.noProducts}
+		<br /><br />
+		{_favourites.howAdd}&nbsp;
+		<svg role="img" class="Icon">
+			<use xlink:href="#symbol-heart-empty"></use>
+		</svg>
+		<br /><br />
+		<div class="u-colorGold" style="max-width: 700px; margin: auto;">{_favourites.about}</div>
+		</div>
+	{/if}
+	{control productList}
+
+	</div>
+</section>
+

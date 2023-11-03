@@ -1,0 +1,19 @@
+<div class="Timeline">
+    {foreach $items as $item}
+        <div class="Timeline-row{if $item->isReverse() === TRUE} Timeline-row--reverse{/if}{$item->getRowClass()}">
+            <div class="Timeline-item u-size6of12 u-sm-max-size12of12{$item->getItem1Class()}">
+                <div class="Timeline-content Timeline-content--right{$item->getContentClass()}">
+                    {if $item->getTitle()}<h3 class="Timeline-title{$item->getTitleClass()}">{$item->getTitle()|noescape}</h3>{/if}
+                    {if $item->getSubtitle()}<h3 class="Timeline-subtitle{$item->getSubtitleClass()}">{$item->getSubtitle()|noescape}</h3>{/if}
+                    {if $item->getDescription()}<p class="Timeline-desc{$item->getDescriptionClass()}">{$item->getDescription()|noescape}</p>{/if}
+                    {if $item->getHtml()}{$item->getHtml()|noescape}{/if}
+                </div>
+            </div>
+            <div class="Timeline-item u-textCenter u-sm-textLeft u-size6of12 u-sm-max-size12of12{$item->getItem2Class()}">
+                <div class="Timeline-images{$item->getImagesClass()}">
+                    {$item->getImages()|noescape}
+                </div>
+            </div>
+        </div>
+    {/foreach}
+</div>

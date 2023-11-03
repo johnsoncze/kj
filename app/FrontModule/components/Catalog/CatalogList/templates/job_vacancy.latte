@@ -1,0 +1,18 @@
+{if $items}
+    <ul class="Expand-list u-mt--30 u-sm--mt--0 js-expand-list">
+        {foreach $items as $job}
+            <li class="Expand-item js-toggle">
+                <h3 class="Expand-title js-toggle-switch">
+                    <svg role="img" class="Icon Expand-icon">
+                        <use xlink:href="#symbol-arr-down"></use>
+                    </svg>
+                    {$job->getTranslation()->getTitle()}</h3>
+                <div class="Expand-content js-toggle-content">
+                    {$job->getTranslation()->getText()|noescape}
+                </div>
+            </li>
+        {/foreach}
+    </ul>
+{else}
+    <p class="Timeline-desc">{_pageStatic.team.hiring.jobVacancy.none}</p>
+{/if}

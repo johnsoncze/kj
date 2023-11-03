@@ -1,0 +1,13 @@
+{if $categories}
+    <div class="Grid">
+        {foreach $categories as $category}
+            <div class="Grid-cell u-sm-size6of12 u-sm-max-size6of12">
+                {$category->getName()}
+                <a href="{plink Category:default, url => $category->getUrl()}" class="Link Link--lineBefore">
+                    {_category.signpost.engagementAndWedding.wedding.link}
+                    <span class="Link--hover"></span>
+                </a>
+            </div>
+        {/foreach}
+    </div>
+{/if}

@@ -1,0 +1,1 @@
+<br class="u-md-displayNone" /> {_store.openingHours.today} {if $openingHours->getOpeningTime() && $openingHours->getClosingTime()} {_store.openingHours.opened} {$openingHours->getOpeningTime()|date:"H:i"}-{$openingHours->getClosingTime()|date:"H:i"}{else}{_store.openingHours.closed}{/if}

@@ -1,0 +1,1 @@
+ALTER TABLE `page` ADD `p_menu_location` TINYINT NOT NULL COMMENT 'where will be page showed' AFTER `p_template`, ADD INDEX (`p_menu_location`);

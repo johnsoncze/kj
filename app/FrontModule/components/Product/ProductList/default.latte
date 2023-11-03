@@ -1,0 +1,13 @@
+{if $products}
+    <div class="ProductGrid">
+        {foreach $products as $product}
+            <div class="ProductGrid-item">
+                {var $lazy = $iterator->getCounter() > 4}
+                {cache 'list-product-' . ($user->isLoggedIn()?'logged':'anonymous') . ($lazy?'-lazy':'-notlazy') . $product->getProduct()->getId(), expire => '30 minutes'}
+                    {var $product_ID = 'product_' . $product->getProduct()->getId()}
+                    {control $product_ID $lazy}
+                {/cache}
+            </div>
+        {/foreach}
+    </div>
+{/if}

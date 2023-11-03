@@ -1,0 +1,1 @@
+ALTER TABLE `order` ADD `o_sent_to_external_system` TINYINT(1) NOT NULL DEFAULT '0' AFTER `o_comment`, ADD INDEX (`o_sent_to_external_system`);

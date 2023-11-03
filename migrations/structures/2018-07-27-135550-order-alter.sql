@@ -1,0 +1,1 @@
+ALTER TABLE `order` ADD `o_birthday_discount` TINYINT(1) NOT NULL AFTER `o_summary_price_before_discount_without_vat`;

@@ -1,0 +1,24 @@
+{if $articles}
+    <div class="Carousel u-mb--40 u-sm-mb--80">
+        <div class="Grid">
+            {var $newLine = TRUE}
+            {foreach $articles as $article}
+            {var $categories = $article->getCategories()}
+                <div class="u-size12of12 u-sm-size1of3 u-mt--30 u-sm-mt--0 u-mb--30 u-sm-mb--0">
+                    <div class="BlogCard{if $iterator->getCounter() % 3 === 0} BlogCard--right{elseif $newLine === TRUE} BlogCard--left{/if}">
+                        <a n:if="$article->getCoverPhoto()" href="{plink Article:detail, url => $article->getUrl()}"><img loading="lazy" n:if="$article->getCoverPhoto()" src="{thumbnailPath 300, 280, $article->getCoverPhoto(), 'article-cover-photos'}" class="BlogCard-image u-borderRounded" alt="{$article->getName()}" width="300" height="280"></a>
+                        <span class="Heading--sectionSubtitle">{foreach $categories as $category}{$category->getCategory()->getName()}{if $iterator->isLast() !== TRUE}, {/if}{/foreach}</span>
+                        <h3 class="Heading Heading--subTitle Heading--subTitleBlog"><a href="{plink Article:detail, url => $article->getUrl()}">{$article->getName()}</a></h3>
+                        <p class="BlogCard-text u-colorBrownDarkTransparent u-textLineHeight--large">
+                            {$article->getIntroduction()}
+                        </p>
+                        <a class="Link Link--lineBefore" href="{plink Article:detail, url => $article->getUrl()}">{_article.preview.anchor}<span class="Link--hover"></span></a>
+                    </div>
+                </div>
+                {php $newLine = $iterator->getCounter() % 3 === 0}
+            {/foreach}
+         </div>
+    </div>
+{else}
+    {_article.noArticle}
+{/if}

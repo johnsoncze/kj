@@ -1,0 +1,122 @@
+.BannerExtBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 250px;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+
+    @media @media-xs-min {
+        max-width: 690px;
+    }
+
+    @media @media-sm-min {
+        position: relative;
+        overflow: hidden;
+    }
+}
+
+.BannerExtBox-mediaContainer {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 40px;
+    margin-bottom: 1.75rem;
+
+    @media @media-sm-min {
+        padding-bottom: 110px;
+    }
+}
+
+.BannerExtBox-media {
+    position: relative;
+    width: 160px;
+    height: 230px;
+    border-radius: @border-radius-large;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: @color-brown-dark;
+
+    @media @media-sm-min {
+        width: 440px;
+        height: 650px;
+        border-radius: @border-radius-larger;
+    }
+}
+
+.BannerExtBox-media--top {
+    top: 40px;
+    left: -40px;
+    opacity: 0.9;
+    margin-right: -20px;
+
+    @media @media-sm-min {
+        top: 110px;
+        left: -110px;
+    }
+}
+
+.BannerExtBox-media--bottom {
+    right: -40px;
+    margin-left: -20px;
+
+    @media @media-sm-min {
+        right: -110px;
+    }
+}
+
+.BannerExtBox-description {
+    max-width: 26rem;
+
+    @media @media-sm-min {
+        position: absolute;
+        top: unit((110 + 170), px);
+        left: calc(50% - 110px + 70px);
+        max-width: 20.5rem;
+        color: @color-white;
+    }
+}
+
+.BannerExtBox-title {
+    margin-bottom: 0.75em;
+    font-weight: 400;
+    font-size: @font-size-large;
+    font-family: @font-secondary;
+    color: @color-brown-dark;
+
+    @media @media-sm-min {
+        // .//letter-spacing(180);
+
+        margin-bottom: 1.5em;
+        font-size: @font-size-largest;
+        color: inherit;
+    }
+}
+
+.BannerExtBox-text {
+    line-height: 1.8;
+    color: @color-brown-dark-alpha-70;
+
+    @media @media-sm-min {
+        color: @color-white-alpha-70;
+    }
+}
+
+/* --- revert position --- */
+
+.BannerExtBox--revert .BannerExtBox-media--top {
+    @media @media-sm-min {
+        left: -330px;
+    }
+}
+
+.BannerExtBox--revert .BannerExtBox-media--bottom {
+    @media @media-sm-min {
+        right: -330px;
+    }
+}
+
+.BannerExtBox--revert .BannerExtBox-description {
+    @media @media-sm-min {
+        left: calc(50% - 330px + 70px);
+    }
+}

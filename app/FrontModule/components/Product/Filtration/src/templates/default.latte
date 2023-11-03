@@ -1,0 +1,319 @@
+{var allFilters = $filterCollection->getFilters()}
+{var filterCount = count($allFilters)}
+
+{var stockFilterName = \App\FrontModule\Components\Product\Filtration\Filter\StockFilter::KEY}
+{var stockFilter = $filterCollection->getByName($stockFilterName)}
+{php $filterCollection->removeByName($stockFilterName)}
+
+{var sortFilterName = \App\FrontModule\Components\Category\Filtration\Filter\SortFilter::KEY}
+{var sortFilter = $filterCollection->getByName($sortFilterName)}
+{php $filterCollection->removeByName($sortFilterName)}
+
+<section class="Filter" id="filter-block">
+    <div class="Filter-panel u-mb--10">
+
+        {* ---------- Header ---------- *}
+        <div class="Filter-row u-displayNone u-md-displayBlock">
+            <div class="Container Grid u-alignItemsBaseline">
+                <div class="Grid-cell u-size5of12"></div>
+                <div class="Grid-cell u-size2of12 u-textCenter">
+
+                    <h3 class="Filter-title Text-caption u-textBold u-textSecondary u-colorGold u-md-mt--100">{_category.filtration.title}</h3>
+
+                </div>
+                <div class="Grid-cell u-size5of12 u-textRight">
+
+                    <div class="Filter-bar u-justifyContentEnd u-mr--3">
+                        <span class="Filter-barItem Filter-stock">
+                            {if $stockFilter}
+                                {include #$stockFilter->getType(), filter => $stockFilter}
+                            {/if}
+                        </span>
+                        {*Sorting*}
+                        <span class="Filter-barItem Filter-sort">
+                            {if $sortFilter}
+                                {include #$sortFilter->getType(), filter => $sortFilter}
+                                {php $filterCollection->removeByName($sortFilterName)}
+                            {/if}
+                        </span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        {* ---------- Filters ---------- *}
+        <div class="Filter-row u-md-size12of12">
+            <div class="Container Filter-container">
+
+                {*Toggle filters, mobile*}
+                <button type="button" class="Button--link Filter-toggleMobile js-toggle" data-target="#filters">
+                    <svg class="Icon Icon--medium Icon--offset">
+                        <use xlink:href="#symbol-settings"/>
+                    </svg>
+                    {_category.filtration.title}
+                </button>
+
+                {*Filters*}
+                <div id="filters"
+                     class="Filter-options Filter-collapsible Filter-collapsible--mobile">
+
+                    {*Filter checkboxes, mobile*}
+                    <div class="Container Filter-container u-py--10 Filter-mobile">
+                        {if $stockFilter}
+                            <b>{include #$stockFilter->getType(), filter => $stockFilter}</b>
+                        {/if}
+                    </div>
+
+                    {*Basic filters, mobile and desktop*}
+                    {var $filters = $filterCollection->getFilters()}
+                    {foreach $filters as $key => $filter}
+                        {include filter_block, filter => $filter}
+                        {php unset($filters[$key])}
+                        {breakIf $iterator->getCounter() === 4}
+                    {/foreach}
+
+                    {*More filters, mobile*}
+                    {if $filters}
+                        <div class="Filter-mobile">
+                            {foreach $filters as $filter}
+                                {include filter_block, filter => $filter}
+                            {/foreach}
+                        </div>
+                    {/if}
+
+                    {*Toggle more filters, desktop*}
+                    {if $filterCount > 4}
+                        <button type="button"
+                                class="Filter-toggle u-displayNone u-md-displayInlineFlex js-toggle"
+                                data-target="#filters_more">
+                            <svg class="Icon Dropdown-toggleIcon u-colorGold">
+                                <use xlink:href="#symbol-arr-down" />
+                            </svg>
+                            <span class="Filter-toggleText">Další filtry</span>
+                            <span class="Filter-toggleText Filter-toggleText--open">Méně filtrů</span>
+                        </button>
+
+                    {/if}
+
+
+                </div>
+
+
+
+            </div>
+
+        </div>
+
+
+        {*More filters, desktop*}
+        {if $filterCount > 4}
+            <div id="filters_more" class="Filter-row Filter-desktop Filter-collapsible is-collapsed u-md-py--10">
+                <div class="Container Filter-container">
+                    <div class="Filter-options">
+                        {foreach $filters as $filter}
+                            {include filter_block, filter => $filter}
+                        {/foreach}
+                    </div>
+                </div>
+            </div>
+        {/if}
+
+    </div>
+
+    {* ---------- Used filters ---------- *}
+    <div class="Container">
+        <div class="Filter-bar">
+
+            {if $used === TRUE}
+                {foreach $allFilters as $filter}
+                    {if $filter->isFiltered() === TRUE}
+                        {if $filter instanceof App\FrontModule\Components\Category\Filtration\Filter\FilterParameters}
+                            <span class="Filter-barItem">
+                            <b>{$filter->getTitle()}:</b>
+                                {foreach $filter->getParameters() as $parameter}
+                                    {if $parameter->isChecked()}
+                                        {include tag, url => $control->buildLink($parameter->getParameter()->getId(), NULL, TRUE), text => $parameter->getParameter()->getTranslation()->getValue()}
+                                    {/if}
+                                {/foreach}
+                        </span>
+                        {elseif $filter instanceof App\FrontModule\Components\Category\Filtration\Filter\PriceRange}
+                            <span class="Filter-barItem">
+                        {include tag, url => $control->buildLink([App\FrontModule\Components\Category\Filtration\Filtration::FILTER_PRICE_FROM, App\FrontModule\Components\Category\Filtration\Filtration::FILTER_PRICE_TO]), text => $filter->getFormattedActualMin() . '-' . $filter->getFormattedActualMax()}
+                                {_price.currency.label}
+                            </span>
+                        {elseif $filter instanceof App\FrontModule\Components\Category\Filtration\Filter\CheckboxFilter}
+                            <span class="Filter-barItem">
+                        {include tag, url => $control->buildLink($filter->getName()), text => $filter->getTitle()}
+                            </span>
+                        {/if}
+                    {/if}
+                {/foreach}
+                <a href="{if $cancelLink}{$cancelLink}{else}{plink $control->getPresenter()->getAction(TRUE)}{/if}"
+                   class="Filter-barItem Button--link">{_category.filtration.cancel.label}</a>
+            {/if}
+
+        </div>
+    </div>
+
+</section>
+
+<script>
+    $(document).ready(function () {
+        $('.filter-input').on('change', function () {
+            /*
+             * queryParameters -> handles the query string parameters
+             * queryString -> the query string without the fist '?' character
+             * re -> the regular expression
+             * m -> holds the string matching the regular expression
+             */
+            var queryParameters = {}, queryString = location.search.substring(1),
+                re = /([^&=]+)=([^&]*)/g, m;
+
+            // Creates a map with the query string parameters
+            while (m = re.exec(queryString)) {
+                m[2] = m[2].replace('+',' ');
+                queryParameters[decodeURIComponent(m[1])] = decodeURIComponent(m[2]);
+            }
+
+            // Add new parameters or update existing ones
+            queryParameters[$(this).attr('name')] = $(this).val();
+            /*
+             * Replace the query portion of the URL.
+             * jQuery.param() -> create a serialized representation of an array or
+             *     object, suitable for use in a URL query string or Ajax request.
+             */
+            location.hash = {\App\FrontModule\Components\Product\Filtration\Filtration::FILTER_BLOCK_ID};
+            location.search = $.param(queryParameters); // Causes page to reload
+        });
+    });
+</script>
+
+{define tag}
+    <span class="Tag">
+        <a href="{$url}" class="Tag-close" title="{_category.filtration.remove.title}">&times;</a>
+        {$text}
+    </span>
+{/define}
+
+{define filter_parameters}
+    <ul class="Dropdown-list">
+        {foreach $filter->getParameters() as $parameter}
+            {include checkbox_field, parameter => $parameter}
+        {/foreach}
+    </ul>
+{/define}
+
+{define color_list}
+    <ul class="Dropdown-list">
+        {foreach $filter->getParameters() as $parameter}
+            {var href = $control->buildLink($parameter->getParameter()->getId(), $parameter->isChecked() ? NULL : $parameter->getParameter()->getTranslation()->getUrl(), TRUE)}
+            <li>
+                <div class="Dropdown-listItem">
+                    <div class="CheckboxField">
+                        <label>
+                            {var href = $control->buildLink($parameter->getParameter()->getId(), $parameter->isChecked() ? NULL : $parameter->getParameter()->getTranslation()->getUrl(), TRUE)}
+                            <input type="checkbox" class="CheckboxField-input" data-href="{$href}"
+                                   onchange="window.location={$href}" {if $parameter->isChecked()}checked{/if}/>
+                            <span class="CheckboxField-label">
+                                <span class="CheckboxField-labelText">
+                                    <span class="CheckboxField-color" style="background-color: {$parameter->getParameter()->getHelper() ? $parameter->getParameter()->getHelper()->getValue() : '#000000'|noescape}"></span>
+                                    {$parameter->getParameter()->getTranslation()->getValue()}
+                                    {*<strong>({$parameter->getProductCount()})</strong>*}
+                                </span>
+                            </span>
+                        </label>
+                    </div>
+                </div>
+            </li>
+        {/foreach}
+    </ul>
+{/define}
+
+{define sort_filter}
+    <div class="Dropdown Dropdown--small js-dropdown">
+        <button type="button" class="Dropdown-toggle js-dropdown-toggle  u-pl--5">
+            <svg class="Dropdown-toggleIcon Icon u-colorGold">
+                <use xlink:href="#symbol-arr-down"></use>
+            </svg>
+            <span class="Dropdown-label u-textUppercase">{$filter->getTitle()}: {$filter->getChecked()->getTitle()}</span>
+        </button>
+        <div class="Dropdown-menu">
+            <ul class="Dropdown-list">
+                {var items = $filter->getItems()}
+                {foreach $items as $item}
+                    <li>
+                        <a href="{$control->buildLink(\App\FrontModule\Components\Category\Filtration\Filter\SortFilter::KEY, $item->getName())}" class="Dropdown-listItem{$item->isChecked() ? ' Dropdown-listItem--selected' : ''}">
+                            {$item->getTitle()}
+                        </a>
+                    </li>
+                {/foreach}
+            </ul>
+        </div>
+    </div>
+{/define}
+
+{define price_range}
+    <input id="input-lower-value" name="priceFrom" class="filter-input u-displayNone">
+    <input id="input-upper-value" name="priceTo" class="filter-input u-displayNone">
+    <div class="NoUiSlider">
+        <div class="NoUiSlider-slider" id="sliderprice" data-min="{$filter->getMin()}" data-middle="50000" data-max="{$filter->getMax()}" data-actual-min="{$filter->getActualMin()}" data-actual-max="{$filter->getActualMax()}" data-step="1"></div>
+
+        <span class="NoUiSlider-value NoUiSlider-value--left">Od: <span id="lower-value"></span>,- Kč</span>
+        <span class="NoUiSlider-value NoUiSlider-value--right">Do: <span id="upper-value"></span>,- Kč</span>
+    </div>
+{/define}
+
+{define checkbox_filter}
+    <div class="CheckboxField u-textUppercase">
+        <label for="{$filter->getName()}">
+            <input type="checkbox" name="{$filter->getName()}" id="{$filter->getName()}" class="CheckboxField-input filter-input" value="{$filter->isChecked() ? '0' : '1'}" {$filter->isChecked() ? 'checked' : NULL}>
+            <span class="CheckboxField-label">
+                <span class="CheckboxField-labelText">
+                    {$filter->getTitle()}
+                </span>
+            </span>
+        </label>
+    </div>
+{/define}
+
+{define checkbox_field}
+    <li>
+        <div class="Dropdown-listItem">
+            <div class="CheckboxField">
+                <label>
+                    {var href = $control->buildLink($parameter->getParameter()->getId(), $parameter->isChecked() ? NULL : $parameter->getParameter()->getTranslation()->getUrl(), TRUE)}
+                    <input type="checkbox"
+                           class="CheckboxField-input aaa"
+                           data-href="{$href}"
+                           onchange="window.location={$href}"
+                           {if $parameter->isDisabled()}disabled{/if}
+                           {if $parameter->isChecked()}checked{/if}
+                    />
+                    <span class="CheckboxField-label">
+                        <span class="CheckboxField-labelText">
+                            {$parameter->getParameter()->getTranslation()->getValue()}
+                            {*<strong>({$parameter->getProductCount()})</strong>*}
+                        </span>
+                    </span>
+                </label>
+            </div>
+        </div>
+    </li>
+{/define}
+
+{define filter_block}
+    <div>
+        <div class="Dropdown{if $filter->getType() === 'price_range'} Dropdown-price{elseif $filter->getType() === 'color_list'} Dropdown-color{/if} js-dropdown">
+            <button type="button" class="Dropdown-toggle js-dropdown-toggle">
+                <svg class="Icon Dropdown-toggleIcon u-colorGold">
+                    <use xlink:href="#symbol-arr-down"/>
+                </svg>
+                <span class="Dropdown-label">{$filter->getTitle()}</span>
+            </button>
+            <div class="Dropdown-menu">
+                {include #$filter->getType(), filter => $filter}
+            </div>
+        </div>
+    </div>
+{/define}

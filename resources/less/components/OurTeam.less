@@ -1,0 +1,98 @@
+.OurTeam-owners {
+  .Timeline-row {
+    .Timeline-content {
+      @media @media-lg-min {
+        padding-left: 0px;
+      }
+    }
+  }
+
+  .Timeline-desc {
+    margin-bottom: 15px;
+    max-width: 412px;
+
+    br {
+      display: none;
+    }
+
+    .mobile-only {
+      display: initial;
+    }
+
+    @media @media-sm-min {
+      br {
+        display: initial;
+      }
+
+      .mobile-only {
+        display: none;
+      }
+    }
+  }
+
+  .Timeline-row:last-of-type {
+    @media @media-sm-min {
+      margin-top: 30px;
+    }
+
+    @media @media-lg-min {
+      margin-top: 70px;
+    }
+  }
+
+  .Timeline {
+    padding-bottom: 20px;
+
+    @media @media-sm-min {
+      padding-top: 20px;
+    }
+
+    @media @media-xl-min {
+      padding-top: 50px;
+    }
+  }
+
+  .Timeline-content {
+    padding-top: 30px;
+  }
+
+  .Timeline-title {
+    margin-bottom: 8px;
+  }
+
+  .Timeline-subtitle {
+    margin-top: 8px;
+    margin-bottom: 21px;
+    color: #be9f57;
+    text-transform: none;
+    font-weight: 400;
+    font-size: 14px;
+  }
+
+  .Timeline-item {
+    padding-top: 0;
+  }
+
+  .Timeline-image-primary {
+    border-radius: 0px;
+  }
+
+  .Timeline-images {
+    left: 0;
+    margin-bottom: 5px;
+    width: 210px;
+    height: 210px;
+    margin-top: 0;
+
+    @media (min-width: 340px) {
+      width: 320px;
+      height: 320px;
+    }
+
+    @media @media-lg-min {
+      width: 410px;
+      height: 410px;
+      margin: 0;
+    }
+  }
+}

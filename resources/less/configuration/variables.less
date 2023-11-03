@@ -1,0 +1,111 @@
+@font-primary: 'Source Sans Pro';
+@font-secondary: 'Source Serif Pro';
+
+@base-font-size: 87.5%; // 14 px
+@base-letter-spacing: 75;
+@base-text-color: @color-brown-dark;
+@base-text-lighter-color: @color-brown-dark-alpha-40;
+
+@font-size-nano:       1rem;        // 11 px
+@font-size-tiniest:       1rem;        // 11 px
+@font-size-tinier:       1rem;        // 11 px
+@font-size-tiny:       1rem;        // 11 px
+@font-size-smallest:   1rem;        // 12 px
+@font-size-smaller:    1rem;        // 13 px
+@font-size-small:      1rem;        // 14 px
+@font-size-base:       1rem;        // 14 px
+@font-size-bigger:      1.142857rem; // 16 px
+@font-size-large:      1.42857rem;  // 20 px
+@font-size-larger:     1.42857rem;  // 20 px
+@font-size-largest:    1.42857rem;  // 20 px
+@font-size-x-large:    42px;        // 28 px
+@font-size-xx-large:   2rem;        // 28 px
+@font-size-xxx-large:  3.42857rem;  // 48 px
+
+@primary-bg: @color-white;
+@secondary-bg: @color-green-darker;
+
+@container-width: 1240px;
+@container-slim-width: 900px;
+@container-slimer-width: 1080px;
+@container-wide-width: 1480px;
+@container-padding: 20px;
+
+@grid-gutter-width: 20px;
+
+@border-radius: 0.2143rem;
+@border-radius-large: 0.333333rem;
+@border-radius-larger: 0.666666rem;
+
+@breakpoint-xs: 380px;
+@breakpoint-sm: 768px;
+@breakpoint-md: 992px;
+@breakpoint-lg: 1400px;
+@breakpoint-xl: 1600px;
+@breakpoint-x2l: 1920px;
+
+// mobile first
+@media-xs-min: ~'screen and (min-width: @{breakpoint-xs})';
+@media-sm-min: ~'screen and (min-width: @{breakpoint-sm})';
+@media-md-min: ~'screen and (min-width: @{breakpoint-md})';
+@media-lg-min: ~'screen and (min-width: @{breakpoint-lg})';
+@media-xl-min: ~'screen and (min-width: @{breakpoint-xl})';
+@media-x2l-min: ~'screen and (min-width: @{breakpoint-x2l})';
+
+// desktop first 🙈
+@media-xs-max: ~'screen and (max-width: @{breakpoint-xs})';
+@media-sm-max: ~'screen and (max-width: @{breakpoint-sm})';
+@media-md-max: ~'screen and (max-width: @{breakpoint-md})';
+@media-lg-max: ~'screen and (max-width: @{breakpoint-lg})';
+@media-xl-max: ~'screen and (max-width: @{breakpoint-xl})';
+@media-x2l-max: ~'screen and (max-width: @{breakpoint-x2l})';
+
+@media-desktop-menu: @media-sm-min;
+
+@spacing-min-value: 0;
+@spacing-max-value: 200;
+@spacing-step: 5;
+@spacing-unit: px;
+
+@depth-collection-card-img-secondary: -1;
+@depth-banner-carousel-pager: 70;
+@depth-banner-carousel-product: 70;
+@depth-banner-carousel-wave: 60;
+@depth-product-carousel: 100;
+@depth-dropdown: 100;
+@depth-header-backdrop: 9999;
+@depth-navigation-desktop: 10000;
+@depth-header: 10100;
+@depth-navigation-mobile: 10200;
+@depth-popup-overlay: 10900;
+@depth-popup: 10901;
+
+@text-inversed-color: @color-white;
+
+@separator-color: @color-brown-lighter;
+
+// UI
+// ==
+
+@form-field-height: 3rem;
+@form-field-spacing-x: 1.6rem;
+@form-field-spacing-x-color: 1.9rem;
+@form-field-color: @color-brown-dark;
+@form-field-border-color: @color-gray-light-alt;
+@form-field-focus-border-color: @color-gold;
+@form-field-placeholder-color: @color-brown-dark-alpha-50;
+
+// Components
+// ==========
+
+@header-height-sm: 122px;
+@header-height-md: 130px;
+@header-bg: @color-gray-lightest;
+
+@navigation-header-height: @header-height-sm;
+
+@navigation-height-sm: 76px;
+@navigation-height-md: 57px;
+
+@navigation-delay-short: 250ms;
+@navigation-delay-long: 400ms;

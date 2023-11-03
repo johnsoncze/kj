@@ -1,0 +1,32 @@
+.Container {
+  max-width: @container-width;
+  padding-right: @container-padding;
+  padding-left: @container-padding;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.Container--slim {
+  max-width: @container-slim-width;
+}
+
+.Container--slimer {
+  max-width: @container-slimer-width;
+}
+
+.Container--wide {
+  max-width: @container-wide-width;
+}
+
+.Container--benefit {
+  padding: 0;
+}
+
+.Container--benefit-main {
+  padding: 0;
+
+  @media (max-width: 1024px) {
+    margin-left: -10px;
+    margin-right: -10px;
+  }
+}

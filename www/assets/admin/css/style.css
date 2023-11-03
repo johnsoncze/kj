@@ -1,0 +1,169 @@
+h1 {
+    font-size: 32px;
+    margin-top: 0px;
+}
+
+.alert {
+    border-radius: 2px;
+}
+
+.headline {
+    margin-top: 100px;
+}
+
+.adminContent {
+    margin-top: 100px;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: #e5e5e5;
+    font-size: 14px;
+}
+
+.info-box i {
+    padding-right: 5px;
+}
+
+.info-box span {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+a .panel {
+    text-align: center;
+}
+
+a .panel i {
+    padding-top: 12px;
+}
+
+.link-white {
+    color: white;
+    text-decoration: underline;
+}
+
+.link-white:hover {
+    color: white;
+    text-decoration: none;
+}
+
+span.custom-url {
+    background-color: #95a5a6;
+    color: white;
+    padding: 2px 4px;
+    border-radius: 2px;
+}
+
+.form-group div.help {
+    padding-bottom: 8px;
+}
+
+.b-g {
+    background-color: #ecf0f1;
+    border-radius: 4px;
+}
+
+ul.sortable li {
+    cursor: move;
+    padding: 5px 10px;
+    background-color: #ecf0f1;
+    border-radius: 4px;
+    margin-bottom: 7px;
+}
+
+ul.sortable li input {
+    display: none;
+}
+
+.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+    vertical-align: middle;
+}
+
+/*Summernote editor*/
+.note-editor.note-frame {
+    border: 2px solid #dce4ec;
+}
+
+.note-editor.panel {
+    margin-bottom: 0;
+}
+
+.language-mini-switcher {
+    padding: 8px 10px;
+    border-radius: 4px;
+    background-color: #ecf0f1;
+    margin-bottom: 15px;
+}
+
+.language-mini-switcher ul {
+    padding: 0px;
+    margin-bottom: 0px;
+}
+
+.language-mini-switcher ul li {
+    display: inline-block;
+    list-style-type: none;
+    padding: 1px 4px;
+    border-radius: 4px;
+}
+
+.language-mini-switcher ul li.active {
+    background-color: #bcbcbc;
+}
+
+.language-mini-switcher ul li.active a {
+    color: white;
+}
+
+.tree ul {
+    padding-left: 25px;
+}
+
+.green{
+    color: #60c2a8;
+}
+
+.red{
+    color: #e35752;
+}
+
+.b-g hr{
+    border-top: 1px solid white;
+}
+
+.thumbnail-body{
+    display: inline-block;
+    text-align: center;
+}
+
+.thumbnail{
+    margin-bottom: 10px;
+}
+
+table.products tr{
+    height: 55px;
+}
+
+.va-middle{
+    vertical-align: middle;
+}
+
+.icon-label{
+    margin-right: 2px;
+}
+
+.inline-blocks div{
+    display: inline-block;
+}
+
+.m-t-21 {
+    margin-top: 21px;
+}
+
+.navbar-default .badge{
+    background-color: #7b8a8b;
+    color: white;
+}
+.checkboxlist-container input {
+    margin-right: .5em;
+}
